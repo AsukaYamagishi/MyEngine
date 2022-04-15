@@ -82,6 +82,9 @@
     <Filter Include="HLSL ファイル\Particle">
       <UniqueIdentifier>{e5727940-5828-44ac-bd18-210110f5f433}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Object\PostEffect">
+      <UniqueIdentifier>{534c16cf-a007-4c5b-a82c-789453440939}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyboardInput.h">
@@ -153,9 +156,6 @@
     <ClInclude Include="FbxDraw.h">
       <Filter>ソース ファイル\Model\FBX</Filter>
     </ClInclude>
-    <ClInclude Include="OBJObject.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Boss.h">
       <Filter>ソース ファイル\Boss</Filter>
     </ClInclude>
@@ -170,6 +170,12 @@
     </ClInclude>
     <ClInclude Include="ControllerInput.h">
       <Filter>ソース ファイル\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJObject.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="PostEffect.h">
+      <Filter>ソース ファイル\Object\PostEffect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -239,9 +245,6 @@
     <ClCompile Include="FbxDraw.cpp">
       <Filter>ソース ファイル\Model\FBX</Filter>
     </ClCompile>
-    <ClCompile Include="OBJObject.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Boss.cpp">
       <Filter>ソース ファイル\Boss</Filter>
     </ClCompile>
@@ -256,6 +259,12 @@
     </ClCompile>
     <ClCompile Include="ControllerInput.cpp">
       <Filter>ソース ファイル\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="OBJObject.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="PostEffect.cpp">
+      <Filter>ソース ファイル\Object\PostEffect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

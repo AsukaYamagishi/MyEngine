@@ -31,7 +31,7 @@ public: //構造体
 #pragma endregion
 
 #pragma region 変数
-private: //静的メンバ変数
+protected: //静的メンバ変数
 	//テクスチャの最大枚数
 	static const int spriteSRVCount = 512; //テクスチャの最大枚数
 	//頂点数
@@ -53,7 +53,7 @@ private: //静的メンバ変数
 	//射影行列
 	static XMMATRIX matProjection;
 
-private: //メンバ変数
+protected: //メンバ変数
 	//頂点バッファ
 	ComPtr<ID3D12Resource> vertBuff;
 	//定数バッファ

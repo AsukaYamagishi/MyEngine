@@ -2,6 +2,7 @@
 #include "GameScene.h"
 #include "Title.h"
 #include "EndGame.h"
+#include "PostEffect.h"
 
 class SceneManager
 {
@@ -13,6 +14,7 @@ private: //ƒƒ“ƒo•Ï”
 	GameScene* game = nullptr;
 	Title* title = nullptr;
 	EndGame* end = nullptr;
+	PostEffect* postEffect = nullptr;
 
 	//ƒV[ƒ“‘JˆÚ”Ô†
 	enum SceneNo {

@@ -6,6 +6,7 @@ SceneManager::SceneManager()
 
 SceneManager::~SceneManager()
 {
+	safe_delete(postEffect);
 }
 
 void SceneManager::Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio)
@@ -27,6 +28,12 @@ void SceneManager::Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* au
 	//end->Init(dxCommon, input, audio);
 	game = new GameScene();
 	game->Init(dxCommon, input, audio);
+
+	//ポストエフェクト用テクスチャ読み込み
+	Sprite::LoadTexture(100, L"Resources/white1x1.png");
+	//ポストエフェクト初期化
+	postEffect = new PostEffect();
+	postEffect->Init();
 
 	//ゲーム開始シーンの設定
 	sceneNo = gameScene;
@@ -79,7 +86,8 @@ void SceneManager::Draw()
 	}
 	else if (sceneNo == gameScene)
 	{
-		game->Draw();
+		postEffect->Draw(dxCommon->GetCommandList());
+		//game->Draw();
 	}
 	else if (sceneNo == endScene) {
 		end->Draw();
