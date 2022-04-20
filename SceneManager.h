@@ -14,7 +14,7 @@ private: //ƒƒ“ƒo•Ï”
 	GameScene* game = nullptr;
 	Title* title = nullptr;
 	EndGame* end = nullptr;
-	PostEffect* postEffect = nullptr;
+	//PostEffect* postEffect = nullptr;
 
 	//ƒV[ƒ“‘JˆÚ”Ô†
 	enum SceneNo {
