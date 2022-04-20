@@ -67,6 +67,9 @@ private: //メンバ変数
 
 	float radius = XMConvertToRadians(2.0f);
 
+	Vector3 move = { 0,0.5,0 };
+	Vector3 initialVelocity = { -6,5,0 };
+
 public:
 	//ゲームシーン終了用
 	bool gameEndFlag = false;

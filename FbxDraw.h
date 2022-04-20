@@ -69,6 +69,15 @@ public: //静的メンバ関数
 	static void CreateGraphicsPipeline();
 
 	
+public: //メンバ変数
+	//ローカルスケール
+	XMFLOAT3 scale = { 1,1,1 };
+	//xyz軸周りのローカル回転角
+	XMFLOAT3 rotation = { 0,0,0 };
+	//ローカル座標
+	Vector3 position = { 0,0,0 };
+
+
 protected: //メンバ変数
 	//定数バッファ
 	ComPtr<ID3D12Resource> constBuffTransform;
@@ -85,12 +94,7 @@ private: //静的メンバ変数
 	//パイプラインステートオブジェクト
 	static ComPtr<ID3D12PipelineState> pipelinestate;
 
-	//ローカルスケール
-	XMFLOAT3 scale = { 1,1,1 };
-	//xyz軸周りのローカル回転角
-	XMFLOAT3 rotation = { 0,0,0 };
-	//ローカル座標
-	XMFLOAT3 position = { 0,0,0 };
+	
 	//ローカルワールド変換行列
 	XMMATRIX matWorld;
 	//モデル
