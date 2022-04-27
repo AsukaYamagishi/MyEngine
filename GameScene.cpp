@@ -98,21 +98,19 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 	skydome = new OBJObject();
 	skydome->Initialize(dxCommon, input, audio, ModelManager::Skydome);
 
+	move = initialVelocity;
+
 	gameEndFlag = false;
 }
 
 void GameScene::Update()
 {
+	move += Vector3{ 0, -0.3, 0 };
 
-	if (input->PressKey(DIK_Z)) {
-		angle += radius;
-	}
-	else if (input->PressKey(DIK_C)) {
-		angle -= radius;
-	}
+	float f = 0.1f * move.Length();
+	move += -move.Normal() * f;
 
-	testObject->position = testObject->position + initialVelocity - move;
-	move = move + Vector3{0, 0.3, 0};
+	testObject->position = testObject->position + move;
 
 	//stage->Update();
 	//skydome->Update();
