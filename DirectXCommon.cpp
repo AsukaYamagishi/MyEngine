@@ -10,7 +10,7 @@
 using namespace Microsoft::WRL;
 
 //初期化
-void DirectXCommon::Init(WindowsAPI *win)
+void DirectXCommon::Init(WindowsAPI* win)
 {
 	//nullptrチェック
 	assert(win);
@@ -30,22 +30,22 @@ void DirectXCommon::Init(WindowsAPI *win)
 	if (!CreateSwapChain()) {
 		assert(0);
 	}
-	
+
 	//レンダーターゲット生成
 	if (!CreateRenderTarget()) {
 		assert(0);
 	}
-	
+
 	//深度バッファ生成
 	if (!CreateDepthBuffer()) {
 		assert(0);
 	}
-	
+
 	//フェンス生成
 	if (!CreateFence()) {
 		assert(0);
 	}
-	
+
 }
 
 //描画前処理
@@ -82,13 +82,13 @@ void DirectXCommon::PostDraw()
 {
 	// リソースバリアを戻す
 	UINT bbIndex = swapchain->GetCurrentBackBufferIndex();
-	cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(backBuffers[bbIndex].Get(),D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT));
-	
+	cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(backBuffers[bbIndex].Get(), D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT));
+
 	// 命令のクローズ
 	cmdList->Close();
 
 	// コマンドリストの実行
-	ID3D12CommandList *cmdLists[] = { cmdList.Get() }; // コマンドリストの配列
+	ID3D12CommandList* cmdLists[] = { cmdList.Get() }; // コマンドリストの配列
 	cmdQueue->ExecuteCommandLists(1, cmdLists);
 
 	// コマンドリストの実行完了を待つ
@@ -232,7 +232,7 @@ bool DirectXCommon::CreateSwapChain()
 	//IDXGISwapChain1のComPtrを用意
 	ComPtr<IDXGISwapChain1> swapchain1;
 	//スワップチェーンの生成
-	result=dxgiFactory->CreateSwapChainForHwnd(
+	result = dxgiFactory->CreateSwapChainForHwnd(
 		cmdQueue.Get(),
 		WindowsAPI::hwnd,
 		&swapchainDesc,
@@ -312,14 +312,14 @@ bool DirectXCommon::CreateRenderTarget()
 			assert(0);
 			return false;
 		}
-		
+
 		// レンダーターゲットビュー用ディスクリプタヒープのハンドルを取得
 		CD3DX12_CPU_DESCRIPTOR_HANDLE handle = CD3DX12_CPU_DESCRIPTOR_HANDLE(rtvHeaps->GetCPUDescriptorHandleForHeapStart(), i, dev->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV));
 		//レンダーターゲットビューの生成
 		dev->CreateRenderTargetView(
 			backBuffers[i].Get(),
 			nullptr,
-			handle );
+			handle);
 	}
 
 	return true;
@@ -337,7 +337,7 @@ bool DirectXCommon::CreateDepthBuffer()
 		WindowsAPI::window_height,
 		1, 0,
 		1, 0,
-		D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL );
+		D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
 
 	//深度バッファリソースの生成
 	result = dev->CreateCommittedResource(

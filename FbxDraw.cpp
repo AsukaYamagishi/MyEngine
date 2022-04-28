@@ -59,7 +59,7 @@ void FbxDraw::Update()
 	const XMMATRIX& modelTransform = model->GetModelTransform();
 	//カメラ座標
 	const XMFLOAT3& cameraPos = camera->eye;
-	
+
 
 	HRESULT result;
 	//定数バッファへデータ転送
@@ -112,11 +112,13 @@ void FbxDraw::Update()
 		FbxAMatrix fbxCurrentPose = bones[i].fbxCluster->GetLink()->EvaluateGlobalTransform(currentTime);
 		//XMMATRIXに変換
 		FbxInput::ConvertMatrixFromFbx(&matCurrentPose, fbxCurrentPose);
+		//モデルの変更行列を取得
+		XMMATRIX meshGlobalTransform = model->GetModelTransform();
 		//合成してスキニング行列に
-		constMapSkin->bones[i] = bones[i].invInitialPose * matCurrentPose;
+		constMapSkin->bones[i] = meshGlobalTransform * bones[i].invInitialPose * matCurrentPose * XMMatrixInverse(nullptr, meshGlobalTransform);
 	}
 	constBuffSkin->Unmap(0, nullptr);
-	
+
 }
 
 void FbxDraw::PlayAnimation(bool isLoop)

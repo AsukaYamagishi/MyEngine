@@ -69,15 +69,16 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 #pragma region 3DモデルCreate・初期設定
 	//モデルを指定して読み込み
-	testModel = FbxInput::GetInstance()->LoadFbxFromFile("Box");
+	testModel = FbxInput::GetInstance()->LoadFbxFromFile("boneTest");
 	//3Dオブジェクト生成とモデルのセット
 	testObject = new FbxDraw();
 	testObject->Init();
 	testObject->SetModel(testModel.get());
-	testObject->SetScale({ 0.05,0.05,0.05 });
+	//testObject->SetScale({ 0.05,0.05,0.05 });
+	testObject->SetScale({ 10,10,10 });
 	//testObject->SetRotation({ 0,0,0 });
-	testObject->SetPosition({ 100,10,3 });
-	//testObject->PlayAnimation(true);
+	//testObject->SetPosition({ 100,10,3 });
+	testObject->PlayAnimation(true);
 
 #pragma endregion
 
@@ -105,12 +106,12 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 void GameScene::Update()
 {
-	move += Vector3{ 0, -0.3, 0 };
+	/*move += Vector3{ 0, -0.3, 0 };
 
 	float f = 0.1f * move.Length();
 	move += -move.Normal() * f;
 
-	testObject->position = testObject->position + move;
+	testObject->position = testObject->position + move;*/
 
 	//stage->Update();
 	//skydome->Update();

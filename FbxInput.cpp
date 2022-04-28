@@ -225,7 +225,7 @@ void FbxInput::ParseMeshFaces(FbxModel* model, FbxMesh* fbxMesh)
 
             controlPointsData[controlPointIndex].push_back(indexCount);
 
-            
+
             FbxModel::VertexPosNormalUvSkin& vertex = vertices[indexCount];
             //座標のコピー
             vertex.pos.x = (float)pCoord[controlPointIndex][0];
@@ -262,7 +262,7 @@ void FbxInput::ParseMeshFaces(FbxModel* model, FbxMesh* fbxMesh)
                 indices.push_back(indexCount);
             }
             //4頂点目
-            else 
+            else
             {
                 //3点追加し、
                 //四角形の0,1,2,3のうち、2,3,0で三角形を構築する
@@ -275,9 +275,10 @@ void FbxInput::ParseMeshFaces(FbxModel* model, FbxMesh* fbxMesh)
             }
 
             indexCount++;
-            
+
         }
     }
+
 }
 
 void FbxInput::ParseMaterial(FbxModel* model, FbxNode* fbxNode)
@@ -371,7 +372,7 @@ void FbxInput::ParseSkin(FbxModel* model, FbxMesh* fbxMesh)
             model->vertices[i].boneWeight[0] = 1.0f;
         }
 
-        return; 
+        return;
     }
 
     //ボーン配列の参照
@@ -445,8 +446,6 @@ void FbxInput::ParseSkin(FbxModel* model, FbxMesh* fbxMesh)
         }
     }
 
-    //頂点配列書き換え用の参照
-    //auto& vertices = model->vertices;
     //各頂点について処理
     for (int i = 0; i < controlPointsData.size(); i++)
     {
@@ -460,10 +459,16 @@ void FbxInput::ParseSkin(FbxModel* model, FbxMesh* fbxMesh)
                 return lhs.weight > rhs.weight;
             });
 
-        int weightArrayIndex = 0;
-        //降順ソート済ウェイトリストから
+        if (weightList.size() > 4)
+        {
+            weightList.resize(4);
+        }
+
+
         for (int j = 0; j < controlPointsData[i].size(); j++)
         {
+            int weightArrayIndex = 0;
+            //降順ソート済ウェイトリストから
             for (auto& weightSet : weightList)
             {
                 std::vector<int>& controlPoint = controlPointsData[i];
@@ -477,9 +482,9 @@ void FbxInput::ParseSkin(FbxModel* model, FbxMesh* fbxMesh)
                 {
                     float weight = 0.0f;
                     //2番目以降のウェイトを合計
-                    for (int j = 1; j < FbxModel::MAX_BONE_INDICES; j++)
+                    for (int k = 1; k < FbxModel::MAX_BONE_INDICES; k++)
                     {
-                        weight += vertices[indexCount].boneWeight[j];
+                        weight += vertices[indexCount].boneWeight[k];
                     }
                     //合計で1.0f(100%)になるように調整
                     vertices[indexCount].boneWeight[0] = 1.0f - weight;

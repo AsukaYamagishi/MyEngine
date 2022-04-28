@@ -77,7 +77,7 @@ void FbxModel::CreateBuffers(ID3D12Device* dev)
 
 	//テクスチャ用バッファの生成
 	result = dev->CreateCommittedResource(
-		&CD3DX12_HEAP_PROPERTIES(D3D12_CPU_PAGE_PROPERTY_WRITE_BACK,D3D12_MEMORY_POOL_L0),
+		&CD3DX12_HEAP_PROPERTIES(D3D12_CPU_PAGE_PROPERTY_WRITE_BACK, D3D12_MEMORY_POOL_L0),
 		D3D12_HEAP_FLAG_NONE, &texresDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
 		nullptr, IID_PPV_ARGS(&texBuff));
@@ -104,7 +104,7 @@ void FbxModel::CreateBuffers(ID3D12Device* dev)
 	srvDesc.Texture2D.MipLevels = 1;
 
 	dev->CreateShaderResourceView(
-		texBuff.Get(), &srvDesc, 
+		texBuff.Get(), &srvDesc,
 		descHeapSRV->GetCPUDescriptorHandleForHeapStart());
 
 #pragma endregion
