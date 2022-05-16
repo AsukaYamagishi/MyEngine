@@ -50,7 +50,7 @@ public:		//静的メンバ関数
 
 public:		//メンバ関数
 	bool InitializeDiscriptorHeap();
-	bool CreateFromObj(string modelName);		//モデル生成
+	bool CreateFromObj(const string &modelName);		//モデル生成
 	bool LoadMaterial(const string &directoryPath, const string &filename);		//マテリアル読み込み
 	bool LoadTexture(const string &directoryPath, const string &filename);		//テクスチャ読み込み
 

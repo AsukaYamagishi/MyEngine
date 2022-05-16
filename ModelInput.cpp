@@ -32,7 +32,7 @@ bool ModelInput::InitializeDiscriptorHeap()
 	return true;
 }
 
-bool ModelInput::CreateFromObj(string modelName)
+bool ModelInput::CreateFromObj(const string &modelName)
 {
 	HRESULT result = S_FALSE;
 
