@@ -7,8 +7,8 @@ using namespace DirectX;
 
 Player::Player()
 {
-	player = ModelDraw::Create();
-	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::Player));
+	/*player = ModelDraw::Create();
+	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::Player));*/
 }
 
 Player::~Player()

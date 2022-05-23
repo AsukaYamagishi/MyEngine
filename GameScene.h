@@ -15,6 +15,7 @@
 #include "ParticleManager.h"
 #include"Primitive.h"
 #include "mCollision.h"
+#include "Bullet.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;
@@ -66,6 +67,8 @@ private: //ƒƒ“ƒo•Ï”
 	float angle = 3.14f / 2.0f;
 
 	float radius = XMConvertToRadians(2.0f);
+
+	vector<Bullet*> bullets;
 
 	Vector3 move = { 0,0.5,0 };
 	Vector3 initialVelocity = { -6,5,0 };

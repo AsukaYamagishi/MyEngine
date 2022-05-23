@@ -35,10 +35,10 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 
 	//カメラのせっち
-	camera->Initialize({ 0,30,130 });
+	camera->Initialize({ 0,0,130 });
 	camera = Camera::GetCam();
 	//camera->target = { 0 ,50 ,0 };
-#pragma endregion
+
 
 #pragma region デバッグテキスト読み込み
 	// デバッグテキスト用テクスチャ読み込み
@@ -68,17 +68,17 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 	FbxDraw::CreateGraphicsPipeline();
 
 #pragma region 3DモデルCreate・初期設定
-	//モデルを指定して読み込み
-	testModel = FbxInput::GetInstance()->LoadFbxFromFile("boneTest");
-	//3Dオブジェクト生成とモデルのセット
-	testObject = new FbxDraw();
-	testObject->Init();
-	testObject->SetModel(testModel.get());
-	//testObject->SetScale({ 0.05,0.05,0.05 });
-	testObject->SetScale({ 10,10,10 });
-	//testObject->SetRotation({ 0,0,0 });
-	//testObject->SetPosition({ 100,10,3 });
-	testObject->PlayAnimation(true);
+	////モデルを指定して読み込み
+	//testModel = FbxInput::GetInstance()->LoadFbxFromFile("boneTest");
+	////3Dオブジェクト生成とモデルのセット
+	//testObject = new FbxDraw();
+	//testObject->Init();
+	//testObject->SetModel(testModel.get());
+	////testObject->SetScale({ 0.05,0.05,0.05 });
+	//testObject->SetScale({ 10,10,10 });
+	////testObject->SetRotation({ 0,0,0 });
+	////testObject->SetPosition({ 100,10,3 });
+	//testObject->PlayAnimation(true);
 
 #pragma endregion
 
@@ -90,14 +90,14 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 #pragma endregion
 
-	player = new Player();
+	/*player = new Player();
 	player->Initialize(dxCommon, input, audio);
 
 	stage = new OBJObject();
 	stage->Initialize(dxCommon, input, audio, ModelManager::Stage);
 	stage->model->SetScale({ 30,30,30 });
 	skydome = new OBJObject();
-	skydome->Initialize(dxCommon, input, audio, ModelManager::Skydome);
+	skydome->Initialize(dxCommon, input, audio, ModelManager::Skydome);*/
 
 	move = initialVelocity;
 
@@ -113,10 +113,19 @@ void GameScene::Update()
 
 	testObject->position = testObject->position + move;*/
 
+	if (input->PressKeyTrigger(DIK_SPACE))
+	{
+		bullets.push_back(new Bullet(dxCommon, Vector3(-30, 0, 0), Vector3(2, 0, 0)));
+	}
+
+	for (int i = 0; i < bullets.size(); i++)
+	{
+		bullets[i]->Update();
+	}
+
 	//stage->Update();
 	//skydome->Update();
-	
-	testObject->Update();
+	//testObject->Update();
 	
 	camera->SetCam(camera);
 	camera->Update();
@@ -163,11 +172,15 @@ void GameScene::Draw()
 
 #pragma region 3Dモデル描画
 
-
+	for (int i = 0; i < bullets.size(); i++)
+	{
+		bullets[i]->Draw();
+	}
+	 
 	//stage->Draw();
 	//skydome->Draw();
 	
-	testObject->Draw(cmdList);
+	//testObject->Draw(cmdList);
 	
 #pragma endregion
 
