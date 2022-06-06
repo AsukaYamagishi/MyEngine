@@ -24,7 +24,7 @@ void PostEffect::Draw(ID3D12GraphicsCommandList* cmdList)
 
 	// 定数バッファにデータ転送
 	ConstBufferData* constMap = nullptr;
-	HRESULT result = this->constBuff->Map(0, nullptr, (void**)&constMap);
+	HRESULT result = this->constBuff->Map(0, nullptr, (void**)&constMap); 
 	if (SUCCEEDED(result)) {
 		constMap->color = this->color;
 		constMap->mat = this->matWorld * matProjection;	// 行列の合成	

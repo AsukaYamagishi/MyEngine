@@ -160,7 +160,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		//•`‰æ‘Oˆ—
 		dxCommon->PreDraw();
 
-		sceneManager->Draw();
+		//sceneManager->Draw();
 		
 		//•`‰æI—¹
 		dxCommon->PostDraw();

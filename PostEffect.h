@@ -9,6 +9,6 @@ public:
     PostEffect();
 
     //•`‰æ
-    void Draw(ID3D12GraphicsCommandList* cmdList);
+    void Draw(ID3D12GraphicsCommandList* cmdList); 
 };
 
