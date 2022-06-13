@@ -58,7 +58,7 @@ void Title::Draw()
 	Sprite::PreDraw(cmdList);
 
 	// 背景スプライト描画
-	spriteBG->Draw();
+	//spriteBG->Draw();
 
 	// スプライト描画後処理
 	Sprite::PostDraw();

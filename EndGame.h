@@ -9,11 +9,14 @@
 #include "KeyboardInput.h"
 #include "ModelDraw.h"
 
+#include "AbstructScene.h"
+
 using namespace Microsoft::WRL;
 using namespace DirectX;
 
 //ゲームシーン
-class EndGame
+class EndGame :
+	public AbstructScene
 {
 #pragma region 変数
 private: //静的メンバ変数
@@ -39,11 +42,11 @@ public: //メンバ関数
 	//デストラクタ
 	~EndGame();
 	//初期化
-	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio);
+	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio) override;
 	//毎フレーム更新処理
-	void Update();
+	void Update() override;
 	//描画
-	void Draw();
+	void Draw() override;
 #pragma endregion
 };
 

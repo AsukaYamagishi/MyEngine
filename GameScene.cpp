@@ -5,6 +5,8 @@
 #include "FbxInput.h"
 #include "FbxDraw.h"
 
+#include "SceneManager.h"
+
 using namespace DirectX;
 
 
@@ -119,6 +121,10 @@ void GameScene::Update()
 	camera->SetCam(camera);
 	camera->Update();
 
+	//シーン切り替え
+	if (input->PressKeyTrigger(DIK_0)) {
+		SceneManager::ChangeScene(SceneManager::SceneNo::titleScene);
+	}
 
 #pragma region デバッグテキスト設定
 	

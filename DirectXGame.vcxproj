@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstructScene.h" />
     <ClInclude Include="Audio.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Camera.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstructScene.cpp" />
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Camera.cpp" />
