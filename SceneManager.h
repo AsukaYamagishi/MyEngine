@@ -36,10 +36,12 @@ private: //メンバ変数
 private: //静的メンバ関数
 	static std::stack<AbstructScene *> scenes;
 public: //静的メンバ関数
+
 	static void ChangeScene(SceneNo sceneNo,bool sceneStackClear = false);
 #pragma endregion
 #pragma region ゲッター/セッター
 	//a
+	void w(int a, int b);
 #pragma endregion
 
 #pragma region メンバ関数

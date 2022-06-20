@@ -45,7 +45,13 @@ public: //メンバ関数
 	Title();
 	//デストラクタ
 	~Title();
-	//初期化
+	/// <summary>
+	/// <para>初期化</para>
+	/// です
+	/// </summary>
+	/// <param name="dxCommon"></param>
+	/// <param name="input">入力</param>
+	/// <param name="audio"></param>
 	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio) override;
 	//毎フレーム更新処理
 	void Update() override;

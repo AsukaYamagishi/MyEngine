@@ -69,13 +69,13 @@ void Title::Draw()
 
 #pragma region 3Dオブジェクト描画
 	// 3Dオブジェクト描画前処理
-	//Object3D::PreDraw(cmdList);
+	//CalculationObject::PreDraw(cmdList);
 
 	// 3Dオブクジェクトの描画
 	//object3d->Draw();
 
 	// 3Dオブジェクト描画後処理
-	//Object3D::PostDraw();
+	//CalculationObject::PostDraw();
 #pragma endregion
 
 #pragma region 3Dモデル描画

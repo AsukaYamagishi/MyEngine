@@ -14,6 +14,7 @@ void SceneManager::ChangeScene(SceneNo sceneNo, bool sceneStackClear)
 			scenes.pop();
 		}
 	}
+	
 	//ƒV[ƒ“Ø‚è‘Ö‚¦
 	switch (sceneNo)
 	{
