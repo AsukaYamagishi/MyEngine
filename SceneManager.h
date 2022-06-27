@@ -23,12 +23,6 @@ private: //メンバ変数
 	static DirectXCommon* dxCommon;
 	static KeyboardInput* input;
 	static Audio* audio;
-	//GameScene* game = nullptr;
-	//Title* title = nullptr;
-	//EndGame* end = nullptr;
-
-	//SceneNo sceneNo;
-
 #pragma endregion
 
 #pragma region 静的メンバ関数
@@ -36,7 +30,6 @@ private: //メンバ変数
 private: //静的メンバ関数
 	static std::stack<AbstructScene *> scenes;
 public: //静的メンバ関数
-
 	static void ChangeScene(SceneNo sceneNo,bool sceneStackClear = false);
 #pragma endregion
 #pragma region ゲッター/セッター

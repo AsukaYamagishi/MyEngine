@@ -178,7 +178,7 @@
       <Filter>ソース ファイル\Object\PostEffect</Filter>
     </ClInclude>
     <ClInclude Include="AbstructScene.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ソース ファイル\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
