@@ -123,6 +123,10 @@ public: //メンバ関数
 private: //メンバ関数
 	//頂点データ転送
 	void TransferVertices();
+
+protected:
+	//頂点バッファ生成
+	void CreateVertBuff();
 #pragma endregion
 
 };

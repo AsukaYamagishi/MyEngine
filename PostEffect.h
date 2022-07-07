@@ -16,6 +16,10 @@ public:
     ComPtr<ID3D12DescriptorHeap> descHeapRTV;
     //DSV用デスクリプタヒープ(デプスステンシルビュー)
     ComPtr<ID3D12DescriptorHeap> descHeapDSV;
+    //グラフィックスパイプライン
+    ComPtr<ID3D12PipelineState> pipelineState;
+    //ルートシグネチャ
+    ComPtr<ID3D12RootSignature> rootSignature;
     //画面クリアカラー
     static const float clearColor[4];
 #pragma endregion
@@ -52,6 +56,12 @@ public:
 
    
 private:
+
+    /// <summary>
+    /// パイプライン生成
+    /// </summary>
+    void CreateGraphicsPipelineState();
+
     /// <summary>
     /// テクスチャ生成
     /// </summary>

@@ -53,12 +53,12 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 #pragma region Sprite初期設定
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)
-	/*if (!Sprite::LoadTexture(3, L"Resources/setumei.png")) {
+	if (!Sprite::LoadTexture(3, L"Resources/setumei.png")) {
 		assert(0);
 		return;
-	}*/
-	//// 背景スプライト生成
-	//sprite = Sprite::CreateSprite(3, { 0.0f,0.0f });
+	}
+	// 背景スプライト生成
+	spriteBG = Sprite::CreateSprite(3, { 0.0f,0.0f });
 #pragma endregion
 	//デバイスをセット
 	FbxDraw::SetDevice(dxCommon->GetDevice());
@@ -133,13 +133,13 @@ void GameScene::Draw()
 
 #pragma region 背景スプライト描画
 	// 背景スプライト描画前処理
-	Sprite::PreDraw(cmdList);
+	//Sprite::PreDraw(cmdList);
 
 	// 背景スプライト描画
 	//spriteBG->Draw();
 
 	// スプライト描画後処理
-	Sprite::PostDraw();
+	//Sprite::PostDraw();
 
 	//深度バッファクリア
 	dxCommon->ClearDepthBuffer();

@@ -128,8 +128,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 #pragma endregion
 
 	PostEffect* postEffect = nullptr;
-	//ポストエフェクト用テクスチャ読み込み
-	Sprite::LoadTexture(100, L"Resources/white1x1.png");
 	//ポストエフェクト初期化
 	postEffect = new PostEffect();
 	postEffect->Init();
@@ -171,7 +169,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 		//ポストエフェクト描画
 		postEffect->Draw(dxCommon->GetCommandList());
-		
+		//sceneManager->Draw(); //ゲームシーン描画
+
 		//描画終了
 		dxCommon->PostDraw();
 #pragma endregion

@@ -160,26 +160,17 @@ bool Sprite::StaticInit(ID3D12Device* dev, int window_width, int window_height)
 	ComPtr<ID3DBlob> rootSigBlob;
 	// バージョン自動判定のシリアライズ
 	result = D3DX12SerializeVersionedRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1_0, &rootSigBlob, &errorBlob);
-	if (FAILED(result)) {
-		assert(0);
-		return false;
-	}
+	assert(SUCCEEDED(result));
+
 	// ルートシグネチャの生成
 	result = dev->CreateRootSignature(0, rootSigBlob->GetBufferPointer(), rootSigBlob->GetBufferSize(), IID_PPV_ARGS(&rootsignature));
-	if (FAILED(result)) {
-		assert(0);
-		return false;
-	}
+	assert(SUCCEEDED(result));
 
 	gpipeline.pRootSignature = rootsignature.Get();
 
 	// グラフィックスパイプラインの生成
 	result = dev->CreateGraphicsPipelineState(&gpipeline, IID_PPV_ARGS(&pipelinestate));
-
-	if (FAILED(result)) {
-		assert(0);
-		return false;
-	}
+	assert(SUCCEEDED(result));
 
 	// 射影行列計算
 	matProjection = XMMatrixOrthographicOffCenterLH(
@@ -344,18 +335,8 @@ bool Sprite::Init()
 
 	HRESULT result = S_FALSE;
 
-	// 頂点バッファ生成
-	result = device->CreateCommittedResource(
-		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD),
-		D3D12_HEAP_FLAG_NONE,
-		&CD3DX12_RESOURCE_DESC::Buffer(sizeof(VertexPosUv) * vertNum),
-		D3D12_RESOURCE_STATE_GENERIC_READ,
-		nullptr,
-		IID_PPV_ARGS(&vertBuff));
-	if (FAILED(result)) {
-		assert(0);
-		return false;
-	}
+	//頂点バッファ生成
+	CreateVertBuff();
 
 	// 頂点バッファへのデータ転送
 	TransferVertices();
@@ -531,4 +512,18 @@ void Sprite::TransferVertices()
 		memcpy(vertMap, vertices, sizeof(vertices));
 		vertBuff->Unmap(0, nullptr);
 	}
+}
+
+void Sprite::CreateVertBuff()
+{
+	HRESULT result;
+
+	//頂点バッファ生成
+	result = device->CreateCommittedResource(
+		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD),
+		D3D12_HEAP_FLAG_NONE,
+		&CD3DX12_RESOURCE_DESC::Buffer(sizeof(VertexPosUv) * vertNum),
+		D3D12_RESOURCE_STATE_GENERIC_READ,
+		nullptr,
+		IID_PPV_ARGS(&vertBuff));
 }
