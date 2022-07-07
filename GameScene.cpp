@@ -162,8 +162,8 @@ void GameScene::Draw()
 #pragma region 3Dƒ‚ƒfƒ‹•`‰æ
 
 
-	stage->Draw();
-	skydome->Draw();
+	//stage->Draw();
+	//skydome->Draw();
 	
 	testObject->Draw(cmdList);
 	
