@@ -58,9 +58,6 @@
     <Filter Include="ソース ファイル\Model\FBX">
       <UniqueIdentifier>{4e0d4d5a-65bd-49e5-a17d-7880d22aa01e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Camera\DebugText">
-      <UniqueIdentifier>{dc5dc9ea-a4f3-4b2e-9527-6c24c503499c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Boss">
       <UniqueIdentifier>{ce0f2d16-91ad-452b-b67b-d9687145b3b7}</UniqueIdentifier>
     </Filter>
@@ -85,6 +82,9 @@
     <Filter Include="ソース ファイル\Object\PostEffect">
       <UniqueIdentifier>{534c16cf-a007-4c5b-a82c-789453440939}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\DebugText">
+      <UniqueIdentifier>{dc5dc9ea-a4f3-4b2e-9527-6c24c503499c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyboardInput.h">
@@ -100,7 +100,7 @@
       <Filter>ソース ファイル\Audio</Filter>
     </ClInclude>
     <ClInclude Include="DebugText.h">
-      <Filter>ソース ファイル\Camera\DebugText</Filter>
+      <Filter>ソース ファイル\DebugText</Filter>
     </ClInclude>
     <ClInclude Include="SafeDelete.h">
       <Filter>ソース ファイル\Base</Filter>
@@ -192,13 +192,10 @@
       <Filter>ソース ファイル\Audio</Filter>
     </ClCompile>
     <ClCompile Include="DebugText.cpp">
-      <Filter>ソース ファイル\Camera\DebugText</Filter>
+      <Filter>ソース ファイル\DebugText</Filter>
     </ClCompile>
     <ClCompile Include="DirectXCommon.cpp">
       <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
       <Filter>ソース ファイル\GameScene\GamePlayScene</Filter>
@@ -265,6 +262,9 @@
     </ClCompile>
     <ClCompile Include="PostEffect.cpp">
       <Filter>ソース ファイル\Object\PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

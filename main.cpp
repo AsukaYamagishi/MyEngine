@@ -17,13 +17,12 @@
 #include"DebugText.h" //デバッグテキスト
 #include"DirectXCommon.h"
 #include"SafeDelete.h"
-#include"GameScene.h"
 #include"ModelDraw.h"
-#include"Title.h"
 #include "SceneManager.h"
 #include "ModelManager.h"
 #include "FbxInput.h"
 #include "Camera.h"
+#include "PostEffect.h"
 
 
 #pragma comment(lib,"dxguid.lib")
@@ -41,16 +40,12 @@ using namespace Microsoft::WRL;
 //Windowsアプリでのエントリーポイント（main関数）
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
-	
-
 	//ウィンドウ
 	WindowsAPI* win = nullptr;
 	win = new WindowsAPI();
 	win->WindowCreate();
 
 	MSG msg{}; //メッセージ
-
-
 
 #ifdef _DEBUG
 	//デバッグレイヤーをオンに
@@ -107,6 +102,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		assert(0);
 		return 1;
 	}
+
+	
 #pragma endregion
 
 #pragma region 3Dモデル静的初期化
@@ -129,6 +126,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	sceneManager->Init(dxCommon, input, audio);
 
 #pragma endregion
+
+	PostEffect* postEffect = nullptr;
+	//ポストエフェクト用テクスチャ読み込み
+	Sprite::LoadTexture(100, L"Resources/white1x1.png");
+	//ポストエフェクト初期化
+	postEffect = new PostEffect();
+	postEffect->Init();
 	
 	////描画初期化処理　ここまで
 
@@ -160,6 +164,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		//描画前処理
 		dxCommon->PreDraw();
 
+		//ポストエフェクト描画
+		postEffect->Draw(dxCommon->GetCommandList());
+		//ゲームシーン描画
 		//sceneManager->Draw();
 		
 		//描画終了
@@ -171,7 +178,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	//解放処理
 	FbxInput::GetInstance()->Fin();
-
+	delete postEffect;
 
 	//クラス(new)の消去
 	safe_delete(dxCommon);
