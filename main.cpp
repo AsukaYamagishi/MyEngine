@@ -12,7 +12,7 @@
 #include"WindowsAPI.h"  //ウィンドウ表示
 #include"KeyboardInput.h"  //キーボード入力
 #include"Sprite.h"  //2D画像(sprite)
-#include"Object3D.h"  //3Dオブジェクト(Object)
+#include"CalculationObject.h"  //3Dオブジェクト(Object)
 #include"Audio.h" //音楽再生
 #include"DebugText.h" //デバッグテキスト
 #include"DirectXCommon.h"
@@ -94,7 +94,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	}
 
 	// 3Dオブジェクト静的初期化
-	if (!Object3D::StaticInit(dxCommon->GetDevice(), WindowsAPI::window_width, WindowsAPI::window_height)) {
+	if (!CalculationObject::StaticInit(dxCommon->GetDevice(), WindowsAPI::window_width, WindowsAPI::window_height)) {
 		assert(0);
 		return 1;
 	}

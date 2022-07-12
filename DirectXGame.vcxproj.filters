@@ -138,7 +138,7 @@
     <ClInclude Include="ModelManager.h">
       <Filter>ソース ファイル\Model</Filter>
     </ClInclude>
-    <ClInclude Include="Object3D.h">
+    <ClInclude Include="CalculationObject.h">
       <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
     <ClInclude Include="Collision.h">
@@ -186,8 +186,13 @@
     <ClInclude Include="PostEffect.h">
       <Filter>ソース ファイル\Object\PostEffect</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="MultiRenderTarget.h">
       <Filter>ソース ファイル\Object\MultiRenderTarget</Filter>
+=======
+    <ClInclude Include="AbstructScene.h">
+      <Filter>ソース ファイル\GameScene</Filter>
+>>>>>>> HR4
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -227,7 +232,7 @@
     <ClCompile Include="ModelManager.cpp">
       <Filter>ソース ファイル\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Object3D.cpp">
+    <ClCompile Include="CalculationObject.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
     <ClCompile Include="Collision.cpp">
@@ -275,11 +280,16 @@
     <ClCompile Include="PostEffect.cpp">
       <Filter>ソース ファイル\Object\PostEffect</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="MultiRenderTarget.cpp">
       <Filter>ソース ファイル\Object\MultiRenderTarget</Filter>
+=======
+    <ClCompile Include="AbstructScene.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+>>>>>>> HR4
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,6 @@ void Audio::Init()
 //wavファイル読み込み
 Audio::SoundData Audio::SoundLoadWave(const char * filename)
 {
-	{
 		HRESULT result;
 
 		////ファイルオープン
@@ -82,7 +81,6 @@ Audio::SoundData Audio::SoundLoadWave(const char * filename)
 		soundData.bufferSize = data.size;
 
 		return soundData;
-	}
 }
 
 //音楽再生

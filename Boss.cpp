@@ -92,11 +92,14 @@ void Boss::Fall(int part)
 {
 	Vector3 pos;
 	Vector3 fallspeed(0.0f, -0.5f, 0.0f);
+	float headUnderPos = -40;
+	float bodyUnderPos = -20;
+	float legUnderPos = -10;
 	//“ª
 	if (part == Parts::head)
 	{
 		pos = head->GetPos();
-		if (pos.y > -40)
+		if (pos.y > headUnderPos)
 		{
 			head->SetPos(head->GetPos() + fallspeed);
 		}
@@ -105,7 +108,7 @@ void Boss::Fall(int part)
 	if (part == Parts::body)
 	{
 		pos = body->GetPos();
-		if (pos.y > -20)
+		if (pos.y > bodyUnderPos)
 		{
 			body->SetPos(body->GetPos() + fallspeed);
 		}
@@ -114,7 +117,7 @@ void Boss::Fall(int part)
 	if (part == Parts::rightaram)
 	{
 		pos = rightaram->GetPos();
-		if (pos.y > -20)
+		if (pos.y > bodyUnderPos)
 		{
 			rightaram->SetPos(rightaram->GetPos() + fallspeed);
 		}
