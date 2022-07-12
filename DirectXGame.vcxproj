@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstructScene.h" />
     <ClInclude Include="Audio.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Camera.h" />
@@ -167,8 +168,12 @@
     <ClInclude Include="ModelInput.h" />
     <ClInclude Include="ModelDraw.h" />
     <ClInclude Include="ModelManager.h" />
+<<<<<<< HEAD
     <ClInclude Include="MultiRenderTarget.h" />
     <ClInclude Include="Object3D.h" />
+=======
+    <ClInclude Include="CalculationObject.h" />
+>>>>>>> HR4
     <ClInclude Include="OBJObject.h" />
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="PostEffect.h" />
@@ -183,6 +188,7 @@
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstructScene.cpp" />
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -201,8 +207,12 @@
     <ClCompile Include="ModelInput.cpp" />
     <ClCompile Include="ModelDraw.cpp" />
     <ClCompile Include="ModelManager.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="MultiRenderTarget.cpp" />
     <ClCompile Include="Object3D.cpp" />
+=======
+    <ClCompile Include="CalculationObject.cpp" />
+>>>>>>> HR4
     <ClCompile Include="OBJObject.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="PostEffect.cpp" />

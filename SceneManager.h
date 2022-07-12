@@ -3,35 +3,38 @@
 #include "Title.h"
 #include "EndGame.h"
 
+#include <stack>
+
 class SceneManager
 {
-#pragma region 変数
-private: //メンバ変数
-	DirectXCommon* dxCommon = nullptr;
-	KeyboardInput* input = nullptr;
-	Audio* audio = nullptr;
-	GameScene* game = nullptr;
-	Title* title = nullptr;
-	EndGame* end = nullptr;
 
+public:    //サブクラス
 	//シーン遷移番号
 	enum SceneNo {
 		titleScene,
 		gameScene,
-		endScene
-	};
-	SceneNo sceneNo;
+		endScene,
 
+		MAX
+	};
+
+#pragma region 変数
+private: //メンバ変数
+	static DirectXCommon* dxCommon;
+	static KeyboardInput* input;
+	static Audio* audio;
 #pragma endregion
 
 #pragma region 静的メンバ関数
 
 private: //静的メンバ関数
+	static std::stack<AbstructScene *> scenes;
 public: //静的メンバ関数
+	static void ChangeScene(SceneNo sceneNo,bool sceneStackClear = false);
 #pragma endregion
-
 #pragma region ゲッター/セッター
 	//a
+	void w(int a, int b);
 #pragma endregion
 
 #pragma region メンバ関数

@@ -1,58 +1,58 @@
-#include "Object3D.h"
+#include "CalculationObject.h"
 
 #pragma region 静的メンバ変数の実体定義
-const float Object3D::radius = 5.0f; //底面の半径
-const float Object3D::prizmHeight = 8.0f; //柱の高さ
+const float CalculationObject::radius = 5.0f; //底面の半径
+const float CalculationObject::prizmHeight = 8.0f; //柱の高さ
 
 //デバイス
-ID3D12Device* Object3D::device = nullptr;
+ID3D12Device* CalculationObject::device = nullptr;
 //デスクリプタサイズ
-UINT Object3D::descriptorHandleIncrementSize = 0;
+UINT CalculationObject::descriptorHandleIncrementSize = 0;
 //コマンドリスト
-ID3D12GraphicsCommandList* Object3D::cmdList = nullptr;
+ID3D12GraphicsCommandList* CalculationObject::cmdList = nullptr;
 //ルートシグネチャ
-ComPtr<ID3D12RootSignature> Object3D::rootsignature;
+ComPtr<ID3D12RootSignature> CalculationObject::rootsignature;
 //パイプラインステートオブジェクト
-ComPtr<ID3D12PipelineState> Object3D::pipelinestate;
+ComPtr<ID3D12PipelineState> CalculationObject::pipelinestate;
 //デスクリプタヒープ
-ComPtr<ID3D12DescriptorHeap> Object3D::descHeap;
+ComPtr<ID3D12DescriptorHeap> CalculationObject::descHeap;
 //頂点バッファ
-ComPtr<ID3D12Resource> Object3D::vertBuff;
+ComPtr<ID3D12Resource> CalculationObject::vertBuff;
 //インデックスバッファ
-ComPtr<ID3D12Resource> Object3D::indexBuff;
+ComPtr<ID3D12Resource> CalculationObject::indexBuff;
 //テクスチャバッファ
-ComPtr<ID3D12Resource> Object3D::texBuff;
+ComPtr<ID3D12Resource> CalculationObject::texBuff;
 //シェーダーリソースビューのハンドル(CPU)
-CD3DX12_CPU_DESCRIPTOR_HANDLE Object3D::cpuDescHandleSRV;
+CD3DX12_CPU_DESCRIPTOR_HANDLE CalculationObject::cpuDescHandleSRV;
 //シェーダーリソースビューのハンドル(GPU)
-CD3DX12_GPU_DESCRIPTOR_HANDLE Object3D::gpuDescHandleSRV;
+CD3DX12_GPU_DESCRIPTOR_HANDLE CalculationObject::gpuDescHandleSRV;
 //ビュー行列
-XMMATRIX Object3D::matView{};
+XMMATRIX CalculationObject::matView{};
 //射影行列
-XMMATRIX Object3D::matProjection{};
+XMMATRIX CalculationObject::matProjection{};
 //視点行列
-XMFLOAT3 Object3D::eye = { 0,0,-50.0f };
+XMFLOAT3 CalculationObject::eye = { 0,0,-50.0f };
 //注視点行列
-XMFLOAT3 Object3D::target = { 0,0,0 };
+XMFLOAT3 CalculationObject::target = { 0,0,0 };
 //上方向ベクトル
-XMFLOAT3 Object3D::up = { 0,1,0 };
+XMFLOAT3 CalculationObject::up = { 0,1,0 };
 //頂点バッファビュー
-D3D12_VERTEX_BUFFER_VIEW Object3D::vbView{};
+D3D12_VERTEX_BUFFER_VIEW CalculationObject::vbView{};
 //インデックスバッファビュー
-D3D12_INDEX_BUFFER_VIEW Object3D::ibView{};
+D3D12_INDEX_BUFFER_VIEW CalculationObject::ibView{};
 //頂点データ配列
-Object3D::VertexPosNormalUv Object3D::vertices[vertexCount];
+CalculationObject::VertexPosNormalUv CalculationObject::vertices[vertexCount];
 //頂点インデックス配列
-unsigned short Object3D::indices[planeCount * 3];
+unsigned short CalculationObject::indices[planeCount * 3];
 
 #pragma endregion
 
 //静的初期化
-bool Object3D::StaticInit(ID3D12Device* dev, int window_width, int window_height)
+bool CalculationObject::StaticInit(ID3D12Device* dev, int window_width, int window_height)
 {
 	//nullptrチェック
 	assert(dev);
-	Object3D::device = dev;
+	CalculationObject::device = dev;
 
 	//デスクリプタヒープ初期化
 	InitDescHeap();
@@ -73,13 +73,13 @@ bool Object3D::StaticInit(ID3D12Device* dev, int window_width, int window_height
 }
 
 //描画前処理
-void Object3D::PreDraw(ID3D12GraphicsCommandList* cmdList)
+void CalculationObject::PreDraw(ID3D12GraphicsCommandList* cmdList)
 {
 	//PreDrawとPostDrawが両方呼ばれていないとエラー
-	assert(Object3D::cmdList == nullptr);
+	assert(CalculationObject::cmdList == nullptr);
 
 	//コマンドリストをセット
-	Object3D::cmdList = cmdList;
+	CalculationObject::cmdList = cmdList;
 
 	//パイプラインステートの設定
 	cmdList->SetPipelineState(pipelinestate.Get());
@@ -90,14 +90,14 @@ void Object3D::PreDraw(ID3D12GraphicsCommandList* cmdList)
 }
 
 //描画後処理
-void Object3D::PostDraw()
+void CalculationObject::PostDraw()
 {
 	//コマンドリストを解除
-	Object3D::cmdList = nullptr;
+	CalculationObject::cmdList = nullptr;
 }
 
 //テクスチャ読み込み
-bool Object3D::LoadTexture(UINT texnumber, const wchar_t* filename)
+bool CalculationObject::LoadTexture(UINT texnumber, const wchar_t* filename)
 {
 	HRESULT result = S_FALSE;
 
@@ -171,10 +171,10 @@ bool Object3D::LoadTexture(UINT texnumber, const wchar_t* filename)
 }
 
 //3Dオブジェクト生成
-Object3D* Object3D::CreateObject()
+CalculationObject* CalculationObject::CreateObject()
 {
 	//3Dオブジェクトのインスタンスを生成
-	Object3D* object = new Object3D();
+	CalculationObject* object = new CalculationObject();
 	if (object == nullptr) {
 		return nullptr;
 	}
@@ -190,21 +190,21 @@ Object3D* Object3D::CreateObject()
 }
 
 //視点座標の取得
-void Object3D::SetEye(XMFLOAT3 eye)
+void CalculationObject::SetEye(XMFLOAT3 eye)
 {
-	Object3D::eye = eye;
+	CalculationObject::eye = eye;
 	UpdateViewMatrix();
 }
 
 //注視点座標の取得
-void Object3D::SetTarget(XMFLOAT3 target)
+void CalculationObject::SetTarget(XMFLOAT3 target)
 {
-	Object3D::target = target;
+	CalculationObject::target = target;
 	UpdateViewMatrix();
 }
 
 //ベクトルによる移動
-void Object3D::CameraMoveVector(XMFLOAT3 move)
+void CalculationObject::CameraMoveVector(XMFLOAT3 move)
 {
 	XMFLOAT3 eye_moved = GetEye();
 	XMFLOAT3 target_moved = GetTarget();
@@ -222,7 +222,7 @@ void Object3D::CameraMoveVector(XMFLOAT3 move)
 }
 
 //デスクリプタヒープ初期化
-bool Object3D::InitDescHeap()
+bool CalculationObject::InitDescHeap()
 {
 	HRESULT result = S_FALSE;
 
@@ -245,7 +245,7 @@ bool Object3D::InitDescHeap()
 }
 
 //カメラ初期化
-void Object3D::InitCamera(int window_width, int window_height)
+void CalculationObject::InitCamera(int window_width, int window_height)
 {
 	//ビュー行列の生成
 	matView = XMMatrixLookAtLH(
@@ -261,7 +261,7 @@ void Object3D::InitCamera(int window_width, int window_height)
 }
 
 //グラフィックパイプライン生成
-bool Object3D::InitGraphicsPipeline()
+bool CalculationObject::InitGraphicsPipeline()
 {
 	HRESULT result;
 	//頂点シェーダファイルの読み込みとコンパイル
@@ -444,7 +444,7 @@ bool Object3D::InitGraphicsPipeline()
 }
 
 //モデル作成
-void Object3D::CreateModel()
+void CalculationObject::CreateModel()
 {
 	HRESULT result = S_FALSE;
 
@@ -634,14 +634,14 @@ void Object3D::CreateModel()
 }
 
 //ビュー行列更新
-void Object3D::UpdateViewMatrix()
+void CalculationObject::UpdateViewMatrix()
 {
 	//ビュー行列の更新
 	matView = XMMatrixLookAtLH(XMLoadFloat3(&eye), XMLoadFloat3(&target), XMLoadFloat3(&up));
 }
 
 //初期化
-bool Object3D::Init()
+bool CalculationObject::Init()
 {
 	//nullptrチェック
 	assert(device);
@@ -660,7 +660,7 @@ bool Object3D::Init()
 }
 
 //毎フレーム更新
-void Object3D::Update()
+void CalculationObject::Update()
 {
 	HRESULT result;
 	XMMATRIX matScale, matRot, matTrans;
@@ -697,11 +697,11 @@ void Object3D::Update()
 }
 
 //描画
-void Object3D::Draw()
+void CalculationObject::Draw()
 {
 	//nullptrチェック
 	assert(device);
-	assert(Object3D::cmdList);
+	assert(CalculationObject::cmdList);
 
 	//頂点バッファの設定
 	cmdList->IASetVertexBuffers(0, 1, &vbView);

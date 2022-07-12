@@ -6,11 +6,14 @@
 #include "KeyboardInput.h"
 #include "Sprite.h"
 
+#include "AbstructScene.h"
+
 using namespace Microsoft::WRL;
 using namespace DirectX;
 
 //ゲームシーン
-class Title
+class Title :
+	public AbstructScene
 {
 #pragma region 変数
 private: //静的メンバ変数
@@ -42,11 +45,17 @@ public: //メンバ関数
 	Title();
 	//デストラクタ
 	~Title();
-	//初期化
-	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio);
+	/// <summary>
+	/// <para>初期化</para>
+	/// です
+	/// </summary>
+	/// <param name="dxCommon"></param>
+	/// <param name="input">入力</param>
+	/// <param name="audio"></param>
+	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio) override;
 	//毎フレーム更新処理
-	void Update();
+	void Update() override;
 	//描画
-	void Draw();
+	void Draw() override;
 #pragma endregion
 };
