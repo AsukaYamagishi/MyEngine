@@ -1,16 +1,5 @@
-#include<Windows.h>
-#include<DirectXTex.h>
-#include<wrl.h>
-#include<d3d12.h>
-#include<dxgi1_6.h>
-#include<d3dx12.h>
-#include<vector>
-#include<string>
-#include<DirectXMath.h>
-#include<d3dcompiler.h>
-
-#include"WindowsAPI.h"  //ウィンドウ表示
-#include"KeyboardInput.h"  //キーボード入力
+//#include"WindowsAPI.h"  //ウィンドウ表示
+//#include"KeyboardInput.h"  //キーボード入力
 #include"Sprite.h"  //2D画像(sprite)
 #include"CalculationObject.h"  //3Dオブジェクト(Object)
 #include"Audio.h" //音楽再生
@@ -24,14 +13,6 @@
 #include "Camera.h"
 #include "PostEffect.h"
 #include "MultiRenderTarget.h"
-
-
-#pragma comment(lib,"dxguid.lib")
-#pragma comment(lib,"d3d12.lib")
-#pragma comment(lib,"dxgi.lib")
-#pragma comment(lib,"d3dcompiler.lib")
-#pragma comment(lib,"dinput8.lib")
-#pragma comment(lib,"xaudio2.lib")
 
 
 using namespace DirectX;

@@ -1,365 +1,326 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="HLSL ファイル">
-      <UniqueIdentifier>{b1594509-19f9-47f5-9e9a-5fb02315f22c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Camera">
-      <UniqueIdentifier>{fc67d5c0-5b26-4370-92ba-9856677af0b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Input">
-      <UniqueIdentifier>{36ec04cb-8844-44b0-9670-e10ee9b52576}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Object">
-      <UniqueIdentifier>{48014e49-c0d0-46dc-a608-c3232a2de3a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Player">
-      <UniqueIdentifier>{247e8a5d-3b0a-449d-b67f-1a08fd19c4ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Audio">
-      <UniqueIdentifier>{ac72d6ab-9c10-4cbf-9655-7937f1b3ef28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Base">
-      <UniqueIdentifier>{327f9434-943b-424c-83af-f6cc3d0280d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GameScene">
-      <UniqueIdentifier>{35c27ec9-e306-49ea-a09f-b2eb21c4ce0e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GameScene\GamePlayScene">
-      <UniqueIdentifier>{38e1fff9-983b-4959-bab8-21078c3517a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GameScene\TitleScene">
-      <UniqueIdentifier>{1b49f521-cf5d-49ff-88ea-6c4504ae5e71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Model">
-      <UniqueIdentifier>{8314fef5-0ad0-453a-ab9d-4f8af7263dc1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Collision">
-      <UniqueIdentifier>{aadc5487-d596-4163-8a57-3d0dc5b0a530}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GameScene\EndGame">
-      <UniqueIdentifier>{2134dae5-8f52-4c16-8b5b-75845e43db62}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Model\Obj">
-      <UniqueIdentifier>{e8ffab32-26df-4928-90c7-26a76786c4c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Model\FBX">
-      <UniqueIdentifier>{4e0d4d5a-65bd-49e5-a17d-7880d22aa01e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Boss">
-      <UniqueIdentifier>{ce0f2d16-91ad-452b-b67b-d9687145b3b7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Particle">
-      <UniqueIdentifier>{7a0f758a-929c-4f14-b85d-9f97acca1254}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HLSL ファイル\Basic">
-      <UniqueIdentifier>{51faadf3-239a-4252-8d68-22a27cf2ea08}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HLSL ファイル\FBX">
-      <UniqueIdentifier>{af4c9c2b-d769-43b5-b0ce-e9e2a551bdb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HLSL ファイル\OBJ">
-      <UniqueIdentifier>{390674f3-556d-4f68-a70f-b50ec50c6492}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HLSL ファイル\Sprite">
-      <UniqueIdentifier>{9eca0400-bd5d-432e-b563-7f1d76f90cef}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HLSL ファイル\Particle">
-      <UniqueIdentifier>{e5727940-5828-44ac-bd18-210110f5f433}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Object\PostEffect">
-      <UniqueIdentifier>{534c16cf-a007-4c5b-a82c-789453440939}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\DebugText">
-      <UniqueIdentifier>{dc5dc9ea-a4f3-4b2e-9527-6c24c503499c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HLSL ファイル\PostEffect">
-      <UniqueIdentifier>{0084ed0a-94bb-45c5-85aa-cd895d662732}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Object\MultiRenderTarget">
-      <UniqueIdentifier>{a382731a-e620-4dff-9d95-a21b8a89d407}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HLSL ファイル\MultiRenderTarget">
-      <UniqueIdentifier>{10d2dfeb-3c05-4a09-b894-7356c4b18d2f}</UniqueIdentifier>
-    </Filter>
+    <FxCompile Include="Resources\Shaders\BasicPS.hlsl">
+      <Filter>Shader\CalculationObj</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\BasicVS.hlsl">
+      <Filter>Shader\CalculationObj</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\FBXPS.hlsl">
+      <Filter>Shader\FBX</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\FBXVS.hlsl">
+      <Filter>Shader\FBX</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\MultiRenderTargetTestPS.hlsl">
+      <Filter>Shader\MultiRenderTarget</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\MultiRenderTargetTestVS.hlsl">
+      <Filter>Shader\MultiRenderTarget</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ObjPS.hlsl">
+      <Filter>Shader\OBJ</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ObjVS.hlsl">
+      <Filter>Shader\OBJ</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ParticleGS.hlsl">
+      <Filter>Shader\Particle</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ParticlePS.hlsl">
+      <Filter>Shader\Particle</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ParticleVS.hlsl">
+      <Filter>Shader\Particle</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\PostEffectTestVS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\PostEffectTestPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\SpritePS.hlsl">
+      <Filter>Shader\Sprite</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\SpriteVS.hlsl">
+      <Filter>Shader\Sprite</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KeyboardInput.h">
-      <Filter>ソース ファイル\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowsAPI.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>ソース ファイル\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Audio.h">
-      <Filter>ソース ファイル\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="DebugText.h">
-      <Filter>ソース ファイル\DebugText</Filter>
-    </ClInclude>
-    <ClInclude Include="SafeDelete.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectXCommon.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>ソース ファイル\GameScene\GamePlayScene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>ソース ファイル\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ソース ファイル\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Title.h">
-      <Filter>ソース ファイル\GameScene\TitleScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>ソース ファイル\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector3.h">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelManager.h">
-      <Filter>ソース ファイル\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="CalculationObject.h">
-      <Filter>ソース ファイル\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Collision.h">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionPrimitive.h">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="EndGame.h">
-      <Filter>ソース ファイル\GameScene\EndGame</Filter>
-    </ClInclude>
-    <ClInclude Include="FbxInput.h">
-      <Filter>ソース ファイル\Model\FBX</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelDraw.h">
-      <Filter>ソース ファイル\Model\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelInput.h">
-      <Filter>ソース ファイル\Model\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="FbxModel.h">
-      <Filter>ソース ファイル\Model\FBX</Filter>
-    </ClInclude>
-    <ClInclude Include="FbxDraw.h">
-      <Filter>ソース ファイル\Model\FBX</Filter>
-    </ClInclude>
-    <ClInclude Include="Boss.h">
-      <Filter>ソース ファイル\Boss</Filter>
-    </ClInclude>
-    <ClInclude Include="ParticleManager.h">
-      <Filter>ソース ファイル\Particle</Filter>
-    </ClInclude>
-    <ClInclude Include="Primitive.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="mCollision.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ControllerInput.h">
-      <Filter>ソース ファイル\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="OBJObject.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="PostEffect.h">
-      <Filter>ソース ファイル\Object\PostEffect</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="MultiRenderTarget.h">
-      <Filter>ソース ファイル\Object\MultiRenderTarget</Filter>
-=======
-    <ClInclude Include="AbstructScene.h">
-      <Filter>ソース ファイル\GameScene</Filter>
->>>>>>> HR4
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="KeyboardInput.cpp">
-      <Filter>ソース ファイル\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowsAPI.cpp">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>ソース ファイル\Camera</Filter>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="AbstructScene.cpp">
+      <Filter>メイン部分\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Audio.cpp">
-      <Filter>ソース ファイル\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="DebugText.cpp">
-      <Filter>ソース ファイル\DebugText</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectXCommon.cpp">
-      <Filter>ソース ファイル\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="GameScene.cpp">
-      <Filter>ソース ファイル\GameScene\GamePlayScene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>ソース ファイル\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>ソース ファイル\GameScene\TitleScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>ソース ファイル\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelManager.cpp">
-      <Filter>ソース ファイル\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="CalculationObject.cpp">
-      <Filter>ソース ファイル\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionPrimitive.cpp">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGame.cpp">
-      <Filter>ソース ファイル\GameScene\EndGame</Filter>
-    </ClCompile>
-    <ClCompile Include="FbxInput.cpp">
-      <Filter>ソース ファイル\Model\FBX</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelDraw.cpp">
-      <Filter>ソース ファイル\Model\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelInput.cpp">
-      <Filter>ソース ファイル\Model\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="FbxModel.cpp">
-      <Filter>ソース ファイル\Model\FBX</Filter>
-    </ClCompile>
-    <ClCompile Include="FbxDraw.cpp">
-      <Filter>ソース ファイル\Model\FBX</Filter>
+      <Filter>メイン部分\Audio</Filter>
     </ClCompile>
     <ClCompile Include="Boss.cpp">
-      <Filter>ソース ファイル\Boss</Filter>
+      <Filter>メイン部分\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleManager.cpp">
-      <Filter>ソース ファイル\Particle</Filter>
+    <ClCompile Include="CalculationObject.cpp">
+      <Filter>メイン部分\Object\CalculationObj</Filter>
     </ClCompile>
-    <ClCompile Include="Primitive.cpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClCompile Include="Camera.cpp">
+      <Filter>メイン部分\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="mCollision.cpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClCompile Include="Collision.cpp">
+      <Filter>メイン部分\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionPrimitive.cpp">
+      <Filter>メイン部分\Collision</Filter>
     </ClCompile>
     <ClCompile Include="ControllerInput.cpp">
-      <Filter>ソース ファイル\Input</Filter>
+      <Filter>メイン部分\Input</Filter>
     </ClCompile>
-    <ClCompile Include="OBJObject.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="DebugText.cpp">
+      <Filter>メイン部分\Base</Filter>
     </ClCompile>
-    <ClCompile Include="PostEffect.cpp">
-      <Filter>ソース ファイル\Object\PostEffect</Filter>
+    <ClCompile Include="DirectXCommon.cpp">
+      <Filter>メイン部分\Base</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="EndGame.cpp">
+      <Filter>メイン部分\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="FbxDraw.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="FbxInput.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="FbxModel.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>メイン部分\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardInput.cpp">
+      <Filter>メイン部分\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelDraw.cpp">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelInput.cpp">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelManager.cpp">
+      <Filter>メイン部分\Object\OBJ</Filter>
     </ClCompile>
     <ClCompile Include="MultiRenderTarget.cpp">
-      <Filter>ソース ファイル\Object\MultiRenderTarget</Filter>
-=======
-    <ClCompile Include="AbstructScene.cpp">
-      <Filter>ソース ファイル\GameScene</Filter>
->>>>>>> HR4
+      <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleManager.cpp">
+      <Filter>メイン部分\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>メイン部分\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PostEffect.cpp">
+      <Filter>メイン部分\Sprite\PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>メイン部分\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>メイン部分\Sprite\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>メイン部分\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsAPI.cpp">
+      <Filter>メイン部分\Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AbstructScene.h">
+      <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>メイン部分\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>メイン部分\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculationObject.h">
+      <Filter>メイン部分\Object\CalculationObj</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>メイン部分\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionPrimitive.h">
+      <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerInput.h">
+      <Filter>メイン部分\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugText.h">
+      <Filter>メイン部分\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXCommon.h">
+      <Filter>メイン部分\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="EndGame.h">
+      <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="FbxDraw.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="FbxInput.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="FbxModel.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardInput.h">
+      <Filter>メイン部分\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelDraw.h">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelInput.h">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelManager.h">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiRenderTarget.h">
+      <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleManager.h">
+      <Filter>メイン部分\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>メイン部分\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PostEffect.h">
+      <Filter>メイン部分\Sprite\PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeDelete.h">
+      <Filter>メイン部分\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>メイン部分\Sprite\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>メイン部分\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsAPI.h">
+      <Filter>メイン部分\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">
-      <Filter>HLSL ファイル\Basic</Filter>
+      <Filter>Shader\CalculationObj</Filter>
     </None>
     <None Include="Resources\Shaders\FBX.hlsli">
-      <Filter>HLSL ファイル\FBX</Filter>
-    </None>
-    <None Include="Resources\Shaders\Obj.hlsli">
-      <Filter>HLSL ファイル\OBJ</Filter>
-    </None>
-    <None Include="Resources\Shaders\Particle.hlsli">
-      <Filter>HLSL ファイル\Particle</Filter>
-    </None>
-    <None Include="Resources\Shaders\Sprite.hlsli">
-      <Filter>HLSL ファイル\Sprite</Filter>
-    </None>
-    <None Include="Resources\Shaders\PostEffectTest.hlsli">
-      <Filter>HLSL ファイル\PostEffect</Filter>
+      <Filter>Shader\FBX</Filter>
     </None>
     <None Include="Resources\Shaders\MultiRenderTargetTest.hlsli">
-      <Filter>HLSL ファイル\MultiRenderTarget</Filter>
+      <Filter>Shader\MultiRenderTarget</Filter>
+    </None>
+    <None Include="Resources\Shaders\Obj.hlsli">
+      <Filter>Shader\OBJ</Filter>
+    </None>
+    <None Include="Resources\Shaders\Particle.hlsli">
+      <Filter>Shader\Particle</Filter>
+    </None>
+    <None Include="Resources\Shaders\PostEffectTest.hlsli">
+      <Filter>Shader\PostEffect</Filter>
+    </None>
+    <None Include="Resources\Shaders\Sprite.hlsli">
+      <Filter>Shader\Sprite</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Resources\Shaders\BasicPS.hlsl">
-      <Filter>HLSL ファイル\Basic</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\BasicVS.hlsl">
-      <Filter>HLSL ファイル\Basic</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\FBXPS.hlsl">
-      <Filter>HLSL ファイル\FBX</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\FBXVS.hlsl">
-      <Filter>HLSL ファイル\FBX</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\ObjPS.hlsl">
-      <Filter>HLSL ファイル\OBJ</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\ObjVS.hlsl">
-      <Filter>HLSL ファイル\OBJ</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\ParticleGS.hlsl">
-      <Filter>HLSL ファイル\Particle</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\ParticlePS.hlsl">
-      <Filter>HLSL ファイル\Particle</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\ParticleVS.hlsl">
-      <Filter>HLSL ファイル\Particle</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\SpritePS.hlsl">
-      <Filter>HLSL ファイル\Sprite</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\SpriteVS.hlsl">
-      <Filter>HLSL ファイル\Sprite</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\PostEffectTestPS.hlsl">
-      <Filter>HLSL ファイル\PostEffect</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\PostEffectTestVS.hlsl">
-      <Filter>HLSL ファイル\PostEffect</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\MultiRenderTargetTestPS.hlsl">
-      <Filter>HLSL ファイル\MultiRenderTarget</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\MultiRenderTargetTestVS.hlsl">
-      <Filter>HLSL ファイル\MultiRenderTarget</Filter>
-    </FxCompile>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{a4b35bf5-536f-45a5-b5c0-39a62cdcb457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\CalculationObj">
+      <UniqueIdentifier>{34a54325-e589-4e7d-9054-506ccdd7c876}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\FBX">
+      <UniqueIdentifier>{65392644-7150-4ed4-b0e0-2fc1fa043d4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\MultiRenderTarget">
+      <UniqueIdentifier>{496aceef-5040-4385-b23b-c02117043d7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\OBJ">
+      <UniqueIdentifier>{77d61d12-9a26-4ba2-9c60-f49145791d14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Particle">
+      <UniqueIdentifier>{4f223da8-9a37-403c-bd75-b712d12baafd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\PostEffect">
+      <UniqueIdentifier>{18849bc6-ddb6-4947-84dc-ad49e0d67bdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Sprite">
+      <UniqueIdentifier>{957ae061-86d0-4bc8-b33d-bc200111789d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分">
+      <UniqueIdentifier>{dbd00371-188c-42ad-972b-5bda1e80d85b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Audio">
+      <UniqueIdentifier>{a74ad3ae-81c7-431a-80eb-963adfbc23e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Enemy">
+      <UniqueIdentifier>{60d1e33d-a484-42ea-9afb-07bb3811af88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Camera">
+      <UniqueIdentifier>{884df4db-84d5-4669-aa2b-eb1eb47fcba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Base">
+      <UniqueIdentifier>{1556d291-6296-40d8-b6f3-2355dd44f0b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Collision">
+      <UniqueIdentifier>{6f0c16dc-b8ac-4a49-92ea-c8cc2e0ab124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Input">
+      <UniqueIdentifier>{8d3e6c92-022d-40a1-9b17-82b01cf453a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Player">
+      <UniqueIdentifier>{f8243134-8987-48a7-8f4b-f2c3ed1008ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Particle">
+      <UniqueIdentifier>{45439660-d7c3-4f6d-88aa-b0393754c997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Sprite">
+      <UniqueIdentifier>{edc78873-c918-4eba-82d7-a3ce1884a2be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Sprite\Sprite">
+      <UniqueIdentifier>{07da67da-cec3-4024-9fd0-e431a823b004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Sprite\PostEffect">
+      <UniqueIdentifier>{a06404cf-4120-41b9-bb52-629da06fc72e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Sprite\MultiRenderTarget">
+      <UniqueIdentifier>{2ff30daa-fc92-4e7c-a7c7-bc795ebad89f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Object">
+      <UniqueIdentifier>{e6cd8d90-2fb4-499b-843a-3b197d7fa0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Object\CalculationObj">
+      <UniqueIdentifier>{b1e7442a-ddca-49b7-a46e-9486a45a5f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Object\FBX">
+      <UniqueIdentifier>{f3688733-900c-4520-a143-e7376f0bbbe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Object\OBJ">
+      <UniqueIdentifier>{7e3491d8-8e86-4c98-b2e6-efa1e99b3f99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Scene">
+      <UniqueIdentifier>{33c1db31-6e50-453a-b45d-c6ac94cbda70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

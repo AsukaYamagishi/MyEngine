@@ -164,20 +164,13 @@
     <ClInclude Include="FbxModel.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="KeyboardInput.h" />
-    <ClInclude Include="mCollision.h" />
     <ClInclude Include="ModelInput.h" />
     <ClInclude Include="ModelDraw.h" />
     <ClInclude Include="ModelManager.h" />
-<<<<<<< HEAD
     <ClInclude Include="MultiRenderTarget.h" />
-    <ClInclude Include="Object3D.h" />
-=======
     <ClInclude Include="CalculationObject.h" />
->>>>>>> HR4
-    <ClInclude Include="OBJObject.h" />
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="PostEffect.h" />
-    <ClInclude Include="Primitive.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SafeDelete.h" />
@@ -203,31 +196,19 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="mCollision.cpp" />
     <ClCompile Include="ModelInput.cpp" />
     <ClCompile Include="ModelDraw.cpp" />
     <ClCompile Include="ModelManager.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="MultiRenderTarget.cpp" />
-    <ClCompile Include="Object3D.cpp" />
-=======
     <ClCompile Include="CalculationObject.cpp" />
->>>>>>> HR4
-    <ClCompile Include="OBJObject.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="PostEffect.cpp" />
-    <ClCompile Include="Primitive.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="EndGame.cpp" />
     <ClCompile Include="WindowsAPI.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="DirectXTex\DirectXTex_Desktop_2019_Win10.vcxproj">
-      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli" />
@@ -355,6 +336,11 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DirectXTex\DirectXTex_Desktop_2019_Win10.vcxproj">
+      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

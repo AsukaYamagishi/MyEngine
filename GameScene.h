@@ -11,10 +11,7 @@
 #include "Collision.h"
 #include "FbxDraw.h"
 #include"Boss.h"
-#include"OBJObject.h"
 #include "ParticleManager.h"
-#include"Primitive.h"
-#include "mCollision.h"
 
 #include "AbstructScene.h"
 
@@ -45,13 +42,7 @@ private: //メンバ変数
 
 	//プレイヤー
 	Player *player;	
-	//武器
-	OBJObject *weapon;
-	//ステージ
-	OBJObject *stage;
-	OBJObject *skydome;
-	//ボス
-	Boss *boss;
+	
 
 
 

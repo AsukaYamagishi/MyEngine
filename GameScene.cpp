@@ -94,11 +94,7 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 	player = new Player();
 	player->Initialize(dxCommon, input, audio);
 
-	stage = new OBJObject();
-	stage->Initialize(dxCommon, input, audio, ModelManager::Stage);
-	stage->model->SetScale({ 30,30,30 });
-	skydome = new OBJObject();
-	skydome->Initialize(dxCommon, input, audio, ModelManager::Skydome);
+	
 
 	gameEndFlag = false;
 }
@@ -113,8 +109,8 @@ void GameScene::Update()
 		angle -= radius;
 	}
 
-	stage->Update();
-	skydome->Update();
+	/*stage->Update();
+	skydome->Update();*/
 	
 	testObject->Update();
 	

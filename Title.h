@@ -46,8 +46,7 @@ public: //メンバ関数
 	//デストラクタ
 	~Title();
 	/// <summary>
-	/// <para>初期化</para>
-	/// です
+	/// 初期化
 	/// </summary>
 	/// <param name="dxCommon"></param>
 	/// <param name="input">入力</param>
