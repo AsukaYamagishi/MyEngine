@@ -159,6 +159,7 @@ bool ModelDraw::InitializeGraphicsPipeline()
 
 	//ブレンドステート設定
 	gpipeline.BlendState.RenderTarget[0] = blenddesc;
+	gpipeline.BlendState.RenderTarget[1] = blenddesc;
 	//深度値フォーマット
 	gpipeline.DSVFormat = DXGI_FORMAT_D32_FLOAT;
 
@@ -169,8 +170,9 @@ bool ModelDraw::InitializeGraphicsPipeline()
 	//トポロジー設定
 	gpipeline.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 
-	gpipeline.NumRenderTargets = 1; // 描画対象は1つ
+	gpipeline.NumRenderTargets = 2; // 描画対象は1つ
 	gpipeline.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM; // 0～255指定のRGBA
+	gpipeline.RTVFormats[1] = DXGI_FORMAT_R8G8B8A8_UNORM; // 0～255指定のRGBA
 	gpipeline.SampleDesc.Count = 1; // 1ピクセルにつき1回サンプリング
 
 

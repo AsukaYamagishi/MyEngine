@@ -386,6 +386,7 @@ bool Object3D::InitGraphicsPipeline()
 
 	//ブレンドステートの設定
 	gpipeline.BlendState.RenderTarget[0] = blenddesc;
+	gpipeline.BlendState.RenderTarget[1] = blenddesc;
 
 	//深度バッファのフォーマット
 	//標準設定（深度テストを行う/書き込み許可/深度が小さければ合格）
@@ -399,8 +400,9 @@ bool Object3D::InitGraphicsPipeline()
 	gpipeline.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 
 	//その他の設定
-	gpipeline.NumRenderTargets = 1; // 描画対象は1つ
+	gpipeline.NumRenderTargets = 2; // 描画対象は1つ
 	gpipeline.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM; // 0～255指定のRGBA
+	gpipeline.RTVFormats[1] = DXGI_FORMAT_R8G8B8A8_UNORM; // 0～255指定のRGBA
 	gpipeline.SampleDesc.Count = 1; // 1ピクセルにつき1回サンプリング
 
 

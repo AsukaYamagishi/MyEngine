@@ -23,6 +23,7 @@
 #include "FbxInput.h"
 #include "Camera.h"
 #include "PostEffect.h"
+#include "MultiRenderTarget.h"
 
 
 #pragma comment(lib,"dxguid.lib")
@@ -131,6 +132,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	//ポストエフェクト初期化
 	postEffect = new PostEffect();
 	postEffect->Init();
+
+	MultiRenderTarget* multiRT = nullptr;
+	//ポストエフェクト初期化
+	multiRT = new MultiRenderTarget();
+	multiRT->Init();
 	
 	////描画初期化処理　ここまで
 
@@ -160,15 +166,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		
 #pragma region 描画コマンド
 		//レンダーテクスチャへの描画(ポストエフェクト準備)
-		postEffect->PreDrawScene(dxCommon->GetCommandList());
+		//postEffect->PreDrawScene(dxCommon->GetCommandList());
+		multiRT->PreDrawScene(dxCommon->GetCommandList());
 		sceneManager->Draw(); //ゲームシーン描画
-		postEffect->PostDrawScene(dxCommon->GetCommandList());
+		//postEffect->PostDrawScene(dxCommon->GetCommandList());
+		multiRT->PostDrawScene(dxCommon->GetCommandList());
 
 		//描画前処理
 		dxCommon->PreDraw();
 
 		//ポストエフェクト描画
-		postEffect->Draw(dxCommon->GetCommandList());
+		//postEffect->Draw(dxCommon->GetCommandList());
+		multiRT->Draw(dxCommon->GetCommandList());
 		//sceneManager->Draw(); //ゲームシーン描画
 
 		//描画終了
@@ -181,6 +190,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	//解放処理
 	FbxInput::GetInstance()->Fin();
 	delete postEffect;
+	delete multiRT;
 
 	//クラス(new)の消去
 	safe_delete(dxCommon);
