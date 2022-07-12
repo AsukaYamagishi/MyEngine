@@ -74,9 +74,9 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 	testObject = new FbxDraw();
 	testObject->Init();
 	testObject->SetModel(testModel.get());
-	testObject->SetScale({ 5,5,5 });
-	testObject->SetRotation({ 0,90,0 });
-	testObject->SetPosition({ 0,5,3 });
+	testObject->SetScale({ 10,10,10 });
+	testObject->SetRotation({ 0,45,0 });
+	testObject->SetPosition({ 0,-15,3 });
 	testObject->PlayAnimation(true);
 
 #pragma endregion
