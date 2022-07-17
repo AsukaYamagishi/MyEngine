@@ -61,23 +61,3 @@ void Camera::SetCam(Camera* cam)
 {
 	NowMatView = cam;
 }
-
-//void Camera::TargetSpin(float length)
-//{
-//	//ジンバルロック回避
-//	if (angle.x > 89) {
-//		angle.x = 89;
-//	}
-//	if (angle.x < -89) {
-//		angle.x = -89;
-//	}
-//	angle.y = yMath::ChangeDegree360(angle.y);
-//
-//	Vector3 Rad = angle * (XM_PI / 180.0f);
-//	//回転行列に変換
-//	XMMATRIX matRotate = XMMatrixRotationRollPitchYaw(Rad.x, Rad.y, Rad.z);
-//	front = matRotate.r[2];
-//
-//	eye = target - front * length;
-//
-//}

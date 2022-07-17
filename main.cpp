@@ -1,5 +1,5 @@
-//#include"WindowsAPI.h"  //ウィンドウ表示
-//#include"KeyboardInput.h"  //キーボード入力
+#include"WindowsAPI.h"  //ウィンドウ表示
+#include"KeyboardInput.h"  //キーボード入力
 #include"Sprite.h"  //2D画像(sprite)
 #include"CalculationObject.h"  //3Dオブジェクト(Object)
 #include"Audio.h" //音楽再生
@@ -115,7 +115,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	postEffect->Init();
 
 	MultiRenderTarget* multiRT = nullptr;
-	//ポストエフェクト初期化
+	//マルチレンダーターゲット初期化
 	multiRT = new MultiRenderTarget();
 	multiRT->Init();
 	
@@ -147,18 +147,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		
 #pragma region 描画コマンド
 		//レンダーテクスチャへの描画(ポストエフェクト準備)
-		//postEffect->PreDrawScene(dxCommon->GetCommandList());
-		multiRT->PreDrawScene(dxCommon->GetCommandList());
+		postEffect->PreDrawScene(dxCommon->GetCommandList());
+		//multiRT->PreDrawScene(dxCommon->GetCommandList());
 		sceneManager->Draw(); //ゲームシーン描画
-		//postEffect->PostDrawScene(dxCommon->GetCommandList());
-		multiRT->PostDrawScene(dxCommon->GetCommandList());
+		postEffect->PostDrawScene(dxCommon->GetCommandList());
+		//multiRT->PostDrawScene(dxCommon->GetCommandList());
 
 		//描画前処理
 		dxCommon->PreDraw();
 
 		//ポストエフェクト描画
-		//postEffect->Draw(dxCommon->GetCommandList());
-		multiRT->Draw(dxCommon->GetCommandList());
+		postEffect->Draw(dxCommon->GetCommandList());
+		//multiRT->Draw(dxCommon->GetCommandList());
 		//sceneManager->Draw(); //ゲームシーン描画
 
 		//描画終了
