@@ -71,7 +71,7 @@ void PostEffect::Init()
 	//DSV作成
 	CreateDSV();
 	//パイプライン生成
-	CreateGraphicsPipelineState();
+	CreateGraphicsPipelineState("PostEffectTest");
 }
 
 void PostEffect::PreDrawScene(ID3D12GraphicsCommandList* cmdList)
@@ -101,7 +101,7 @@ void PostEffect::PreDrawScene(ID3D12GraphicsCommandList* cmdList)
 	cmdList->ClearDepthStencilView(dsvH, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 }
 
-void PostEffect::Draw(ID3D12GraphicsCommandList* cmdList)
+void PostEffect::Draw(ID3D12GraphicsCommandList* cmdList, const std::string& shaderName)
 {
 	// 定数バッファにデータ転送
 	ConstBufferData* constMap = nullptr;
@@ -113,9 +113,9 @@ void PostEffect::Draw(ID3D12GraphicsCommandList* cmdList)
 	}
 
 	// パイプラインステートの設定
-	cmdList->SetPipelineState(pipelinestate.Get());
+	cmdList->SetPipelineState(pipelineStates[shaderName].Get());
 	// ルートシグネチャの設定
-	cmdList->SetGraphicsRootSignature(rootsignature.Get());
+	cmdList->SetGraphicsRootSignature(rootSignatures[shaderName].Get());
 	// プリミティブ形状を設定
 	cmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 
@@ -142,7 +142,7 @@ void PostEffect::PostDrawScene(ID3D12GraphicsCommandList* cmdList)
 
 }
 
-void PostEffect::CreateGraphicsPipelineState()
+void PostEffect::CreateGraphicsPipelineState(const std::string& shaderName)
 {
 	HRESULT result = S_FALSE;
 	ComPtr<ID3DBlob> vsBlob; // 頂点シェーダオブジェクト
@@ -173,8 +173,11 @@ void PostEffect::CreateGraphicsPipelineState()
 	}
 
 	// ピクセルシェーダの読み込みとコンパイル
+	const std::string psFilename = "Resources/Shaders/" + shaderName + "PS.hlsl";
+	std::wstring psFilename_w = std::wstring(psFilename.begin(), psFilename.end());
+
 	result = D3DCompileFromFile(
-		L"Resources/Shaders/PostEffectTestPS.hlsl",	// シェーダファイル名
+		psFilename_w.c_str(),	// シェーダファイル名
 		nullptr,
 		D3D_COMPILE_STANDARD_FILE_INCLUDE, // インクルード可能にする
 		"main", "ps_5_0",	// エントリーポイント名、シェーダーモデル指定
@@ -275,13 +278,13 @@ void PostEffect::CreateGraphicsPipelineState()
 	assert(SUCCEEDED(result));
 
 	// ルートシグネチャの生成
-	result = device->CreateRootSignature(0, rootSigBlob->GetBufferPointer(), rootSigBlob->GetBufferSize(), IID_PPV_ARGS(&rootsignature));
+	result = device->CreateRootSignature(0, rootSigBlob->GetBufferPointer(), rootSigBlob->GetBufferSize(), IID_PPV_ARGS(&rootSignatures[shaderName]));
 	assert(SUCCEEDED(result));
 
-	gpipeline.pRootSignature = rootsignature.Get();
+	gpipeline.pRootSignature = rootSignatures[shaderName].Get();
 
 	// グラフィックスパイプラインの生成
-	result = device->CreateGraphicsPipelineState(&gpipeline, IID_PPV_ARGS(&pipelinestate));
+	result = device->CreateGraphicsPipelineState(&gpipeline, IID_PPV_ARGS(&pipelineStates[shaderName]));
 	assert(SUCCEEDED(result));
 }
 

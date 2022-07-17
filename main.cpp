@@ -157,7 +157,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		dxCommon->PreDraw();
 
 		//ポストエフェクト描画
-		postEffect->Draw(dxCommon->GetCommandList());
+		postEffect->Draw(dxCommon->GetCommandList(),"PostEffectTest");
 		//multiRT->Draw(dxCommon->GetCommandList());
 		//sceneManager->Draw(); //ゲームシーン描画
 

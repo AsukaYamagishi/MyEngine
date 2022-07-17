@@ -1,5 +1,6 @@
 #pragma once
 #include "Sprite.h"
+#include <map>
 
 class PostEffect :
     public Sprite
@@ -17,9 +18,9 @@ public:
     //DSV用デスクリプタヒープ(デプスステンシルビュー)
     ComPtr<ID3D12DescriptorHeap> descHeapDSV;
     //グラフィックスパイプライン
-    ComPtr<ID3D12PipelineState> pipelineState;
+    std::map<std::string, ComPtr<ID3D12PipelineState>> pipelineStates;
     //ルートシグネチャ
-    ComPtr<ID3D12RootSignature> rootSignature;
+    std::map<std::string, ComPtr<ID3D12RootSignature>> rootSignatures;
     //画面クリアカラー
     static const float clearColor[4];
 #pragma endregion
@@ -46,7 +47,7 @@ public:
     /// 描画
     /// </summary>
     /// <param name="cmdList">コマンドリスト</param>
-    void Draw(ID3D12GraphicsCommandList* cmdList); 
+    void Draw(ID3D12GraphicsCommandList* cmdList, const std::string& shaderName);
 
     /// <summary>
     /// シーン描画後処理
@@ -60,7 +61,7 @@ private:
     /// <summary>
     /// パイプライン生成
     /// </summary>
-    void CreateGraphicsPipelineState();
+    void CreateGraphicsPipelineState(const std::string& shaderName);
 
     /// <summary>
     /// テクスチャ生成
