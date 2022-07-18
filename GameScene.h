@@ -12,6 +12,7 @@
 #include "FbxDraw.h"
 #include"Boss.h"
 #include "ParticleManager.h"
+#include "Stage.h"
 
 #include "AbstructScene.h"
 
@@ -43,12 +44,16 @@ private: //メンバ変数
 	//プレイヤー
 	Player *player;	
 	
-
+	//ステージ
+	Stage* stage;
 
 
 	//FBXモデル
 	std::unique_ptr<FbxModel> testModel = nullptr;
 	FbxDraw *testObject = nullptr;
+
+	std::unique_ptr<FbxModel> boxModel = nullptr;
+	FbxDraw* boxObject = nullptr;
 
 	//パーティクル
 	ParticleManager* particleMan = nullptr;

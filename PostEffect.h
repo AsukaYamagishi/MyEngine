@@ -64,6 +64,11 @@ private:
     void CreateGraphicsPipelineState(const std::string& shaderName);
 
     /// <summary>
+    /// 複数のパイプラインをまとめて生成
+    /// </summary>
+    void CreateManyPipelines();
+
+    /// <summary>
     /// テクスチャ生成
     /// </summary>
     void CreateTexture();

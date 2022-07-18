@@ -46,7 +46,36 @@
     <FxCompile Include="Resources\Shaders\SpriteVS.hlsl">
       <Filter>Shader\Sprite</Filter>
     </FxCompile>
-    <FxCompile Include="Resources\Shaders\SinpleColorPS.hlsl" />
+    <FxCompile Include="Resources\Shaders\InverseColorPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\SinpleColorPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\NoEffectPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ChangeBrightnessPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ChangeChromaPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\UvScrollPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\PixelBlurPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\TilingPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ScanLinePS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\RGBShiftPS.hlsl">
+      <Filter>Shader\PostEffect</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -131,6 +160,7 @@
     <ClCompile Include="WindowsAPI.cpp">
       <Filter>メイン部分\Base</Filter>
     </ClCompile>
+    <ClCompile Include="Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstructScene.h">
@@ -220,6 +250,7 @@
     <ClInclude Include="WindowsAPI.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Stage.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">

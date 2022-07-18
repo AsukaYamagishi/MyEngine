@@ -78,9 +78,20 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 	testObject->SetModel(testModel.get());
 	testObject->SetScale({ 10,10,10 });
 	testObject->SetRotation({ 0,45,0 });
-	testObject->SetPosition({ 0,-15,3 });
+	testObject->SetPosition({ -50,-15,3 });
 	testObject->PlayAnimation(true);
 
+	boxModel= FbxInput::GetInstance()->LoadFbxFromFile("Box");
+	boxObject = new FbxDraw();
+	boxObject->Init();
+	boxObject->SetModel(boxModel.get());
+	boxObject->SetScale({ 0.1,0.1,0.1 });
+	boxObject->SetRotation({ 0,30,0 });
+	boxObject->SetPosition({ 50,-15,3 });
+
+
+	stage = new Stage();
+	stage->Initialize(dxCommon);
 #pragma endregion
 
 
@@ -102,25 +113,19 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 void GameScene::Update()
 {
 
-	if (input->PressKey(DIK_Z)) {
-		angle += radius;
-	}
-	else if (input->PressKey(DIK_C)) {
-		angle -= radius;
-	}
-
-	/*stage->Update();
-	skydome->Update();*/
+	stage->Update();
+	
 	
 	testObject->Update();
+	boxObject->Update();
 	
 	camera->SetCam(camera);
 	camera->Update();
 
-	//シーン切り替え
-	if (input->PressKeyTrigger(DIK_0)) {
-		SceneManager::ChangeScene(SceneManager::SceneNo::titleScene);
-	}
+	////シーン切り替え
+	//if (input->PressKeyTrigger(DIK_0)) {
+	//	SceneManager::ChangeScene(SceneManager::SceneNo::titleScene);
+	//}
 
 #pragma region デバッグテキスト設定
 	
@@ -165,9 +170,10 @@ void GameScene::Draw()
 
 
 	//stage->Draw();
-	//skydome->Draw();
+	
 	
 	testObject->Draw(cmdList);
+	boxObject->Draw(cmdList);
 	
 #pragma endregion
 

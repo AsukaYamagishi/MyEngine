@@ -28,6 +28,7 @@ public: //\‘¢‘Ì
 	{
 		XMFLOAT4 color; //F(RGBA)
 		XMMATRIX mat; //3D•ÏŠ·s—ñ
+		float time; //ŠÔ
 	};
 #pragma endregion
 

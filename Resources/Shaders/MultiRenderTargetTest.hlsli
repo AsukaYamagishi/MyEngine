@@ -1,6 +1,8 @@
 cbuffer cbuff0 : register(b0)
 {
-	
+    float4 color; //色(RGBA)
+    matrix mat; //3D変換行列
+    float time;
 };
 
 //頂点シェーダからの出力構造体

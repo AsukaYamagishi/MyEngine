@@ -8,7 +8,7 @@ using namespace DirectX;
 
 //静的メンバ変数の実体
 //										  R     G    B    A  (緑っぽい色)
-const float PostEffect::clearColor[4] = { 1.0f,0.5f,0.1f,0.0f };
+const float PostEffect::clearColor[4] = { 0.0f,0.5f,0.5f,0.0f };
 
 PostEffect::PostEffect()
 	:Sprite(
@@ -71,7 +71,7 @@ void PostEffect::Init()
 	//DSV作成
 	CreateDSV();
 	//パイプライン生成
-	CreateGraphicsPipelineState("PostEffectTest");
+	CreateManyPipelines();
 }
 
 void PostEffect::PreDrawScene(ID3D12GraphicsCommandList* cmdList)
@@ -103,12 +103,17 @@ void PostEffect::PreDrawScene(ID3D12GraphicsCommandList* cmdList)
 
 void PostEffect::Draw(ID3D12GraphicsCommandList* cmdList, const std::string& shaderName)
 {
+	static float time = 0.0f;
+	time += 1.0f / 60.0f;
+	if (time > 2.0f)time = 0.0f;
+
 	// 定数バッファにデータ転送
 	ConstBufferData* constMap = nullptr;
 	HRESULT result = this->constBuff->Map(0, nullptr, (void**)&constMap);
 	if (SUCCEEDED(result)) {
 		constMap->color = this->color;
 		constMap->mat = XMMatrixIdentity();	// 行列の合成	
+		constMap->time = time / 2.0f;
 		this->constBuff->Unmap(0, nullptr);
 	}
 
@@ -288,6 +293,24 @@ void PostEffect::CreateGraphicsPipelineState(const std::string& shaderName)
 	assert(SUCCEEDED(result));
 }
 
+void PostEffect::CreateManyPipelines()
+{
+	//各シェーダー用にパイプライン生成
+	CreateGraphicsPipelineState("PostEffectTest");
+	CreateGraphicsPipelineState("InverseColor");
+	CreateGraphicsPipelineState("SinpleColor");
+	CreateGraphicsPipelineState("ChangeBrightness");
+	CreateGraphicsPipelineState("ChangeChroma");
+	//CreateGraphicsPipelineState("ChangeHue");
+	CreateGraphicsPipelineState("UvScroll");
+	CreateGraphicsPipelineState("PixelBlur");
+	CreateGraphicsPipelineState("Tiling");
+	CreateGraphicsPipelineState("ScanLine");
+	CreateGraphicsPipelineState("RGBShift");
+
+	CreateGraphicsPipelineState("NoEffect");
+}
+
 void PostEffect::CreateTexture()
 {
 	HRESULT result;
@@ -322,7 +345,7 @@ void PostEffect::CreateTexture()
 	{
 		//前面を特定の色で埋める
 		//         R G B A
-		img[i] = 0xff00ffff;
+		img[i] = 0x00ffffff;
 	}
 
 	//テクスチャバッファにデータ転送
