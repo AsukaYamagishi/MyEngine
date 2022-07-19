@@ -41,13 +41,13 @@ void Camera::UpdateProjectionMatrix()
 {
 	matProjection = XMMatrixPerspectiveFovLH(
 		XMConvertToRadians(60.0f),
-		(float)WindowsAPI::window_width / WindowsAPI::window_height,
+		(float)WindowsAPI::win_width / WindowsAPI::win_height,
 		0.1f, 50000.0f
 	);
 }
 
 
-void Camera::Initialize(const XMFLOAT3 eye)
+void Camera::Init(const XMFLOAT3 eye)
 {
 	NowMatView = new Camera(Vector3{ eye });
 	NowMatView->matView = XMMatrixLookAtLH(

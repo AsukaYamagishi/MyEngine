@@ -7,9 +7,9 @@ using namespace DirectX;
 
 //静的メンバ変数の実体
 ID3D12Device* FbxDraw::dev = nullptr;
-Camera* FbxDraw::camera = nullptr;
-ComPtr<ID3D12RootSignature> FbxDraw::rootsignature;
-ComPtr<ID3D12PipelineState> FbxDraw::pipelinestate;
+Camera* FbxDraw::cam = nullptr;
+ComPtr<ID3D12RootSignature> FbxDraw::rootSignature;
+ComPtr<ID3D12PipelineState> FbxDraw::pipelineState;
 
 void FbxDraw::Init()
 {
@@ -54,11 +54,11 @@ void FbxDraw::Update()
 	matWorld *= matTrans;
 
 	//ビュープロジェクション行列
-	const XMMATRIX& matViewProjection = camera->GetViewProjectionMatrix();
+	const XMMATRIX& matViewProjection = cam->GetViewProjectionMatrix();
 	//モデルのメッシュトランスフォーム
 	const XMMATRIX& modelTransform = model->GetModelTransform();
 	//カメラ座標
-	const XMFLOAT3& cameraPos = camera->eye;
+	const XMFLOAT3& cameraPos = cam->eye;
 	
 
 	HRESULT result;
@@ -151,9 +151,9 @@ void FbxDraw::Draw(ID3D12GraphicsCommandList* cmdList)
 	if (model == nullptr) { return; }
 
 	//パイプラインステートの設定
-	cmdList->SetPipelineState(pipelinestate.Get());
+	cmdList->SetPipelineState(pipelineState.Get());
 	//ルートシグネチャの設定
-	cmdList->SetGraphicsRootSignature(rootsignature.Get());
+	cmdList->SetGraphicsRootSignature(rootSignature.Get());
 	//プリミティブ形状を設定
 	cmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	//定数バッファビューをセット
@@ -318,12 +318,12 @@ void FbxDraw::CreateGraphicsPipeline()
 	// バージョン自動判定のシリアライズ
 	result = D3DX12SerializeVersionedRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1_0, &rootSigBlob, &errorBlob);
 	// ルートシグネチャの生成
-	result = dev->CreateRootSignature(0, rootSigBlob->GetBufferPointer(), rootSigBlob->GetBufferSize(), IID_PPV_ARGS(rootsignature.ReleaseAndGetAddressOf()));
+	result = dev->CreateRootSignature(0, rootSigBlob->GetBufferPointer(), rootSigBlob->GetBufferSize(), IID_PPV_ARGS(rootSignature.ReleaseAndGetAddressOf()));
 	if (FAILED(result)) { assert(0); }
 
-	gpipeline.pRootSignature = rootsignature.Get();
+	gpipeline.pRootSignature = rootSignature.Get();
 
 	// グラフィックスパイプラインの生成
-	result = dev->CreateGraphicsPipelineState(&gpipeline, IID_PPV_ARGS(pipelinestate.ReleaseAndGetAddressOf()));
+	result = dev->CreateGraphicsPipelineState(&gpipeline, IID_PPV_ARGS(pipelineState.ReleaseAndGetAddressOf()));
 	if (FAILED(result)) { assert(0); }
 }

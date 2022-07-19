@@ -12,6 +12,7 @@
 
 class FbxDraw
 {
+#pragma region 定数
 protected: //エイリアス
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 	using XMFLOAT2 = DirectX::XMFLOAT2;
@@ -37,25 +38,50 @@ public: //サブクラス
 	{
 		XMMATRIX bones[MAX_BONES];
 	};
+#pragma endregion
 
+#pragma region 関数
 public: //メンバ関数
-	//初期化
+	/// <summary>
+	/// 初期化
+	/// </summary>
 	void Init();
 
-	//毎フレーム処理
+	/// <summary>
+	/// 毎フレーム更新処理
+	/// </summary>
 	void Update();
 
-	//モデルのセット
+	/// <summary>
+	/// モデルのセット
+	/// </summary>
+	/// <param name="model">FBXモデル</param>
 	void SetModel(FbxModel* model) { this->model = model; }
 
-	//アニメーション開始
+	/// <summary>
+	/// アニメーション再生
+	/// </summary>
+	/// <param name="isLoop">ループするか</param>
 	void PlayAnimation(bool isLoop = false);
 
-	//描画
+	/// <summary>
+	/// アニメーション再生停止
+	/// </summary>
+	void StopAnimation() { isPlay = false; }
+
+	/// <summary>
+	/// 描画
+	/// </summary>
+	/// <param name="cmdList">コマンドリスト</param>
 	void Draw(ID3D12GraphicsCommandList* cmdList);
 
 
-	//ゲッター・セッター
+	//ゲッター
+	Vector3 GetScale() { return scale; }
+	Vector3 GetPosition() { return position; }
+	Vector3 GetRotation() { return rotation; }
+
+	//セッター
 	void SetScale(Vector3 nextScale) { scale = nextScale; }
 	void SetPosition(Vector3 nextPos) { position = nextPos; }
 	void SetRotation(Vector3 nextRotate) { rotation = nextRotate; }
@@ -63,12 +89,15 @@ public: //メンバ関数
 public: //静的メンバ関数
 	//セッター
 	static void SetDevice(ID3D12Device* dev) { FbxDraw::dev = dev; }
-	static void SetCamera(Camera* camera) { FbxDraw::camera = camera; }
+	static void SetCamera(Camera* cam) { FbxDraw::cam = cam; }
 
-	//グラフィックスパイプラインの生成
+	/// <summary>
+	/// グラフィックスパイプラインの生成
+	/// </summary>
 	static void CreateGraphicsPipeline();
-
+#pragma endregion
 	
+#pragma region 変数
 protected: //メンバ変数
 	//定数バッファ
 	ComPtr<ID3D12Resource> constBuffTransform;
@@ -79,11 +108,11 @@ private: //静的メンバ変数
 	//デバイス
 	static ID3D12Device* dev;
 	//カメラ
-	static Camera* camera;
+	static Camera* cam;
 	//ルートシグネチャ
-	static ComPtr<ID3D12RootSignature> rootsignature;
+	static ComPtr<ID3D12RootSignature> rootSignature;
 	//パイプラインステートオブジェクト
-	static ComPtr<ID3D12PipelineState> pipelinestate;
+	static ComPtr<ID3D12PipelineState> pipelineState;
 
 	//ローカルスケール
 	XMFLOAT3 scale = { 1,1,1 };
@@ -107,6 +136,6 @@ private: //静的メンバ変数
 	bool isPlay = false;
 	//アニメーションループ再生
 	bool isLoop = false;
-
+#pragma endregion
 };
 

@@ -46,35 +46,35 @@
     <FxCompile Include="Resources\Shaders\SpriteVS.hlsl">
       <Filter>Shader\Sprite</Filter>
     </FxCompile>
-    <FxCompile Include="Resources\Shaders\InverseColorPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\SinpleColorPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\NoEffectPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
-    </FxCompile>
     <FxCompile Include="Resources\Shaders\ChangeBrightnessPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
+      <Filter>Shader\PostEffect\Effects</Filter>
     </FxCompile>
     <FxCompile Include="Resources\Shaders\ChangeChromaPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
+      <Filter>Shader\PostEffect\Effects</Filter>
     </FxCompile>
-    <FxCompile Include="Resources\Shaders\UvScrollPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
+    <FxCompile Include="Resources\Shaders\InverseColorPS.hlsl">
+      <Filter>Shader\PostEffect\Effects</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\NoEffectPS.hlsl">
+      <Filter>Shader\PostEffect\Effects</Filter>
     </FxCompile>
     <FxCompile Include="Resources\Shaders\PixelBlurPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\TilingPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\Shaders\ScanLinePS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
+      <Filter>Shader\PostEffect\Effects</Filter>
     </FxCompile>
     <FxCompile Include="Resources\Shaders\RGBShiftPS.hlsl">
-      <Filter>Shader\PostEffect</Filter>
+      <Filter>Shader\PostEffect\Effects</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\ScanLinePS.hlsl">
+      <Filter>Shader\PostEffect\Effects</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\SinpleColorPS.hlsl">
+      <Filter>Shader\PostEffect\Effects</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\TilingPS.hlsl">
+      <Filter>Shader\PostEffect\Effects</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\UvScrollPS.hlsl">
+      <Filter>Shader\PostEffect\Effects</Filter>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +86,7 @@
       <Filter>メイン部分\Audio</Filter>
     </ClCompile>
     <ClCompile Include="Boss.cpp">
-      <Filter>メイン部分\Enemy</Filter>
+      <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="CalculationObject.cpp">
       <Filter>メイン部分\Object\CalculationObj</Filter>
@@ -143,7 +143,7 @@
       <Filter>メイン部分\Particle</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>メイン部分\Player</Filter>
+      <Filter>メイン部分\GameObj\Player</Filter>
     </ClCompile>
     <ClCompile Include="PostEffect.cpp">
       <Filter>メイン部分\Sprite\PostEffect</Filter>
@@ -160,7 +160,9 @@
     <ClCompile Include="WindowsAPI.cpp">
       <Filter>メイン部分\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Stage.cpp">
+      <Filter>メイン部分\GameObj\Stage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstructScene.h">
@@ -170,7 +172,7 @@
       <Filter>メイン部分\Audio</Filter>
     </ClInclude>
     <ClInclude Include="Boss.h">
-      <Filter>メイン部分\Enemy</Filter>
+      <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="CalculationObject.h">
       <Filter>メイン部分\Object\CalculationObj</Filter>
@@ -227,7 +229,7 @@
       <Filter>メイン部分\Particle</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>メイン部分\Player</Filter>
+      <Filter>メイン部分\GameObj\Player</Filter>
     </ClInclude>
     <ClInclude Include="PostEffect.h">
       <Filter>メイン部分\Sprite\PostEffect</Filter>
@@ -250,7 +252,9 @@
     <ClInclude Include="WindowsAPI.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Stage.h" />
+    <ClInclude Include="Stage.h">
+      <Filter>メイン部分\GameObj\Stage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">
@@ -306,9 +310,6 @@
     <Filter Include="メイン部分\Audio">
       <UniqueIdentifier>{a74ad3ae-81c7-431a-80eb-963adfbc23e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="メイン部分\Enemy">
-      <UniqueIdentifier>{60d1e33d-a484-42ea-9afb-07bb3811af88}</UniqueIdentifier>
-    </Filter>
     <Filter Include="メイン部分\Camera">
       <UniqueIdentifier>{884df4db-84d5-4669-aa2b-eb1eb47fcba5}</UniqueIdentifier>
     </Filter>
@@ -320,9 +321,6 @@
     </Filter>
     <Filter Include="メイン部分\Input">
       <UniqueIdentifier>{8d3e6c92-022d-40a1-9b17-82b01cf453a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="メイン部分\Player">
-      <UniqueIdentifier>{f8243134-8987-48a7-8f4b-f2c3ed1008ed}</UniqueIdentifier>
     </Filter>
     <Filter Include="メイン部分\Particle">
       <UniqueIdentifier>{45439660-d7c3-4f6d-88aa-b0393754c997}</UniqueIdentifier>
@@ -353,6 +351,21 @@
     </Filter>
     <Filter Include="メイン部分\Scene">
       <UniqueIdentifier>{33c1db31-6e50-453a-b45d-c6ac94cbda70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\PostEffect\Effects">
+      <UniqueIdentifier>{57c4cc42-7c83-4514-9fb2-ed15027d565a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\GameObj">
+      <UniqueIdentifier>{21a672d7-5146-4acc-a58d-28b66643954e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\GameObj\Enemy">
+      <UniqueIdentifier>{60d1e33d-a484-42ea-9afb-07bb3811af88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\GameObj\Player">
+      <UniqueIdentifier>{f8243134-8987-48a7-8f4b-f2c3ed1008ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\GameObj\Stage">
+      <UniqueIdentifier>{c0ce1929-586d-4bea-a56e-5052f2d49eb4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

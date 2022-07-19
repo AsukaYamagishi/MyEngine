@@ -72,9 +72,9 @@ void DirectXCommon::PreDraw()
 	ClearDepthBuffer();
 
 	//ビューポートの設定
-	cmdList->RSSetViewports(1, &CD3DX12_VIEWPORT(0.0f, 0.0f, WindowsAPI::window_width, WindowsAPI::window_height));
+	cmdList->RSSetViewports(1, &CD3DX12_VIEWPORT(0.0f, 0.0f, WindowsAPI::win_width, WindowsAPI::win_height));
 	//シザー矩形の設定
-	cmdList->RSSetScissorRects(1, &CD3DX12_RECT(0, 0, WindowsAPI::window_width, WindowsAPI::window_height));
+	cmdList->RSSetScissorRects(1, &CD3DX12_RECT(0, 0, WindowsAPI::win_width, WindowsAPI::win_height));
 }
 
 //描画後処理
@@ -107,7 +107,7 @@ void DirectXCommon::PostDraw()
 	swapchain->Present(1, 0);
 }
 
-//レンダーターゲットのクリア
+//レンダーターゲットのクリア（画面色クリア）
 void DirectXCommon::ClearRenderTarget()
 {
 	UINT bbIndex = swapchain->GetCurrentBackBufferIndex();
@@ -129,7 +129,7 @@ void DirectXCommon::ClearDepthBuffer()
 	cmdList->ClearDepthStencilView(dsvH, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 }
 
-
+#pragma region 成否判定
 //デバイス初期化
 bool DirectXCommon::InitDXGIDevice()
 {
@@ -221,8 +221,8 @@ bool DirectXCommon::CreateSwapChain()
 
 	//各種設定をしてスワップチェーンを生成
 	DXGI_SWAP_CHAIN_DESC1 swapchainDesc{};
-	swapchainDesc.Width = WindowsAPI::window_width;
-	swapchainDesc.Height = WindowsAPI::window_height;
+	swapchainDesc.Width = WindowsAPI::win_width;
+	swapchainDesc.Height = WindowsAPI::win_height;
 	swapchainDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM; //色情報の書式
 	swapchainDesc.SampleDesc.Count = 1; //マルチサンプルしない
 	swapchainDesc.BufferUsage = DXGI_USAGE_BACK_BUFFER; //バックバッファ用
@@ -333,8 +333,8 @@ bool DirectXCommon::CreateDepthBuffer()
 	//深度バッファリソース設定
 	CD3DX12_RESOURCE_DESC depthResDesc = CD3DX12_RESOURCE_DESC::Tex2D(
 		DXGI_FORMAT_D32_FLOAT,
-		WindowsAPI::window_width,
-		WindowsAPI::window_height,
+		WindowsAPI::win_width,
+		WindowsAPI::win_height,
 		1, 0,
 		1, 0,
 		D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL );
@@ -388,3 +388,4 @@ bool DirectXCommon::CreateFence()
 
 	return true;
 }
+#pragma endregion

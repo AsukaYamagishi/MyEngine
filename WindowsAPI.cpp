@@ -4,8 +4,8 @@
 WNDCLASSEX WindowsAPI::w;
 HWND WindowsAPI::hwnd;
 MSG WindowsAPI::msg;
-const int WindowsAPI::window_width = 1280;
-const int WindowsAPI::window_height = 720;
+const int WindowsAPI::win_width = 1280;
+const int WindowsAPI::win_height = 720;
 
 
 HINSTANCE WindowsAPI::GetInstance()
@@ -37,12 +37,12 @@ bool WindowsAPI::WindowCreate()
 	//ウィンドウクラスをOSに登録
 	RegisterClassEx(&WindowsAPI::w);
 	//ウィンドウサイズ｛x,y,width,height｝
-	RECT wrc = { 0,0,window_width,window_height };
+	RECT wrc = { 0,0,win_width,win_height };
 	AdjustWindowRect(&wrc, WS_OVERLAPPEDWINDOW, false); //自動でサイズ補正
 
 	//ウィンドウオブジェクトの生成
 	WindowsAPI::hwnd = CreateWindow(WindowsAPI::w.lpszClassName, //クラス名
-							 L"ゲーム大賞", //タイトルバーの文字
+							 L"就職作品", //タイトルバーの文字
 							 WS_OVERLAPPEDWINDOW, //標準的なウィンドウスタイル
 							 CW_USEDEFAULT, //表示Ｘ座標（OS依存）
 							 CW_USEDEFAULT, //表示Y座標（OS依存）

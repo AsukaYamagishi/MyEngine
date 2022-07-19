@@ -5,6 +5,7 @@ using namespace DirectX;
 
 class Camera
 {
+#pragma region 定数
 protected: // エイリアス
 	// DirectX::を省略
 	using XMFLOAT2 = DirectX::XMFLOAT2;
@@ -12,38 +13,75 @@ protected: // エイリアス
 	using XMFLOAT4 = DirectX::XMFLOAT4;
 	using XMVECTOR = DirectX::XMVECTOR;
 	using XMMATRIX = DirectX::XMMATRIX;
+#pragma endregion
 
+#pragma region 関数
 public:
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
+	/// <param name="eye">視点</param>
+	/// <param name="target">注視点</param>
+	/// <param name="up">上ベクトル</param>
 	Camera(Vector3 eye, Vector3 target = { 0,0,0 }, Vector3 up = { 0,1,0 });
 
-	//更新
+	/// <summary>
+	/// 毎フレーム更新
+	/// </summary>
 	void Update();
-	//ビュー行列更新
+
+	/// <summary>
+	/// ビュー行列更新
+	/// </summary>
 	void UpdateViewMatrix();
-	//射影行列を更新
+
+	/// <summary>
+	/// 射影行列更新
+	/// </summary>
 	void UpdateProjectionMatrix();
 
+	/// <summary>
+	/// 初期化
+	/// </summary>
+	/// <param name="eye">視点</param>
+	static void Init(const XMFLOAT3 eye = { 0,100,100 });
 
-	static void Initialize(const XMFLOAT3 eye = { 0,100,100 });
+
+	//ゲッター・セッター
+	/// <summary>
+	/// カメラセット
+	/// </summary>
+	/// <param name="cam">カメラ情報</param>
 	static void SetCam(Camera* cam);
-
-	const XMMATRIX& GetViewProjectionMatrix() {
-		return matViewProjection;
-	}
+	/// <summary>
+	/// ビュー射影行列取得
+	/// </summary>
+	/// <returns>ビュー射影行列</returns>
+	const XMMATRIX& GetViewProjectionMatrix() { return matViewProjection; }
+	/// <summary>
+	/// 現在のカメラ情報取得
+	/// </summary>
+	/// <returns>現在のカメラ情報</returns>
 	static Camera* GetCam() { return NowMatView; }
-	//ビュー行列取得
+	/// <summary>
+	/// ビュー行列取得
+	/// </summary>
+	/// <returns>ビュー行列</returns>
 	XMMATRIX GetMatView() { return matView; }
-	//プロジェクション行列取得
+	/// <summary>
+	/// プロジェクション行列取得
+	/// </summary>
+	/// <returns>プロジェクション行列</returns>
 	XMMATRIX GetMatProj() { return matProjection; }
-	
+#pragma endregion
 
+#pragma region 変数
+public:
 	Vector3 eye;			//視点座標
 	Vector3 target;			//注視点座標
 	Vector3 up;				//上方向ベクトル
 	Vector3 front;			//正面ベクトル
-
 	Vector3 angle;			//角度
-
 
 protected:
 	//今のカメラ
@@ -54,5 +92,6 @@ protected:
 	XMMATRIX matProjection = XMMatrixIdentity();
 	//ビュー射影行列
 	XMMATRIX matViewProjection = XMMatrixIdentity();//現在ののカメラ
+#pragma endregion
 };
 

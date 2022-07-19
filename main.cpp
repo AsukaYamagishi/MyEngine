@@ -89,18 +89,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	////描画初期化処理　ここから
 #pragma region スプライト/3Dオブジェクト静的初期化
 	// スプライト静的初期化
-	if (!Sprite::StaticInit(dxCommon->GetDevice(), WindowsAPI::window_width, WindowsAPI::window_height)) {
+	if (!Sprite::StaticInit(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
 		assert(0);
 		return 1;
 	}
 
 	// 3Dオブジェクト静的初期化
-	if (!CalculationObject::StaticInit(dxCommon->GetDevice(), WindowsAPI::window_width, WindowsAPI::window_height)) {
+	if (!CalculationObject::StaticInit(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
 		assert(0);
 		return 1;
 	}
 
-	if (!ParticleManager::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::window_width, WindowsAPI::window_height)) {
+	if (!ParticleManager::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
 		assert(0);
 		return 1;
 	}
@@ -110,7 +110,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 #pragma region 3Dモデル静的初期化
 	// Obj
-	if (!ModelDraw::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::window_width, WindowsAPI::window_height)) {
+	if (!ModelDraw::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
 		assert(0);
 		return 1;
 	}

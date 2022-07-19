@@ -91,9 +91,9 @@ void PostEffect::PreDrawScene(ID3D12GraphicsCommandList* cmdList)
 	cmdList->OMSetRenderTargets(1, &rtvH, false, &dsvH);
 
 	//ビューポートの設定
-	cmdList->RSSetViewports(1, &CD3DX12_VIEWPORT(0.0f, 0.0f, WindowsAPI::window_width, WindowsAPI::window_height));
+	cmdList->RSSetViewports(1, &CD3DX12_VIEWPORT(0.0f, 0.0f, WindowsAPI::win_width, WindowsAPI::win_height));
 	//シザリング矩形の設定
-	cmdList->RSSetScissorRects(1, &CD3DX12_RECT(0, 0, WindowsAPI::window_width, WindowsAPI::window_height));
+	cmdList->RSSetScissorRects(1, &CD3DX12_RECT(0, 0, WindowsAPI::win_width, WindowsAPI::win_height));
 
 	//全画面クリア
 	cmdList->ClearRenderTargetView(rtvH, clearColor, 0, nullptr);
@@ -318,8 +318,8 @@ void PostEffect::CreateTexture()
 	//テクスチャリソース設定
 	CD3DX12_RESOURCE_DESC texresDesc = CD3DX12_RESOURCE_DESC::Tex2D(
 		DXGI_FORMAT_R8G8B8A8_UNORM,
-		WindowsAPI::window_width,
-		(UINT)WindowsAPI::window_height,
+		WindowsAPI::win_width,
+		(UINT)WindowsAPI::win_height,
 		1, 0, 1, 0, D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET);
 
 	//テクスチャバッファの生成
@@ -334,11 +334,11 @@ void PostEffect::CreateTexture()
 
 	////テクスチャを水色でクリア
 	//画素数(1280x720)
-	const UINT pixelCount = WindowsAPI::window_width * WindowsAPI::window_height;
+	const UINT pixelCount = WindowsAPI::win_width * WindowsAPI::win_height;
 	//画像1行分のデータサイズ
-	const UINT rowPitch = sizeof(UINT) * WindowsAPI::window_width;
+	const UINT rowPitch = sizeof(UINT) * WindowsAPI::win_width;
 	//画像全体のデータサイズ
-	const UINT depthPitch = rowPitch * WindowsAPI::window_height;
+	const UINT depthPitch = rowPitch * WindowsAPI::win_height;
 	//画像イメージ
 	UINT* img = new UINT[pixelCount];
 	for (int i = 0; i < pixelCount; i++)
@@ -408,8 +408,8 @@ void PostEffect::CreateDepthBuff()
 	CD3DX12_RESOURCE_DESC depthResDesc =
 		CD3DX12_RESOURCE_DESC::Tex2D(
 			DXGI_FORMAT_D32_FLOAT,
-			WindowsAPI::window_width,
-			WindowsAPI::window_height,
+			WindowsAPI::win_width,
+			WindowsAPI::win_height,
 			1, 0, 1, 0,
 			D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL);
 

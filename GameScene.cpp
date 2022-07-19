@@ -20,7 +20,6 @@ GameScene::~GameScene()
 	//safe_deleteはここで行う
 	safe_delete(particleMan);
 	safe_delete(testObject);
-	//safe_delete(testModel);
 }
 
 void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio)
@@ -37,7 +36,7 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 
 	//カメラのせっち
-	camera->Initialize({ 0,30,130 });
+	camera->Init({ 0,30,130 });
 	camera = Camera::GetCam();
 	//camera->target = { 0 ,50 ,0 };
 #pragma endregion
@@ -55,12 +54,12 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 #pragma region Sprite初期設定
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)
-	if (!Sprite::LoadTexture(3, L"Resources/setumei.png")) {
+	/*if (!Sprite::LoadTexture(3, L"Resources/white1x1.png")) {
 		assert(0);
 		return;
-	}
+	}*/
 	// 背景スプライト生成
-	spriteBG = Sprite::CreateSprite(3, { 0.0f,0.0f });
+	//spriteBG = Sprite::CreateSprite(3, { 0.0f,0.0f });
 #pragma endregion
 	//デバイスをセット
 	FbxDraw::SetDevice(dxCommon->GetDevice());
