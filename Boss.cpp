@@ -13,17 +13,12 @@ Boss::~Boss()
 
 }
 
-void Boss::Initialize(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio, ModelDraw* player)
+void Boss::Init(DirectXCommon* dxCommon)
 {
 	// nullptrチェック
 	assert(dxCommon);
-	assert(input);
-	assert(audio);
 
 	this->dxCommon = dxCommon;
-	this->input = input;
-	this->audio = audio;
-
 }
 
 void Boss::Update()

@@ -49,22 +49,33 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	MSG msg{}; //メッセージ
 
+
 #ifdef _DEBUG
 	//デバッグレイヤーをオンに
-	ComPtr<ID3D12Debug> debugController;
+	ComPtr<ID3D12Debug1> debugController;
 	if (SUCCEEDED(D3D12GetDebugInterface(IID_PPV_ARGS(&debugController))))
 	{
 		debugController->EnableDebugLayer();
+		debugController->SetEnableGPUBasedValidation(TRUE);
 	}
 #endif // _DEBUG
 
 #pragma region DirecyX初期化
 	////DirectX初期化処理　ここから
-		
 	//DirectX汎用部分
 	DirectXCommon* dxCommon = nullptr;
 	dxCommon = new DirectXCommon();
 	dxCommon->Init(win);
+
+#ifdef _DEBUG
+	ComPtr<ID3D12InfoQueue> infoQueue;
+	if (SUCCEEDED(dxCommon->GetDevice()->QueryInterface(IID_PPV_ARGS(&infoQueue))))
+	{
+		infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY_CORRUPTION, true); //やばいエラーで止まる
+		infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY_ERROR, true); //エラーで止まる
+		infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY_WARNING, true); //warningで止まる
+	}
+#endif // _DEBUG
 
 	//初期化
 	Audio* audio = nullptr;

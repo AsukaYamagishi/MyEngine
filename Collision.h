@@ -48,7 +48,14 @@ public:
 		DirectX::XMVECTOR *inter = nullptr
 	);
 
-	//レイと平面
+	/// <summary>
+	///  レイと平面の当たり判定
+	/// </summary>
+	/// <param name="ray">レイ</param>
+	/// <param name="plane">平面</param>
+	/// <param name="distance">二点間の距離</param>
+	/// <param name="inter">交点</param>
+	/// <returns>交差しているか否か</returns>
 	static bool IsRayToPlane(
 		const Ray &ray,
 		const Plane &plane,
@@ -56,7 +63,14 @@ public:
 		DirectX::XMVECTOR *inter = nullptr
 	);
 
-	//レイと法線付き三角
+	/// <summary>
+	/// レイと法線付き三角の当たり判定
+	/// </summary>
+	/// <param name="ray">レイ</param>
+	/// <param name="triangle">三角形</param>
+	/// <param name="distance">二点間の距離</param>
+	/// <param name="inter">交点(三角形上の最近接点)</param>
+	/// <returns>交差しているか否か</returns>
 	static bool IsRayToTriangle(
 		const Ray &ray,
 		const Triangle &triangle,
@@ -64,7 +78,14 @@ public:
 		DirectX::XMVECTOR *inter = nullptr
 	);
 
-	//レイと球
+	/// <summary>
+	/// レイと球の当たり判定
+	/// </summary>
+	/// <param name="ray">レイ</param>
+	/// <param name="sphere">球</param>
+	/// <param name="distance">二点間の距離</param>
+	/// <param name="inter">交点</param>
+	/// <returns>交差しているか否か</returns>
 	static bool IsRayToSqhere(
 		const Ray &ray,
 		const Sphere &sphere,
@@ -72,7 +93,12 @@ public:
 		DirectX::XMVECTOR *inter = nullptr
 	);
 
-    // 球体同士の当たり判定
+	/// <summary>
+	/// 球と球の当たり判定
+	/// </summary>
+	/// <param name="a">球１</param>
+	/// <param name="b">球２</param>
+	/// <returns>交差しているか否か</returns>
 	static bool IsBallToBallCollision(const Sphere& a,const Sphere& b);
 //
 //	// 直方体同士の当たり判定

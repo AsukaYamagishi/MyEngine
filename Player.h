@@ -1,48 +1,59 @@
 ﻿#pragma once
 #include "SafeDelete.h"
 #include "DirectXCommon.h"
-#include "KeyboardInput.h"
-#include "Audio.h"
 #include "ModelDraw.h"
 #include "ModelManager.h"
-
 #include <DirectXMath.h>
+
 class Player {
+#pragma region 定数
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
-	// DirectX::��ȗ�
+	// DirectX::を省略
 	using XMFLOAT2 = DirectX::XMFLOAT2;
 	using XMFLOAT3 = DirectX::XMFLOAT3;
 	using XMFLOAT4 = DirectX::XMFLOAT4;
 	using XMMATRIX = DirectX::XMMATRIX;
+#pragma endregion
+
 public:
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
 	Player();
+	/// <summary>
+	/// デストラクタ
+	/// </summary>
 	~Player();
-	void Initialize(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio);
 
 	/// <summary>
-	/// ���t���[������
+	/// 初期化
+	/// </summary>
+	/// <param name="dxCommon">基礎部分</param>
+	void Init(DirectXCommon *dxCommon);
+
+	/// <summary>
+	/// 毎フレーム処理
 	/// </summary>
 	void Update();
 
 	/// <summary>
-	/// �`��
+	/// 描画
 	/// </summary>
 	void Draw();
 
+	/// <summary>
+	/// 移動処理
+	/// </summary>
+	void Move();
+#pragma endregion
+
+#pragma region 変数
 public:
 	ModelDraw *player = nullptr;
-	int attacktime = 0;
-	bool attack = false;
-	bool enemyWepon = false;
-
+	
 private:
 	DirectXCommon *dxCommon = nullptr;
-	KeyboardInput *input = nullptr;
-	Audio *audio = nullptr;
-
 	float move = 0.5f;
 	int hp = 10;
-
-
-
+#pragma endregion
 };

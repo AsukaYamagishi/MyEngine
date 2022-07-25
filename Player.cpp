@@ -2,6 +2,7 @@
 #include "Camera.h"
 #include <time.h>
 #include <cassert>
+#include "KeyboardInput.h"
 
 using namespace DirectX;
 
@@ -17,17 +18,12 @@ Player::~Player()
 
 }
 
-void Player::Initialize(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio)
+void Player::Init(DirectXCommon *dxCommon)
 {
-	// nullptr�`�F�b�N
+	// nullptrチェック
 	assert(dxCommon);
-	assert(input);
-	assert(audio);
-
 	this->dxCommon = dxCommon;
-	this->input = input;
-	this->audio = audio;
-
+	
 	player->SetScale(Vector3(1, 1, 1));
 	player->SetPos(Vector3(0, 5, 0));
 }
@@ -35,75 +31,33 @@ void Player::Initialize(DirectXCommon *dxCommon, KeyboardInput *input, Audio *au
 void Player::Update()
 {
 	player->Update();
-
-#pragma region	�v���C���[�ړ�
-	if (input->PressKey(DIK_W)) {
-		player->SetPos(player->GetPos() + Vector3(0.0f, 0.0f, move));
-	}
-	if ( input->PressKey(DIK_S)) {
-		player->SetPos(player->GetPos() + Vector3(0.0f, 0.0f, -move));
-	}
-	if ( input->PressKey(DIK_A)) {
-		player->SetPos(player->GetPos() + Vector3(-move, 0.0f, 0.0f));
-	}
-	if (input->PressKey(DIK_D)) {
-		player->SetPos(player->GetPos() + Vector3(+move, 0.0f, 0.0f));
-	}
-
-	//デバッグ移動
-	if (input->PressKey(DIK_E)) {
-		player->SetPos(player->GetPos() + Vector3(0.0f, move, 0.0f));
-	}
-	if (input->PressKey(DIK_Q)) {
-		player->SetPos(player->GetPos() + Vector3(0.0f, -move, 0.0f));
-	}
-
-	/*if (input->PressKey(DIK_Z)) {
-		player->SetRotation(player->GetRotation() + Vector3(0.0f, 2.0f, 0.0f));
-	}
-	if (input->PressKey(DIK_C)) {
-		player->SetRotation(player->GetRotation() + Vector3(0.0f, -2.0f, 0.0f));
-	}*/
-#pragma endregion
-
-
-#pragma region �U��
-	if (input->PressKey(DIK_SPACE) && attacktime == 0)
-	{
-		attack = true;
-		attacktime += 1;
-	}
-	if (attacktime > 0)
-	{
-		Vector3 rota = player->GetRotation();
-		attacktime++;
-		if (attacktime < 30)
-		{
-			player->SetRotation(player->GetRotation() + Vector3(0.0f, 5.0f, 0.0f));
-		}
-		else if (rota.y > 0)
-		{
-			player->SetRotation(player->GetRotation() + Vector3(0.0f, -5.0f, 0.0f));
-		}
-		else
-		{
-			player->SetRotation(Vector3(0.0f, 0.0f, 0.0f));
-			attack = false;
-			attacktime = 0;
-		}
-	}
-#pragma endregion
-
-
+	Move();
 }
 
 void Player::Draw()
 {
-	// �R�}���h���X�g�̎擾
 	ID3D12GraphicsCommandList *cmdList = dxCommon->GetCommandList();
 
 	ModelDraw::PreDraw(cmdList);
 	player->Draw();
 	ModelDraw::PostDraw();
 
+}
+
+void Player::Move()
+{
+	if (KeyboardInput::GetInstance()->PressKey(DIK_W)) {
+		player->SetPos(player->GetPos() + Vector3(0.0f, 0.0f, move));
+	}
+	if (KeyboardInput::GetInstance()->PressKey(DIK_S)) {
+		player->SetPos(player->GetPos() + Vector3(0.0f, 0.0f, -move));
+	}
+	if (KeyboardInput::GetInstance()->PressKey(DIK_A)) {
+		player->SetPos(player->GetPos() + Vector3(-move, 0.0f, 0.0f));
+	}
+	if (KeyboardInput::GetInstance()->PressKey(DIK_D)) {
+		player->SetPos(player->GetPos() + Vector3(+move, 0.0f, 0.0f));
+	}
+	
+	player->Update();
 }

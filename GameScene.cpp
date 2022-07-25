@@ -102,7 +102,7 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 #pragma endregion
 
 	player = new Player();
-	player->Initialize(dxCommon, input, audio);
+	player->Init(dxCommon);
 
 	
 
