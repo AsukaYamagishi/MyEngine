@@ -22,23 +22,20 @@ GameScene::~GameScene()
 	safe_delete(testObject);
 }
 
-void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio)
+void GameScene::Init(DirectXCommon *dxCommon, Audio *audio)
 {
 #pragma region nullptrチェック/代入
 	assert(dxCommon);
-	assert(input);
 	assert(audio);
 
 	this->dxCommon = dxCommon;
-	this->input = input;
 	this->audio = audio;
 #pragma endregion
 
 
 	//カメラのせっち
-	camera->Init({ 0,30,130 });
+	camera->Init({ 0,0,-30 });
 	camera = Camera::GetCam();
-	//camera->target = { 0 ,50 ,0 };
 #pragma endregion
 
 #pragma region デバッグテキスト読み込み
@@ -69,28 +66,8 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 	FbxDraw::CreateGraphicsPipeline();
 
 #pragma region 3DモデルCreate・初期設定
-	//モデルを指定して読み込み
-	testModel = FbxInput::GetInstance()->LoadFbxFromFile("boneTest");
-	//3Dオブジェクト生成とモデルのセット
-	testObject = new FbxDraw();
-	testObject->Init();
-	testObject->SetModel(testModel.get());
-	testObject->SetScale({ 10,10,10 });
-	testObject->SetRotation({ 0,45,0 });
-	testObject->SetPosition({ -50,-15,3 });
-	testObject->PlayAnimation(true);
-
-	boxModel= FbxInput::GetInstance()->LoadFbxFromFile("Box");
-	boxObject = new FbxDraw();
-	boxObject->Init();
-	boxObject->SetModel(boxModel.get());
-	boxObject->SetScale({ 0.1,0.1,0.1 });
-	boxObject->SetRotation({ 0,30,0 });
-	boxObject->SetPosition({ 50,-15,3 });
-
-
-	stage = new Stage();
-	stage->Initialize(dxCommon);
+	
+	
 #pragma endregion
 
 
@@ -101,7 +78,7 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 #pragma endregion
 
-	player = new Player();
+	player = new PlayerBase(PlayerType::SHOT,ModelManager::GetIns()->GetModel(ModelManager::Player));
 	player->Init(dxCommon);
 
 	
@@ -111,20 +88,10 @@ void GameScene::Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio
 
 void GameScene::Update()
 {
+	player->Update();
 
-	stage->Update();
-	
-	
-	testObject->Update();
-	boxObject->Update();
-	
 	camera->SetCam(camera);
 	camera->Update();
-
-	////シーン切り替え
-	//if (input->PressKeyTrigger(DIK_0)) {
-	//	SceneManager::ChangeScene(SceneManager::SceneNo::titleScene);
-	//}
 
 #pragma region デバッグテキスト設定
 	
@@ -166,14 +133,9 @@ void GameScene::Draw()
 #pragma endregion
 
 #pragma region 3Dモデル描画
+	
+	player->Draw();
 
-
-	//stage->Draw();
-	
-	
-	testObject->Draw(cmdList);
-	boxObject->Draw(cmdList);
-	
 #pragma endregion
 
 #pragma region 前景スプライト描画

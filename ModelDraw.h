@@ -96,6 +96,9 @@ public:		//ÉÅÉìÉoä÷êî
 	void Draw();
 
 	void SetPos(Vector3 nextPos) { position = nextPos; }
+	void SetPosX(float nextPosX) { position.x = nextPosX; }
+	void SetPosY(float nextPosY) { position.y = nextPosY; }
+	void SetPosZ(float nextPosZ) { position.z = nextPosZ; }
 	void SetScale(Vector3 nextScale) { scale = nextScale; }
 	void SetRotation(Vector3 nextRotation) { rotation = nextRotation; }
 	void SetParent(ModelDraw* nextParent) { parent = nextParent; }

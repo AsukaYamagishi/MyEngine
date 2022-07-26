@@ -7,7 +7,7 @@
 #include "Audio.h"
 #include "KeyboardInput.h"
 #include <vector>
-#include "Player.h"
+#include "PlayerBase.h"
 #include "Collision.h"
 #include "FbxDraw.h"
 #include"Boss.h"
@@ -30,7 +30,6 @@ private: //静的メンバ変数
 
 private: //メンバ変数
 	DirectXCommon *dxCommon = nullptr;
-	KeyboardInput *input = nullptr;
 	Audio *audio = nullptr;
 	Camera *camera = nullptr;
 	DebugText debugText;
@@ -42,7 +41,7 @@ private: //メンバ変数
 	Audio::SoundData soundData[3];
 
 	//プレイヤー
-	Player *player;	
+	PlayerBase *player;	
 	
 	//ステージ
 	Stage* stage;
@@ -91,7 +90,7 @@ public: //メンバ関数
 	//デストラクタ
 	~GameScene();
 	//初期化
-	void Init(DirectXCommon *dxCommon, KeyboardInput *input, Audio *audio) override;
+	void Init(DirectXCommon *dxCommon, Audio *audio) override;
 	//毎フレーム更新処理
 	void Update()override;
 	//描画

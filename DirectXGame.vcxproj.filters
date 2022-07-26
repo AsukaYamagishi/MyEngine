@@ -142,7 +142,7 @@
     <ClCompile Include="ParticleManager.cpp">
       <Filter>メイン部分\Particle</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="PlayerBase.cpp">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClCompile>
     <ClCompile Include="PostEffect.cpp">
@@ -228,7 +228,7 @@
     <ClInclude Include="ParticleManager.h">
       <Filter>メイン部分\Particle</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="PlayerBase.h">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClInclude>
     <ClInclude Include="PostEffect.h">

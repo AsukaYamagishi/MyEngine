@@ -15,13 +15,6 @@ public:
 		Player,
 		Stage,
 		Skydome,
-		Weapon,
-		Face,
-		Body,
-		Right_arm,
-		Left_arm,
-		Rightleg,
-		Leftleg,
 		Plane
 	};
 

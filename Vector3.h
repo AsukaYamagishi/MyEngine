@@ -69,6 +69,9 @@ struct Vector3 : public XMFLOAT3 {
 		return pow(this->Length(),2);
 	}
 	//ê≥ãKâª
+	Vector3 Normal() {
+		return XMVector3Normalize(XMVECTOR(*this));
+	}
 	void Normalize() {
 		*this = XMVector3Normalize(XMVECTOR(*this));
 	}

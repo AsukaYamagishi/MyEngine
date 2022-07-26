@@ -1,5 +1,6 @@
 #include"WindowsAPI.h"  //ウィンドウ表示
 #include"KeyboardInput.h"  //キーボード入力
+#include"ControllerInput.h" //ゲームパッド入力
 #include"Sprite.h"  //2D画像(sprite)
 #include"CalculationObject.h"  //3Dオブジェクト(Object)
 #include"Audio.h" //音楽再生
@@ -89,10 +90,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	ModelInput::StaticInitialize(dxCommon->GetDevice());
 	ModelManager::GetIns()->Initialize();
 
-	
-	////DirectInput(入力)初期化処理
-	KeyboardInput* input = KeyboardInput::GetInstance();
-	input->Init(win->hwnd);
+	//入力関係初期化
+	KeyboardInput::GetInstance()->Init(win->hwnd);
+	ControllerInput::GetInstance()->Init();
+
 
 	////DirectX初期化処理　ここまで
 #pragma endregion
@@ -136,7 +137,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	
 	SceneManager* sceneManager = nullptr;
 	sceneManager = new SceneManager();
-	sceneManager->Init(dxCommon, input, audio);
+	sceneManager->Init(dxCommon, audio);
 
 #pragma endregion
 
@@ -172,7 +173,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		////////////////DirectX毎フレーム処理 ここから
 
 #pragma region 更新処理
-		input->Update();
+		KeyboardInput::GetInstance()->Update();
+		ControllerInput::GetInstance()->Update();
 		sceneManager->Update();
 #pragma endregion
 		

@@ -13,15 +13,13 @@ EndGame::~EndGame()
 	//safe_delete(sprite1);
 }
 
-void EndGame::Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio)
+void EndGame::Init(DirectXCommon* dxCommon, Audio* audio)
 {
 	// nullptrチェック
 	assert(dxCommon);
-	assert(input);
 	assert(audio);
 
 	this->dxCommon = dxCommon;
-	this->input = input;
 	this->audio = audio;
 
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)
@@ -36,8 +34,6 @@ void EndGame::Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio)
 
 void EndGame::Update()
 {
-	//キーボード入力更新
-	input->Update();
 }
 
 void EndGame::Draw()

@@ -24,7 +24,6 @@ private: //静的メンバ変数
 
 private: //メンバ変数
 	DirectXCommon* dxCommon = nullptr;
-	KeyboardInput* input = nullptr;
 	Audio* audio = nullptr;
 	DebugText debugText;
 
@@ -42,7 +41,7 @@ public: //メンバ関数
 	//デストラクタ
 	~EndGame();
 	//初期化
-	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio) override;
+	void Init(DirectXCommon* dxCommon, Audio* audio) override;
 	//毎フレーム更新処理
 	void Update() override;
 	//描画

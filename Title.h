@@ -21,7 +21,6 @@ private: //静的メンバ変数
 
 private: //メンバ変数
 	DirectXCommon* dxCommon = nullptr;
-	KeyboardInput* input = nullptr;
 	Audio* audio = nullptr;
 	
 	//ゲームシーン用
@@ -48,10 +47,9 @@ public: //メンバ関数
 	/// <summary>
 	/// 初期化
 	/// </summary>
-	/// <param name="dxCommon"></param>
-	/// <param name="input">入力</param>
-	/// <param name="audio"></param>
-	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio) override;
+	/// <param name="dxCommon">基礎</param>
+	/// <param name="audio">音楽</param>
+	void Init(DirectXCommon* dxCommon, Audio* audio) override;
 	//毎フレーム更新処理
 	void Update() override;
 	//描画

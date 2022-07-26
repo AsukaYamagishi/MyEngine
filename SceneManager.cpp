@@ -2,7 +2,6 @@
 std::stack<AbstructScene*> SceneManager::scenes;
 
 DirectXCommon* SceneManager::dxCommon;
-KeyboardInput* SceneManager::input;
 Audio* SceneManager::audio;
 
 void SceneManager::ChangeScene(SceneNo sceneNo, bool sceneStackClear)
@@ -32,7 +31,7 @@ void SceneManager::ChangeScene(SceneNo sceneNo, bool sceneStackClear)
 		default:
 			break;
 	}
-	scenes.top()->Init(dxCommon, input, audio);
+	scenes.top()->Init(dxCommon, audio);
 }
 
 SceneManager::SceneManager()
@@ -44,31 +43,15 @@ SceneManager::~SceneManager()
 	
 }
 
-void SceneManager::Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio)
+void SceneManager::Init(DirectXCommon* dxCommon, Audio* audio)
 {
 #pragma region nullptrチェック/代入
 	assert(dxCommon);
-	assert(input);
 	assert(audio);
 
 	this->dxCommon = dxCommon;
-	this->input = input;
 	this->audio = audio;
 #pragma endregion
-
-	//各シーン生成/最初のシーン初期化
-	//title = new Title();
-	//title->Init(dxCommon, input, audio);
-	//end = new EndGame();
-	////end->Init(dxCommon, input, audio);
-	//game = new GameScene();
-	//game->Init(dxCommon, input, audio);
-
-	//ポストエフェクト用テクスチャ読み込み
-	//Sprite::LoadTexture(100, L"Resources/white1x1.png");
-
-	//ゲーム開始シーンの設定
-	//sceneNo = gameScene;
 
 	ChangeScene(gameScene);
 

@@ -5,7 +5,12 @@
 #include "ModelManager.h"
 #include <DirectXMath.h>
 
-class Player {
+enum class PlayerType {
+	MELLE, //近距離
+	SHOT, //遠距離
+};
+
+class PlayerBase {
 #pragma region 定数
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 	// DirectX::を省略
@@ -19,11 +24,11 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	Player();
+	PlayerBase(PlayerType type, ModelInput* model);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
-	~Player();
+	~PlayerBase();
 
 	/// <summary>
 	/// 初期化
@@ -41,19 +46,36 @@ public:
 	/// </summary>
 	void Draw();
 
+
+private:
 	/// <summary>
 	/// 移動処理
 	/// </summary>
 	void Move();
+
+	/// <summary>
+	/// 攻撃処理
+	/// </summary>
+	virtual void Attack();
+
 #pragma endregion
 
 #pragma region 変数
-public:
-	ModelDraw *player = nullptr;
-	
 private:
 	DirectXCommon *dxCommon = nullptr;
-	float move = 0.5f;
-	int hp = 10;
+	
+	//プレイヤーモデル
+	std::shared_ptr<ModelDraw> player;
+	//座標
+	Vector3 pos = { 0,0,0 };
+	//攻撃タイプ
+	PlayerType type;
+	//1fのキー入力に対する移動量
+	float move = 0.3f;
+	//1f内での合計移動量
+	Vector3 velocity = { 0,0,0 };
+	
+	//体力
+	int hp = 100;
 #pragma endregion
 };

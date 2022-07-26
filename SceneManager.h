@@ -21,7 +21,6 @@ public:    //サブクラス
 #pragma region 変数
 private: //メンバ変数
 	static DirectXCommon* dxCommon;
-	static KeyboardInput* input;
 	static Audio* audio;
 #pragma endregion
 
@@ -44,7 +43,7 @@ public: //メンバ関数
 	//デストラクタ
 	~SceneManager();
 	//初期化
-	void Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio);
+	void Init(DirectXCommon* dxCommon, Audio* audio);
 	//毎フレーム更新処理
 	void Update();
 	//描画

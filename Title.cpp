@@ -12,15 +12,13 @@ Title::~Title()
 	//safe_deleteはここで行う
 }
 
-void Title::Init(DirectXCommon* dxCommon, KeyboardInput* input, Audio* audio)
+void Title::Init(DirectXCommon* dxCommon, Audio* audio)
 {
 #pragma region nullptrチェック/代入
 	assert(dxCommon);
-	assert(input);
 	assert(audio);
 
 	this->dxCommon = dxCommon;
-	this->input = input;
 	this->audio = audio;
 #pragma endregion
 
