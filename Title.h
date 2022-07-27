@@ -41,7 +41,7 @@ public: //静的メンバ関数
 #pragma region メンバ関数
 public: //メンバ関数
 	//コンストラクタ
-	Title();
+	Title(DirectXCommon* dxCommon, Audio* audio);
 	//デストラクタ
 	~Title();
 	/// <summary>
@@ -49,7 +49,7 @@ public: //メンバ関数
 	/// </summary>
 	/// <param name="dxCommon">基礎</param>
 	/// <param name="audio">音楽</param>
-	void Init(DirectXCommon* dxCommon, Audio* audio) override;
+	void Init() override;
 	//毎フレーム更新処理
 	void Update() override;
 	//描画

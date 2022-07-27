@@ -12,10 +12,9 @@ private:
 
 public:
 	enum ModelName {
-		Player,
-		Stage,
-		Skydome,
-		Plane
+		PLAYER,
+		BULLET,
+		ENEMY,
 	};
 
 public:

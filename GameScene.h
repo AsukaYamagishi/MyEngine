@@ -13,7 +13,8 @@
 #include"Boss.h"
 #include "ParticleManager.h"
 #include "Stage.h"
-
+#include "GameObjectManager.h"
+#include "CollisionManager.h"
 #include "AbstructScene.h"
 
 using namespace Microsoft::WRL;
@@ -34,6 +35,8 @@ private: //メンバ変数
 	Camera *camera = nullptr;
 	DebugText debugText;
 	Sprite *spriteBG;
+	std::shared_ptr<GameObjectManager> gameObjManager;
+	std::shared_ptr<CollisionManager> collisionManager;
 
 	//ゲームシーン用
 	Sprite *sprite = nullptr;
@@ -41,7 +44,7 @@ private: //メンバ変数
 	Audio::SoundData soundData[3];
 
 	//プレイヤー
-	PlayerBase *player;	
+	PlayerBase* player;	
 	
 	//ステージ
 	Stage* stage;
@@ -86,11 +89,11 @@ public: //静的メンバ関数
 private: //メンバ関数
 public: //メンバ関数
 	//コンストラクタ
-	GameScene();
+	GameScene(DirectXCommon* dxCommon, Audio* audio);
 	//デストラクタ
 	~GameScene();
 	//初期化
-	void Init(DirectXCommon *dxCommon, Audio *audio) override;
+	void Init() override;
 	//毎フレーム更新処理
 	void Update()override;
 	//描画

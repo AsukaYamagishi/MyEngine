@@ -3,8 +3,14 @@
 
 using namespace DirectX;
 
-EndGame::EndGame()
+EndGame::EndGame(DirectXCommon* dxCommon, Audio* audio)
 {
+	// nullptrチェック
+	assert(dxCommon);
+	assert(audio);
+
+	this->dxCommon = dxCommon;
+	this->audio = audio;
 }
 
 EndGame::~EndGame()
@@ -13,14 +19,9 @@ EndGame::~EndGame()
 	//safe_delete(sprite1);
 }
 
-void EndGame::Init(DirectXCommon* dxCommon, Audio* audio)
+void EndGame::Init()
 {
-	// nullptrチェック
-	assert(dxCommon);
-	assert(audio);
-
-	this->dxCommon = dxCommon;
-	this->audio = audio;
+	
 
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)
 	/*if (!Sprite::LoadTexture(4, L"Resources/end.png")) {

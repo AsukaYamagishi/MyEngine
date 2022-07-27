@@ -152,16 +152,23 @@
   <ItemGroup>
     <ClInclude Include="AbstructScene.h" />
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="BaseCollider.h" />
     <ClInclude Include="Boss.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionInfo.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CollisionPrimitive.h" />
     <ClInclude Include="ControllerInput.h" />
     <ClInclude Include="DebugText.h" />
     <ClInclude Include="DirectXCommon.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="FbxDraw.h" />
     <ClInclude Include="FbxInput.h" />
     <ClInclude Include="FbxModel.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="ModelInput.h" />
@@ -171,6 +178,7 @@
     <ClInclude Include="CalculationObject.h" />
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="PostEffect.h" />
+    <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="SafeDelete.h" />
@@ -184,16 +192,23 @@
   <ItemGroup>
     <ClCompile Include="AbstructScene.cpp" />
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="BaseCollider.cpp" />
     <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionInfo.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CollisionPrimitive.cpp" />
     <ClCompile Include="ControllerInput.cpp" />
     <ClCompile Include="DebugText.cpp" />
     <ClCompile Include="DirectXCommon.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FbxDraw.cpp" />
     <ClCompile Include="FbxInput.cpp" />
     <ClCompile Include="FbxModel.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="main.cpp" />
@@ -204,6 +219,7 @@
     <ClCompile Include="CalculationObject.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="PostEffect.cpp" />
+    <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />

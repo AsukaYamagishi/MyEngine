@@ -37,11 +37,11 @@ private: //メンバ変数
 #pragma region 関数
 public: //メンバ関数
 	//コンストラクタ
-	EndGame();
+	EndGame(DirectXCommon* dxCommon, Audio* audio);
 	//デストラクタ
 	~EndGame();
 	//初期化
-	void Init(DirectXCommon* dxCommon, Audio* audio) override;
+	void Init() override;
 	//毎フレーム更新処理
 	void Update() override;
 	//描画

@@ -7,7 +7,7 @@
 class AbstructScene
 {
 public:
-	virtual void Init(DirectXCommon* dxCommon, Audio* audio) {};
+	virtual void Init() {};
 	virtual void Update() {};
 	virtual void Draw() {};
 };

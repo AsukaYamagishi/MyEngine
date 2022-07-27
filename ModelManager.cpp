@@ -10,9 +10,9 @@ ModelManager *ModelManager::GetIns()
 
 void ModelManager::Initialize()
 {
-	LoadModel(Player, "Player");
-	LoadModel(Stage, "stage");
-	LoadModel(Skydome, "skydome");
+	LoadModel(PLAYER, "Player");
+	LoadModel(BULLET, "bullet");
+	LoadModel(ENEMY, "enemy");
 	
 	//LoadModel(TestDunut, "donut");
 }

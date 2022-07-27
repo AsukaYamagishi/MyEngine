@@ -4,13 +4,23 @@
 #include <cassert>
 #include "KeyboardInput.h"
 #include "ControllerInput.h"
+#include "Bullet.h"
+#include "SphereCollider.h"
+
 
 using namespace DirectX;
 
-PlayerBase::PlayerBase(PlayerType type, ModelInput* model)
+PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager,std::shared_ptr<CollisionManager> collisionManager, PlayerType type):
+	GameObject(dxCommon)
 {
 	player = std::make_shared<ModelDraw>(*ModelDraw::Create());
-	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::Player));
+	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
+	this->gameObjManager = gameObjManager;
+	this->collisionManager = collisionManager;
+
+	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
+	sphere.get()->SetName("Player");
+	AddCollider(sphere, collisionManager);
 }
 
 PlayerBase::~PlayerBase()
@@ -18,23 +28,24 @@ PlayerBase::~PlayerBase()
 
 }
 
-void PlayerBase::Init(DirectXCommon *dxCommon)
+void PlayerBase::Init()
 {
-	// nullptrチェック
-	assert(dxCommon);
-	this->dxCommon = dxCommon;
+	
 	
 }
 
 void PlayerBase::Update()
 {
 	pos = player->GetPos();
+
+	Attack();
+
 	Move();
-	player->Update();
 }
 
 void PlayerBase::Draw()
 {
+	player->Update();
 	player->SetPos(pos);
 
 	ID3D12GraphicsCommandList *cmdList = dxCommon->GetCommandList();
@@ -45,10 +56,18 @@ void PlayerBase::Draw()
 
 }
 
+void PlayerBase::OnCollision(CollisionInfo info)
+{
+	if (info.hitName == "Bullet") {
+		//int test = 100;
+
+	}
+}
+
 void PlayerBase::Move()
 {
 	//徐々に止まる
-	velocity = velocity * Vector3(0.85f,0.85f,0.85f);
+	velocity = velocity * Vector3(0.85f, 0.85f, 0.85f);
 	if (velocity.length() <= 0.01f)
 	{
 		velocity = { 0,0,0 };
@@ -69,8 +88,7 @@ void PlayerBase::Move()
 	}
 
 	//ゲームパッド移動
-	////要相談
-	if (ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LX, 0.1f) != 0 || 
+	if (ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LX, 0.1f) != 0 ||
 		ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LY, 0.1f) != 0)
 	{
 		velocity.x += move * (ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LX, 0.1f) / 500);
@@ -88,13 +106,29 @@ void PlayerBase::Move()
 	//画面外に出ないようにする
 	const float width = 30.0f;
 	const float height = 15.0f;
-	if (pos.x > width) player->SetPosX(width);
-	if (pos.x < -width) player->SetPosX(-width);
-	if (player->GetPos().y > height) player->SetPosY(height);
-	if (player->GetPos().y < -height) player->SetPosY(-height);
+	if (pos.x > width){
+		pos.x = width;
+		velocity = { 0,0,0 };
+	}
+	if (pos.x < -width){
+		pos.x = -width;
+		velocity = { 0,0,0 };
+	}
+	if (pos.y > height) {
+		pos.y = height;
+		velocity = { 0,0,0 };
+	}
+	if (pos.y < -height){
+		pos.y = -height;
+		velocity = { 0,0,0 };
+	}
 
 }
 
 void PlayerBase::Attack()
 {
+	if (KeyboardInput::GetInstance()->PressKeyTrigger(DIK_SPACE))
+	{
+		gameObjManager.lock().get()->AddGameObject<Bullet>(dxCommon,collisionManager, pos, Vector3{ 0.0f,0.0f,0.7f });
+	}
 }

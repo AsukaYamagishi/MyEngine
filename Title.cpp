@@ -3,16 +3,7 @@
 
 using namespace DirectX;
 
-Title::Title()
-{
-}
-
-Title::~Title()
-{
-	//safe_deleteはここで行う
-}
-
-void Title::Init(DirectXCommon* dxCommon, Audio* audio)
+Title::Title(DirectXCommon* dxCommon, Audio* audio)
 {
 #pragma region nullptrチェック/代入
 	assert(dxCommon);
@@ -21,6 +12,16 @@ void Title::Init(DirectXCommon* dxCommon, Audio* audio)
 	this->dxCommon = dxCommon;
 	this->audio = audio;
 #pragma endregion
+}
+
+Title::~Title()
+{
+	//safe_deleteはここで行う
+}
+
+void Title::Init()
+{
+
 
 #pragma region Sprite初期設定
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)

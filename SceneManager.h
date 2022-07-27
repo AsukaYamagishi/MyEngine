@@ -39,11 +39,11 @@ public: //静的メンバ関数
 #pragma region メンバ関数
 public: //メンバ関数
 	//コンストラクタ
-	SceneManager();
+	SceneManager(DirectXCommon* dxCommon, Audio* audio);
 	//デストラクタ
 	~SceneManager();
 	//初期化
-	void Init(DirectXCommon* dxCommon, Audio* audio);
+	void Init();
 	//毎フレーム更新処理
 	void Update();
 	//描画

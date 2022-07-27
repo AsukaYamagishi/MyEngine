@@ -15,30 +15,9 @@
 #include "PostEffect.h"
 #include "MultiRenderTarget.h"
 
-
 using namespace DirectX;
 using namespace Microsoft::WRL;
 
-
-
-enum EffectType {
-	BASE = 0,
-	INV,
-	SINPLE,
-	BRIGHTNESS,
-	CHROMA,
-	HUE,
-	SCROLL,
-	BLUR,
-	TILING,
-	NOIZE,
-	RGB,
-
-	NOEFFECT
-};
-EffectType type = NOEFFECT;
-void ChangeEffectType();
-void DrawEffects(DirectXCommon* dxCommon, PostEffect* postEffect);
 
 //Windowsアプリでのエントリーポイント（main関数）
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
@@ -61,7 +40,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	}
 #endif // _DEBUG
 
-#pragma region DirecyX初期化
+#pragma region DirectX初期化
 	////DirectX初期化処理　ここから
 	//DirectX汎用部分
 	DirectXCommon* dxCommon = nullptr;
@@ -86,10 +65,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	//カメラ
 	Camera* camera = nullptr;
 	
-
-	ModelInput::StaticInitialize(dxCommon->GetDevice());
-	ModelManager::GetIns()->Initialize();
-
 	//入力関係初期化
 	KeyboardInput::GetInstance()->Init(win->hwnd);
 	ControllerInput::GetInstance()->Init();
@@ -106,6 +81,16 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		return 1;
 	}
 
+	////ポストエフェクト初期化
+	//PostEffect* postEffect = nullptr;
+	//postEffect = new PostEffect();
+	//postEffect->Init();
+
+	////マルチレンダーターゲット初期化
+	//MultiRenderTarget* multiRT = nullptr;
+	//multiRT = new MultiRenderTarget();
+	//multiRT->Init();
+
 	// 3Dオブジェクト静的初期化
 	if (!CalculationObject::StaticInit(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
 		assert(0);
@@ -121,6 +106,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 #pragma endregion
 
 #pragma region 3Dモデル静的初期化
+	ModelInput::StaticInitialize(dxCommon->GetDevice());
+	ModelManager::GetIns()->Initialize();
+
 	// Obj
 	if (!ModelDraw::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
 		assert(0);
@@ -132,24 +120,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 #pragma endregion
 	
-
 #pragma region ゲームシーン初期化
 	
 	SceneManager* sceneManager = nullptr;
-	sceneManager = new SceneManager();
-	sceneManager->Init(dxCommon, audio);
+	sceneManager = new SceneManager(dxCommon, audio);
+	sceneManager->Init();
 
 #pragma endregion
 
-	PostEffect* postEffect = nullptr;
-	//ポストエフェクト初期化
-	postEffect = new PostEffect();
-	postEffect->Init();
-
-	MultiRenderTarget* multiRT = nullptr;
-	//マルチレンダーターゲット初期化
-	multiRT = new MultiRenderTarget();
-	multiRT->Init();
 	
 	////描画初期化処理　ここまで
 
@@ -179,23 +157,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 #pragma endregion
 		
 #pragma region 描画コマンド
-		//レンダーテクスチャへの描画(ポストエフェクト準備)
-		postEffect->PreDrawScene(dxCommon->GetCommandList());
-		//multiRT->PreDrawScene(dxCommon->GetCommandList());
-		sceneManager->Draw(); //ゲームシーン描画
-		postEffect->PostDrawScene(dxCommon->GetCommandList());
-		//multiRT->PostDrawScene(dxCommon->GetCommandList());
-
+		
 		//描画前処理
 		dxCommon->PreDraw();
 
-		//ポストエフェクト描画
-		/*if(input->PressKey(DIK_SPACE))postEffect->Draw(dxCommon->GetCommandList(), "PostEffectTest");
-		else postEffect->Draw(dxCommon->GetCommandList(), "InverseColor");*/
-		ChangeEffectType();
-		DrawEffects(dxCommon, postEffect);
-		//multiRT->Draw(dxCommon->GetCommandList());
-		//sceneManager->Draw(); //ゲームシーン描画
+		sceneManager->Draw(); //ゲームシーン描画
 
 		//描画終了
 		dxCommon->PostDraw();
@@ -206,8 +172,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	//解放処理
 	FbxInput::GetInstance()->Fin();
-	delete postEffect;
-	delete multiRT;
 
 	//クラス(new)の消去
 	safe_delete(dxCommon);
@@ -220,69 +184,3 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	return 0;
 }
-
-void ChangeEffectType()
-{
-	if (KeyboardInput::GetInstance()->PressKeyTrigger(DIK_0)) type = BASE;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_1)) type = INV;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_2)) type = SINPLE;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_3)) type = BRIGHTNESS;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_4)) type = CHROMA;
-	//else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_5)) type = HUE;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_5)) type = SCROLL;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_6)) type = BLUR;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_7)) type = TILING;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_8)) type = NOIZE;
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_9)) type = RGB;
-
-	else if(KeyboardInput::GetInstance()->PressKeyTrigger(DIK_RETURN)) type = NOEFFECT;
-}
-
-void DrawEffects(DirectXCommon* dxCommon, PostEffect* postEffect)
-{
-
-	switch (type)
-	{
-	case BASE:
-		postEffect->Draw(dxCommon->GetCommandList(), "PostEffectTest");
-		break;
-	case INV:
-		postEffect->Draw(dxCommon->GetCommandList(), "InverseColor");
-		break;
-	case SINPLE:
-		postEffect->Draw(dxCommon->GetCommandList(), "SinpleColor");
-		break;
-	case BRIGHTNESS:
-		postEffect->Draw(dxCommon->GetCommandList(), "ChangeBrightness");
-		break;
-	case CHROMA:
-		postEffect->Draw(dxCommon->GetCommandList(), "ChangeChroma");
-		break;
-	/*case HUE:
-		postEffect->Draw(dxCommon->GetCommandList(), "ChangeHue");
-		break;*/
-	case SCROLL:
-		postEffect->Draw(dxCommon->GetCommandList(), "UvScroll");
-		break;
-	case BLUR:
-		postEffect->Draw(dxCommon->GetCommandList(), "PixelBlur");
-		break;
-	case TILING:
-		postEffect->Draw(dxCommon->GetCommandList(), "Tiling");
-		break;
-	case NOIZE:
-		postEffect->Draw(dxCommon->GetCommandList(), "ScanLine");
-		break;
-	case RGB:
-		postEffect->Draw(dxCommon->GetCommandList(), "RGBShift");
-		break;
-
-	case NOEFFECT:
-		postEffect->Draw(dxCommon->GetCommandList(), "NoEffect");
-		break;
-	default:
-		postEffect->Draw(dxCommon->GetCommandList(), "PostEffectTest");
-		break;
-	}
-}
-

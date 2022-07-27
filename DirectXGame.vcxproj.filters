@@ -163,6 +163,26 @@
     <ClCompile Include="Stage.cpp">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>メイン部分\GameObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>メイン部分\GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManager.cpp">
+      <Filter>メイン部分\GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseCollider.cpp">
+      <Filter>メイン部分\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>メイン部分\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionInfo.cpp">
+      <Filter>メイン部分\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereCollider.cpp" />
+    <ClCompile Include="Enemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstructScene.h">
@@ -255,6 +275,26 @@
     <ClInclude Include="Stage.h">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>メイン部分\GameObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManager.h">
+      <Filter>メイン部分\GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>メイン部分\GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCollider.h">
+      <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionInfo.h">
+      <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereCollider.h" />
+    <ClInclude Include="Enemy.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">
@@ -366,6 +406,9 @@
     </Filter>
     <Filter Include="メイン部分\GameObj\Stage">
       <UniqueIdentifier>{c0ce1929-586d-4bea-a56e-5052f2d49eb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\GameObj\Bullet">
+      <UniqueIdentifier>{8be5055b-edb3-4ba3-ad1d-af264a3441e2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

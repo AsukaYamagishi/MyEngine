@@ -1,0 +1,39 @@
+#pragma once
+#include "GameObject.h"
+#include "CollisionInfo.h"
+#include <string>
+
+enum class CollisionShapeType {
+	SHAPE_UNKONOWN = -1,
+
+	SHAPE_SPHERE = 0x00001,	//球
+
+};
+
+class BaseCollider
+{
+public:
+	friend class CollisionManager;
+	BaseCollider() = default;
+	virtual ~BaseCollider() = default;
+
+	virtual void Update() = 0;
+
+	inline CollisionShapeType GetShapeType() { return shapeType;}
+	std::string GetCollisionName() { return collisionName; }
+
+	inline void OnCollision(CollisionInfo info) {
+		this->object->OnCollision(info);
+	}
+	inline void SetObject(GameObject* object) { this->object = object; }
+	inline void SetName(const std::string name) { this->collisionName = name; }
+
+protected:
+	//オブジェクトのポインタ
+	GameObject* object = nullptr;
+	//形状タイプ
+	CollisionShapeType shapeType = CollisionShapeType::SHAPE_UNKONOWN;
+	std::string collisionName;
+
+};
+

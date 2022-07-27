@@ -7,22 +7,12 @@
 
 #include "SceneManager.h"
 
+#include "BaseCollider.h"
+
 using namespace DirectX;
 
 
-GameScene::GameScene()
-{
-
-}
-
-GameScene::~GameScene()
-{
-	//safe_deleteはここで行う
-	safe_delete(particleMan);
-	safe_delete(testObject);
-}
-
-void GameScene::Init(DirectXCommon *dxCommon, Audio *audio)
+GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 {
 #pragma region nullptrチェック/代入
 	assert(dxCommon);
@@ -32,7 +22,18 @@ void GameScene::Init(DirectXCommon *dxCommon, Audio *audio)
 	this->audio = audio;
 #pragma endregion
 
+	collisionManager = std::make_shared<CollisionManager>();
+	gameObjManager = std::make_shared<GameObjectManager>(dxCommon);
+	auto player = gameObjManager->AddGameObject<PlayerBase>(dxCommon, gameObjManager, collisionManager, PlayerType::SHOT);
+}
 
+GameScene::~GameScene()
+{
+	//safe_deleteはここで行う
+}
+
+void GameScene::Init()
+{
 	//カメラのせっち
 	camera->Init({ 0,0,-30 });
 	camera = Camera::GetCam();
@@ -65,6 +66,7 @@ void GameScene::Init(DirectXCommon *dxCommon, Audio *audio)
 	//グラフィックスパイプライン生成
 	FbxDraw::CreateGraphicsPipeline();
 
+
 #pragma region 3DモデルCreate・初期設定
 	
 	
@@ -78,18 +80,17 @@ void GameScene::Init(DirectXCommon *dxCommon, Audio *audio)
 
 #pragma endregion
 
-	player = new PlayerBase(PlayerType::SHOT,ModelManager::GetIns()->GetModel(ModelManager::Player));
-	player->Init(dxCommon);
+	/*player = new PlayerBase(PlayerType::SHOT,ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
+	player->Init(dxCommon);*/
 
-	
-
+	gameObjManager->Init();
 	gameEndFlag = false;
 }
 
 void GameScene::Update()
 {
-	player->Update();
-
+	gameObjManager->Update();
+	collisionManager->CheckHitColliders();
 	camera->SetCam(camera);
 	camera->Update();
 
@@ -134,7 +135,8 @@ void GameScene::Draw()
 
 #pragma region 3Dモデル描画
 	
-	player->Draw();
+	/*player->Draw();*/
+	gameObjManager->Draw();
 
 #pragma endregion
 
