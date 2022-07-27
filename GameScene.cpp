@@ -25,6 +25,8 @@ GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 	collisionManager = std::make_shared<CollisionManager>();
 	gameObjManager = std::make_shared<GameObjectManager>(dxCommon);
 	auto player = gameObjManager->AddGameObject<PlayerBase>(dxCommon, gameObjManager, collisionManager, PlayerType::SHOT);
+	
+	srand(time(NULL));
 }
 
 GameScene::~GameScene()
@@ -89,6 +91,13 @@ void GameScene::Init()
 
 void GameScene::Update()
 {
+	static int timer = 0;
+
+	if (timer % 180 == 0)
+	{
+		auto enemy = gameObjManager->AddGameObject<Enemy>(dxCommon, gameObjManager, collisionManager, Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), 50.0f });
+	}
+
 	gameObjManager->Update();
 	collisionManager->CheckHitColliders();
 	camera->SetCam(camera);
@@ -98,6 +107,7 @@ void GameScene::Update()
 	
 #pragma endregion
 
+	++timer;
 }
 
 void GameScene::Draw()

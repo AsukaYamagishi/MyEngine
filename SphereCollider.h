@@ -16,6 +16,9 @@ public:
 
     void Update() override;
 
+    void SetRadius(float radius) { this->radius = radius; }
+    void SetOffset(DirectX::XMVECTOR offset) { this->offset = offset; }
+
 
 
 

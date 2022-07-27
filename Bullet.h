@@ -44,7 +44,7 @@ public:
 	/// </summary>
 	void Draw() override;
 
-
+	void OnCollision(CollisionInfo info) override;
 #pragma endregion
 
 #pragma region •Ï”

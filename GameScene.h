@@ -16,6 +16,7 @@
 #include "GameObjectManager.h"
 #include "CollisionManager.h"
 #include "AbstructScene.h"
+#include "Enemy.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;
@@ -62,7 +63,7 @@ private: //ƒƒ“ƒo•Ï”
 
 
 	//“G
-	//vector<Enemy*> enemys;
+	Enemy* enemy;
 
 	float angle = 3.14f / 2.0f;
 

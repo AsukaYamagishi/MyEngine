@@ -10,10 +10,12 @@ Bullet::Bullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisio
 	pos = startPos;
 	velocity = shotVelocity;
 	bullet->SetPos(pos);
+	bullet->SetScale({ 0.5f, 0.5f, 0.5f });
 
 
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
 	sphere.get()->SetName("Bullet");
+	sphere.get()->SetRadius(10.0f);
 	AddCollider(sphere, collisionManager);
 }
 
@@ -46,4 +48,11 @@ void Bullet::Draw()
 	ModelDraw::PreDraw(cmdList);
 	bullet->Draw();
 	ModelDraw::PostDraw();
+}
+
+void Bullet::OnCollision(CollisionInfo info)
+{
+ 	if (info.hitName == "Enemy") {
+		deleteFlag = true;
+	}
 }

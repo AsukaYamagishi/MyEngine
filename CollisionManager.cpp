@@ -9,8 +9,8 @@ void CollisionManager::Update()
 			colliders.erase(colliders.begin() + i);
 		}
 	}
-	for (auto& collider : colliders) {
-		collider.lock()->Update();
+	for (int i = 0; i < colliders.size(); ++i) {
+		colliders[i].lock()->Update();
 	}
 }
 
@@ -49,7 +49,7 @@ void CollisionManager::CheckHitColliders()
 				infoA.object = colliderIteB->lock()->object;
 				infoA.hitName = colliderIteB->lock()->GetCollisionName();
 
-				CollisionInfo infoB;
+ 				CollisionInfo infoB;
 				infoB.object = colliderIteA->lock()->object;
 				infoB.hitName = colliderIteA->lock()->GetCollisionName();
 

@@ -22,7 +22,7 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager);
+	Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, Vector3 startPos);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -61,7 +61,7 @@ private:
 	//モデル
 	std::shared_ptr<ModelDraw> enemy;
 	//1fのキー入力に対する移動量
-	float move = 0.5f;
+	float move = -0.1f;
 	//1f内での合計移動量
 	Vector3 velocity = { 0,0,0 };
 

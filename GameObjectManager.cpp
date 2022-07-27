@@ -24,7 +24,7 @@ void GameObjectManager::Update()
 	for (int i = 0; i < objects.size(); ++i)
 	{
 		if (objects[i]->GetDeleteFlag()) {
-			objects.erase(objects.begin() + i);
+    			objects.erase(objects.begin() + i);
 		}
 	}
 	for (int i = 0; i < objects.size(); ++i) {

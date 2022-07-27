@@ -129,6 +129,6 @@ void PlayerBase::Attack()
 {
 	if (KeyboardInput::GetInstance()->PressKeyTrigger(DIK_SPACE))
 	{
-		gameObjManager.lock().get()->AddGameObject<Bullet>(dxCommon,collisionManager, pos, Vector3{ 0.0f,0.0f,0.7f });
+		gameObjManager.lock().get()->AddGameObject<Bullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,1.0f }, Vector3{ 0.0f,0.0f,0.7f });
 	}
 }
