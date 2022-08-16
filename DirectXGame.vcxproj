@@ -188,6 +188,7 @@
     <ClInclude Include="Title.h" />
     <ClInclude Include="EndGame.h" />
     <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +229,7 @@
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="EndGame.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="WindowsAPI.cpp" />
   </ItemGroup>
   <ItemGroup>

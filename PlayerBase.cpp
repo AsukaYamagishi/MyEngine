@@ -20,20 +20,8 @@ PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManage
 	this->collisionManager = collisionManager;
 
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
-	DirectX::XMVECTOR obbNormal[3] = {
-		{1.0f,0,0},
-		{0,1.0f,0},
-		{0,0,1.0f},
-	};
-	float obbLength[3] = {
-		1.0f,
-		1.0f,
-		1.0f
-	};
-	std::shared_ptr<OBBCollider> obb = std::make_shared<OBBCollider>(obbNormal,obbLength);
 	sphere.get()->SetName("Player");
-	obb.get()->SetName("TestOBB");
-	AddCollider(obb, collisionManager);
+	AddCollider(sphere, collisionManager);
 }
 
 PlayerBase::~PlayerBase()
@@ -71,16 +59,22 @@ void PlayerBase::Draw()
 
 void PlayerBase::OnCollision(CollisionInfo info)
 {
-	if (info.hitName == "Bullet") {
-		//int test = 100;
+	
+	if (info.hitName == "Wall") {
+		flontMove = -4.0f;
 
 	}
 }
 
 void PlayerBase::Move()
 {
+	if (flontMove < 0.2f) {
+		flontMove += 0.1f;
+	}
+	else {
+		flontMove = 0.2f;
+	}
 	//徐々に止まる
-	const float flontMove = 0.2f;
 	velocity = velocity * Vector3(0.85f, 0.85f, 0.85f);
 	velocity.z = flontMove;
 	if (velocity.length() <= 0.01f)

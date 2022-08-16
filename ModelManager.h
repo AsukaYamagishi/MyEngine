@@ -15,6 +15,7 @@ public:
 		PLAYER,
 		BULLET,
 		ENEMY,
+		WALL,
 	};
 
 public:

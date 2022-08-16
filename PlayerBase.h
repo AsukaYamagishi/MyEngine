@@ -79,5 +79,8 @@ private:
 	
 	//体力
 	int hp = 100;
+
+	//前後への移動量
+	float flontMove;
 #pragma endregion
 };

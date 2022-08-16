@@ -29,7 +29,7 @@ bool CollisionManager::CheckHit(BaseCollider *a, BaseCollider *b)
 		return false;
 	}
 	//‹…‚ÆOBB
-	if (collisions == static_cast<int>(CollisionShapeType::SHAPE_SPHERE) | static_cast<int>(CollisionShapeType::SHAPE_OBB)) {
+	if (collisions == (static_cast<int>(CollisionShapeType::SHAPE_SPHERE) | static_cast<int>(CollisionShapeType::SHAPE_OBB))) {
 		// “KØ‚ÈŒ^‚É•ÏŠ·
 		Sphere* sphere;
 		OBB* obb;
@@ -77,7 +77,7 @@ void CollisionManager::CheckHitColliders()
 				infoB.hitName = colliderIteA->lock()->GetCollisionName();
 
 				colliderIteA->lock().get()->OnCollision(infoA);
-				colliderIteA->lock().get()->OnCollision(infoB);
+				colliderIteB->lock().get()->OnCollision(infoB);
 			}
 
 		}

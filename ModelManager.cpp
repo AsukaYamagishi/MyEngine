@@ -13,6 +13,7 @@ void ModelManager::Initialize()
 	LoadModel(PLAYER, "Player");
 	LoadModel(BULLET, "bullet");
 	LoadModel(ENEMY, "enemy");
+	LoadModel(WALL, "Wall");
 	
 	//LoadModel(TestDunut, "donut");
 }

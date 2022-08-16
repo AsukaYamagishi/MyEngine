@@ -186,6 +186,9 @@
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
     <ClCompile Include="OBBCollider.cpp" />
+    <ClCompile Include="Wall.cpp">
+      <Filter>メイン部分\GameObj\Wall</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstructScene.h">
@@ -301,6 +304,9 @@
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
     <ClInclude Include="OBBCollider.h" />
+    <ClInclude Include="Wall.h">
+      <Filter>メイン部分\GameObj\Wall</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">
@@ -415,6 +421,9 @@
     </Filter>
     <Filter Include="メイン部分\GameObj\Bullet">
       <UniqueIdentifier>{8be5055b-edb3-4ba3-ad1d-af264a3441e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\GameObj\Wall">
+      <UniqueIdentifier>{34fe37e4-5c59-4b4f-8c52-57582c9d434e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
