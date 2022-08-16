@@ -15,7 +15,7 @@ Bullet::Bullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisio
 
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
 	sphere.get()->SetName("Bullet");
-	sphere.get()->SetRadius(10.0f);
+	sphere.get()->SetRadius(1.0f);
 	AddCollider(sphere, collisionManager);
 }
 

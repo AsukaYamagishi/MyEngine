@@ -6,11 +6,12 @@ class SphereCollider :
 {
 public:
     SphereCollider(std::string name = "", DirectX::XMVECTOR offset = { 0,0,0,0 }, float radius = 1.0f):
-    offset(offset),
-    radius(radius)
+    offset(offset)
     {
         shapeType = CollisionShapeType::SHAPE_SPHERE;
+        this->radius = radius;
         this->collisionName = name;
+
         
     }
 
@@ -19,11 +20,7 @@ public:
     void SetRadius(float radius) { this->radius = radius; }
     void SetOffset(DirectX::XMVECTOR offset) { this->offset = offset; }
 
-
-
-
 private:
     DirectX::XMVECTOR offset = {0,0,0,0};
-    float radius = 1.0f;
 };
 

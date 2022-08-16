@@ -1,8 +1,7 @@
 #include "Enemy.h"
 #include "SphereCollider.h"
-#include "PlayerBase.h"
 
-Enemy::Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, Vector3 startPos):
+Enemy::Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player):
 	GameObject(dxCommon)
 {
 	enemy = std::make_shared<ModelDraw>(*ModelDraw::Create());
@@ -12,9 +11,11 @@ Enemy::Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObj
 	pos = startPos;
 	enemy->SetPos(pos);
 
+	this->player = player;
+
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
 	sphere.get()->SetName("Enemy");
-	sphere.get()->SetRadius(20.0f);
+	sphere.get()->SetRadius(3.0f);
 	//sphere.get()->SetOffset({ 0.0f,0.0f,0.0f });
 	AddCollider(sphere, collisionManager);
 }
@@ -30,6 +31,9 @@ void Enemy::Init()
 void Enemy::Update()
 {
 	Move();
+	if (pos.z < player->GetPos().z - 30) {
+		deleteFlag = true;
+	}
 }
 
 void Enemy::Draw()
@@ -53,7 +57,7 @@ void Enemy::OnCollision(CollisionInfo info)
 
 void Enemy::Move()
 {
-	pos = enemy->GetPos();
+	/*pos = enemy->GetPos();
 	if (pos.z >= 10.0f)
 	{
 		velocity.z = move;
@@ -62,5 +66,5 @@ void Enemy::Move()
 	{
 		velocity.z = 0.0f;
 	}
-	pos += velocity;
+	pos += velocity;*/
 }

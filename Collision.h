@@ -100,6 +100,8 @@ public:
 	/// <param name="b">‹…‚Q</param>
 	/// <returns>Œğ·‚µ‚Ä‚¢‚é‚©”Û‚©</returns>
 	static bool IsBallToBallCollision(const Sphere& a,const Sphere& b);
+
+	static bool IsSphereToObb(const Sphere& sphere, const OBB& obb);
 //
 //	// ’¼•û‘Ì“¯m‚Ì“–‚½‚è”»’è
 //	bool IsBoxToBoxCollision(const XMVECTOR& pos1, const XMVECTOR& rotation1, const XMVECTOR& scale1, const XMVECTOR& pos2, const XMVECTOR& rotation2, const XMVECTOR& scale2);

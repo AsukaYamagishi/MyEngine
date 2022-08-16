@@ -51,8 +51,6 @@ public:
 private:
 	//バレットモデル
 	std::shared_ptr<ModelDraw> bullet;
-	//座標
-	Vector3 pos = { 0,0,0 };
 	//移動量
 	Vector3 velocity = { 0,0,0 };
 	//生存時間

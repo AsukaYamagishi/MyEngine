@@ -3,6 +3,7 @@
 #include "GameObjectManager.h"
 #include "ModelDraw.h"
 #include "ModelManager.h"
+#include "PlayerBase.h"
 
 
 class Enemy :
@@ -22,7 +23,7 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, Vector3 startPos);
+	Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -65,6 +66,7 @@ private:
 	//1f内での合計移動量
 	Vector3 velocity = { 0,0,0 };
 
+	PlayerBase* player;
 #pragma endregion
 };
 

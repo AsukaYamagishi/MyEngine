@@ -181,8 +181,11 @@
     <ClCompile Include="CollisionInfo.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="SphereCollider.cpp">
+      <Filter>メイン部分\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="OBBCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstructScene.h">
@@ -293,8 +296,11 @@
     <ClInclude Include="CollisionInfo.h">
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="SphereCollider.h">
+      <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="OBBCollider.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">

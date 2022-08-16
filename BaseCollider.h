@@ -6,7 +6,8 @@
 enum class CollisionShapeType {
 	SHAPE_UNKONOWN = -1,
 
-	SHAPE_SPHERE = 0x00001,	//‹…
+	SHAPE_SPHERE	= 0x00001,	//‹…
+	SHAPE_OBB		= 0x00002 
 
 };
 

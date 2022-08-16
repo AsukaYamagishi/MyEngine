@@ -232,6 +232,29 @@ bool Collision::IsRayToSqhere(const Ray &ray, const Sphere &sphere, float *dista
 
 		return distance.Length() < (a.radius + b.radius);
 	}
+
+	bool Collision::IsSphereToObb(const Sphere& sphere, const OBB& obb)
+	{
+		Vector3 vec = { 0,0,0 };
+		for (int i = 0; i < 3; ++i) {
+			float length = obb.length[i];
+			if (length <= 0) {
+				continue;	//’·‚³ƒ[ƒ‚ÍœŠO
+			}
+			float s = Vector3(sphere.centor - obb.centor).VDot(Vector3(obb.normalDirect[i]))/length;
+
+			s = fabsf(s);
+
+			if (s > 1) {
+				vec += (1 - s) * length * obb.normalDirect[i];
+			}
+		}
+
+		if (vec.length() <= sphere.radius) {
+			return true;
+		}
+		return false;
+	}
 //
 //bool Collision::IsBoxToBoxCollision(const XMVECTOR& pos1, const XMVECTOR& rotation1, const XMVECTOR& scale1, const XMVECTOR& pos2, const XMVECTOR& rotation2, const XMVECTOR& scale2)
 //{

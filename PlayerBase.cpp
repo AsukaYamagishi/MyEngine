@@ -6,6 +6,7 @@
 #include "ControllerInput.h"
 #include "Bullet.h"
 #include "SphereCollider.h"
+#include "OBBCollider.h"
 
 
 using namespace DirectX;
@@ -19,8 +20,20 @@ PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManage
 	this->collisionManager = collisionManager;
 
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
+	DirectX::XMVECTOR obbNormal[3] = {
+		{1.0f,0,0},
+		{0,1.0f,0},
+		{0,0,1.0f},
+	};
+	float obbLength[3] = {
+		1.0f,
+		1.0f,
+		1.0f
+	};
+	std::shared_ptr<OBBCollider> obb = std::make_shared<OBBCollider>(obbNormal,obbLength);
 	sphere.get()->SetName("Player");
-	AddCollider(sphere, collisionManager);
+	obb.get()->SetName("TestOBB");
+	AddCollider(obb, collisionManager);
 }
 
 PlayerBase::~PlayerBase()
@@ -67,7 +80,9 @@ void PlayerBase::OnCollision(CollisionInfo info)
 void PlayerBase::Move()
 {
 	//徐々に止まる
+	const float flontMove = 0.2f;
 	velocity = velocity * Vector3(0.85f, 0.85f, 0.85f);
+	velocity.z = flontMove;
 	if (velocity.length() <= 0.01f)
 	{
 		velocity = { 0,0,0 };

@@ -16,6 +16,17 @@ struct Sphere {
 };
 
 ///<summary>
+///OBB
+///</summary>
+struct OBB {
+	//中心座標
+	DirectX::XMVECTOR centor = { 0,0,0 };
+	//方向ベクトル
+	DirectX::XMVECTOR normalDirect[3];
+	//各軸方向の長さ
+	float length[3];
+};
+///<summary>
 ///平面
 ///</summary>
 struct Plane {

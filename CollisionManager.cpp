@@ -20,14 +20,36 @@ bool CollisionManager::CheckHit(BaseCollider *a, BaseCollider *b)
 	
 	//球と球
 	if (collisions == static_cast<int>(CollisionShapeType::SHAPE_SPHERE)) {
-		auto sphereA = dynamic_cast<Sphere*>(a);
-		auto sphereB = dynamic_cast<Sphere*>(b);
+		Sphere* sphereA = dynamic_cast<Sphere*>(a);
+		Sphere* sphereB = dynamic_cast<Sphere*>(b);
 
 		if (Collision::IsBallToBallCollision(*sphereA, *sphereB)) {
 			return true;
 		}
 		return false;
 	}
+	//球とOBB
+	if (collisions == static_cast<int>(CollisionShapeType::SHAPE_SPHERE) | static_cast<int>(CollisionShapeType::SHAPE_OBB)) {
+		// 適切な型に変換
+		Sphere* sphere;
+		OBB* obb;
+		// aを球にキャストできればbをOBBに変換
+		if (sphere = dynamic_cast<Sphere*>(a)) {
+			obb = dynamic_cast<OBB*>(b);
+		}
+		// そうでなければ逆に
+		else {
+			obb = dynamic_cast<OBB*>(a);
+			sphere = dynamic_cast<Sphere*>(b);
+		}
+
+		if (Collision::IsSphereToObb(*sphere, *obb)) {
+			return true;
+		}
+		return false;
+
+	}
+
 
 	return false;
 }
@@ -35,9 +57,10 @@ bool CollisionManager::CheckHit(BaseCollider *a, BaseCollider *b)
 void CollisionManager::CheckHitColliders()
 {
 	Update();
-	std::vector<std::weak_ptr<BaseCollider>>::const_iterator colliderIteA;
-	std::vector<std::weak_ptr<BaseCollider>>::const_iterator colliderIteB;
+	std::vector<std::weak_ptr<BaseCollider>>::const_iterator colliderIteA;	//一つ目のイテレータ
+	std::vector<std::weak_ptr<BaseCollider>>::const_iterator colliderIteB;	//二つ目のイテレータ
 
+	// 全てのコライダーを比較
 	for (colliderIteA = colliders.begin(); colliderIteA != colliders.end(); ++colliderIteA) {
 		colliderIteB = colliderIteA;
 		++colliderIteB;
