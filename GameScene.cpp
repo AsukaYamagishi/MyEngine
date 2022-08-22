@@ -98,14 +98,13 @@ void GameScene::Update()
 
 	static int timer = 0;
 
-	if (timer % 180 == 0)
+	if (timer % 180 == 60)
 	{
-		//auto enemy = gameObjManager->AddGameObject<Enemy>(dxCommon, gameObjManager, collisionManager, Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), player->GetPos().z + 50.0f },player);
 		auto wall= gameObjManager->AddGameObject<Wall>(
 			Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), player->GetPos().z + 50.0f },
 			dxCommon, gameObjManager, collisionManager, player);
 	}
-	if (timer % 125 == 0)
+	if (timer % 125 == 124)
 	{
 		auto enemy = gameObjManager->AddGameObject<Enemy>(
 			dxCommon, gameObjManager, collisionManager, 
