@@ -1,9 +1,9 @@
-#include "Bullet.h"
-#include "SphereCollider.h"
+#include "EnemyBullet.h"
 
-Bullet::Bullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, Vector3 shotVelocity):
- 	GameObject(dxCommon)
+EnemyBullet::EnemyBullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, Vector3 shotVelocity):
+	GameObject(dxCommon)
 {
+
 	bullet = std::make_shared<ModelDraw>(*ModelDraw::Create());
 	bullet->SetModel(ModelManager::GetIns()->GetModel(ModelManager::BULLET));
 
@@ -14,31 +14,19 @@ Bullet::Bullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisio
 
 
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
-	sphere.get()->SetName("Bullet");
+	sphere.get()->SetName("EnemyBullet");
 	sphere.get()->SetRadius(1.0f);
 	AddCollider(sphere, collisionManager);
 }
 
-Bullet::~Bullet()
-{
-}
-
-void Bullet::Init()
-{
-
-}
-
-void Bullet::Update()
+void EnemyBullet::Update()
 {
 	pos = bullet.get()->GetPos();
 	pos += velocity;
-	liveTimer++;
-	if (liveTimer >= 120) {
-		deleteFlag = true;
-	}
+	
 }
 
-void Bullet::Draw()
+void EnemyBullet::Draw()
 {
 	bullet->Update();
 	bullet->SetPos(pos);
@@ -50,9 +38,9 @@ void Bullet::Draw()
 	ModelDraw::PostDraw();
 }
 
-void Bullet::OnCollision(CollisionInfo info)
+void EnemyBullet::OnCollision(CollisionInfo info)
 {
- 	if (info.hitName == "Enemy" || info.hitName == "Wall") {
+	if (info.hitName == "Player" || info.hitName == "Wall") {
 		deleteFlag = true;
 	}
 }

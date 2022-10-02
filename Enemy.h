@@ -23,7 +23,7 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player);
+	Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjManager, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -67,6 +67,8 @@ private:
 	Vector3 velocity = { 0,0,0 };
 
 	PlayerBase* player;
+
+	int liveTime = 0;	//生存時間
 #pragma endregion
 };
 

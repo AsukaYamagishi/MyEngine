@@ -16,7 +16,7 @@
 #include "GameObjectManager.h"
 #include "CollisionManager.h"
 #include "AbstructScene.h"
-#include "Enemy.h"
+#include "EnemySponer.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;
@@ -46,6 +46,7 @@ private: //メンバ変数
 
 	//プレイヤー
 	PlayerBase* player;	
+
 	
 	//ステージ
 	Stage* stage;
@@ -63,7 +64,7 @@ private: //メンバ変数
 
 
 	//敵
-	Enemy* enemy;
+	//Enemy* enemy;
 
 	float angle = 3.14f / 2.0f;
 
@@ -88,6 +89,7 @@ public: //静的メンバ関数
 #pragma region メンバ関数
 
 private: //メンバ関数
+	int timer = 0;	// フレーム数
 public: //メンバ関数
 	//コンストラクタ
 	GameScene(DirectXCommon* dxCommon, Audio* audio);

@@ -1,7 +1,8 @@
 #include "Enemy.h"
+#include "EnemyBullet.h"
 #include "SphereCollider.h"
 
-Enemy::Enemy(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player):
+Enemy::Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjManager, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player):
 	GameObject(dxCommon)
 {
 	enemy = std::make_shared<ModelDraw>(*ModelDraw::Create());
@@ -31,6 +32,11 @@ void Enemy::Init()
 void Enemy::Update()
 {
 	Move();
+	++liveTime;
+	if (liveTime % 120 == 0)
+	{
+		GameObject::Create<EnemyBullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,-1.0f }, Vector3{ 0.0f,0.0f,-0.7f });
+	}
 	if (pos.z < player->GetPos().z - 30) {
 		deleteFlag = true;
 	}

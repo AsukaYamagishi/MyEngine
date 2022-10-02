@@ -25,8 +25,9 @@ GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 
 	collisionManager = std::make_shared<CollisionManager>();
 	gameObjManager = std::make_shared<GameObjectManager>(dxCommon);
-	player = gameObjManager->AddGameObject<PlayerBase>(dxCommon, gameObjManager, collisionManager, PlayerType::SHOT);
-	
+	GameObject::SetManager(gameObjManager);
+	player = GameObject::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT);
+	GameObject::Create<EnemySponer>(dxCommon, collisionManager, player);
 	srand(time(NULL));
 }
 
@@ -96,21 +97,12 @@ void GameScene::Update()
 	camera->eye.z = player->GetPos().z - 30;
 	camera->target.z = camera->eye.z + 1.0f;
 
-	static int timer = 0;
 
 	if (timer % 180 == 60)
 	{
-		auto wall= gameObjManager->AddGameObject<Wall>(
+		auto wall= GameObject::Create<Wall>(
 			Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), player->GetPos().z + 50.0f },
 			dxCommon, gameObjManager, collisionManager, player);
-	}
-	if (timer % 125 == 124)
-	{
-		auto enemy = gameObjManager->AddGameObject<Enemy>(
-			dxCommon, gameObjManager, collisionManager, 
-			Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), 
-			player->GetPos().z + 50.0f },player);
-
 	}
 
 	gameObjManager->Update();

@@ -28,7 +28,7 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager,std::shared_ptr<CollisionManager> collisionManager, PlayerType type);
+	PlayerBase(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerType type);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -65,7 +65,6 @@ private:
 
 #pragma region 変数
 private:
-	std::weak_ptr<GameObjectManager> gameObjManager;
 	std::weak_ptr<CollisionManager> collisionManager;
 	
 	//プレイヤーモデル

@@ -4,6 +4,7 @@
 #include "CollisionInfo.h"
 
 class CollisionManager;
+class GameObjectManager;
 
 class GameObject
 {
@@ -26,6 +27,21 @@ public:
 	/// デストラクタ
 	/// </summary>
 	~GameObject();
+
+	/// <summary>
+	/// マネージャのセット
+	/// </summary>
+	/// <param name="gameObjectManager"></param>
+	static void SetManager(std::weak_ptr<GameObjectManager> gameObjectManager);
+
+	/// <summary>
+	/// オブジェクト生成関数
+	/// </summary>
+	/// <typeparam name="Object">生成したいオブジェクトテンプレート</typeparam>
+	/// <typeparam name="...Args">可変長引数テンプレート</typeparam>
+	/// <returns></returns>
+	template<class Object,class ...Args>
+	static Object* Create(Args ...args);
 
 	/// <summary>
 	/// 初期化
@@ -60,6 +76,16 @@ protected:
 	//座標
 	Vector3 pos = { 0,0,0 };
 	
+	// 自分が所属しているマネージャー
+	static std::weak_ptr<GameObjectManager> gameObjectManager;
 	std::vector<std::shared_ptr<BaseCollider>> colliders;
+
 };
 
+template<class Object, class ...Args>
+inline Object* GameObject::Create(Args ...args)
+{
+	Object* obj = new Object(args...);
+	gameObjectManager.lock()->AddGameObject(obj);
+	return obj;
+}

@@ -181,7 +181,6 @@
     <ClCompile Include="CollisionInfo.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="SphereCollider.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
@@ -189,6 +188,11 @@
     <ClCompile Include="Wall.cpp">
       <Filter>メイン部分\GameObj\Wall</Filter>
     </ClCompile>
+    <ClCompile Include="EnemySponer.cpp" />
+    <ClCompile Include="Enemy.cpp">
+      <Filter>メイン部分\GameObj\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstructScene.h">
@@ -299,7 +303,6 @@
     <ClInclude Include="CollisionInfo.h">
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h" />
     <ClInclude Include="SphereCollider.h">
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
@@ -307,6 +310,11 @@
     <ClInclude Include="Wall.h">
       <Filter>メイン部分\GameObj\Wall</Filter>
     </ClInclude>
+    <ClInclude Include="EnemySponer.h" />
+    <ClInclude Include="Enemy.h">
+      <Filter>メイン部分\GameObj\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBullet.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">

@@ -34,11 +34,8 @@ public:
 	/// <summary>
 	/// オブジェクトをvectorに追加
 	/// </summary>
-	template<class T, class...Args>
-	T* AddGameObject(Args... args) {
-		T* obj = new T(args...);
+	void AddGameObject(GameObject *obj) {
 		objects.emplace_back(obj);
-		return obj;
 	};
 
 #pragma endregion

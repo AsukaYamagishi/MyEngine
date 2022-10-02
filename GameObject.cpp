@@ -1,5 +1,8 @@
 #include "GameObject.h"
 #include "CollisionManager.h"
+#include "GameObjectManager.h"
+
+std::weak_ptr<GameObjectManager> GameObject::gameObjectManager;
 
 GameObject::GameObject(DirectXCommon* dxCommon)
 {
@@ -10,6 +13,11 @@ GameObject::GameObject(DirectXCommon* dxCommon)
 
 GameObject::~GameObject()
 {
+}
+
+void GameObject::SetManager(std::weak_ptr<GameObjectManager> gameObjectManager)
+{
+	GameObject::gameObjectManager = gameObjectManager;
 }
 
 void GameObject::Init()
