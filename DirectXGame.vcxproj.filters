@@ -166,9 +166,6 @@
     <ClCompile Include="GameObjectManager.cpp">
       <Filter>メイン部分\GameObj</Filter>
     </ClCompile>
-    <ClCompile Include="BaseCollider.cpp">
-      <Filter>メイン部分\Collision</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
@@ -192,6 +189,9 @@
     </ClCompile>
     <ClCompile Include="Code\Scene\AbstructScene.cpp">
       <Filter>メイン部分\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp">
+      <Filter>メイン部分\Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -288,9 +288,6 @@
     <ClInclude Include="GameObject.h">
       <Filter>メイン部分\GameObj</Filter>
     </ClInclude>
-    <ClInclude Include="BaseCollider.h">
-      <Filter>メイン部分\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionManager.h">
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\Scene\AbstructScene.h">
       <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Collision\Collider\BaseCollider.h">
+      <Filter>メイン部分\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

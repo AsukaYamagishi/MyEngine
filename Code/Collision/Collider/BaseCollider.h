@@ -1,6 +1,6 @@
 #pragma once
-#include "GameObject.h"
-#include "CollisionInfo.h"
+#include "../GameObject.h"
+#include "../CollisionInfo.h"
 #include <string>
 
 enum class CollisionShapeType {

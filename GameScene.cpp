@@ -8,7 +8,7 @@
 
 #include "SceneManager.h"
 
-#include "BaseCollider.h"
+#include "Code/Collision/Collider/BaseCollider.h"
 
 using namespace DirectX;
 
