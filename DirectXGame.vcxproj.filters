@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="CalculationObject.cpp">
-      <Filter>メイン部分\Object\CalculationObj</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>メイン部分\Camera</Filter>
     </ClCompile>
@@ -193,11 +190,11 @@
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Model\CalculationModel.cpp">
+      <Filter>メイン部分\Object\Calculation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CalculationObject.h">
-      <Filter>メイン部分\Object\CalculationObj</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>メイン部分\Camera</Filter>
     </ClInclude>
@@ -315,6 +312,9 @@
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Code\Model\CalculationModel.h">
+      <Filter>メイン部分\Object\Calculation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">
@@ -400,9 +400,6 @@
     <Filter Include="メイン部分\Object">
       <UniqueIdentifier>{e6cd8d90-2fb4-499b-843a-3b197d7fa0fe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="メイン部分\Object\CalculationObj">
-      <UniqueIdentifier>{b1e7442a-ddca-49b7-a46e-9486a45a5f6d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="メイン部分\Object\FBX">
       <UniqueIdentifier>{f3688733-900c-4520-a143-e7376f0bbbe5}</UniqueIdentifier>
     </Filter>
@@ -429,6 +426,9 @@
     </Filter>
     <Filter Include="メイン部分\GameObj\Wall">
       <UniqueIdentifier>{34fe37e4-5c59-4b4f-8c52-57582c9d434e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Object\Calculation">
+      <UniqueIdentifier>{b1e7442a-ddca-49b7-a46e-9486a45a5f6d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

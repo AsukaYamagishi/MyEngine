@@ -12,7 +12,7 @@ using namespace DirectX;
 #pragma comment(lib, "d3dcompiler.lib")
 
 
-class CalculationObject
+class CalculationModel
 {
 #pragma region 構造体
 public: //構造体
@@ -96,7 +96,7 @@ private: //メンバ変数
 	//ローカルワールド変換行列
 	XMMATRIX matWorld;
 	//親オブジェクト
-	CalculationObject* parent = nullptr;
+	CalculationModel* parent = nullptr;
 #pragma endregion
 
 #pragma region 関数
@@ -108,7 +108,7 @@ public: //静的メンバ関数
 	//描画後処理
 	static void PostDraw();
 	//3Dオブジェクト生成
-	static CalculationObject* CreateObject();
+	static CalculationModel* CreateObject();
 	//テクスチャ読み込み
 	static bool LoadTexture(UINT texnumber, const wchar_t* filename);
 
