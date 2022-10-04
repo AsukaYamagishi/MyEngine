@@ -78,7 +78,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelDraw.cpp">
       <Filter>メイン部分\Object\OBJ</Filter>
     </ClCompile>
@@ -197,6 +196,7 @@
     <ClCompile Include="Code\Input\KeyboardInput.cpp">
       <Filter>メイン部分\Input</Filter>
     </ClCompile>
+    <ClCompile Include="Code\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ModelDraw.h">

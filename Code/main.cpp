@@ -1,19 +1,19 @@
-#include "WindowsAPI.h"  //ウィンドウ表示
-#include "Code/Input/KeyboardInput.h"  //キーボード入力
-#include "Code/Input/ControllerInput.h" //ゲームパッド入力
-#include "Sprite.h"  //2D画像(sprite)
-#include "Code/Model/CalculationModel.h"  //3Dオブジェクト(Object)
-#include "Code/Audio/Audio.h" //音楽再生
-#include "Code/DirectXBase/DebugText.h" //デバッグテキスト
-#include "Code/DirectXBase/DirectXCommon.h"
-#include "SafeDelete.h"
-#include "ModelDraw.h"
-#include "SceneManager.h"
-#include "ModelManager.h"
-#include "Code/Model/Fbx/FbxLoader.h"
-#include "Code/Camera/Camera.h"
-#include "PostEffect.h"
-#include "MultiRenderTarget.h"
+#include "../WindowsAPI.h"  //ウィンドウ表示
+#include "Input/KeyboardInput.h"  //キーボード入力
+#include "Input/ControllerInput.h" //ゲームパッド入力
+#include "../Sprite.h"  //2D画像(sprite)
+#include "Model/CalculationModel.h"  //3Dオブジェクト(Object)
+#include "Audio/Audio.h" //音楽再生
+#include "DirectXBase/DebugText.h" //デバッグテキスト
+#include "DirectXBase/DirectXCommon.h"
+#include "../SafeDelete.h"
+#include "../ModelDraw.h"
+#include "../SceneManager.h"
+#include "../ModelManager.h"
+#include "Model/Fbx/FbxLoader.h"
+#include "Camera/Camera.h"
+#include "../PostEffect.h"
+#include "../MultiRenderTarget.h"
 
 using namespace DirectX;
 using namespace Microsoft::WRL;
