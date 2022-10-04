@@ -141,9 +141,6 @@
       <Filter>メイン部分\GameObj\Wall</Filter>
     </ClCompile>
     <ClCompile Include="EnemySponer.cpp" />
-    <ClCompile Include="Enemy.cpp">
-      <Filter>メイン部分\GameObj\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="Code\Audio\Audio.cpp">
       <Filter>メイン部分\Audio</Filter>
@@ -192,6 +189,9 @@
     </ClCompile>
     <ClCompile Include="Code\Scene\EndScene.cpp">
       <Filter>メイン部分\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameObject\Enemy\Enemy.cpp">
+      <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -263,9 +263,6 @@
       <Filter>メイン部分\GameObj\Wall</Filter>
     </ClInclude>
     <ClInclude Include="EnemySponer.h" />
-    <ClInclude Include="Enemy.h">
-      <Filter>メイン部分\GameObj\Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="Code\Audio\Audio.h">
       <Filter>メイン部分\Audio</Filter>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\Scene\EndScene.h">
       <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameObject\Enemy\Enemy.h">
+      <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

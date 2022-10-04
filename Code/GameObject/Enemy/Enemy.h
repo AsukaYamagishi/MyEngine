@@ -1,9 +1,9 @@
 #pragma once
-#include "GameObject.h"
-#include "GameObjectManager.h"
-#include "ModelDraw.h"
-#include "ModelManager.h"
-#include "PlayerBase.h"
+#include "../GameObject.h"
+#include "../GameObjectManager.h"
+#include "../ModelDraw.h"
+#include "../ModelManager.h"
+#include "../PlayerBase.h"
 
 
 class Enemy :
