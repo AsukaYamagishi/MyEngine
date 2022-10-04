@@ -150,8 +150,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
     <ClInclude Include="Code\Audio\Audio.h" />
+    <ClInclude Include="Code\Camera\Camera.h" />
     <ClInclude Include="Code\Collision\Collider\BaseCollider.h" />
     <ClInclude Include="Code\GameObject\Enemy\Boss.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h" />
@@ -194,8 +194,8 @@
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Code\Audio\Audio.cpp" />
+    <ClCompile Include="Code\Camera\Camera.cpp" />
     <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp" />

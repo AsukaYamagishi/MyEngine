@@ -1,5 +1,5 @@
 #include "Camera.h"
-#include "WindowsAPI.h"
+#include "../WindowsAPI.h"
 #include "yMath.h"
 
 Camera* Camera::NowMatView = nullptr;

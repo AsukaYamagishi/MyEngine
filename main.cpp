@@ -11,7 +11,7 @@
 #include "SceneManager.h"
 #include "ModelManager.h"
 #include "FbxInput.h"
-#include "Camera.h"
+#include "Code/Camera/Camera.h"
 #include "PostEffect.h"
 #include "MultiRenderTarget.h"
 

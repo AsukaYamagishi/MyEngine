@@ -8,7 +8,7 @@
 
 #include "FbxModel.h"
 #include "FbxInput.h"
-#include "Camera.h"
+#include "Code/Camera/Camera.h"
 
 class FbxDraw
 {

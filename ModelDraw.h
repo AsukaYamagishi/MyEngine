@@ -16,7 +16,7 @@ using namespace DirectX;
 #include <vector>
 
 #include "ModelInput.h"
-#include "Camera.h"
+#include "Code/Camera/Camera.h"
 
 using namespace std;
 

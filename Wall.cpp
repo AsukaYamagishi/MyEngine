@@ -17,8 +17,8 @@ Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObject
 	};
 	// 各軸の長さ
 	float obbLength[3] = {
-		rand() % 10 + 1,
-		rand() % 10 + 1,
+		rand() % 10 + 1.0f,
+		rand() % 10 + 1.0f,
 		1.0f
 	};
 	// コライダー
