@@ -1,20 +1,20 @@
 #pragma once
-#include "SafeDelete.h"
-#include "Code/DirectXBase/DirectXCommon.h"
+#include "../SafeDelete.h"
+#include "../DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
-#include "Sprite.h"
-#include "Code/DirectXBase/DebugText.h"
-#include "Code/Audio/Audio.h"
-#include "KeyboardInput.h"
-#include "ModelDraw.h"
+#include "../Sprite.h"
+#include "../DirectXBase/DebugText.h"
+#include "../Audio/Audio.h"
+#include "../KeyboardInput.h"
+#include "../ModelDraw.h"
 
-#include "Code/Scene/AbstructScene.h"
+#include "AbstructScene.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;
 
 //ゲームシーン
-class EndGame :
+class EndScene :
 	public AbstructScene
 {
 #pragma region 変数
@@ -36,9 +36,9 @@ private: //メンバ変数
 #pragma region 関数
 public: //メンバ関数
 	//コンストラクタ
-	EndGame(DirectXCommon* dxCommon, Audio* audio);
+	EndScene(DirectXCommon* dxCommon, Audio* audio);
 	//デストラクタ
-	~EndGame();
+	~EndScene();
 	//初期化
 	void Init() override;
 	//毎フレーム更新処理

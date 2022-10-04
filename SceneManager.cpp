@@ -24,7 +24,7 @@ void SceneManager::ChangeScene(SceneNo sceneNo, bool sceneStackClear)
 			scenes.push(new GameScene(dxCommon, audio));
 			break;
 		case SceneManager::endScene:
-			scenes.push(new EndGame(dxCommon, audio));
+			scenes.push(new EndScene(dxCommon, audio));
 			break;
 		case SceneManager::MAX:
 			break;

@@ -1,7 +1,7 @@
 #pragma once
 #include "GameScene.h"
 #include "Title.h"
-#include "EndGame.h"
+#include "Code/Scene/EndScene.h"
 
 #include <stack>
 
@@ -31,9 +31,8 @@ private: //静的メンバ関数
 public: //静的メンバ関数
 	static void ChangeScene(SceneNo sceneNo,bool sceneStackClear = false);
 #pragma endregion
+
 #pragma region ゲッター/セッター
-	//a
-	void w(int a, int b);
 #pragma endregion
 
 #pragma region メンバ関数

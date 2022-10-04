@@ -1,9 +1,9 @@
-#include "EndGame.h"
+#include "EndScene.h"
 #include <cassert>
 
 using namespace DirectX;
 
-EndGame::EndGame(DirectXCommon* dxCommon, Audio* audio)
+EndScene::EndScene(DirectXCommon* dxCommon, Audio* audio)
 {
 	// nullptrチェック
 	assert(dxCommon);
@@ -13,13 +13,13 @@ EndGame::EndGame(DirectXCommon* dxCommon, Audio* audio)
 	this->audio = audio;
 }
 
-EndGame::~EndGame()
+EndScene::~EndScene()
 {
 	safe_delete(spriteBG);
 	//safe_delete(sprite1);
 }
 
-void EndGame::Init()
+void EndScene::Init()
 {
 	
 
@@ -33,11 +33,11 @@ void EndGame::Init()
 	
 }
 
-void EndGame::Update()
+void EndScene::Update()
 {
 }
 
-void EndGame::Draw()
+void EndScene::Draw()
 {
 	// コマンドリストの取得
 	ID3D12GraphicsCommandList* cmdList = dxCommon->GetCommandList();
