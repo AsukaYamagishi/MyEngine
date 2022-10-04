@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Collision.cpp">
-      <Filter>メイン部分\Collision</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionPrimitive.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
@@ -193,11 +190,11 @@
     <ClCompile Include="Code\Camera\Camera.cpp">
       <Filter>メイン部分\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Collision\Collision.cpp">
+      <Filter>メイン部分\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Collision.h">
-      <Filter>メイン部分\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionPrimitive.h">
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\Camera\Camera.h">
       <Filter>メイン部分\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Collision\Collision.h">
+      <Filter>メイン部分\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

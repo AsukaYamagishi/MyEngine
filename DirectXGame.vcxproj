@@ -153,11 +153,11 @@
     <ClInclude Include="Code\Audio\Audio.h" />
     <ClInclude Include="Code\Camera\Camera.h" />
     <ClInclude Include="Code\Collision\Collider\BaseCollider.h" />
+    <ClInclude Include="Code\Collision\Collision.h" />
     <ClInclude Include="Code\GameObject\Enemy\Boss.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h" />
     <ClInclude Include="Code\Model\CalculationModel.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
-    <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionInfo.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CollisionPrimitive.h" />
@@ -197,11 +197,11 @@
     <ClCompile Include="Code\Audio\Audio.cpp" />
     <ClCompile Include="Code\Camera\Camera.cpp" />
     <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp" />
+    <ClCompile Include="Code\Collision\Collision.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp" />
     <ClCompile Include="Code\Model\CalculationModel.cpp" />
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
-    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionInfo.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CollisionPrimitive.cpp" />
