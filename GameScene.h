@@ -16,7 +16,7 @@
 #include "GameObjectManager.h"
 #include "Code/Collision/CollisionManager.h"
 #include "Code/Scene/AbstructScene.h"
-#include "EnemySponer.h"
+#include "Code/GameObject/Enemy/EnemySpawner.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;

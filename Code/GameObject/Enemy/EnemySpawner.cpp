@@ -1,33 +1,33 @@
-#include "EnemySponer.h"
+#include "EnemySpawner.h"
 
-EnemySponer::EnemySponer(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
+EnemySpawner::EnemySpawner(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
 	GameObject(dxCommon)
 {
 	this->collisionManager = collisionManager;
 	playerData = player;
 	// ファイル読み込み
-	spownDatas = LoadData("Resources/EnemySpownData.csv");
+	spawnDatas = LoadData("Resources/EnemySpownData.csv");
 }
 
-void EnemySponer::Update()
+void EnemySpawner::Update()
 {
-	if (spownDatas.size() == 0)
+	if (spawnDatas.size() == 0)
 	{
 		return;
 	}
 	// プレイヤーがスポーン位置から一定の距離内にいれば先頭のデータをスポーンさせる
-	if (playerData->GetPos().z >= spownDatas.front().spownPos.z - 50.0f)
+	if (playerData->GetPos().z >= spawnDatas.front().spawnPos.z - 50.0f)
 	{
 		GameObject::Create<Enemy>(
 			dxCommon, gameObjectManager, collisionManager,
-			spownDatas.front().spownPos, playerData);
-		spownDatas.pop();
+			spawnDatas.front().spawnPos, playerData);
+		spawnDatas.pop();
 	}
 }
 
-std::queue<EnemySponer::SpownData> EnemySponer::LoadData(const char* filepath)
+std::queue<EnemySpawner::SpawnData> EnemySpawner::LoadData(const char* filepath)
 {
-	std::queue<SpownData> dataTable;
+	std::queue<SpawnData> dataTable;
 
 	ifstream fileStream(filepath);
 	if (!fileStream) 
@@ -56,8 +56,8 @@ std::queue<EnemySponer::SpownData> EnemySponer::LoadData(const char* filepath)
 			datas.push_back(stemp);
 		}
 		//切り分けたデータを構造体に格納
-		SpownData data;
-		data.spownPos =
+		SpawnData data;
+		data.spawnPos =
 		{
 			strtof(datas[0].c_str(),NULL),
 			strtof(datas[1].c_str(),NULL),

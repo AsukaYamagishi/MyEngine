@@ -27,7 +27,7 @@ GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 	gameObjManager = std::make_shared<GameObjectManager>(dxCommon);
 	GameObject::SetManager(gameObjManager);
 	player = GameObject::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT);
-	GameObject::Create<EnemySponer>(dxCommon, collisionManager, player);
+	GameObject::Create<EnemySpawner>(dxCommon, collisionManager, player);
 	srand(time(NULL));
 }
 

@@ -1,8 +1,8 @@
 #pragma once
-#include "GameObject.h"
-#include "ModelDraw.h"
-#include "ModelManager.h"
-#include "SphereCollider.h"
+#include "../GameObject.h"
+#include "../ModelDraw.h"
+#include "../ModelManager.h"
+#include "../SphereCollider.h"
 
 class EnemyBullet :
     public GameObject
