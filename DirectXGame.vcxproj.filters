@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Boss.cpp">
-      <Filter>メイン部分\GameObj\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="CalculationObject.cpp">
       <Filter>メイン部分\Object\CalculationObj</Filter>
     </ClCompile>
@@ -193,11 +190,11 @@
     <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Code\GameObject\Enemy\Boss.cpp">
+      <Filter>メイン部分\GameObj\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Boss.h">
-      <Filter>メイン部分\GameObj\Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="CalculationObject.h">
       <Filter>メイン部分\Object\CalculationObj</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\Collision\Collider\BaseCollider.h">
       <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameObject\Enemy\Boss.h">
+      <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,8 @@
 #pragma once
-#include "SafeDelete.h"
-#include "DirectXCommon.h"
-#include "ModelDraw.h"
-#include "ModelManager.h"
+#include "../SafeDelete.h"
+#include "../DirectXCommon.h"
+#include "../ModelDraw.h"
+#include "../ModelManager.h"
 #include <DirectXMath.h>
 
 

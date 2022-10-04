@@ -10,7 +10,7 @@
 #include "PlayerBase.h"
 #include "Collision.h"
 #include "FbxDraw.h"
-#include"Boss.h"
+#include "Code/GameObject/Enemy/Boss.h"
 #include "ParticleManager.h"
 #include "Stage.h"
 #include "GameObjectManager.h"
