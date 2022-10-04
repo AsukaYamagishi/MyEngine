@@ -154,12 +154,6 @@
     <ClCompile Include="CollisionManager.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionInfo.cpp">
-      <Filter>メイン部分\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="SphereCollider.cpp">
-      <Filter>メイン部分\Collision</Filter>
-    </ClCompile>
     <ClCompile Include="OBBCollider.cpp" />
     <ClCompile Include="Wall.cpp">
       <Filter>メイン部分\GameObj\Wall</Filter>
@@ -175,9 +169,6 @@
     <ClCompile Include="Code\Scene\AbstructScene.cpp">
       <Filter>メイン部分\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp">
-      <Filter>メイン部分\Collision</Filter>
-    </ClCompile>
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClCompile>
@@ -191,6 +182,15 @@
       <Filter>メイン部分\Camera</Filter>
     </ClCompile>
     <ClCompile Include="Code\Collision\Collision.cpp">
+      <Filter>メイン部分\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp">
+      <Filter>メイン部分\Collision\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereCollider.cpp">
+      <Filter>メイン部分\Collision\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Collision\CollisionInfo.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
   </ItemGroup>
@@ -276,12 +276,6 @@
     <ClInclude Include="CollisionManager.h">
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionInfo.h">
-      <Filter>メイン部分\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="SphereCollider.h">
-      <Filter>メイン部分\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="OBBCollider.h" />
     <ClInclude Include="Wall.h">
       <Filter>メイン部分\GameObj\Wall</Filter>
@@ -297,9 +291,6 @@
     <ClInclude Include="Code\Scene\AbstructScene.h">
       <Filter>メイン部分\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Collision\Collider\BaseCollider.h">
-      <Filter>メイン部分\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="Code\GameObject\Enemy\Boss.h">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClInclude>
@@ -313,6 +304,15 @@
       <Filter>メイン部分\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Code\Collision\Collision.h">
+      <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Collision\Collider\BaseCollider.h">
+      <Filter>メイン部分\Collision\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereCollider.h">
+      <Filter>メイン部分\Collision\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Collision\CollisionInfo.h">
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
   </ItemGroup>
@@ -429,6 +429,9 @@
     </Filter>
     <Filter Include="メイン部分\Object\Calculation">
       <UniqueIdentifier>{b1e7442a-ddca-49b7-a46e-9486a45a5f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Collision\Collider">
+      <UniqueIdentifier>{420e242b-a449-4151-bd40-52bef72dac67}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

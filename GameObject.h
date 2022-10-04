@@ -1,7 +1,7 @@
 #pragma once
 #include "DirectXCommon.h"
 #include "Vector3.h"
-#include "CollisionInfo.h"
+#include "Code/Collision/CollisionInfo.h"
 
 class CollisionManager;
 class GameObjectManager;
