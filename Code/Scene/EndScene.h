@@ -6,7 +6,7 @@
 #include "../DirectXBase/DebugText.h"
 #include "../Audio/Audio.h"
 #include "../Input/KeyboardInput.h"
-#include "../ModelDraw.h"
+#include "../3d/Obj/ObjDraw.h"
 
 #include "AbstructScene.h"
 

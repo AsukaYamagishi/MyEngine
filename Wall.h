@@ -2,7 +2,7 @@
 #include "Code/GameObject/GameObjectBase.h"
 #include "Vector3.h"
 #include "Code/Manager/GameObjectManager.h"
-#include "ModelDraw.h"
+#include "Code/3d/Obj/ObjDraw.h"
 #include "ModelManager.h"
 #include "PlayerBase.h"
 
@@ -15,7 +15,7 @@ public:
     void Draw() override;
     void OnCollision(CollisionInfo info) override;
     //ƒ‚ƒfƒ‹
-    std::shared_ptr<ModelDraw> wall;
+    std::shared_ptr<ObjDraw> wall;
 
     PlayerBase* player;
 };

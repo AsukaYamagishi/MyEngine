@@ -1,7 +1,7 @@
 #pragma once
 #include "../SafeDelete.h"
 #include "../../DirectXBase/DirectXCommon.h"
-#include "../ModelDraw.h"
+#include "../../3d/Obj/ObjDraw.h"
 #include "../ModelManager.h"
 #include <DirectXMath.h>
 

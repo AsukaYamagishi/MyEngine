@@ -1,6 +1,6 @@
 #include "ModelManager.h"
 
-map<ModelManager::ModelName, ModelInput *> ModelManager::model;
+map<ModelManager::ModelName, ObjLoader *> ModelManager::model;
 
 ModelManager *ModelManager::GetIns()
 {
@@ -20,7 +20,7 @@ void ModelManager::Initialize()
 
 void ModelManager::LoadModel(const ModelName modelName, std::string fileName)
 {
-	model[modelName] = new ModelInput();
+	model[modelName] = new ObjLoader();
 	model[modelName]->InitializeDiscriptorHeap();
 	model[modelName]->CreateFromObj(fileName);
 

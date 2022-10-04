@@ -1,7 +1,7 @@
 #pragma once
 #include "../../GameObject/GameObjectBase.h"
 #include "../../Manager/GameObjectManager.h"
-#include "../ModelDraw.h"
+#include "../../3d/Obj/ObjDraw.h"
 #include "../ModelManager.h"
 #include "../PlayerBase.h"
 
@@ -60,7 +60,7 @@ private:
 	std::weak_ptr<CollisionManager> collisionManager;
 
 	//モデル
-	std::shared_ptr<ModelDraw> enemy;
+	std::shared_ptr<ObjDraw> enemy;
 	//1fのキー入力に対する移動量
 	float move = -0.1f;
 	//1f内での合計移動量

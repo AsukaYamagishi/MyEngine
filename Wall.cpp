@@ -4,7 +4,7 @@
 Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
 	GameObjectBase(dxCommon)
 {
-	wall = std::make_shared<ModelDraw>(*ModelDraw::Create());
+	wall = std::make_shared<ObjDraw>(*ObjDraw::Create());
 	wall->SetModel(ModelManager::GetIns()->GetModel(ModelManager::WALL));
 
 	this->player = player;
@@ -42,9 +42,9 @@ void Wall::Draw()
 {
 	wall->Update();
 	ID3D12GraphicsCommandList* cmdList = dxCommon->GetCommandList();
-	ModelDraw::PreDraw(cmdList);
+	ObjDraw::PreDraw(cmdList);
 	wall->Draw();
-	ModelDraw::PostDraw();
+	ObjDraw::PostDraw();
 }
 
 void Wall::OnCollision(CollisionInfo info)

@@ -14,7 +14,7 @@ using namespace DirectX;
 PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager> collisionManager, PlayerType type):
 	GameObjectBase(dxCommon)
 {
-	player = std::make_shared<ModelDraw>(*ModelDraw::Create());
+	player = std::make_shared<ObjDraw>(*ObjDraw::Create());
 	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
 	this->collisionManager = collisionManager;
 
@@ -50,9 +50,9 @@ void PlayerBase::Draw()
 
 	ID3D12GraphicsCommandList *cmdList = dxCommon->GetCommandList();
 
-	ModelDraw::PreDraw(cmdList);
+	ObjDraw::PreDraw(cmdList);
 	player->Draw();
-	ModelDraw::PostDraw();
+	ObjDraw::PostDraw();
 
 }
 

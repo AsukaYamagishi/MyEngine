@@ -1,7 +1,7 @@
 #pragma once
 #include <map>
 #include <string>
-#include "ModelInput.h"
+#include "Code/3d/Obj/ObjLoader.h"
 class ModelManager final
 {
 private:
@@ -23,9 +23,9 @@ public:
 
 	void Initialize();
 	void LoadModel(const ModelName modelName, std::string fileName);
-	ModelInput *GetModel(ModelName modelName) { return model[modelName]; }
+	ObjLoader *GetModel(ModelName modelName) { return model[modelName]; }
 
 private:
-	static map<ModelName, ModelInput *> model;	//ƒ‚ƒfƒ‹Ši”[ƒ}ƒbƒv
+	static map<ModelName, ObjLoader*> model;	//ƒ‚ƒfƒ‹Ši”[ƒ}ƒbƒv
 };
 

@@ -28,8 +28,8 @@ void Stage::Update()
 void Stage::Draw()
 {
 	ID3D12GraphicsCommandList* cmdList = dxCommon->GetCommandList();
-	ModelDraw::PreDraw(cmdList);
+	ObjDraw::PreDraw(cmdList);
 	/*skydome->Draw();
 	stage->Draw();*/
-	ModelDraw::PostDraw();
+	ObjDraw::PostDraw();
 }

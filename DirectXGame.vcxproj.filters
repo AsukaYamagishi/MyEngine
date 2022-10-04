@@ -78,12 +78,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ModelDraw.cpp">
-      <Filter>メイン部分\Object\OBJ</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelInput.cpp">
-      <Filter>メイン部分\Object\OBJ</Filter>
-    </ClCompile>
     <ClCompile Include="ModelManager.cpp">
       <Filter>メイン部分\Object\OBJ</Filter>
     </ClCompile>
@@ -197,14 +191,14 @@
     <ClCompile Include="Code\3d\CalculationModel.cpp">
       <Filter>メイン部分\Object\Calculation</Filter>
     </ClCompile>
+    <ClCompile Include="Code\3d\Obj\ObjDraw.cpp">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\3d\Obj\ObjLoader.cpp">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ModelDraw.h">
-      <Filter>メイン部分\Object\OBJ</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelInput.h">
-      <Filter>メイン部分\Object\OBJ</Filter>
-    </ClInclude>
     <ClInclude Include="ModelManager.h">
       <Filter>メイン部分\Object\OBJ</Filter>
     </ClInclude>
@@ -322,6 +316,12 @@
     </ClInclude>
     <ClInclude Include="Code\3d\CalculationModel.h">
       <Filter>メイン部分\Object\Calculation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\3d\Obj\ObjDraw.h">
+      <Filter>メイン部分\Object\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\3d\Obj\ObjLoader.h">
+      <Filter>メイン部分\Object\OBJ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

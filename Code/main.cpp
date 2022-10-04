@@ -7,7 +7,7 @@
 #include "DirectXBase/DebugText.h" //デバッグテキスト
 #include "DirectXBase/DirectXCommon.h"
 #include "../SafeDelete.h"
-#include "../ModelDraw.h"
+#include "3d/Obj/ObjDraw.h"
 #include "../SceneManager.h"
 #include "../ModelManager.h"
 #include "3d/Fbx/FbxLoader.h"
@@ -106,11 +106,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 #pragma endregion
 
 #pragma region 3Dモデル静的初期化
-	ModelInput::StaticInitialize(dxCommon->GetDevice());
+	ObjLoader::StaticInitialize(dxCommon->GetDevice());
 	ModelManager::GetIns()->Initialize();
 
 	// Obj
-	if (!ModelDraw::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
+	if (!ObjDraw::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {
 		assert(0);
 		return 1;
 	}

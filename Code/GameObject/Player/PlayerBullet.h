@@ -2,7 +2,7 @@
 #include "../../DirectXBase/DirectXCommon.h"
 #include "../Vector3.h"
 #include "../../GameObject/GameObjectBase.h"
-#include "../ModelDraw.h"
+#include "../../3d/Obj/ObjDraw.h"
 #include "../ModelManager.h"
 
 class Bullet
@@ -50,7 +50,7 @@ public:
 #pragma region 変数
 private:
 	//バレットモデル
-	std::shared_ptr<ModelDraw> bullet;
+	std::shared_ptr<ObjDraw> bullet;
 	//移動量
 	Vector3 velocity = { 0,0,0 };
 	//生存時間

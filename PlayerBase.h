@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "SafeDelete.h"
 #include "Code/DirectXBase/DirectXCommon.h"
-#include "ModelDraw.h"
+#include "Code/3d/Obj/ObjDraw.h"
 #include "ModelManager.h"
 #include <DirectXMath.h>
 #include "Code/GameObject/GameObjectBase.h"
@@ -68,7 +68,7 @@ private:
 	std::weak_ptr<CollisionManager> collisionManager;
 	
 	//プレイヤーモデル
-	std::shared_ptr<ModelDraw> player;
+	std::shared_ptr<ObjDraw> player;
 	//攻撃タイプ
 	PlayerType type;
 	//1fのキー入力に対する移動量

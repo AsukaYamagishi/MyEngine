@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "SafeDelete.h"
 #include "Code/DirectXBase/DirectXCommon.h"
-#include "ModelDraw.h"
+#include "Code/3d/Obj/ObjDraw.h"
 #include "ModelManager.h"
 class Stage {
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
@@ -26,8 +26,8 @@ public:
 	void Draw();
 
 public:
-	ModelDraw* skydome = nullptr;
-	ModelDraw* stage = nullptr;
+	ObjDraw* skydome = nullptr;
+	ObjDraw* stage = nullptr;
 
 private:
 	DirectXCommon* dxCommon = nullptr;

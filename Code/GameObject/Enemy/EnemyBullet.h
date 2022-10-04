@@ -1,6 +1,6 @@
 #pragma once
 #include "../../GameObject/GameObjectBase.h"
-#include "../ModelDraw.h"
+#include "../Code/3d/Obj/ObjDraw.h"
 #include "../ModelManager.h"
 #include "../SphereCollider.h"
 
@@ -27,7 +27,7 @@ public:
 	void OnCollision(CollisionInfo info) override;
 private:
 	//バレットモデル
-	std::shared_ptr<ModelDraw> bullet;
+	std::shared_ptr<ObjDraw> bullet;
 	//移動量
 	Vector3 velocity = { 0,0,0 };
 };

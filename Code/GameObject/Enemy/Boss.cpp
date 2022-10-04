@@ -30,8 +30,8 @@ void Boss::Draw()
 	// コマンドリストの取得
 	ID3D12GraphicsCommandList* cmdList = dxCommon->GetCommandList();
 
-	ModelDraw::PreDraw(cmdList);
+	ObjDraw::PreDraw(cmdList);
 	
-	ModelDraw::PostDraw();
+	ObjDraw::PostDraw();
 }
 

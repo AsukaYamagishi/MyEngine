@@ -154,6 +154,8 @@
     <ClInclude Include="Code\3d\Fbx\FbxDraw.h" />
     <ClInclude Include="Code\3d\Fbx\FbxLoader.h" />
     <ClInclude Include="Code\3d\Fbx\FbxModel.h" />
+    <ClInclude Include="Code\3d\Obj\ObjDraw.h" />
+    <ClInclude Include="Code\3d\Obj\ObjLoader.h" />
     <ClInclude Include="Code\Audio\Audio.h" />
     <ClInclude Include="Code\Camera\Camera.h" />
     <ClInclude Include="Code\Collision\Collider\BaseCollider.h" />
@@ -175,8 +177,6 @@
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
-    <ClInclude Include="ModelInput.h" />
-    <ClInclude Include="ModelDraw.h" />
     <ClInclude Include="ModelManager.h" />
     <ClInclude Include="MultiRenderTarget.h" />
     <ClInclude Include="OBBCollider.h" />
@@ -198,6 +198,8 @@
     <ClCompile Include="Code\3d\Fbx\FbxDraw.cpp" />
     <ClCompile Include="Code\3d\Fbx\FbxLoader.cpp" />
     <ClCompile Include="Code\3d\Fbx\FbxModel.cpp" />
+    <ClCompile Include="Code\3d\Obj\ObjDraw.cpp" />
+    <ClCompile Include="Code\3d\Obj\ObjLoader.cpp" />
     <ClCompile Include="Code\Audio\Audio.cpp" />
     <ClCompile Include="Code\Camera\Camera.cpp" />
     <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp" />
@@ -220,8 +222,6 @@
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
-    <ClCompile Include="ModelInput.cpp" />
-    <ClCompile Include="ModelDraw.cpp" />
     <ClCompile Include="ModelManager.cpp" />
     <ClCompile Include="MultiRenderTarget.cpp" />
     <ClCompile Include="OBBCollider.cpp" />

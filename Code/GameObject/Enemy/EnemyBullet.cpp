@@ -4,7 +4,7 @@ EnemyBullet::EnemyBullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager
 	GameObjectBase(dxCommon)
 {
 
-	bullet = std::make_shared<ModelDraw>(*ModelDraw::Create());
+	bullet = std::make_shared<ObjDraw>(*ObjDraw::Create());
 	bullet->SetModel(ModelManager::GetIns()->GetModel(ModelManager::BULLET));
 
 	pos = startPos;
@@ -33,9 +33,9 @@ void EnemyBullet::Draw()
 
 	ID3D12GraphicsCommandList* cmdList = dxCommon->GetCommandList();
 
-	ModelDraw::PreDraw(cmdList);
+	ObjDraw::PreDraw(cmdList);
 	bullet->Draw();
-	ModelDraw::PostDraw();
+	ObjDraw::PostDraw();
 }
 
 void EnemyBullet::OnCollision(CollisionInfo info)
