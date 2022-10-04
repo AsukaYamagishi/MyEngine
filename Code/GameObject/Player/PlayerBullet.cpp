@@ -1,5 +1,5 @@
-#include "Bullet.h"
-#include "SphereCollider.h"
+#include "PlayerBullet.h"
+#include "../SphereCollider.h"
 
 Bullet::Bullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, Vector3 shotVelocity):
  	GameObject(dxCommon)

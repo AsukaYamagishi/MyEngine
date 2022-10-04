@@ -154,9 +154,6 @@
     <ClCompile Include="Stage.cpp">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>メイン部分\GameObj\Bullet</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>メイン部分\GameObj</Filter>
     </ClCompile>
@@ -192,6 +189,9 @@
     </ClCompile>
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp">
       <Filter>メイン部分\GameObj\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp">
+      <Filter>メイン部分\GameObj\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -276,9 +276,6 @@
     <ClInclude Include="Stage.h">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>メイン部分\GameObj\Bullet</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjectManager.h">
       <Filter>メイン部分\GameObj</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\GameObject\Enemy\Boss.h">
       <Filter>メイン部分\GameObj\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameObject\Player\PlayerBullet.h">
+      <Filter>メイン部分\GameObj\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -426,9 +426,6 @@
     </Filter>
     <Filter Include="メイン部分\GameObj\Stage">
       <UniqueIdentifier>{c0ce1929-586d-4bea-a56e-5052f2d49eb4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="メイン部分\GameObj\Bullet">
-      <UniqueIdentifier>{8be5055b-edb3-4ba3-ad1d-af264a3441e2}</UniqueIdentifier>
     </Filter>
     <Filter Include="メイン部分\GameObj\Wall">
       <UniqueIdentifier>{34fe37e4-5c59-4b4f-8c52-57582c9d434e}</UniqueIdentifier>

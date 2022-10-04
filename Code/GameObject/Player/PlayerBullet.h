@@ -1,9 +1,9 @@
 #pragma once
-#include "DirectXCommon.h"
-#include "Vector3.h"
-#include "GameObject.h"
-#include "ModelDraw.h"
-#include "ModelManager.h"
+#include "../DirectXCommon.h"
+#include "../Vector3.h"
+#include "../GameObject.h"
+#include "../ModelDraw.h"
+#include "../ModelManager.h"
 
 class Bullet
 	:public GameObject
