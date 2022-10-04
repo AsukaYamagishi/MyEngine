@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ControllerInput.cpp">
-      <Filter>メイン部分\Input</Filter>
-    </ClCompile>
     <ClCompile Include="DebugText.cpp">
       <Filter>メイン部分\Base</Filter>
     </ClCompile>
@@ -193,11 +190,11 @@
     <ClCompile Include="Code\Collision\CollisionPrimitive.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Input\ControllerInput.cpp">
+      <Filter>メイン部分\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ControllerInput.h">
-      <Filter>メイン部分\Input</Filter>
-    </ClInclude>
     <ClInclude Include="DebugText.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\Collision\CollisionPrimitive.h">
       <Filter>メイン部分\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Input\ControllerInput.h">
+      <Filter>メイン部分\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

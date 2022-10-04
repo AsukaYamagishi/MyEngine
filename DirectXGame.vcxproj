@@ -159,9 +159,9 @@
     <ClInclude Include="Code\Collision\CollisionPrimitive.h" />
     <ClInclude Include="Code\GameObject\Enemy\Boss.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h" />
+    <ClInclude Include="Code\Input\ControllerInput.h" />
     <ClInclude Include="Code\Model\CalculationModel.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
-    <ClInclude Include="ControllerInput.h" />
     <ClInclude Include="DebugText.h" />
     <ClInclude Include="DirectXCommon.h" />
     <ClInclude Include="Enemy.h" />
@@ -203,9 +203,9 @@
     <ClCompile Include="Code\Collision\CollisionPrimitive.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp" />
+    <ClCompile Include="Code\Input\ControllerInput.cpp" />
     <ClCompile Include="Code\Model\CalculationModel.cpp" />
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
-    <ClCompile Include="ControllerInput.cpp" />
     <ClCompile Include="DebugText.cpp" />
     <ClCompile Include="DirectXCommon.cpp" />
     <ClCompile Include="Enemy.cpp" />
