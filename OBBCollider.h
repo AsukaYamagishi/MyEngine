@@ -1,5 +1,5 @@
 #pragma once
-#include "CollisionPrimitive.h"
+#include "Code/Collision/CollisionPrimitive.h"
 #include "Code/Collision/Collider/BaseCollider.h"
 class OBBCollider :
     public BaseCollider , public OBB

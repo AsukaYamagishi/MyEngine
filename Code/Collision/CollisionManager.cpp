@@ -1,5 +1,5 @@
 #include "CollisionManager.h"
-#include "Code/Collision/Collision.h"
+#include "Collision.h"
 
 void CollisionManager::Update()
 {

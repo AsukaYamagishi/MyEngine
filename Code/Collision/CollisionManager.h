@@ -1,5 +1,5 @@
 #pragma once
-#include "Code/Collision/Collider/BaseCollider.h"
+#include "Collider/BaseCollider.h"
 #include <memory>
 #include <vector>
 class CollisionManager
