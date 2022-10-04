@@ -7,14 +7,14 @@
 #include <d3dx12.h>
 #include <string>
 
-class FbxInput
+class FbxLoader
 {
 private: //エイリアス
 	using string = std::string;
 
 public:
 	// シングルトンインスタンスの取得
-	static FbxInput* GetInstance();
+	static FbxLoader* GetInstance();
 	//FBXの行列をXMMATRIXに変換
 	static void ConvertMatrixFromFbx(DirectX::XMMATRIX* dst, const FbxAMatrix& src);
 
@@ -28,13 +28,13 @@ public:
 
 private:
 	// privateなコンストラクタ（シングルトンパターン）
-	FbxInput() = default;
+	FbxLoader() = default;
 	// privateなデストラクタ（シングルトンパターン）
-	~FbxInput() = default;
+	~FbxLoader() = default;
 	// コピーコンストラクタを禁止（シングルトンパターン）
-	FbxInput(const FbxInput & obj) = delete;
+	FbxLoader(const FbxLoader & obj) = delete;
 	// コピー代入演算子を禁止（シングルトンパターン）
-	void operator=(const FbxInput & obj) = delete;
+	void operator=(const FbxLoader & obj) = delete;
 
 	//再帰的にノード構成を解析
 	void ParseNodeRecursive(FbxModel* model, FbxNode* fbxNode, Node* parent = nullptr);

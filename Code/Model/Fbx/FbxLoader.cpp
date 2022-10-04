@@ -1,20 +1,20 @@
-﻿#include "FbxInput.h"
+﻿#include "FbxLoader.h"
 #include <cassert>
 
 using namespace DirectX;
 
 //静的メンバ変数の実体
-const std::string FbxInput::baseDirectory = "Resources/";
-const std::string FbxInput::defaultTexFileName = "white1x1.png";
+const std::string FbxLoader::baseDirectory = "Resources/";
+const std::string FbxLoader::defaultTexFileName = "white1x1.png";
 
 
-FbxInput* FbxInput::GetInstance()
+FbxLoader* FbxLoader::GetInstance()
 {
-    static FbxInput instance;
+    static FbxLoader instance;
     return &instance;
 }
 
-void FbxInput::Init(ID3D12Device* dev)
+void FbxLoader::Init(ID3D12Device* dev)
 {
     //再初期化チェック
     assert(fbxManager == nullptr);
@@ -29,14 +29,14 @@ void FbxInput::Init(ID3D12Device* dev)
     fbxImporter = FbxImporter::Create(fbxManager, "");
 }
 
-void FbxInput::Fin()
+void FbxLoader::Fin()
 {
     //各種FBXインスタンスの破棄
     fbxImporter->Destroy();
     fbxManager->Destroy();
 }
 
-std::unique_ptr<FbxModel> FbxInput::LoadFbxFromFile(const string& modelName)
+std::unique_ptr<FbxModel> FbxLoader::LoadFbxFromFile(const string& modelName)
 {
     //モデルと同じ名前のフォルダから読み込む
     const string directoryPath = baseDirectory + modelName + "/";
@@ -78,7 +78,7 @@ std::unique_ptr<FbxModel> FbxInput::LoadFbxFromFile(const string& modelName)
     return std::unique_ptr<FbxModel>(model);
 }
 
-void FbxInput::ParseNodeRecursive(FbxModel* model, FbxNode* fbxNode, Node* parent)
+void FbxLoader::ParseNodeRecursive(FbxModel* model, FbxNode* fbxNode, Node* parent)
 {
     //モデルにノードを追加
     model->nodes.emplace_back();
@@ -145,7 +145,7 @@ void FbxInput::ParseNodeRecursive(FbxModel* model, FbxNode* fbxNode, Node* paren
     }
 }
 
-void FbxInput::ParseMesh(FbxModel* model, FbxNode* fbxNode)
+void FbxLoader::ParseMesh(FbxModel* model, FbxNode* fbxNode)
 {
     //ノードのメッシュを取得
     FbxMesh* fbxMesh = fbxNode->GetMesh();
@@ -161,7 +161,7 @@ void FbxInput::ParseMesh(FbxModel* model, FbxNode* fbxNode)
 }
 
 #pragma region メッシュ解析用サブ関数
-void FbxInput::ParseMeshVertices(FbxModel* model, FbxMesh* fbxMesh)
+void FbxLoader::ParseMeshVertices(FbxModel* model, FbxMesh* fbxMesh)
 {
     //auto& vertices = model->vertices;
 
@@ -185,7 +185,7 @@ void FbxInput::ParseMeshVertices(FbxModel* model, FbxMesh* fbxMesh)
     //}
 }
 
-void FbxInput::ParseMeshFaces(FbxModel* model, FbxMesh* fbxMesh)
+void FbxLoader::ParseMeshFaces(FbxModel* model, FbxMesh* fbxMesh)
 {
     auto& vertices = model->vertices;
     auto& indices = model->indices;
@@ -281,7 +281,7 @@ void FbxInput::ParseMeshFaces(FbxModel* model, FbxMesh* fbxMesh)
     }
 }
 
-void FbxInput::ParseMaterial(FbxModel* model, FbxNode* fbxNode)
+void FbxLoader::ParseMaterial(FbxModel* model, FbxNode* fbxNode)
 {
     const int materialCount = fbxNode->GetMaterialCount();
     if (materialCount > 0)
@@ -340,7 +340,7 @@ void FbxInput::ParseMaterial(FbxModel* model, FbxNode* fbxNode)
     }
 }
 
-void FbxInput::LoadTexture(FbxModel* model, const std::string& fullpath)
+void FbxLoader::LoadTexture(FbxModel* model, const std::string& fullpath)
 {
     HRESULT result = S_FALSE;
 
@@ -357,7 +357,7 @@ void FbxInput::LoadTexture(FbxModel* model, const std::string& fullpath)
     }
 }
 
-void FbxInput::ParseSkin(FbxModel* model, FbxMesh* fbxMesh)
+void FbxLoader::ParseSkin(FbxModel* model, FbxMesh* fbxMesh)
 {
     //スキニング情報
     FbxSkin* fbxSkin = static_cast<FbxSkin*>(fbxMesh->GetDeformer(0, FbxDeformer::eSkin));
@@ -498,7 +498,7 @@ void FbxInput::ParseSkin(FbxModel* model, FbxMesh* fbxMesh)
 #pragma endregion
 
 
-std::string FbxInput::ExtractFileName(const std::string& path)
+std::string FbxLoader::ExtractFileName(const std::string& path)
 {
     size_t pos1;
 
@@ -519,7 +519,7 @@ std::string FbxInput::ExtractFileName(const std::string& path)
     return path;
 }
 
-void FbxInput::ConvertMatrixFromFbx(DirectX::XMMATRIX* dst, const FbxAMatrix& src)
+void FbxLoader::ConvertMatrixFromFbx(DirectX::XMMATRIX* dst, const FbxAMatrix& src)
 {
     //行
     for (int i = 0; i < 4; i++)

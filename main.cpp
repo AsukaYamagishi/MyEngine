@@ -10,7 +10,7 @@
 #include "ModelDraw.h"
 #include "SceneManager.h"
 #include "ModelManager.h"
-#include "FbxInput.h"
+#include "Code/Model/Fbx/FbxLoader.h"
 #include "Code/Camera/Camera.h"
 #include "PostEffect.h"
 #include "MultiRenderTarget.h"
@@ -116,7 +116,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	}
 
 	// FBX
-	FbxInput::GetInstance()->Init(dxCommon->GetDevice());
+	FbxLoader::GetInstance()->Init(dxCommon->GetDevice());
 
 #pragma endregion
 	
@@ -171,7 +171,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	}
 
 	//‰ğ•úˆ—
-	FbxInput::GetInstance()->Fin();
+	FbxLoader::GetInstance()->Fin();
 
 	//ƒNƒ‰ƒX(new)‚ÌÁ‹
 	safe_delete(dxCommon);

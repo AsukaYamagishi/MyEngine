@@ -33,7 +33,7 @@ class FbxModel
 {
 public:
 	//フレンドクラス
-	friend class FbxInput;
+	friend class FbxLoader;
 
 private: //エイリアス
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;

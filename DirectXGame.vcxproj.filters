@@ -79,15 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="FbxDraw.cpp">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClCompile>
-    <ClCompile Include="FbxInput.cpp">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClCompile>
-    <ClCompile Include="FbxModel.cpp">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClCompile>
     <ClCompile Include="GameScene.cpp">
       <Filter>メイン部分\Scene</Filter>
     </ClCompile>
@@ -197,17 +188,17 @@
     <ClCompile Include="Code\GameObject\Enemy\EnemySpawner.cpp">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Model\Fbx\FbxDraw.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Model\Fbx\FbxLoader.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Model\Fbx\FbxModel.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FbxDraw.h">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClInclude>
-    <ClInclude Include="FbxInput.h">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClInclude>
-    <ClInclude Include="FbxModel.h">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClInclude>
     <ClInclude Include="GameScene.h">
       <Filter>メイン部分\Scene</Filter>
     </ClInclude>
@@ -322,6 +313,15 @@
     </ClInclude>
     <ClInclude Include="Code\GameObject\Enemy\EnemySpawner.h">
       <Filter>メイン部分\GameObj\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Model\Fbx\FbxDraw.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Model\Fbx\FbxLoader.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Model\Fbx\FbxModel.h">
+      <Filter>メイン部分\Object\FBX</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
