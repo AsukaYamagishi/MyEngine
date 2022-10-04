@@ -1,5 +1,5 @@
 #pragma once
-#include "../GameObject.h"
+#include "../../DirectXBase/GameObject.h"
 #include "../CollisionInfo.h"
 #include <string>
 

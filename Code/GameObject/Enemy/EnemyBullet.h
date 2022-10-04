@@ -1,5 +1,5 @@
 #pragma once
-#include "../GameObject.h"
+#include "../../DirectXBase/GameObject.h"
 #include "../ModelDraw.h"
 #include "../ModelManager.h"
 #include "../SphereCollider.h"

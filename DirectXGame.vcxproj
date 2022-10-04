@@ -159,6 +159,7 @@
     <ClInclude Include="Code\Collision\CollisionPrimitive.h" />
     <ClInclude Include="Code\DirectXBase\DebugText.h" />
     <ClInclude Include="Code\DirectXBase\DirectXCommon.h" />
+    <ClInclude Include="Code\DirectXBase\GameObject.h" />
     <ClInclude Include="Code\GameObject\Enemy\Boss.h" />
     <ClInclude Include="Code\GameObject\Enemy\Enemy.h" />
     <ClInclude Include="Code\GameObject\Enemy\EnemyBullet.h" />
@@ -171,7 +172,6 @@
     <ClInclude Include="Code\Model\Fbx\FbxModel.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
-    <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="KeyboardInput.h" />
@@ -203,6 +203,7 @@
     <ClCompile Include="Code\Collision\CollisionPrimitive.cpp" />
     <ClCompile Include="Code\DirectXBase\DebugText.cpp" />
     <ClCompile Include="Code\DirectXBase\DirectXCommon.cpp" />
+    <ClCompile Include="Code\DirectXBase\GameObject.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\Enemy.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\EnemyBullet.cpp" />
@@ -215,7 +216,6 @@
     <ClCompile Include="Code\Model\Fbx\FbxModel.cpp" />
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
-    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />

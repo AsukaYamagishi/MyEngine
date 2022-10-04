@@ -1,5 +1,5 @@
 #pragma once
-#include "GameObject.h"
+#include "Code/DirectXBase/GameObject.h"
 #include <vector>
 
 class GameObjectManager

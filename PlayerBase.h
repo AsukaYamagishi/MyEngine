@@ -4,7 +4,7 @@
 #include "ModelDraw.h"
 #include "ModelManager.h"
 #include <DirectXMath.h>
-#include "GameObject.h"
+#include "Code/DirectXBase/GameObject.h"
 #include "GameObjectManager.h"
 
 enum class PlayerType {
