@@ -1,6 +1,6 @@
 #pragma once
 #include "SafeDelete.h"
-#include "DirectXCommon.h"
+#include "Code/DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
 #include "Sprite.h"
 #include "Code/DirectXBase/DebugText.h"

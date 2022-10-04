@@ -1,7 +1,7 @@
 #include "DirectXCommon.h"
 #include <vector>
 #include <cassert>
-#include "SafeDelete.h"
+#include "../SafeDelete.h"
 
 #pragma comment(lib,"d3d12.lib")
 #pragma comment(lib,"dxgi.lib")
@@ -72,7 +72,7 @@ void DirectXCommon::PreDraw()
 	ClearDepthBuffer();
 
 	//ビューポートの設定
-	cmdList->RSSetViewports(1, &CD3DX12_VIEWPORT(0.0f, 0.0f, WindowsAPI::win_width, WindowsAPI::win_height));
+	cmdList->RSSetViewports(1, &CD3DX12_VIEWPORT(0.0f, 0.0f, (float)WindowsAPI::win_width, (float)WindowsAPI::win_height));
 	//シザー矩形の設定
 	cmdList->RSSetScissorRects(1, &CD3DX12_RECT(0, 0, WindowsAPI::win_width, WindowsAPI::win_height));
 }

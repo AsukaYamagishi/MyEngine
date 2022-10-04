@@ -1,5 +1,5 @@
 #pragma once
-#include "../DirectXCommon.h"
+#include "../DirectXBase/DirectXCommon.h"
 #include "../KeyboardInput.h"
 #include "../Audio/Audio.h"
 

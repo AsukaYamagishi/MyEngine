@@ -1,5 +1,5 @@
 #include "GameObject.h"
-#include "CollisionManager.h"
+#include "Code/Collision/CollisionManager.h"
 #include "GameObjectManager.h"
 
 std::weak_ptr<GameObjectManager> GameObject::gameObjectManager;

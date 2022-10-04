@@ -1,5 +1,5 @@
 #pragma once
-#include "../DirectXCommon.h"
+#include "../../DirectXBase/DirectXCommon.h"
 #include "../Vector3.h"
 #include "../GameObject.h"
 #include "../ModelDraw.h"

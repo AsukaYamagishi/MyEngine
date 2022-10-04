@@ -1,13 +1,13 @@
-#include"WindowsAPI.h"  //ウィンドウ表示
-#include"KeyboardInput.h"  //キーボード入力
-#include"Code/Input/ControllerInput.h" //ゲームパッド入力
-#include"Sprite.h"  //2D画像(sprite)
+#include "WindowsAPI.h"  //ウィンドウ表示
+#include "KeyboardInput.h"  //キーボード入力
+#include "Code/Input/ControllerInput.h" //ゲームパッド入力
+#include "Sprite.h"  //2D画像(sprite)
 #include "Code/Model/CalculationModel.h"  //3Dオブジェクト(Object)
-#include"Code/Audio/Audio.h" //音楽再生
-#include"Code/DirectXBase/DebugText.h" //デバッグテキスト
-#include"DirectXCommon.h"
-#include"SafeDelete.h"
-#include"ModelDraw.h"
+#include "Code/Audio/Audio.h" //音楽再生
+#include "Code/DirectXBase/DebugText.h" //デバッグテキスト
+#include "Code/DirectXBase/DirectXCommon.h"
+#include "SafeDelete.h"
+#include "ModelDraw.h"
 #include "SceneManager.h"
 #include "ModelManager.h"
 #include "FbxInput.h"

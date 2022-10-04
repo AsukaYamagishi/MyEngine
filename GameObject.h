@@ -1,5 +1,5 @@
 #pragma once
-#include "DirectXCommon.h"
+#include "Code/DirectXBase/DirectXCommon.h"
 #include "Vector3.h"
 #include "Code/Collision/CollisionInfo.h"
 

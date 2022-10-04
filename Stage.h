@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "SafeDelete.h"
-#include "DirectXCommon.h"
+#include "Code/DirectXBase/DirectXCommon.h"
 #include "ModelDraw.h"
 #include "ModelManager.h"
 class Stage {

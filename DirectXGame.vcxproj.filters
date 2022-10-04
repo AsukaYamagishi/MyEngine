@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="DirectXCommon.cpp">
-      <Filter>メイン部分\Base</Filter>
-    </ClCompile>
     <ClCompile Include="EndGame.cpp">
       <Filter>メイン部分\Scene</Filter>
     </ClCompile>
@@ -193,11 +190,11 @@
     <ClCompile Include="Code\DirectXBase\DebugText.cpp">
       <Filter>メイン部分\Base\DebugTex</Filter>
     </ClCompile>
+    <ClCompile Include="Code\DirectXBase\DirectXCommon.cpp">
+      <Filter>メイン部分\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectXCommon.h">
-      <Filter>メイン部分\Base</Filter>
-    </ClInclude>
     <ClInclude Include="EndGame.h">
       <Filter>メイン部分\Scene</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\DirectXBase\DebugText.h">
       <Filter>メイン部分\Base\DebugTex</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DirectXBase\DirectXCommon.h">
+      <Filter>メイン部分\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
