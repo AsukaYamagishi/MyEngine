@@ -66,7 +66,7 @@ struct Vector3 : public XMFLOAT3 {
 
 	//í∑Ç≥ìÒèÊ
 	float LengthSq() const {
-		return pow(this->Length(),2);
+		return (float)pow(this->Length(),2);
 	}
 	//ê≥ãKâª
 	Vector3 Normal() {
