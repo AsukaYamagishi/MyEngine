@@ -9,7 +9,7 @@
 #include <vector>
 #include "../PlayerBase.h"
 #include "../Collision/Collision.h"
-#include "../Model/Fbx/FbxDraw.h"
+#include "../3d/Fbx/FbxDraw.h"
 #include "../GameObject/Enemy/Boss.h"
 #include "../ParticleManager.h"
 #include "../Stage.h"

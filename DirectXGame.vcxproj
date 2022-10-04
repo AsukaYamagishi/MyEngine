@@ -150,6 +150,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Code\3d\CalculationModel.h" />
+    <ClInclude Include="Code\3d\Fbx\FbxDraw.h" />
+    <ClInclude Include="Code\3d\Fbx\FbxLoader.h" />
+    <ClInclude Include="Code\3d\Fbx\FbxModel.h" />
     <ClInclude Include="Code\Audio\Audio.h" />
     <ClInclude Include="Code\Camera\Camera.h" />
     <ClInclude Include="Code\Collision\Collider\BaseCollider.h" />
@@ -168,10 +172,6 @@
     <ClInclude Include="Code\Input\ControllerInput.h" />
     <ClInclude Include="Code\Input\KeyboardInput.h" />
     <ClInclude Include="Code\Manager\GameObjectManager.h" />
-    <ClInclude Include="Code\Model\CalculationModel.h" />
-    <ClInclude Include="Code\Model\Fbx\FbxDraw.h" />
-    <ClInclude Include="Code\Model\Fbx\FbxLoader.h" />
-    <ClInclude Include="Code\Model\Fbx\FbxModel.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
@@ -194,6 +194,10 @@
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Code\3d\CalculationModel.cpp" />
+    <ClCompile Include="Code\3d\Fbx\FbxDraw.cpp" />
+    <ClCompile Include="Code\3d\Fbx\FbxLoader.cpp" />
+    <ClCompile Include="Code\3d\Fbx\FbxModel.cpp" />
     <ClCompile Include="Code\Audio\Audio.cpp" />
     <ClCompile Include="Code\Camera\Camera.cpp" />
     <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp" />
@@ -213,10 +217,6 @@
     <ClCompile Include="Code\Input\KeyboardInput.cpp" />
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\Manager\GameObjectManager.cpp" />
-    <ClCompile Include="Code\Model\CalculationModel.cpp" />
-    <ClCompile Include="Code\Model\Fbx\FbxDraw.cpp" />
-    <ClCompile Include="Code\Model\Fbx\FbxLoader.cpp" />
-    <ClCompile Include="Code\Model\Fbx\FbxModel.cpp" />
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />

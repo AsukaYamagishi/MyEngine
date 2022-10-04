@@ -130,9 +130,6 @@
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Model\CalculationModel.cpp">
-      <Filter>メイン部分\Object\Calculation</Filter>
-    </ClCompile>
     <ClCompile Include="Code\Camera\Camera.cpp">
       <Filter>メイン部分\Camera</Filter>
     </ClCompile>
@@ -175,15 +172,6 @@
     <ClCompile Include="Code\GameObject\Enemy\EnemySpawner.cpp">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Model\Fbx\FbxDraw.cpp">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Model\Fbx\FbxLoader.cpp">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Model\Fbx\FbxModel.cpp">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClCompile>
     <ClCompile Include="Code\GameObject\GameObjectBase.cpp">
       <Filter>メイン部分\GameObj</Filter>
     </ClCompile>
@@ -197,6 +185,18 @@
       <Filter>メイン部分\Input</Filter>
     </ClCompile>
     <ClCompile Include="Code\main.cpp" />
+    <ClCompile Include="Code\3d\Fbx\FbxDraw.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\3d\Fbx\FbxLoader.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\3d\Fbx\FbxModel.cpp">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\3d\CalculationModel.cpp">
+      <Filter>メイン部分\Object\Calculation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ModelDraw.h">
@@ -257,9 +257,6 @@
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Model\CalculationModel.h">
-      <Filter>メイン部分\Object\Calculation</Filter>
-    </ClInclude>
     <ClInclude Include="Code\Camera\Camera.h">
       <Filter>メイン部分\Camera</Filter>
     </ClInclude>
@@ -302,15 +299,6 @@
     <ClInclude Include="Code\GameObject\Enemy\EnemySpawner.h">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Model\Fbx\FbxDraw.h">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Model\Fbx\FbxLoader.h">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Model\Fbx\FbxModel.h">
-      <Filter>メイン部分\Object\FBX</Filter>
-    </ClInclude>
     <ClInclude Include="Code\GameObject\GameObjectBase.h">
       <Filter>メイン部分\GameObj</Filter>
     </ClInclude>
@@ -322,6 +310,18 @@
     </ClInclude>
     <ClInclude Include="Code\Input\KeyboardInput.h">
       <Filter>メイン部分\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\3d\Fbx\FbxDraw.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\3d\Fbx\FbxLoader.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\3d\Fbx\FbxModel.h">
+      <Filter>メイン部分\Object\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\3d\CalculationModel.h">
+      <Filter>メイン部分\Object\Calculation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

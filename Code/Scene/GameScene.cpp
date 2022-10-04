@@ -2,8 +2,8 @@
 #include "../ParticleManager.h"
 #include <cassert>
 #include <time.h>
-#include "../Model/Fbx/FbxLoader.h"
-#include "../Model/Fbx/FbxDraw.h"
+#include "../3d/Fbx/FbxLoader.h"
+#include "../3d/Fbx/FbxDraw.h"
 #include "../Wall.h"
 
 #include "../SceneManager.h"

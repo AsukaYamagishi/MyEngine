@@ -2,7 +2,7 @@
 #include "Input/KeyboardInput.h"  //キーボード入力
 #include "Input/ControllerInput.h" //ゲームパッド入力
 #include "../Sprite.h"  //2D画像(sprite)
-#include "Model/CalculationModel.h"  //3Dオブジェクト(Object)
+#include "3d/CalculationModel.h"  //3Dオブジェクト(Object)
 #include "Audio/Audio.h" //音楽再生
 #include "DirectXBase/DebugText.h" //デバッグテキスト
 #include "DirectXBase/DirectXCommon.h"
@@ -10,7 +10,7 @@
 #include "../ModelDraw.h"
 #include "../SceneManager.h"
 #include "../ModelManager.h"
-#include "Model/Fbx/FbxLoader.h"
+#include "3d/Fbx/FbxLoader.h"
 #include "Camera/Camera.h"
 #include "../PostEffect.h"
 #include "../MultiRenderTarget.h"
