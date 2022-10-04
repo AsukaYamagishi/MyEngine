@@ -1,22 +1,22 @@
 #pragma once
-#include "SafeDelete.h"
-#include "Code/DirectXBase/DirectXCommon.h"
+#include "../SafeDelete.h"
+#include "../DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
-#include "Sprite.h"
-#include "Code/DirectXBase/DebugText.h"
-#include "Code/Audio/Audio.h"
-#include "KeyboardInput.h"
+#include "../Sprite.h"
+#include "../DirectXBase/DebugText.h"
+#include "../Audio/Audio.h"
+#include "../KeyboardInput.h"
 #include <vector>
-#include "PlayerBase.h"
-#include "Code/Collision/Collision.h"
-#include "Code/Model/Fbx/FbxDraw.h"
-#include "Code/GameObject/Enemy/Boss.h"
-#include "ParticleManager.h"
-#include "Stage.h"
-#include "Code/Manager/GameObjectManager.h"
-#include "Code/Collision/CollisionManager.h"
-#include "Code/Scene/AbstructScene.h"
-#include "Code/GameObject/Enemy/EnemySpawner.h"
+#include "../PlayerBase.h"
+#include "../Collision/Collision.h"
+#include "../Model/Fbx/FbxDraw.h"
+#include "../GameObject/Enemy/Boss.h"
+#include "../ParticleManager.h"
+#include "../Stage.h"
+#include "../Manager/GameObjectManager.h"
+#include "../Collision/CollisionManager.h"
+#include "../Scene/AbstructScene.h"
+#include "../GameObject/Enemy/EnemySpawner.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;

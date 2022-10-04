@@ -173,7 +173,7 @@
     <ClInclude Include="Code\Model\Fbx\FbxModel.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
-    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Code\Scene\GameScene.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="ModelInput.h" />
     <ClInclude Include="ModelDraw.h" />
@@ -217,7 +217,7 @@
     <ClCompile Include="Code\Model\Fbx\FbxModel.cpp" />
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
-    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Code\Scene\GameScene.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelInput.cpp" />

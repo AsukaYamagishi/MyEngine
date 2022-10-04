@@ -1,5 +1,5 @@
 #pragma once
-#include "GameScene.h"
+#include "Code/Scene/GameScene.h"
 #include "Title.h"
 #include "Code/Scene/EndScene.h"
 

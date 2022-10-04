@@ -1,14 +1,14 @@
 #include "GameScene.h"
-#include "ParticleManager.h"
+#include "../ParticleManager.h"
 #include <cassert>
 #include <time.h>
-#include "Code/Model/Fbx/FbxLoader.h"
-#include "Code/Model/Fbx/FbxDraw.h"
-#include "Wall.h"
+#include "../Model/Fbx/FbxLoader.h"
+#include "../Model/Fbx/FbxDraw.h"
+#include "../Wall.h"
 
-#include "SceneManager.h"
+#include "../SceneManager.h"
 
-#include "Code/Collision/Collider/BaseCollider.h"
+#include "../Collision/Collider/BaseCollider.h"
 
 using namespace DirectX;
 
