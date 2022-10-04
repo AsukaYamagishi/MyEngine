@@ -6,7 +6,7 @@
 #include "KeyboardInput.h"
 #include "Sprite.h"
 
-#include "AbstructScene.h"
+#include "Code/Scene/AbstructScene.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;

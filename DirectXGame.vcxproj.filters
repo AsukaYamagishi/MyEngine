@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="AbstructScene.cpp">
-      <Filter>メイン部分\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Boss.cpp">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClCompile>
@@ -193,11 +190,11 @@
     <ClCompile Include="Code\Audio\Audio.cpp">
       <Filter>メイン部分\Audio</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Scene\AbstructScene.cpp">
+      <Filter>メイン部分\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstructScene.h">
-      <Filter>メイン部分\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="Boss.h">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="Code\Audio\Audio.h">
       <Filter>メイン部分\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Scene\AbstructScene.h">
+      <Filter>メイン部分\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

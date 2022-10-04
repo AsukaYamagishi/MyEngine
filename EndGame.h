@@ -9,7 +9,7 @@
 #include "KeyboardInput.h"
 #include "ModelDraw.h"
 
-#include "AbstructScene.h"
+#include "Code/Scene/AbstructScene.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;

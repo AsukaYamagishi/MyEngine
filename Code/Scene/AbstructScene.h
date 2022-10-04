@@ -1,7 +1,7 @@
 #pragma once
-#include "DirectXCommon.h"
-#include "KeyboardInput.h"
-#include "Code/Audio/Audio.h"
+#include "../DirectXCommon.h"
+#include "../KeyboardInput.h"
+#include "../Audio/Audio.h"
 
 //シーンの基底クラス
 class AbstructScene

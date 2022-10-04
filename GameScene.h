@@ -15,7 +15,7 @@
 #include "Stage.h"
 #include "GameObjectManager.h"
 #include "CollisionManager.h"
-#include "AbstructScene.h"
+#include "Code/Scene/AbstructScene.h"
 #include "EnemySponer.h"
 
 using namespace Microsoft::WRL;

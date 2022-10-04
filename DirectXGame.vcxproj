@@ -150,12 +150,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AbstructScene.h" />
     <ClInclude Include="BaseCollider.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Code\Audio\Audio.h" />
+    <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionInfo.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -194,12 +194,12 @@
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AbstructScene.cpp" />
     <ClCompile Include="BaseCollider.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Code\Audio\Audio.cpp" />
+    <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionInfo.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
