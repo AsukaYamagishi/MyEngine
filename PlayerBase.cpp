@@ -12,7 +12,7 @@
 using namespace DirectX;
 
 PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager> collisionManager, PlayerType type):
-	GameObject(dxCommon)
+	GameObjectBase(dxCommon)
 {
 	player = std::make_shared<ModelDraw>(*ModelDraw::Create());
 	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
@@ -137,6 +137,6 @@ void PlayerBase::Attack()
 {
 	if (KeyboardInput::GetInstance()->PressKeyTrigger(DIK_SPACE))
 	{
-		GameObject::Create<Bullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,1.0f }, Vector3{ 0.0f,0.0f,0.7f });
+		GameObjectBase::Create<Bullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,1.0f }, Vector3{ 0.0f,0.0f,0.7f });
 	}
 }

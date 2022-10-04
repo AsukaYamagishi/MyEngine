@@ -1,5 +1,5 @@
 #pragma once
-#include "Code/DirectXBase/GameObject.h"
+#include "../GameObject/GameObjectBase.h"
 #include <vector>
 
 class GameObjectManager
@@ -34,7 +34,7 @@ public:
 	/// <summary>
 	/// オブジェクトをvectorに追加
 	/// </summary>
-	void AddGameObject(GameObject *obj) {
+	void AddGameObject(GameObjectBase *obj) {
 		objects.emplace_back(obj);
 	};
 
@@ -45,7 +45,7 @@ private:
 	DirectXCommon* dxCommon = nullptr;
 
 	//ゲームオブジェクト
-	std::vector<std::shared_ptr<GameObject>> objects;
+	std::vector<std::shared_ptr<GameObjectBase>> objects;
 #pragma endregion
 };
 

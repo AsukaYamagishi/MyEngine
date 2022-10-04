@@ -13,7 +13,7 @@
 #include "Code/GameObject/Enemy/Boss.h"
 #include "ParticleManager.h"
 #include "Stage.h"
-#include "GameObjectManager.h"
+#include "Code/Manager/GameObjectManager.h"
 #include "Code/Collision/CollisionManager.h"
 #include "Code/Scene/AbstructScene.h"
 #include "Code/GameObject/Enemy/EnemySpawner.h"

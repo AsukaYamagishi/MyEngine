@@ -1,5 +1,5 @@
 #pragma once
-#include "../../DirectXBase/GameObject.h"
+#include "../../GameObject/GameObjectBase.h"
 #include "../CollisionInfo.h"
 #include <string>
 
@@ -26,12 +26,12 @@ public:
 	inline void OnCollision(CollisionInfo info) {
 		this->object->OnCollision(info);
 	}
-	inline void SetObject(GameObject* object) { this->object = object; }
+	inline void SetObject(GameObjectBase* object) { this->object = object; }
 	inline void SetName(const std::string name) { this->collisionName = name; }
 
 protected:
 	//オブジェクトのポインタ
-	GameObject* object = nullptr;
+	GameObjectBase* object = nullptr;
 	//形状タイプ
 	CollisionShapeType shapeType = CollisionShapeType::SHAPE_UNKONOWN;
 	std::string collisionName;

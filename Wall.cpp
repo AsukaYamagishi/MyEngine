@@ -2,7 +2,7 @@
 #include "OBBCollider.h"
 
 Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
-	GameObject(dxCommon)
+	GameObjectBase(dxCommon)
 {
 	wall = std::make_shared<ModelDraw>(*ModelDraw::Create());
 	wall->SetModel(ModelManager::GetIns()->GetModel(ModelManager::WALL));

@@ -1,12 +1,12 @@
 #pragma once
 #include "../../DirectXBase/DirectXCommon.h"
 #include "../Vector3.h"
-#include "../../DirectXBase/GameObject.h"
+#include "../../GameObject/GameObjectBase.h"
 #include "../ModelDraw.h"
 #include "../ModelManager.h"
 
 class Bullet
-	:public GameObject
+	:public GameObjectBase
 {
 #pragma region íËêî
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;

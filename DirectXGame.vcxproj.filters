@@ -121,9 +121,6 @@
     <ClCompile Include="Stage.cpp">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjectManager.cpp">
-      <Filter>メイン部分\GameObj</Filter>
-    </ClCompile>
     <ClCompile Include="OBBCollider.cpp" />
     <ClCompile Include="Wall.cpp">
       <Filter>メイン部分\GameObj\Wall</Filter>
@@ -194,8 +191,11 @@
     <ClCompile Include="Code\Model\Fbx\FbxModel.cpp">
       <Filter>メイン部分\Object\FBX</Filter>
     </ClCompile>
-    <ClCompile Include="Code\DirectXBase\GameObject.cpp">
-      <Filter>メイン部分\Base</Filter>
+    <ClCompile Include="Code\GameObject\GameObjectBase.cpp">
+      <Filter>メイン部分\GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Manager\GameObjectManager.cpp">
+      <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -246,9 +246,6 @@
     </ClInclude>
     <ClInclude Include="Stage.h">
       <Filter>メイン部分\GameObj\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObjectManager.h">
-      <Filter>メイン部分\GameObj</Filter>
     </ClInclude>
     <ClInclude Include="OBBCollider.h" />
     <ClInclude Include="Wall.h">
@@ -320,8 +317,11 @@
     <ClInclude Include="Code\Model\Fbx\FbxModel.h">
       <Filter>メイン部分\Object\FBX</Filter>
     </ClInclude>
-    <ClInclude Include="Code\DirectXBase\GameObject.h">
-      <Filter>メイン部分\Base</Filter>
+    <ClInclude Include="Code\GameObject\GameObjectBase.h">
+      <Filter>メイン部分\GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Manager\GameObjectManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

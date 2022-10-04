@@ -1,11 +1,11 @@
 #pragma once
-#include "../../DirectXBase/GameObject.h"
+#include "../../GameObject/GameObjectBase.h"
 #include "../ModelDraw.h"
 #include "../ModelManager.h"
 #include "../SphereCollider.h"
 
 class EnemyBullet :
-    public GameObject
+    public GameObjectBase
 {
 
 public:

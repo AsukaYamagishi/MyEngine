@@ -1,7 +1,7 @@
 #include "EnemyBullet.h"
 
 EnemyBullet::EnemyBullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, Vector3 shotVelocity):
-	GameObject(dxCommon)
+	GameObjectBase(dxCommon)
 {
 
 	bullet = std::make_shared<ModelDraw>(*ModelDraw::Create());

@@ -1,12 +1,12 @@
 #pragma once
-#include "DirectXCommon.h"
+#include "../DirectXBase/DirectXCommon.h"
 #include "../Vector3.h"
 #include "../Collision/CollisionInfo.h"
 
 class CollisionManager;
 class GameObjectManager;
 
-class GameObject
+class GameObjectBase
 {
 #pragma region 定数
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
@@ -22,11 +22,11 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	GameObject(DirectXCommon* dxCommon);
+	GameObjectBase(DirectXCommon* dxCommon);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
-	~GameObject();
+	~GameObjectBase();
 
 	/// <summary>
 	/// マネージャのセット
@@ -83,7 +83,7 @@ protected:
 };
 
 template<class Object, class ...Args>
-inline Object* GameObject::Create(Args ...args)
+inline Object* GameObjectBase::Create(Args ...args)
 {
 	Object* obj = new Object(args...);
 	gameObjectManager.lock()->AddGameObject(obj);

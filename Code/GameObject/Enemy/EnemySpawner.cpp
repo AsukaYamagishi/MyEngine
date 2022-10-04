@@ -1,7 +1,7 @@
 #include "EnemySpawner.h"
 
 EnemySpawner::EnemySpawner(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
-	GameObject(dxCommon)
+	GameObjectBase(dxCommon)
 {
 	this->collisionManager = collisionManager;
 	playerData = player;
@@ -18,7 +18,7 @@ void EnemySpawner::Update()
 	// プレイヤーがスポーン位置から一定の距離内にいれば先頭のデータをスポーンさせる
 	if (playerData->GetPos().z >= spawnDatas.front().spawnPos.z - 50.0f)
 	{
-		GameObject::Create<Enemy>(
+		GameObjectBase::Create<Enemy>(
 			dxCommon, gameObjectManager, collisionManager,
 			spawnDatas.front().spawnPos, playerData);
 		spawnDatas.pop();

@@ -1,13 +1,13 @@
 #pragma once
-#include "../../DirectXBase/GameObject.h"
-#include "../GameObjectManager.h"
+#include "../../GameObject/GameObjectBase.h"
+#include "../../Manager/GameObjectManager.h"
 #include "../ModelDraw.h"
 #include "../ModelManager.h"
 #include "../PlayerBase.h"
 
 
 class Enemy :
-    public GameObject
+    public GameObjectBase
 {
 #pragma region íËêî
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;

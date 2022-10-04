@@ -1,11 +1,11 @@
 #pragma once
 #include "Enemy.h"
 #include "../PlayerBase.h"
-#include "../GameObjectManager.h"
+#include "../../Manager/GameObjectManager.h"
 #include "../Vector3.h"
 #include <queue>
 class EnemySpawner :
-	public GameObject
+	public GameObjectBase
 {
 public:
 

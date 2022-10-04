@@ -2,18 +2,18 @@
 #include <string>
 #include <DirectXMath.h>
 
-class GameObject;
+class GameObjectBase;
 class BaseCollider;
 class CollisionInfo
 {
 public:
-	CollisionInfo(GameObject* obj = nullptr, std::string myNane = "")
+	CollisionInfo(GameObjectBase* obj = nullptr, std::string myNane = "")
 	{
 		this->object = obj;
 		this->hitName = hitName;
 	}
 
-	GameObject* object = nullptr;
+	GameObjectBase* object = nullptr;
 
 	std::string hitName;
 };

@@ -4,8 +4,8 @@
 #include "ModelDraw.h"
 #include "ModelManager.h"
 #include <DirectXMath.h>
-#include "Code/DirectXBase/GameObject.h"
-#include "GameObjectManager.h"
+#include "Code/GameObject/GameObjectBase.h"
+#include "Code/Manager/GameObjectManager.h"
 
 enum class PlayerType {
 	MELLE, //近距離
@@ -13,7 +13,7 @@ enum class PlayerType {
 };
 
 class PlayerBase 
-	: public GameObject{
+	: public GameObjectBase{
 #pragma region 定数
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 	// DirectX::を省略
