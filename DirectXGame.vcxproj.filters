@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="DebugText.cpp">
-      <Filter>メイン部分\Base</Filter>
-    </ClCompile>
     <ClCompile Include="DirectXCommon.cpp">
       <Filter>メイン部分\Base</Filter>
     </ClCompile>
@@ -193,11 +190,11 @@
     <ClCompile Include="Code\Input\ControllerInput.cpp">
       <Filter>メイン部分\Input</Filter>
     </ClCompile>
+    <ClCompile Include="Code\DirectXBase\DebugText.cpp">
+      <Filter>メイン部分\Base\DebugTex</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DebugText.h">
-      <Filter>メイン部分\Base</Filter>
-    </ClInclude>
     <ClInclude Include="DirectXCommon.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
@@ -314,6 +311,9 @@
     </ClInclude>
     <ClInclude Include="Code\Input\ControllerInput.h">
       <Filter>メイン部分\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DirectXBase\DebugText.h">
+      <Filter>メイン部分\Base\DebugTex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -432,6 +432,9 @@
     </Filter>
     <Filter Include="メイン部分\Collision\Collider">
       <UniqueIdentifier>{420e242b-a449-4151-bd40-52bef72dac67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\Base\DebugTex">
+      <UniqueIdentifier>{e89d9931-92af-4086-84fd-a4fa2353848e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

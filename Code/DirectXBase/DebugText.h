@@ -2,7 +2,7 @@
 #include<Windows.h>
 #include<string>
 
-#include"Sprite.h"
+#include"../Sprite.h"
 
 class DebugText
 {
