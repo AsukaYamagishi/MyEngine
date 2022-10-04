@@ -3,7 +3,7 @@
 #include "Code/DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
 #include "Code/Audio/Audio.h"
-#include "KeyboardInput.h"
+#include "Code/Input/KeyboardInput.h"
 #include "Sprite.h"
 
 #include "Code/Scene/AbstructScene.h"

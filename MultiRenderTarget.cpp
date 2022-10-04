@@ -2,7 +2,6 @@
 #include <d3dx12.h>
 #include <d3dcompiler.h>
 #include "WindowsAPI.h"
-#include "KeyboardInput.h"
 
 #pragma comment(lib,"d3dcompiler.lib")
 using namespace DirectX;

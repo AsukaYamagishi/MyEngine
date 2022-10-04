@@ -166,6 +166,7 @@
     <ClInclude Include="Code\GameObject\GameObjectBase.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h" />
     <ClInclude Include="Code\Input\ControllerInput.h" />
+    <ClInclude Include="Code\Input\KeyboardInput.h" />
     <ClInclude Include="Code\Manager\GameObjectManager.h" />
     <ClInclude Include="Code\Model\CalculationModel.h" />
     <ClInclude Include="Code\Model\Fbx\FbxDraw.h" />
@@ -174,7 +175,6 @@
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
-    <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="ModelInput.h" />
     <ClInclude Include="ModelDraw.h" />
     <ClInclude Include="ModelManager.h" />
@@ -210,6 +210,7 @@
     <ClCompile Include="Code\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp" />
     <ClCompile Include="Code\Input\ControllerInput.cpp" />
+    <ClCompile Include="Code\Input\KeyboardInput.cpp" />
     <ClCompile Include="Code\Manager\GameObjectManager.cpp" />
     <ClCompile Include="Code\Model\CalculationModel.cpp" />
     <ClCompile Include="Code\Model\Fbx\FbxDraw.cpp" />
@@ -218,7 +219,6 @@
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
-    <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ModelInput.cpp" />
     <ClCompile Include="ModelDraw.cpp" />

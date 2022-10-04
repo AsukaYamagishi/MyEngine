@@ -5,7 +5,7 @@
 #include "../Sprite.h"
 #include "../DirectXBase/DebugText.h"
 #include "../Audio/Audio.h"
-#include "../KeyboardInput.h"
+#include "../Input/KeyboardInput.h"
 #include "../ModelDraw.h"
 
 #include "AbstructScene.h"

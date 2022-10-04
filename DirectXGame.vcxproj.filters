@@ -79,9 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="KeyboardInput.cpp">
-      <Filter>メイン部分\Input</Filter>
-    </ClCompile>
     <ClCompile Include="ModelDraw.cpp">
       <Filter>メイン部分\Object\OBJ</Filter>
     </ClCompile>
@@ -197,11 +194,11 @@
     <ClCompile Include="Code\Scene\GameScene.cpp">
       <Filter>メイン部分\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Input\KeyboardInput.cpp">
+      <Filter>メイン部分\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KeyboardInput.h">
-      <Filter>メイン部分\Input</Filter>
-    </ClInclude>
     <ClInclude Include="ModelDraw.h">
       <Filter>メイン部分\Object\OBJ</Filter>
     </ClInclude>
@@ -322,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="Code\Scene\GameScene.h">
       <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Input\KeyboardInput.h">
+      <Filter>メイン部分\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
