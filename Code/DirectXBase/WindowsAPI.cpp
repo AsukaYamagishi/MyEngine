@@ -8,7 +8,7 @@ const int WindowsAPI::win_width = 1280;
 const int WindowsAPI::win_height = 720;
 
 
-HINSTANCE WindowsAPI::GetInstance()
+HINSTANCE WindowsAPI::GetIns()
 {
 	return WindowsAPI::w.hInstance;
 }

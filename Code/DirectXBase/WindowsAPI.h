@@ -5,7 +5,7 @@ class WindowsAPI
 {
 #pragma region ä÷êî
 public:
-	static HINSTANCE GetInstance();
+	static HINSTANCE GetIns();
 	static LRESULT WindowProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 	static bool WindowCreate();
 	static bool WindowClassRelease();

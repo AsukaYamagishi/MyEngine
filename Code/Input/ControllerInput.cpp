@@ -20,7 +20,7 @@ void ControllerInput::Init()
 	HRESULT result;
 
 	result = DirectInput8Create(
-		WindowsAPI::GetInstance(), DIRECTINPUT_VERSION,
+		WindowsAPI::GetIns(), DIRECTINPUT_VERSION,
 		IID_IDirectInput8, (void**)&dinput, nullptr);
 	result=CreateGamepadDevice();
 }

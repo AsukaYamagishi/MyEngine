@@ -15,23 +15,23 @@ struct Vector3 : public XMFLOAT3 {
 		this->y = num.y;
 		this->z = num.z;
 	}
-	Vector3(const XMVECTOR &other) :XMFLOAT3() {
+	Vector3(const XMVECTOR& other) :XMFLOAT3() {
 		XMVECTOR temp = other;
 		XMStoreFloat3(this, temp);
 	}
 
 	//ââéZ
-	inline bool operator == (const Vector3 &r) const { return x == r.x && y == r.y && z == r.z; }
-	inline bool operator != (const Vector3 &r) const { return x != r.x || y != r.y || z != r.z; }
-	inline XMVECTOR operator *(const float r) const { return Vector3(x * r, y * r, z * r); }
-	inline XMVECTOR operator /(const float r) const { return Vector3(x / r, y / r, z / r); }
+	inline bool operator == (const Vector3& r) const { return x == r.x && y == r.y && z == r.z; }
+	inline bool operator != (const Vector3& r) const { return x != r.x || y != r.y || z != r.z; }
+	inline XMVECTOR operator * (const float r) const { return Vector3(x * r, y * r, z * r); }
+	inline XMVECTOR operator / (const float r) const { return Vector3(x / r, y / r, z / r); }
 
 	//ìÒçÄââéZ
-	Vector3 operator+=(const Vector3 &r) {
+	Vector3 operator += (const Vector3& r) {
 		*this = *this + r;
 		return *this;
 	}
-	Vector3 operator-=(const Vector3 &r) {
+	Vector3 operator -= (const Vector3& r) {
 		*this = *this + -r;
 		return *this;
 	}
@@ -44,7 +44,7 @@ struct Vector3 : public XMFLOAT3 {
 	Vector3 VScale(float Scale) { Vector3 Result = { x * Scale, y * Scale, z * Scale }; return Result; }
 
 	//ë„ì¸
-	Vector3 &operator=(const XMVECTOR &other) {
+	Vector3& operator = (const XMVECTOR& other) {
 		XMVECTOR temp = other;
 		XMStoreFloat3(this, temp);
 		return *this;
