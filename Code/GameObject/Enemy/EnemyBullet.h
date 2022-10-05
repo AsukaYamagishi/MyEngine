@@ -1,7 +1,7 @@
 #pragma once
 #include "../../GameObject/GameObjectBase.h"
 #include "../Code/3d/Obj/ObjDraw.h"
-#include "../ModelManager.h"
+#include "../../Manager/ModelManager.h"
 #include "../SphereCollider.h"
 
 class EnemyBullet :

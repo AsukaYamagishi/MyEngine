@@ -2,7 +2,7 @@
 #include "../../GameObject/GameObjectBase.h"
 #include "../../Manager/GameObjectManager.h"
 #include "../../3d/Obj/ObjDraw.h"
-#include "../ModelManager.h"
+#include "../../Manager/ModelManager.h"
 #include "../PlayerBase.h"
 
 

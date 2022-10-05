@@ -3,7 +3,7 @@
 #include "../Vector3.h"
 #include "../../GameObject/GameObjectBase.h"
 #include "../../3d/Obj/ObjDraw.h"
-#include "../ModelManager.h"
+#include "../../Manager/ModelManager.h"
 
 class Bullet
 	:public GameObjectBase

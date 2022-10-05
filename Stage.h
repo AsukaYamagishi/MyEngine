@@ -2,7 +2,7 @@
 #include "SafeDelete.h"
 #include "Code/DirectXBase/DirectXCommon.h"
 #include "Code/3d/Obj/ObjDraw.h"
-#include "ModelManager.h"
+#include "Code/Manager/ModelManager.h"
 class Stage {
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 	// DirectX::��ȗ�

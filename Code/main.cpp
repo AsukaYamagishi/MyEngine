@@ -9,7 +9,7 @@
 #include "../SafeDelete.h"
 #include "3d/Obj/ObjDraw.h"
 #include "../SceneManager.h"
-#include "../ModelManager.h"
+#include "Manager/ModelManager.h"
 #include "3d/Fbx/FbxLoader.h"
 #include "Camera/Camera.h"
 #include "../PostEffect.h"

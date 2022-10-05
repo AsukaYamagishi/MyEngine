@@ -3,7 +3,7 @@
 #include "Vector3.h"
 #include "Code/Manager/GameObjectManager.h"
 #include "Code/3d/Obj/ObjDraw.h"
-#include "ModelManager.h"
+#include "Code/Manager/ModelManager.h"
 #include "PlayerBase.h"
 
 class Wall :

@@ -174,10 +174,10 @@
     <ClInclude Include="Code\Input\ControllerInput.h" />
     <ClInclude Include="Code\Input\KeyboardInput.h" />
     <ClInclude Include="Code\Manager\GameObjectManager.h" />
+    <ClInclude Include="Code\Manager\ModelManager.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
-    <ClInclude Include="ModelManager.h" />
     <ClInclude Include="MultiRenderTarget.h" />
     <ClInclude Include="OBBCollider.h" />
     <ClInclude Include="ParticleManager.h" />
@@ -219,10 +219,10 @@
     <ClCompile Include="Code\Input\KeyboardInput.cpp" />
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\Manager\GameObjectManager.cpp" />
+    <ClCompile Include="Code\Manager\ModelManager.cpp" />
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
-    <ClCompile Include="ModelManager.cpp" />
     <ClCompile Include="MultiRenderTarget.cpp" />
     <ClCompile Include="OBBCollider.cpp" />
     <ClCompile Include="ParticleManager.cpp" />

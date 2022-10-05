@@ -2,7 +2,7 @@
 #include "../SafeDelete.h"
 #include "../../DirectXBase/DirectXCommon.h"
 #include "../../3d/Obj/ObjDraw.h"
-#include "../ModelManager.h"
+#include "../../Manager/ModelManager.h"
 #include <DirectXMath.h>
 
 

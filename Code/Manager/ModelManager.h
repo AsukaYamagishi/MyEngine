@@ -1,7 +1,7 @@
 #pragma once
 #include <map>
 #include <string>
-#include "Code/3d/Obj/ObjLoader.h"
+#include "../3d/Obj/ObjLoader.h"
 class ModelManager final
 {
 private:
