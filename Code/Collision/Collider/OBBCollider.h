@@ -1,10 +1,18 @@
 #pragma once
-#include "../CollisionPrimitive.h"
 #include "BaseCollider.h"
+#include "../CollisionPrimitive.h"
+
 class OBBCollider :
     public BaseCollider , public OBB
 {
 public:
+    /// <summary>
+    /// コンストラクタ
+    /// </summary>
+    /// <param name="normalDirect">方向ベクトル</param>
+    /// <param name="length">長さ</param>
+    /// <param name="name"></param>
+    /// <param name="offset"></param>
     OBBCollider(DirectX::XMVECTOR normalDirect[3], float length[3], std::string name = "", DirectX::XMVECTOR offset = { 0,0,0,0 }) :
         offset(offset)
     {

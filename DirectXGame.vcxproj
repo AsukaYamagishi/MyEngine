@@ -206,11 +206,9 @@
     <ClCompile Include="Code\3d\Obj\ObjLoader.cpp" />
     <ClCompile Include="Code\Audio\Audio.cpp" />
     <ClCompile Include="Code\Camera\Camera.cpp" />
-    <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp" />
     <ClCompile Include="Code\Collision\Collider\OBBCollider.cpp" />
     <ClCompile Include="Code\Collision\Collider\SphereCollider.cpp" />
     <ClCompile Include="Code\Collision\Collision.cpp" />
-    <ClCompile Include="Code\Collision\CollisionInfo.cpp" />
     <ClCompile Include="Code\Collision\CollisionManager.cpp" />
     <ClCompile Include="Code\Collision\CollisionPrimitive.cpp" />
     <ClCompile Include="Code\DirectXBase\DebugText.cpp" />

@@ -96,12 +96,6 @@
     <ClCompile Include="Code\Collision\Collision.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp">
-      <Filter>メイン部分\Collision\Collider</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Collision\CollisionInfo.cpp">
-      <Filter>メイン部分\Collision</Filter>
-    </ClCompile>
     <ClCompile Include="Code\Collision\CollisionManager.cpp">
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
