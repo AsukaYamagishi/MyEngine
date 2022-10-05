@@ -13,7 +13,7 @@
 #include "3d/Fbx/FbxLoader.h"
 #include "Camera/Camera.h"
 #include "../PostEffect.h"
-#include "../MultiRenderTarget.h"
+#include "2d/PostEffect/MultiRenderTarget.h"
 
 using namespace DirectX;
 using namespace Microsoft::WRL;

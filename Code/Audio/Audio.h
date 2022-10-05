@@ -72,7 +72,7 @@ public: //ƒƒ“ƒo•Ï”
 	};
 
 private: //ƒƒ“ƒo•Ï”
-	IXAudio2MasteringVoice* masterVoice;
+	IXAudio2MasteringVoice* masterVoice = nullptr;
 	XAudio2VoiceCallback voiceCallback;
 
 #pragma endregion

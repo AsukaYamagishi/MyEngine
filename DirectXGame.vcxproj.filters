@@ -78,9 +78,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MultiRenderTarget.cpp">
-      <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
-    </ClCompile>
     <ClCompile Include="ParticleManager.cpp">
       <Filter>メイン部分\Particle</Filter>
     </ClCompile>
@@ -197,11 +194,11 @@
     <ClCompile Include="Code\Manager\ModelManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
+    <ClCompile Include="Code\2d\PostEffect\MultiRenderTarget.cpp">
+      <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MultiRenderTarget.h">
-      <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
-    </ClInclude>
     <ClInclude Include="ParticleManager.h">
       <Filter>メイン部分\Particle</Filter>
     </ClInclude>
@@ -322,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="Code\Manager\ModelManager.h">
       <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\2d\PostEffect\MultiRenderTarget.h">
+      <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
