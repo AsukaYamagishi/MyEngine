@@ -1,4 +1,4 @@
-#include "../WindowsAPI.h"  //ウィンドウ表示
+#include "DirectXBase/WindowsAPI.h"  //ウィンドウ表示
 #include "Input/KeyboardInput.h"  //キーボード入力
 #include "Input/ControllerInput.h" //ゲームパッド入力
 #include "2d/Sprite.h"  //2D画像(sprite)
@@ -107,7 +107,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 #pragma region 3Dモデル静的初期化
 	ObjLoader::StaticInitialize(dxCommon->GetDevice());
-	ModelManager::GetIns()->Initialize();
+	ModelManager::GetIns()->Init();
 
 	// Obj
 	if (!ObjDraw::StaticInitialize(dxCommon->GetDevice(), WindowsAPI::win_width, WindowsAPI::win_height)) {

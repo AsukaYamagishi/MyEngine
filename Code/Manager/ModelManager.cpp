@@ -8,7 +8,7 @@ ModelManager *ModelManager::GetIns()
 	return &instans;
 }
 
-void ModelManager::Initialize()
+void ModelManager::Init()
 {
 	LoadModel(PLAYER, "Player");
 	LoadModel(BULLET, "bullet");

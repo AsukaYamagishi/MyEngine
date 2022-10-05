@@ -1,6 +1,6 @@
 #include "SceneManager.h"
-std::stack<AbstructScene*> SceneManager::scenes;
 
+std::stack<AbstructScene*> SceneManager::scenes;
 DirectXCommon* SceneManager::dxCommon;
 Audio* SceneManager::audio;
 
@@ -8,7 +8,7 @@ void SceneManager::ChangeScene(SceneNo sceneNo, bool sceneStackClear)
 {
 
 	if (sceneStackClear) {
-		//シーンが空になるまでポップ
+		//シーンが空になるまでポップ(取り出す)
 		while (scenes.size() != 0) {
 			scenes.pop();
 		}
@@ -31,6 +31,8 @@ void SceneManager::ChangeScene(SceneNo sceneNo, bool sceneStackClear)
 		default:
 			break;
 	}
+
+	//スタックの一番上のみ初期化
 	scenes.top()->Init();
 }
 
@@ -52,6 +54,7 @@ SceneManager::~SceneManager()
 
 void SceneManager::Init()
 {
+	//ゲーム起動時処理
 	ChangeScene(GAMEPLAY);
 }
 
