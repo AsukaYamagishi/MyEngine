@@ -3,7 +3,7 @@
 #include "../../Manager/GameObjectManager.h"
 #include "../../3d/Obj/ObjDraw.h"
 #include "../../Manager/ModelManager.h"
-#include "../PlayerBase.h"
+#include "../Player/PlayerBase.h"
 
 
 class Enemy :

@@ -174,6 +174,7 @@
     <ClInclude Include="Code\GameObject\Enemy\EnemyBullet.h" />
     <ClInclude Include="Code\GameObject\Enemy\EnemySpawner.h" />
     <ClInclude Include="Code\GameObject\GameObjectBase.h" />
+    <ClInclude Include="Code\GameObject\Player\PlayerBase.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h" />
     <ClInclude Include="Code\Input\ControllerInput.h" />
     <ClInclude Include="Code\Input\KeyboardInput.h" />
@@ -184,7 +185,6 @@
     <ClInclude Include="Code\Scene\GameScene.h" />
     <ClInclude Include="PostEffect.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="SafeDelete.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage.h" />
@@ -218,6 +218,7 @@
     <ClCompile Include="Code\GameObject\Enemy\EnemyBullet.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\EnemySpawner.cpp" />
     <ClCompile Include="Code\GameObject\GameObjectBase.cpp" />
+    <ClCompile Include="Code\GameObject\Player\PlayerBase.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp" />
     <ClCompile Include="Code\Input\ControllerInput.cpp" />
     <ClCompile Include="Code\Input\KeyboardInput.cpp" />
@@ -229,7 +230,6 @@
     <ClCompile Include="Code\Scene\GameScene.cpp" />
     <ClCompile Include="PostEffect.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Title.cpp" />

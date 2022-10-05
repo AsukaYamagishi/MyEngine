@@ -4,7 +4,7 @@
 #include "Code/Manager/GameObjectManager.h"
 #include "Code/3d/Obj/ObjDraw.h"
 #include "Code/Manager/ModelManager.h"
-#include "PlayerBase.h"
+#include "Code/GameObject/Player/PlayerBase.h"
 
 class Wall :
     public GameObjectBase

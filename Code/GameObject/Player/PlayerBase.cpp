@@ -1,12 +1,12 @@
 ﻿#include "PlayerBase.h"
-#include "Code/Camera/Camera.h"
+#include "../../Camera/Camera.h"
 #include <time.h>
 #include <cassert>
-#include "Code/Input/KeyboardInput.h"
-#include "Code/Input/ControllerInput.h"
-#include "Code/GameObject/Player/PlayerBullet.h"
-#include "Code/Collision/Collider/SphereCollider.h"
-#include "Code/Collision/Collider/OBBCollider.h"
+#include "../../Input/KeyboardInput.h"
+#include "../../Input/ControllerInput.h"
+#include "PlayerBullet.h"
+#include "../../Collision/Collider/SphereCollider.h"
+#include "../../Collision/Collider/OBBCollider.h"
 
 
 using namespace DirectX;

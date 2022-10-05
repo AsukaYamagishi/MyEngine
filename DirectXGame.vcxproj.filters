@@ -78,9 +78,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PlayerBase.cpp">
-      <Filter>メイン部分\GameObj\Player</Filter>
-    </ClCompile>
     <ClCompile Include="PostEffect.cpp">
       <Filter>メイン部分\Sprite\PostEffect</Filter>
     </ClCompile>
@@ -199,11 +196,11 @@
     <ClCompile Include="Code\2d\Particle\ParticleManager.cpp">
       <Filter>メイン部分\Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Code\GameObject\Player\PlayerBase.cpp">
+      <Filter>メイン部分\GameObj\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PlayerBase.h">
-      <Filter>メイン部分\GameObj\Player</Filter>
-    </ClInclude>
     <ClInclude Include="PostEffect.h">
       <Filter>メイン部分\Sprite\PostEffect</Filter>
     </ClInclude>
@@ -326,6 +323,9 @@
     </ClInclude>
     <ClInclude Include="Code\2d\Particle\ParticleManager.h">
       <Filter>メイン部分\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameObject\Player\PlayerBase.h">
+      <Filter>メイン部分\GameObj\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

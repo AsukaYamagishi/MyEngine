@@ -7,7 +7,7 @@
 #include "../Audio/Audio.h"
 #include "../Input/KeyboardInput.h"
 #include <vector>
-#include "../PlayerBase.h"
+#include "../GameObject/Player/PlayerBase.h"
 #include "../Collision/Collision.h"
 #include "../3d/Fbx/FbxDraw.h"
 #include "../GameObject/Enemy/Boss.h"
