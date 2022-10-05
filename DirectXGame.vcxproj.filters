@@ -78,9 +78,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>メイン部分\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Title.cpp">
       <Filter>メイン部分\Scene</Filter>
     </ClCompile>
@@ -199,11 +196,11 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>メイン部分\Sprite</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Manager\SceneManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SceneManager.h">
-      <Filter>メイン部分\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="Title.h">
       <Filter>メイン部分\Scene</Filter>
     </ClInclude>
@@ -326,6 +323,9 @@
     </ClInclude>
     <ClInclude Include="Code\DirectXBase\SafeDelete.h">
       <Filter>メイン部分\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Manager\SceneManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

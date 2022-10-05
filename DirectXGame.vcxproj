@@ -182,11 +182,11 @@
     <ClInclude Include="Code\Input\KeyboardInput.h" />
     <ClInclude Include="Code\Manager\GameObjectManager.h" />
     <ClInclude Include="Code\Manager\ModelManager.h" />
+    <ClInclude Include="Code\Manager\SceneManager.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="Vector3.h" />
@@ -226,11 +226,11 @@
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\Manager\GameObjectManager.cpp" />
     <ClCompile Include="Code\Manager\ModelManager.cpp" />
+    <ClCompile Include="Code\Manager\SceneManager.cpp" />
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="Wall.cpp" />

@@ -1,7 +1,7 @@
 #pragma once
-#include "Code/Scene/GameScene.h"
-#include "Title.h"
-#include "Code/Scene/EndScene.h"
+#include "../Scene/GameScene.h"
+#include "../Title.h"
+#include "../Scene/EndScene.h"
 
 #include <stack>
 

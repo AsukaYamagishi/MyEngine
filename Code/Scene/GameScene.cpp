@@ -6,7 +6,7 @@
 #include "../3d/Fbx/FbxDraw.h"
 #include "../Wall.h"
 
-#include "../SceneManager.h"
+#include "../Manager/SceneManager.h"
 
 #include "../Collision/Collider/BaseCollider.h"
 

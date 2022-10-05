@@ -8,7 +8,7 @@
 #include "DirectXBase/DirectXCommon.h"
 #include "DirectXBase/SafeDelete.h"
 #include "3d/Obj/ObjDraw.h"
-#include "../SceneManager.h"
+#include "Manager/SceneManager.h"
 #include "Manager/ModelManager.h"
 #include "3d/Fbx/FbxLoader.h"
 #include "Camera/Camera.h"
