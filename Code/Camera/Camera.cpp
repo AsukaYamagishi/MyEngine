@@ -1,6 +1,6 @@
 #include "Camera.h"
+#include <yMath.h>
 #include "../DirectXBase/WindowsAPI.h"
-#include "yMath.h"
 
 Camera* Camera::NowMatView = nullptr;
 
@@ -31,6 +31,7 @@ void Camera::Update()
 
 void Camera::UpdateViewMatrix()
 {
+	//Œ»Ý‚ÌƒJƒƒ‰î•ñ‚Åã‘‚«
 	matView = XMMatrixLookAtLH(
 		XMLoadFloat3(&eye),
 		XMLoadFloat3(&target),
@@ -47,13 +48,14 @@ void Camera::UpdateProjectionMatrix()
 }
 
 
-void Camera::Init(const XMFLOAT3 eye)
+void Camera::Init(const Vector3 eye, const Vector3 target, const Vector3 up)
 {
-	NowMatView = new Camera(Vector3{ eye });
+	//‰½‚àÝ’è‚µ‚È‚¢ê‡Ž©“®“I‚É(0,100,100),(0,0,0),(0,1,0)‚É
+	NowMatView = new Camera(eye, target, up);
 	NowMatView->matView = XMMatrixLookAtLH(
 		XMLoadFloat3(&eye),
-		XMLoadFloat3(&Vector3{ 0,0,0 }),
-		XMLoadFloat3(&Vector3{ 0,1,0 })
+		XMLoadFloat3(&target),
+		XMLoadFloat3(&up)
 	);
 }
 

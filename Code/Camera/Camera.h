@@ -1,6 +1,7 @@
 #pragma once
 #include <DirectXMath.h>
 #include "../Math/Vector3.h"
+
 using namespace DirectX;
 
 class Camera
@@ -26,6 +27,16 @@ public:
 	Camera(Vector3 eye, Vector3 target = { 0,0,0 }, Vector3 up = { 0,1,0 });
 
 	/// <summary>
+	/// 初期化
+	/// </summary>
+	/// <param name="eye">視点</param>
+	/// <param name="target">注視点(0,0,0)</param>
+	/// <param name="up">上ベクトル(0,1,0)</param>
+	static void Init(const Vector3 eye = { 0,100,100 },
+					 const Vector3 target = { 0,0,0 },
+					 const Vector3 up = { 0,1,0 });
+
+	/// <summary>
 	/// 毎フレーム更新
 	/// </summary>
 	void Update();
@@ -39,20 +50,16 @@ public:
 	/// 射影行列更新
 	/// </summary>
 	void UpdateProjectionMatrix();
+#pragma endregion
 
-	/// <summary>
-	/// 初期化
-	/// </summary>
-	/// <param name="eye">視点</param>
-	static void Init(const XMFLOAT3 eye = { 0,100,100 });
-
-
-	//ゲッター・セッター
+#pragma region ゲッター/セッター
+	
 	/// <summary>
 	/// カメラセット
 	/// </summary>
 	/// <param name="cam">カメラ情報</param>
 	static void SetCam(Camera* cam);
+
 	/// <summary>
 	/// ビュー射影行列取得
 	/// </summary>
