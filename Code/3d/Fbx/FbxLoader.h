@@ -14,7 +14,7 @@ private: //エイリアス
 
 public:
 	// シングルトンインスタンスの取得
-	static FbxLoader* GetInstance();
+	static FbxLoader* GetIns();
 	//FBXの行列をXMMATRIXに変換
 	static void ConvertMatrixFromFbx(DirectX::XMMATRIX* dst, const FbxAMatrix& src);
 

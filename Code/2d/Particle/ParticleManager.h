@@ -75,7 +75,7 @@ public: // Ã“Iƒƒ“ƒoŠÖ”
 	/// <param name="window_width">‰æ–Ê•</param>
 	/// <param name="window_height">‰æ–Ê‚‚³</param>
 	/// <returns>¬”Û</returns>
-	static bool StaticInitialize(ID3D12Device* device, int window_width, int window_height);
+	static bool StaticInit(ID3D12Device* device, int window_width, int window_height);
 
 	/// <summary>
 	/// •`‰æ‘Oˆ—

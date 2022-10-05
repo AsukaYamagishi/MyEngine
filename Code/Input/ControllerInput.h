@@ -47,7 +47,7 @@ public: //コンストラクタ関係の設定
 	//代入演算子の削除
 	const ControllerInput& operator=(const ControllerInput&) = delete;
 	//インスタンスの取得
-	static ControllerInput* GetInstance();
+	static ControllerInput* GetIns();
 
 private: //エイリアス
 	template<class T> using vector = std::vector<T>;

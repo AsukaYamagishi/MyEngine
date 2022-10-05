@@ -81,9 +81,6 @@
     <ClCompile Include="Code\Audio\Audio.cpp">
       <Filter>メイン部分\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Scene\AbstructScene.cpp">
-      <Filter>メイン部分\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp">
       <Filter>メイン部分\GameObj\Enemy</Filter>
     </ClCompile>
@@ -182,16 +179,16 @@
       <Filter>メイン部分\Sprite</Filter>
     </ClCompile>
     <ClCompile Include="Code\GameObject\Other\Stage.cpp">
-      <Filter>メイン部分\GameObj\Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\GameObject\Other\Wall.cpp">
-      <Filter>メイン部分\GameObj\Wall</Filter>
+      <Filter>メイン部分\GameObj\Other</Filter>
     </ClCompile>
     <ClCompile Include="Code\Scene\TitleScene.cpp">
       <Filter>メイン部分\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Code\DirectXBase\WindowsAPI.cpp">
       <Filter>メイン部分\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameObject\Other\Wall.cpp">
+      <Filter>メイン部分\GameObj\Other</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,10 +304,7 @@
       <Filter>メイン部分\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Code\GameObject\Other\Stage.h">
-      <Filter>メイン部分\GameObj\Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\GameObject\Other\Wall.h">
-      <Filter>メイン部分\GameObj\Wall</Filter>
+      <Filter>メイン部分\GameObj\Other</Filter>
     </ClInclude>
     <ClInclude Include="Code\Scene\TitleScene.h">
       <Filter>メイン部分\Scene</Filter>
@@ -320,6 +314,9 @@
     </ClInclude>
     <ClInclude Include="Code\DirectXBase\WindowsAPI.h">
       <Filter>メイン部分\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameObject\Other\Wall.h">
+      <Filter>メイン部分\GameObj\Other</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -421,12 +418,6 @@
     <Filter Include="メイン部分\GameObj\Player">
       <UniqueIdentifier>{f8243134-8987-48a7-8f4b-f2c3ed1008ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="メイン部分\GameObj\Stage">
-      <UniqueIdentifier>{c0ce1929-586d-4bea-a56e-5052f2d49eb4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="メイン部分\GameObj\Wall">
-      <UniqueIdentifier>{34fe37e4-5c59-4b4f-8c52-57582c9d434e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="メイン部分\Object\Calculation">
       <UniqueIdentifier>{b1e7442a-ddca-49b7-a46e-9486a45a5f6d}</UniqueIdentifier>
     </Filter>
@@ -438,6 +429,9 @@
     </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{1b18531d-74dd-4b53-9d04-2f27d035f730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="メイン部分\GameObj\Other">
+      <UniqueIdentifier>{c0ce1929-586d-4bea-a56e-5052f2d49eb4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -31,7 +31,7 @@ public:
 	/// <summary>
 	/// マネージャのセット
 	/// </summary>
-	/// <param name="gameObjectManager"></param>
+	/// <param name="gameObjectManager">オブジェクトマネージャ</param>
 	static void SetManager(std::weak_ptr<GameObjectManager> gameObjectManager);
 
 	/// <summary>

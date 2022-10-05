@@ -9,7 +9,7 @@ ControllerInput::vector<DIJOYSTATE> ControllerInput::oldgamepad = {};
 size_t ControllerInput::pressCount[64] = {};
 size_t ControllerInput::releaseCount[64] = {};
 
-ControllerInput* ControllerInput::GetInstance()
+ControllerInput* ControllerInput::GetIns()
 {
 	static ControllerInput instance;
 	return &instance;

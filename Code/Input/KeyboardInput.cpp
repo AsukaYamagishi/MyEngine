@@ -1,8 +1,8 @@
 #include "KeyboardInput.h"
 
 //インクルード関係
-#define DIRECTINPUT_VERSION 0x0800 //DirectInputバージョン指定
 #include<dinput.h>
+#define DIRECTINPUT_VERSION 0x0800 //DirectInputバージョン指定
 
 //キーボードデバイスの生成
 IDirectInputDevice8* devkeyboard = nullptr;
@@ -97,7 +97,7 @@ bool KeyboardInput::ReleaseKey(int key)
 	return releaseKey[key] > 0;
 }
 
-KeyboardInput* KeyboardInput::GetInstance()
+KeyboardInput* KeyboardInput::GetIns()
 {
 	static KeyboardInput instance;
 	return &instance;

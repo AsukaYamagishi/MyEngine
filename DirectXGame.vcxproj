@@ -229,7 +229,6 @@
     <ClCompile Include="Code\Manager\GameObjectManager.cpp" />
     <ClCompile Include="Code\Manager\ModelManager.cpp" />
     <ClCompile Include="Code\Manager\SceneManager.cpp" />
-    <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
     <ClCompile Include="Code\Scene\TitleScene.cpp" />

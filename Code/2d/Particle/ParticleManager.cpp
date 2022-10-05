@@ -41,7 +41,7 @@ const DirectX::XMFLOAT3 operator + (const DirectX::XMFLOAT3& lhs, const DirectX:
 	return result;
 }
 
-bool ParticleManager::StaticInitialize(ID3D12Device* device, int window_width, int window_height)
+bool ParticleManager::StaticInit(ID3D12Device* device, int window_width, int window_height)
 {
 	// nullptrチェック
 	assert(device);

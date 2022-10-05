@@ -1,14 +1,13 @@
 #pragma once
+#include <DirectXMath.h>
+#include "AbstructScene.h"
 #include "../DirectXBase/SafeDelete.h"
 #include "../DirectXBase/DirectXCommon.h"
-#include <DirectXMath.h>
-#include "../2d/Sprite.h"
 #include "../DirectXBase/DebugText.h"
-#include "../Audio/Audio.h"
 #include "../Input/KeyboardInput.h"
+#include "../Audio/Audio.h"
+#include "../2d/Sprite.h"
 #include "../3d/Obj/ObjDraw.h"
-
-#include "AbstructScene.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;

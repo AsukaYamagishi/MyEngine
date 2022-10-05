@@ -1,10 +1,10 @@
 ﻿#include "PlayerBase.h"
-#include "../../Camera/Camera.h"
+#include "PlayerBullet.h"
 #include <time.h>
 #include <cassert>
+#include "../../Camera/Camera.h"
 #include "../../Input/KeyboardInput.h"
 #include "../../Input/ControllerInput.h"
-#include "PlayerBullet.h"
 #include "../../Collision/Collider/SphereCollider.h"
 #include "../../Collision/Collider/OBBCollider.h"
 
@@ -82,25 +82,25 @@ void PlayerBase::Move()
 	}
 
 	//キーボード移動
-	if (KeyboardInput::GetInstance()->PressKey(DIK_W)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_W)) {
 		velocity += Vector3(0.0f, move, 0.0f);
 	}
-	if (KeyboardInput::GetInstance()->PressKey(DIK_S)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_S)) {
 		velocity += Vector3(0.0f, -move, 0.0f);
 	}
-	if (KeyboardInput::GetInstance()->PressKey(DIK_A)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_A)) {
 		velocity += Vector3(-move, 0.0f, 0.0f);
 	}
-	if (KeyboardInput::GetInstance()->PressKey(DIK_D)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_D)) {
 		velocity += Vector3(+move, 0.0f, 0.0f);
 	}
 
 	//ゲームパッド移動
-	if (ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LX, 0.1f) != 0 ||
-		ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LY, 0.1f) != 0)
+	if (ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LX, 0.1f) != 0 ||
+		ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LY, 0.1f) != 0)
 	{
-		velocity.x += move * (ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LX, 0.1f) / 500);
-		velocity.y += move * -(ControllerInput::GetInstance()->IsPadStick(INPUT_AXIS_LY, 0.1f) / 500);
+		velocity.x += move * (ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LX, 0.1f) / 500);
+		velocity.y += move * -(ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LY, 0.1f) / 500);
 	}
 
 	//move以上に大きく動かないようにする
@@ -135,7 +135,8 @@ void PlayerBase::Move()
 
 void PlayerBase::Attack()
 {
-	if (KeyboardInput::GetInstance()->PressKeyTrigger(DIK_SPACE))
+	//スペースを押すと弾が飛ぶ(長距離攻撃挙動)
+	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE))
 	{
 		GameObjectBase::Create<Bullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,1.0f }, Vector3{ 0.0f,0.0f,0.7f });
 	}

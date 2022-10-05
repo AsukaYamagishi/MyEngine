@@ -1,11 +1,11 @@
 ﻿#pragma once
-#include "../../DirectXBase/SafeDelete.h"
-#include "../../DirectXBase/DirectXCommon.h"
-#include "../../3d/Obj/ObjDraw.h"
-#include "../../Manager/ModelManager.h"
 #include <DirectXMath.h>
 #include "../GameObjectBase.h"
+#include "../../DirectXBase/SafeDelete.h"
+#include "../../DirectXBase/DirectXCommon.h"
+#include "../../Manager/ModelManager.h"
 #include "../../Manager/GameObjectManager.h"
+#include "../../3d/Obj/ObjDraw.h"
 
 enum class PlayerType {
 	MELLE, //近距離

@@ -22,10 +22,6 @@ public: //静的メンバ関数
 	static void Init(HWND hwnd);
 	//毎フレーム更新
 	static void Update();
-	//情報の利用
-	//static void GetHitKeyStateAll(int *key);
-	//static bool CheckHitKey(int key);
-	//static bool CheckHitKeyTrigger(int key);
 
 //private:
 	static bool PressKeyTrigger(int key);
@@ -40,5 +36,5 @@ public:
 	//代入演算子無効
 	KeyboardInput& operator=(const KeyboardInput& obj) = delete;
 	//インスタンス生成
-	static KeyboardInput* GetInstance();
+	static KeyboardInput* GetIns();
 };
