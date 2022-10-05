@@ -4,7 +4,7 @@
 #include <DirectXMath.h>
 #include "Code/Audio/Audio.h"
 #include "Code/Input/KeyboardInput.h"
-#include "Sprite.h"
+#include "Code/2d/Sprite.h"
 
 #include "Code/Scene/AbstructScene.h"
 

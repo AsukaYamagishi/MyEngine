@@ -2,7 +2,7 @@
 #include "../DIrectXBase/SafeDelete.h"
 #include "../DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
-#include "../Sprite.h"
+#include "../2d/Sprite.h"
 #include "../DirectXBase/DebugText.h"
 #include "../Audio/Audio.h"
 #include "../Input/KeyboardInput.h"

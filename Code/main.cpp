@@ -1,7 +1,7 @@
 #include "../WindowsAPI.h"  //ウィンドウ表示
 #include "Input/KeyboardInput.h"  //キーボード入力
 #include "Input/ControllerInput.h" //ゲームパッド入力
-#include "../Sprite.h"  //2D画像(sprite)
+#include "2d/Sprite.h"  //2D画像(sprite)
 #include "3d/CalculationModel.h"  //3Dオブジェクト(Object)
 #include "Audio/Audio.h" //音楽再生
 #include "DirectXBase/DebugText.h" //デバッグテキスト

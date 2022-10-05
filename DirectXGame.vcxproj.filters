@@ -193,11 +193,11 @@
     <ClCompile Include="Code\2d\PostEffect\MultiRenderTarget.cpp">
       <Filter>メイン部分\Sprite\PostEffect</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>メイン部分\Sprite</Filter>
-    </ClCompile>
     <ClCompile Include="Code\Manager\SceneManager.cpp">
       <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\2d\Sprite.cpp">
+      <Filter>メイン部分\Sprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -318,14 +318,14 @@
     <ClInclude Include="Code\2d\PostEffect\MultiRenderTarget.h">
       <Filter>メイン部分\Sprite\PostEffect</Filter>
     </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>メイン部分\Sprite</Filter>
-    </ClInclude>
     <ClInclude Include="Code\DirectXBase\SafeDelete.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
     <ClInclude Include="Code\Manager\SceneManager.h">
       <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\2d\Sprite.h">
+      <Filter>メイン部分\Sprite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
