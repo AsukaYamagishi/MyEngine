@@ -5,13 +5,10 @@
 #include <DirectXTex.h>
 
 #pragma comment(lib, "d3dcompiler.lib")
-
 using namespace DirectX;
 using namespace Microsoft::WRL;
 
-/// <summary>
-/// 静的メンバ変数の実体
-/// </summary>
+#pragma region 静的メンバ変数の実体定義
 ID3D12Device* Sprite::device = nullptr;
 UINT Sprite::descriptorHandleIncrementSize;
 ID3D12GraphicsCommandList* Sprite::cmdList = nullptr;
@@ -20,12 +17,12 @@ ComPtr<ID3D12PipelineState> Sprite::pipelinestate;
 XMMATRIX Sprite::matProjection;
 ComPtr<ID3D12DescriptorHeap> Sprite::descHeap;
 ComPtr<ID3D12Resource> Sprite::texBuff[spriteSRVCount];
+#pragma endregion
 
 bool Sprite::StaticInit(ID3D12Device* dev, int window_width, int window_height)
 {
 	// nullptrチェック
 	assert(dev);
-
 	Sprite::device = dev;
 
 	// デスクリプタサイズを取得
@@ -84,7 +81,7 @@ bool Sprite::StaticInit(ID3D12Device* dev, int window_width, int window_height)
 		return false;
 	}
 
-	// 頂点レイアウト
+	// 頂点レイアウト(シェーダへ送る情報)
 	D3D12_INPUT_ELEMENT_DESC inputLayout[] = {
 		{ // xy座標(1行で書いたほうが見やすい)
 			"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0,
@@ -119,7 +116,7 @@ bool Sprite::StaticInit(ID3D12Device* dev, int window_width, int window_height)
 	blenddesc.BlendOp = D3D12_BLEND_OP_ADD;
 	blenddesc.SrcBlend = D3D12_BLEND_SRC_ALPHA;
 	blenddesc.DestBlend = D3D12_BLEND_INV_SRC_ALPHA;
-
+	//アルファ値関係設定
 	blenddesc.BlendOpAlpha = D3D12_BLEND_OP_ADD;
 	blenddesc.SrcBlendAlpha = D3D12_BLEND_ONE;
 	blenddesc.DestBlendAlpha = D3D12_BLEND_ZERO;
@@ -196,12 +193,11 @@ bool Sprite::LoadTexture(UINT texnumber, const wchar_t* filename)
 {
 	// nullptrチェック
 	assert(device);
-
 	HRESULT result;
+
 	// WICテクスチャのロード
 	TexMetadata metadata{};
 	ScratchImage scratchImg{};
-
 	result = LoadFromWICFile(
 		filename, WIC_FLAGS_NONE,
 		&metadata, scratchImg);
@@ -209,7 +205,6 @@ bool Sprite::LoadTexture(UINT texnumber, const wchar_t* filename)
 		assert(0);
 		return false;
 	}
-
 	const Image* img = scratchImg.GetImage(0, 0, 0); // 生データ抽出
 
 	// リソース設定
@@ -258,8 +253,7 @@ bool Sprite::LoadTexture(UINT texnumber, const wchar_t* filename)
 
 	device->CreateShaderResourceView(texBuff[texnumber].Get(), //ビューと関連付けるバッファ
 									 &srvDesc, //テクスチャ設定情報
-									 CD3DX12_CPU_DESCRIPTOR_HANDLE(descHeap->GetCPUDescriptorHandleForHeapStart(), texnumber, descriptorHandleIncrementSize)
-	);
+									 CD3DX12_CPU_DESCRIPTOR_HANDLE(descHeap->GetCPUDescriptorHandleForHeapStart(), texnumber, descriptorHandleIncrementSize));
 
 	return true;
 }
@@ -332,7 +326,6 @@ bool Sprite::Init()
 {
 	// nullptrチェック
 	assert(device);
-
 	HRESULT result = S_FALSE;
 
 	//頂点バッファ生成
@@ -421,6 +414,7 @@ void Sprite::SetIsFlipY(bool isFlipY)
 
 void Sprite::SetTextureRect(XMFLOAT2 texBase, XMFLOAT2 texSize)
 {
+	//始点(texBase)からのサイズを設定
 	this->texBase = texBase;
 	this->texSize = texSize;
 
@@ -483,7 +477,6 @@ void Sprite::TransferVertices()
 
 	// 頂点データ
 	VertexPosUv vertices[vertNum];
-
 	vertices[LB].pos = { left,	bottom,	0.0f }; // 左下
 	vertices[LT].pos = { left,	top,	0.0f }; // 左上
 	vertices[RB].pos = { right,	bottom,	0.0f }; // 右下

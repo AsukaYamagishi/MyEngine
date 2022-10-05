@@ -1,17 +1,14 @@
 #pragma once
-#include<DirectXTex.h>
-#include<wrl.h>
-#include<d3d12.h>
-#include<d3dx12.h>
-#include<DirectXMath.h>
+#include <d3d12.h>
+#include <d3dx12.h>
 #include <d3dcompiler.h>
+#include <wrl.h>
+#include <DirectXTex.h>
+#include <DirectXMath.h>
 
-
-
+#pragma comment(lib, "d3dcompiler.lib")
 using namespace Microsoft::WRL;
 using namespace DirectX;
-#pragma comment(lib, "d3dcompiler.lib")
-
 
 class Sprite
 {
@@ -89,45 +86,123 @@ protected: //メンバ変数
 
 #pragma region 関数
 public: //静的メンバ関数
-	//静的初期化
+	/// <summary>
+	/// 静的初期化
+	/// </summary>
+	/// <param name="dev">デバイス</param>
+	/// <param name="window_width">ウィンドウ横長さ</param>
+	/// <param name="window_height">ウィンドウ縦長さ</param>
+	/// <returns>成否</returns>
 	static bool StaticInit(ID3D12Device* dev, int window_width, int window_height);
-	//描画前処理
+
+	/// <summary>
+	/// 描画前処理
+	/// </summary>
+	/// <param name="cmdList">描画コマンドリスト</param>
 	static void PreDraw(ID3D12GraphicsCommandList* cmdList);
-	//描画後処理
+
+	/// <summary>
+	/// 描画後処理
+	/// </summary>
 	static void PostDraw();
-	//スプライト生成
+
+	/// <summary>
+	/// スプライト(画像)生成
+	/// </summary>
+	/// <param name="texNumber">テクスチャ保存場所番号</param>
+	/// <param name="position">位置</param>
+	/// <param name="color">色(RGBA)</param>
+	/// <param name="anchorpoint">アンカーポイント(左上)</param>
+	/// <param name="isFlipX">左右反転</param>
+	/// <param name="isFlipY">上下反転</param>
+	/// <returns>スプライト生成情報</returns>
 	static Sprite* CreateSprite(UINT texNumber, XMFLOAT2 position, XMFLOAT4 color = { 1,1,1,1 }, XMFLOAT2 anchorpoint = { 0.0f,0.0f }, bool isFlipX = false, bool isFlipY = false);
-	//テクスチャ読み込み
+
+	/// <summary>
+	/// テクスチャ読み込み
+	/// </summary>
+	/// <param name="texnumber">テクスチャ保存場所番号</param>
+	/// <param name="filename">ファイル名</param>
+	/// <returns>成否</returns>
 	static bool LoadTexture(UINT texnumber, const wchar_t* filename);
 
 public: //メンバ関数
-	//コンストラクタ
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
+	/// <param name="texNumber">テクスチャ保存場所番号</param>
+	/// <param name="position">位置</param>
+	/// <param name="size">サイズ</param>
+	/// <param name="color">色(RGBA)</param>
+	/// <param name="anchorpoint">アンカーポイント(左上)</param>
+	/// <param name="isFlipX">左右反転</param>
+	/// <param name="isFlopY">上下反転</param>
 	Sprite(UINT texNumber, XMFLOAT2 position, XMFLOAT2 size, XMFLOAT4 color, XMFLOAT2 anchorpoint, bool isFlipX, bool isFlopY);
-	//初期化
+	
+	/// <summary>
+	/// 初期化
+	/// </summary>
+	/// <returns>成否</returns>
 	bool Init();
-	//描画
+	
+	/// <summary>
+	/// 描画
+	/// </summary>
 	void Draw();
-	//角度の設定
+
+	/// <summary>
+	/// 角度変更設定
+	/// </summary>
+	/// <param name="rotation">角度</param>
 	void SetRotation(float rotation);
-	//座標の設定
+	
+	/// <summary>
+	/// 座標変更設定
+	/// </summary>
+	/// <param name="position">座標</param>
 	void SetPosition(XMFLOAT2 position);
-	//サイズの設定
+	
+	/// <summary>
+	/// サイズ設定
+	/// </summary>
+	/// <param name="size">サイズ</param>
 	void SetSize(XMFLOAT2 size);
-	//アンカーポイントの設定
+
+	/// <summary>
+	/// アンカーポイント変更設定
+	/// </summary>
+	/// <param name="anchorpoint">アンカーポイント(どこを基にするか)</param>
 	void SetAnchorPoint(XMFLOAT2 anchorpoint);
-	//左右反転の設定
+
+	/// <summary>
+	/// 左右反転設定
+	/// </summary>
+	/// <param name="isFlipX">左右反転</param>
 	void SetIsFlipX(bool isFlipX);
-	//上下反転の設定
+
+	/// <summary>
+	/// 上下反転設定
+	/// </summary>
+	/// <param name="isFlipY">上下反転</param>
 	void SetIsFlipY(bool isFlipY);
-	//テクスチャ範囲設定
+	
+	/// <summary>
+	/// テクスチャ範囲設定(トリミング)
+	/// </summary>
+	/// <param name="texBase">テクスチャ始点</param>
+	/// <param name="texSize">始点を基にしたサイズ</param>
 	void SetTextureRect(XMFLOAT2 texBase, XMFLOAT2 texSize);
 
 private: //メンバ関数
-	//頂点データ転送
+	/// <summary>
+	/// 頂点データ転送
+	/// </summary>
 	void TransferVertices();
 
 protected:
-	//頂点バッファ生成
+	/// <summary>
+	/// 頂点バッファ生成
+	/// </summary>
 	void CreateVertBuff();
 #pragma endregion
 
