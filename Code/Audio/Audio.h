@@ -66,9 +66,10 @@ public: //構造体
 
 public: //メンバ変数
 	ComPtr<IXAudio2> xAudio2;
+	//ループさせるか
 	enum IsLoop {
-		loop,
-		not
+		not,
+		loop
 	};
 
 private: //メンバ変数
@@ -79,15 +80,37 @@ private: //メンバ変数
 
 #pragma region 関数
 public: //メンバ関数
-	//音声関係初期化
+	/// <summary>
+	/// 初期化
+	/// </summary>
 	void Init();
-	//音声データ読み込み
+	
+	/// <summary>
+	/// 音声データ読み込み
+	/// </summary>
+	/// <param name="filename">ファイル名</param>
+	/// <returns>音声データ生成</returns>
 	SoundData SoundLoadWave(const char* filename);
-	//音声再生(ループ対応)
+
+	/// <summary>
+	/// 音楽再生(ループ対応)
+	/// </summary>
+	/// <param name="xAudio2">音声用API</param>
+	/// <param name="soundData">再生する音声</param>
+	/// <param name="isLoop">ループさせるか</param>
 	void SoundPlayWave(IXAudio2* xAudio2, const SoundData& soundData, IsLoop isLoop = not);
-	//再生停止
+
+	/// <summary>
+	/// 再生停止
+	/// </summary>
+	/// <param name="xAudio2">音声用API</param>
+	/// <param name="soundData">停止する音声</param>
 	void SoundStop(IXAudio2* xAudio2, const SoundData& soundData);
-	//音声データ解放
+
+	/// <summary>
+	/// 音声データ解放
+	/// </summary>
+	/// <param name="soundData">解放する音声データ</param>
 	void SoundUnLoad(SoundData* soundData);
 
 #pragma endregion

@@ -17,8 +17,6 @@ void Audio::Init()
 //wavファイル読み込み
 Audio::SoundData Audio::SoundLoadWave(const char * filename)
 {
-		HRESULT result;
-
 		////ファイルオープン
 		//ファイル入力ストリームのインスタンス
 		std::ifstream file;
