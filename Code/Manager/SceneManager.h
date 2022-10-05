@@ -1,6 +1,6 @@
 #pragma once
 #include "../Scene/GameScene.h"
-#include "../Title.h"
+#include "../Scene/TitleScene.h"
 #include "../Scene/EndScene.h"
 
 #include <stack>
@@ -11,9 +11,9 @@ class SceneManager
 public:    //サブクラス
 	//シーン遷移番号
 	enum SceneNo {
-		titleScene,
-		gameScene,
-		endScene,
+		TITLE,
+		GAMEPLAY,
+		END,
 
 		MAX
 	};

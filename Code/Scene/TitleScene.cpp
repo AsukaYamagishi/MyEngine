@@ -1,9 +1,9 @@
-#include "Title.h"
+#include "TitleScene.h"
 #include <cassert>
 
 using namespace DirectX;
 
-Title::Title(DirectXCommon* dxCommon, Audio* audio)
+TitleScene::TitleScene(DirectXCommon* dxCommon, Audio* audio)
 {
 #pragma region nullptrチェック/代入
 	assert(dxCommon);
@@ -14,18 +14,18 @@ Title::Title(DirectXCommon* dxCommon, Audio* audio)
 #pragma endregion
 }
 
-Title::~Title()
+TitleScene::~TitleScene()
 {
 	//safe_deleteはここで行う
 }
 
-void Title::Init()
+void TitleScene::Init()
 {
 
 
 #pragma region Sprite初期設定
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)
-	/*if (!Sprite::LoadTexture(2, L"Resources/title.png")) {
+	/*if (!Sprite::LoadTexture(2, L"Resources/TitleScene.png")) {
 		assert(0);
 		return;
 	}*/
@@ -41,13 +41,13 @@ void Title::Init()
 #pragma endregion
 }
 
-void Title::Update()
+void TitleScene::Update()
 {
 	//キーボード入力更新
 	KeyboardInput::Update();
 }
 
-void Title::Draw()
+void TitleScene::Draw()
 {
 	// コマンドリストの取得
 	ID3D12GraphicsCommandList* cmdList = dxCommon->GetCommandList();

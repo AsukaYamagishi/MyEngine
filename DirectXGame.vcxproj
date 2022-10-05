@@ -189,7 +189,7 @@
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
-    <ClInclude Include="Title.h" />
+    <ClInclude Include="Code\Scene\TitleScene.h" />
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
@@ -233,7 +233,7 @@
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
-    <ClCompile Include="Title.cpp" />
+    <ClCompile Include="Code\Scene\TitleScene.cpp" />
     <ClCompile Include="WindowsAPI.cpp" />
   </ItemGroup>
   <ItemGroup>

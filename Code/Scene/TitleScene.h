@@ -1,18 +1,18 @@
 #pragma once
-#include "Code/DirectXBase/SafeDelete.h"
-#include "Code/DirectXBase/DirectXCommon.h"
+#include "../DirectXBase/SafeDelete.h"
+#include "../DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
-#include "Code/Audio/Audio.h"
-#include "Code/Input/KeyboardInput.h"
-#include "Code/2d/Sprite.h"
+#include "../Audio/Audio.h"
+#include "../Input/KeyboardInput.h"
+#include "../2d/Sprite.h"
 
-#include "Code/Scene/AbstructScene.h"
+#include "AbstructScene.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;
 
 //ゲームシーン
-class Title :
+class TitleScene :
 	public AbstructScene
 {
 #pragma region 変数
@@ -41,9 +41,9 @@ public: //静的メンバ関数
 #pragma region メンバ関数
 public: //メンバ関数
 	//コンストラクタ
-	Title(DirectXCommon* dxCommon, Audio* audio);
+	TitleScene(DirectXCommon* dxCommon, Audio* audio);
 	//デストラクタ
-	~Title();
+	~TitleScene();
 	/// <summary>
 	/// 初期化
 	/// </summary>

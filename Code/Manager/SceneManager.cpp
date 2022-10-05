@@ -17,13 +17,13 @@ void SceneManager::ChangeScene(SceneNo sceneNo, bool sceneStackClear)
 	//ÉVÅ[ÉìêÿÇËë÷Ç¶
 	switch (sceneNo)
 	{
-		case SceneManager::titleScene:
-			scenes.push(new Title(dxCommon, audio));
+		case SceneManager::TITLE:
+			scenes.push(new TitleScene(dxCommon, audio));
 			break;
-		case SceneManager::gameScene:
+		case SceneManager::GAMEPLAY:
 			scenes.push(new GameScene(dxCommon, audio));
 			break;
-		case SceneManager::endScene:
+		case SceneManager::END:
 			scenes.push(new EndScene(dxCommon, audio));
 			break;
 		case SceneManager::MAX:
@@ -52,7 +52,7 @@ SceneManager::~SceneManager()
 
 void SceneManager::Init()
 {
-	ChangeScene(gameScene);
+	ChangeScene(GAMEPLAY);
 }
 
 void SceneManager::Update()
