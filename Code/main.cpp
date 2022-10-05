@@ -6,7 +6,7 @@
 #include "Audio/Audio.h" //音楽再生
 #include "DirectXBase/DebugText.h" //デバッグテキスト
 #include "DirectXBase/DirectXCommon.h"
-#include "../SafeDelete.h"
+#include "DirectXBase/SafeDelete.h"
 #include "3d/Obj/ObjDraw.h"
 #include "../SceneManager.h"
 #include "Manager/ModelManager.h"

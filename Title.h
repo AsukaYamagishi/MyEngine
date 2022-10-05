@@ -1,5 +1,5 @@
 #pragma once
-#include "SafeDelete.h"
+#include "Code/DirectXBase/SafeDelete.h"
 #include "Code/DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
 #include "Code/Audio/Audio.h"

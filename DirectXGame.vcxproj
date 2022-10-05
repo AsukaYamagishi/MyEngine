@@ -170,6 +170,7 @@
     <ClInclude Include="Code\Collision\CollisionPrimitive.h" />
     <ClInclude Include="Code\DirectXBase\DebugText.h" />
     <ClInclude Include="Code\DirectXBase\DirectXCommon.h" />
+    <ClInclude Include="Code\DirectXBase\SafeDelete.h" />
     <ClInclude Include="Code\GameObject\Enemy\Boss.h" />
     <ClInclude Include="Code\GameObject\Enemy\Enemy.h" />
     <ClInclude Include="Code\GameObject\Enemy\EnemyBullet.h" />
@@ -185,7 +186,6 @@
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="SafeDelete.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Title.h" />

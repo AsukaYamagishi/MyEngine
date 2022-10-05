@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../SafeDelete.h"
+#include "../../DirectXBase/SafeDelete.h"
 #include "../../DirectXBase/DirectXCommon.h"
 #include "../../3d/Obj/ObjDraw.h"
 #include "../../Manager/ModelManager.h"

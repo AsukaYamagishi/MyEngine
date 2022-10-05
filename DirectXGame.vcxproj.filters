@@ -201,9 +201,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SafeDelete.h">
-      <Filter>メイン部分\Base</Filter>
-    </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>メイン部分\Scene</Filter>
     </ClInclude>
@@ -326,6 +323,9 @@
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>メイン部分\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DirectXBase\SafeDelete.h">
+      <Filter>メイン部分\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
