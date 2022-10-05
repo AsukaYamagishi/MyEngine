@@ -1,7 +1,7 @@
 #include "PostEffect.h"
 #include <d3dx12.h>
 #include <d3dcompiler.h>
-#include "WindowsAPI.h"
+#include "../WindowsAPI.h"
 
 #pragma comment(lib,"d3dcompiler.lib")
 using namespace DirectX;

@@ -12,7 +12,7 @@
 #include "Manager/ModelManager.h"
 #include "3d/Fbx/FbxLoader.h"
 #include "Camera/Camera.h"
-#include "../PostEffect.h"
+#include "2d/PostEffect/PostEffect.h"
 #include "2d/PostEffect/MultiRenderTarget.h"
 
 using namespace DirectX;

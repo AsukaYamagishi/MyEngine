@@ -1,5 +1,5 @@
 #pragma once
-#include "Sprite.h"
+#include "../Sprite.h"
 #include <map>
 
 class PostEffect :
