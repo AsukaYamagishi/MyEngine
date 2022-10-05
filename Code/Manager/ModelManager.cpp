@@ -1,8 +1,8 @@
 #include "ModelManager.h"
 
-map<ModelManager::ModelName, ObjLoader *> ModelManager::model;
+map<ModelManager::ModelName, ObjLoader* > ModelManager::model;
 
-ModelManager *ModelManager::GetIns()
+ModelManager* ModelManager::GetIns()
 {
 	static ModelManager instans;
 	return &instans;

@@ -34,7 +34,7 @@ public:
 	/// <summary>
 	/// オブジェクトをvectorに追加
 	/// </summary>
-	void AddGameObject(GameObjectBase *obj) {
+	void AddGameObject(GameObjectBase* obj) {
 		objects.emplace_back(obj);
 	};
 

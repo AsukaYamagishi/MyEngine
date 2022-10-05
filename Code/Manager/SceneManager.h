@@ -21,7 +21,7 @@ private: //メンバ変数
 	static DirectXCommon* dxCommon;
 	static Audio* audio;
 private: //静的メンバ変数
-	static std::stack<AbstructScene *> scenes; //シーンスタック
+	static std::stack<AbstructScene* > scenes; //シーンスタック
 #pragma endregion
 
 #pragma region 静的メンバ関数
@@ -31,7 +31,7 @@ public: //静的メンバ関数
 	/// </summary>
 	/// <param name="sceneNo">シーン名</param>
 	/// <param name="sceneStackClear">全てのシーンを初期化するか</param>
-	static void ChangeScene(SceneNo sceneNo,bool sceneStackClear = false);
+	static void ChangeScene(SceneNo sceneNo, bool sceneStackClear = false);
 #pragma endregion
 
 #pragma region メンバ関数

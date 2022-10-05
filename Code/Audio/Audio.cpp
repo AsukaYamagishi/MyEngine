@@ -15,7 +15,7 @@ void Audio::Init()
 }
 
 //wavファイル読み込み
-Audio::SoundData Audio::SoundLoadWave(const char * filename)
+Audio::SoundData Audio::SoundLoadWave(const char* filename)
 {
 		////ファイルオープン
 		//ファイル入力ストリームのインスタンス
@@ -82,7 +82,7 @@ Audio::SoundData Audio::SoundLoadWave(const char * filename)
 }
 
 //音楽再生
-void Audio::SoundPlayWave(IXAudio2 * xAudio2, const SoundData & soundData, IsLoop isLoop)
+void Audio::SoundPlayWave(IXAudio2* xAudio2, const SoundData& soundData, IsLoop isLoop)
 {
 	HRESULT result;
 
@@ -138,7 +138,7 @@ void Audio::SoundStop(IXAudio2* xAudio2, const SoundData& soundData)
 }
 
 //データ解放
-void Audio::SoundUnLoad(SoundData * soundData)
+void Audio::SoundUnLoad(SoundData* soundData)
 {
 	//xAudio2のインスタンスを解放
 	xAudio2.Reset();

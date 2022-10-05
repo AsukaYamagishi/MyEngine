@@ -8,8 +8,8 @@ class ModelManager final
 private:
 	ModelManager() = default;
 	~ModelManager() = default;
-	ModelManager(const ModelManager &r) = default;
-	ModelManager &operator= (const ModelManager &r) = default;
+	ModelManager(const ModelManager& r) = default;
+	ModelManager& operator= (const ModelManager& r) = default;
 
 public:
 	//モデルに付けるタグ名
@@ -23,7 +23,7 @@ public:
 	};
 
 public:
-	static ModelManager *GetIns();		//取得用
+	static ModelManager* GetIns();		//取得用
 
 	/// <summary>
 	/// 初期化
@@ -45,6 +45,6 @@ public:
 	ObjLoader *GetModel(ModelName modelName) { return model[modelName]; }
 
 private:
-	static map<ModelName, ObjLoader*> model;	//モデル格納マップ
+	static map<ModelName, ObjLoader* > model;	//モデル格納マップ
 };
 
