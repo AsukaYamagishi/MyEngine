@@ -78,9 +78,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ParticleManager.cpp">
-      <Filter>メイン部分\Particle</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerBase.cpp">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClCompile>
@@ -199,11 +196,11 @@
     <ClCompile Include="Code\Collision\Collider\SphereCollider.cpp">
       <Filter>メイン部分\Collision\Collider</Filter>
     </ClCompile>
+    <ClCompile Include="Code\2d\Particle\ParticleManager.cpp">
+      <Filter>メイン部分\Particle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ParticleManager.h">
-      <Filter>メイン部分\Particle</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerBase.h">
       <Filter>メイン部分\GameObj\Player</Filter>
     </ClInclude>
@@ -326,6 +323,9 @@
     </ClInclude>
     <ClInclude Include="Code\Collision\Collider\SphereCollider.h">
       <Filter>メイン部分\Collision\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\2d\Particle\ParticleManager.h">
+      <Filter>メイン部分\Particle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

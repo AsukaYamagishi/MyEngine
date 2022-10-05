@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Code\2d\Particle\ParticleManager.h" />
     <ClInclude Include="Code\2d\PostEffect\MultiRenderTarget.h" />
     <ClInclude Include="Code\3d\CalculationModel.h" />
     <ClInclude Include="Code\3d\Fbx\FbxDraw.h" />
@@ -181,7 +182,6 @@
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
-    <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="PostEffect.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="PlayerBase.h" />
@@ -194,6 +194,7 @@
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Code\2d\Particle\ParticleManager.cpp" />
     <ClCompile Include="Code\2d\PostEffect\MultiRenderTarget.cpp" />
     <ClCompile Include="Code\3d\CalculationModel.cpp" />
     <ClCompile Include="Code\3d\Fbx\FbxDraw.cpp" />
@@ -226,7 +227,6 @@
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
-    <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="PostEffect.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="PlayerBase.cpp" />

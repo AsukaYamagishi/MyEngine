@@ -1,5 +1,5 @@
 #include "GameScene.h"
-#include "../ParticleManager.h"
+#include "../2d/Particle/ParticleManager.h"
 #include <cassert>
 #include <time.h>
 #include "../3d/Fbx/FbxLoader.h"

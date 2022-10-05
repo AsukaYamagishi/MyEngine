@@ -613,7 +613,7 @@ void ParticleManager::Update()
 		vertBuff->Unmap(0, nullptr);
 	}
 
-	XMMATRIX matScale, matRot, matTrans;
+	XMMATRIX matScale, matRot;
 
 	// スケール、回転、平行移動行列の計算
 	matScale = XMMatrixScaling(scale.x, scale.y, scale.z);

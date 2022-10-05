@@ -11,7 +11,7 @@
 #include "../Collision/Collision.h"
 #include "../3d/Fbx/FbxDraw.h"
 #include "../GameObject/Enemy/Boss.h"
-#include "../ParticleManager.h"
+#include "../2d/Particle/ParticleManager.h"
 #include "../Stage.h"
 #include "../Manager/GameObjectManager.h"
 #include "../Collision/CollisionManager.h"
