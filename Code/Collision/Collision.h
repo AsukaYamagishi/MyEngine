@@ -5,7 +5,7 @@
 
 #include <DirectXMath.h>
 #include "CollisionPrimitive.h"
-#include "../Vector3.h"
+#include "../Math/Vector3.h"
 
 class Collision
 {

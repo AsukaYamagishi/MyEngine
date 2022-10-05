@@ -2,7 +2,7 @@
 #include "Enemy.h"
 #include "../Player/PlayerBase.h"
 #include "../../Manager/GameObjectManager.h"
-#include "../Vector3.h"
+#include "../../Math/Vector3.h"
 #include <queue>
 class EnemySpawner :
 	public GameObjectBase

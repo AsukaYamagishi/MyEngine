@@ -78,9 +78,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WindowsAPI.cpp">
-      <Filter>メイン部分\Base</Filter>
-    </ClCompile>
     <ClCompile Include="Code\Audio\Audio.cpp">
       <Filter>メイン部分\Audio</Filter>
     </ClCompile>
@@ -199,14 +196,11 @@
     <ClCompile Include="Code\Scene\TitleScene.cpp">
       <Filter>メイン部分\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Code\DirectXBase\WindowsAPI.cpp">
+      <Filter>メイン部分\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vector3.h">
-      <Filter>メイン部分\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowsAPI.h">
-      <Filter>メイン部分\Base</Filter>
-    </ClInclude>
     <ClInclude Include="Code\Audio\Audio.h">
       <Filter>メイン部分\Audio</Filter>
     </ClInclude>
@@ -326,6 +320,12 @@
     </ClInclude>
     <ClInclude Include="Code\Scene\TitleScene.h">
       <Filter>メイン部分\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Math\Vector3.h">
+      <Filter>メイン部分\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DirectXBase\WindowsAPI.h">
+      <Filter>メイン部分\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 #include "MultiRenderTarget.h"
 #include <d3dx12.h>
 #include <d3dcompiler.h>
-#include "../WindowsAPI.h"
+#include "../../DirectXBase/WindowsAPI.h"
 
 #pragma comment(lib,"d3dcompiler.lib")
 using namespace DirectX;

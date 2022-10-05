@@ -172,6 +172,7 @@
     <ClInclude Include="Code\DirectXBase\DebugText.h" />
     <ClInclude Include="Code\DirectXBase\DirectXCommon.h" />
     <ClInclude Include="Code\DirectXBase\SafeDelete.h" />
+    <ClInclude Include="Code\DirectXBase\WindowsAPI.h" />
     <ClInclude Include="Code\GameObject\Enemy\Boss.h" />
     <ClInclude Include="Code\GameObject\Enemy\Enemy.h" />
     <ClInclude Include="Code\GameObject\Enemy\EnemyBullet.h" />
@@ -186,12 +187,11 @@
     <ClInclude Include="Code\Manager\GameObjectManager.h" />
     <ClInclude Include="Code\Manager\ModelManager.h" />
     <ClInclude Include="Code\Manager\SceneManager.h" />
+    <ClInclude Include="Code\Math\Vector3.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
     <ClInclude Include="Code\Scene\TitleScene.h" />
-    <ClInclude Include="Vector3.h" />
-    <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\2d\Particle\ParticleManager.cpp" />
@@ -215,6 +215,7 @@
     <ClCompile Include="Code\Collision\CollisionPrimitive.cpp" />
     <ClCompile Include="Code\DirectXBase\DebugText.cpp" />
     <ClCompile Include="Code\DirectXBase\DirectXCommon.cpp" />
+    <ClCompile Include="Code\DirectXBase\WindowsAPI.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\Boss.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\Enemy.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\EnemyBullet.cpp" />
@@ -234,7 +235,6 @@
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
     <ClCompile Include="Code\Scene\TitleScene.cpp" />
-    <ClCompile Include="WindowsAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli" />

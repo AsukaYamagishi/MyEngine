@@ -1,5 +1,5 @@
 #pragma once
-#include "../WindowsAPI.h"
+#include "../DirectXBase/WindowsAPI.h"
 #include <vector>
 
 //インクルード関係

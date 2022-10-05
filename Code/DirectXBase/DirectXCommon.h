@@ -5,7 +5,7 @@
 #include <wrl.h>
 #include <d3dx12.h>
 #include <cstdlib>
-#include "../WindowsAPI.h"
+#include "WindowsAPI.h"
 
 class DirectXCommon
 {

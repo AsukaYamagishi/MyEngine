@@ -1,6 +1,6 @@
 #pragma once
 #include "../GameObjectBase.h"
-#include "../Vector3.h"
+#include "../../Math/Vector3.h"
 #include "../../Manager/GameObjectManager.h"
 #include "../../3d/Obj/ObjDraw.h"
 #include "../../Manager/ModelManager.h"
