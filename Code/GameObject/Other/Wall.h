@@ -1,10 +1,10 @@
 #pragma once
-#include "Code/GameObject/GameObjectBase.h"
-#include "Vector3.h"
-#include "Code/Manager/GameObjectManager.h"
-#include "Code/3d/Obj/ObjDraw.h"
-#include "Code/Manager/ModelManager.h"
-#include "Code/GameObject/Player/PlayerBase.h"
+#include "../GameObjectBase.h"
+#include "../Vector3.h"
+#include "../../Manager/GameObjectManager.h"
+#include "../../3d/Obj/ObjDraw.h"
+#include "../../Manager/ModelManager.h"
+#include "../Player/PlayerBase.h"
 
 class Wall :
     public GameObjectBase

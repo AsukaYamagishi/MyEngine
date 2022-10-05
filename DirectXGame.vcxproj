@@ -178,6 +178,7 @@
     <ClInclude Include="Code\GameObject\Enemy\EnemySpawner.h" />
     <ClInclude Include="Code\GameObject\GameObjectBase.h" />
     <ClInclude Include="Code\GameObject\Other\Stage.h" />
+    <ClInclude Include="Code\GameObject\Other\Wall.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBase.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h" />
     <ClInclude Include="Code\Input\ControllerInput.h" />
@@ -190,7 +191,6 @@
     <ClInclude Include="Code\Scene\GameScene.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="Vector3.h" />
-    <ClInclude Include="Wall.h" />
     <ClInclude Include="WindowsAPI.h" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +221,7 @@
     <ClCompile Include="Code\GameObject\Enemy\EnemySpawner.cpp" />
     <ClCompile Include="Code\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="Code\GameObject\Other\Stage.cpp" />
+    <ClCompile Include="Code\GameObject\Other\Wall.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBase.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp" />
     <ClCompile Include="Code\Input\ControllerInput.cpp" />
@@ -233,7 +234,6 @@
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
     <ClCompile Include="Title.cpp" />
-    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="WindowsAPI.cpp" />
   </ItemGroup>
   <ItemGroup>

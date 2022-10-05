@@ -84,9 +84,6 @@
     <ClCompile Include="WindowsAPI.cpp">
       <Filter>メイン部分\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Wall.cpp">
-      <Filter>メイン部分\GameObj\Wall</Filter>
-    </ClCompile>
     <ClCompile Include="Code\Audio\Audio.cpp">
       <Filter>メイン部分\Audio</Filter>
     </ClCompile>
@@ -199,6 +196,9 @@
     <ClCompile Include="Code\GameObject\Other\Stage.cpp">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClCompile>
+    <ClCompile Include="Code\GameObject\Other\Wall.cpp">
+      <Filter>メイン部分\GameObj\Wall</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -209,9 +209,6 @@
     </ClInclude>
     <ClInclude Include="WindowsAPI.h">
       <Filter>メイン部分\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>メイン部分\GameObj\Wall</Filter>
     </ClInclude>
     <ClInclude Include="Code\Audio\Audio.h">
       <Filter>メイン部分\Audio</Filter>
@@ -326,6 +323,9 @@
     </ClInclude>
     <ClInclude Include="Code\GameObject\Other\Stage.h">
       <Filter>メイン部分\GameObj\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameObject\Other\Wall.h">
+      <Filter>メイン部分\GameObj\Wall</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

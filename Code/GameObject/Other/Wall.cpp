@@ -1,5 +1,5 @@
 #include "Wall.h"
-#include "Code/Collision/Collider/OBBCollider.h"
+#include "../../Collision/Collider/OBBCollider.h"
 
 Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
 	GameObjectBase(dxCommon)

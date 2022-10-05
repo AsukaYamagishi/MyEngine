@@ -4,7 +4,7 @@
 #include <time.h>
 #include "../3d/Fbx/FbxLoader.h"
 #include "../3d/Fbx/FbxDraw.h"
-#include "../Wall.h"
+#include "../GameObject/Other/Wall.h"
 
 #include "../Manager/SceneManager.h"
 
