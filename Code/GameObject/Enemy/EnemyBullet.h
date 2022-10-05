@@ -2,7 +2,7 @@
 #include "../../GameObject/GameObjectBase.h"
 #include "../Code/3d/Obj/ObjDraw.h"
 #include "../../Manager/ModelManager.h"
-#include "../SphereCollider.h"
+#include "../../Collision/Collider/SphereCollider.h"
 
 class EnemyBullet :
     public GameObjectBase

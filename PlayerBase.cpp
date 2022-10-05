@@ -5,8 +5,8 @@
 #include "Code/Input/KeyboardInput.h"
 #include "Code/Input/ControllerInput.h"
 #include "Code/GameObject/Player/PlayerBullet.h"
-#include "SphereCollider.h"
-#include "OBBCollider.h"
+#include "Code/Collision/Collider/SphereCollider.h"
+#include "Code/Collision/Collider/OBBCollider.h"
 
 
 using namespace DirectX;

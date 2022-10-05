@@ -160,6 +160,8 @@
     <ClInclude Include="Code\Audio\Audio.h" />
     <ClInclude Include="Code\Camera\Camera.h" />
     <ClInclude Include="Code\Collision\Collider\BaseCollider.h" />
+    <ClInclude Include="Code\Collision\Collider\OBBCollider.h" />
+    <ClInclude Include="Code\Collision\Collider\SphereCollider.h" />
     <ClInclude Include="Code\Collision\Collision.h" />
     <ClInclude Include="Code\Collision\CollisionInfo.h" />
     <ClInclude Include="Code\Collision\CollisionManager.h" />
@@ -179,10 +181,8 @@
     <ClInclude Include="Code\Scene\AbstructScene.h" />
     <ClInclude Include="Code\Scene\EndScene.h" />
     <ClInclude Include="Code\Scene\GameScene.h" />
-    <ClInclude Include="OBBCollider.h" />
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="PostEffect.h" />
-    <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="SafeDelete.h" />
@@ -204,6 +204,8 @@
     <ClCompile Include="Code\Audio\Audio.cpp" />
     <ClCompile Include="Code\Camera\Camera.cpp" />
     <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp" />
+    <ClCompile Include="Code\Collision\Collider\OBBCollider.cpp" />
+    <ClCompile Include="Code\Collision\Collider\SphereCollider.cpp" />
     <ClCompile Include="Code\Collision\Collision.cpp" />
     <ClCompile Include="Code\Collision\CollisionInfo.cpp" />
     <ClCompile Include="Code\Collision\CollisionManager.cpp" />
@@ -224,10 +226,8 @@
     <ClCompile Include="Code\Scene\AbstructScene.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
     <ClCompile Include="Code\Scene\GameScene.cpp" />
-    <ClCompile Include="OBBCollider.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="PostEffect.cpp" />
-    <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />

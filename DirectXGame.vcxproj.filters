@@ -102,7 +102,6 @@
     <ClCompile Include="Stage.cpp">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClCompile>
-    <ClCompile Include="OBBCollider.cpp" />
     <ClCompile Include="Wall.cpp">
       <Filter>メイン部分\GameObj\Wall</Filter>
     </ClCompile>
@@ -125,9 +124,6 @@
       <Filter>メイン部分\Collision</Filter>
     </ClCompile>
     <ClCompile Include="Code\Collision\Collider\BaseCollider.cpp">
-      <Filter>メイン部分\Collision\Collider</Filter>
-    </ClCompile>
-    <ClCompile Include="SphereCollider.cpp">
       <Filter>メイン部分\Collision\Collider</Filter>
     </ClCompile>
     <ClCompile Include="Code\Collision\CollisionInfo.cpp">
@@ -197,6 +193,12 @@
     <ClCompile Include="Code\2d\PostEffect\MultiRenderTarget.cpp">
       <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Collision\Collider\OBBCollider.cpp">
+      <Filter>メイン部分\Collision\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Collision\Collider\SphereCollider.cpp">
+      <Filter>メイン部分\Collision\Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ParticleManager.h">
@@ -229,7 +231,6 @@
     <ClInclude Include="Stage.h">
       <Filter>メイン部分\GameObj\Stage</Filter>
     </ClInclude>
-    <ClInclude Include="OBBCollider.h" />
     <ClInclude Include="Wall.h">
       <Filter>メイン部分\GameObj\Wall</Filter>
     </ClInclude>
@@ -252,9 +253,6 @@
       <Filter>メイン部分\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Code\Collision\Collider\BaseCollider.h">
-      <Filter>メイン部分\Collision\Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="SphereCollider.h">
       <Filter>メイン部分\Collision\Collider</Filter>
     </ClInclude>
     <ClInclude Include="Code\Collision\CollisionInfo.h">
@@ -322,6 +320,12 @@
     </ClInclude>
     <ClInclude Include="Code\2d\PostEffect\MultiRenderTarget.h">
       <Filter>メイン部分\Sprite\MultiRenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Collision\Collider\OBBCollider.h">
+      <Filter>メイン部分\Collision\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Collision\Collider\SphereCollider.h">
+      <Filter>メイン部分\Collision\Collider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

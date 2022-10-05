@@ -1,6 +1,6 @@
 #pragma once
-#include "Code/Collision/CollisionPrimitive.h"
-#include "Code/Collision/Collider/BaseCollider.h"
+#include "../CollisionPrimitive.h"
+#include "BaseCollider.h"
 class OBBCollider :
     public BaseCollider , public OBB
 {

@@ -1,6 +1,6 @@
 #include "Enemy.h"
 #include "EnemyBullet.h"
-#include "../SphereCollider.h"
+#include "../../Collision/Collider/SphereCollider.h"
 
 Enemy::Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjManager, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player):
 	GameObjectBase(dxCommon)
