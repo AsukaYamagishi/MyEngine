@@ -12,7 +12,7 @@
 #include "../3d/Fbx/FbxDraw.h"
 #include "../GameObject/Enemy/Boss.h"
 #include "../2d/Particle/ParticleManager.h"
-#include "../Stage.h"
+#include "../GameObject/Other/Stage.h"
 #include "../Manager/GameObjectManager.h"
 #include "../Collision/CollisionManager.h"
 #include "../Scene/AbstructScene.h"
