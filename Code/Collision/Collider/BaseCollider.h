@@ -58,7 +58,7 @@ public:
 protected:
 	//オブジェクトのポインタ
 	GameObjectBase* object = nullptr;
-	//形状タイプ
+	//形状タイプ(初期設定では不明形となる)
 	CollisionShapeType shapeType = CollisionShapeType::SHAPE_UNKONOWN;
 	//
 	std::string collisionName;

@@ -16,11 +16,15 @@ public:
     OBBCollider(DirectX::XMVECTOR normalDirect[3], float length[3], std::string name = "", DirectX::XMVECTOR offset = { 0,0,0,0 }) :
         offset(offset)
     {
+        //OBBを示す符号を付与
         shapeType = CollisionShapeType::SHAPE_OBB;
+
+        //各軸の長さをセット
         this->length[0] = length[0];
         this->length[1] = length[1];
         this->length[2] = length[2];
 
+        //各軸の方向ベクトルをセット
         this->normalDirect[0] = normalDirect[0];
         this->normalDirect[1] = normalDirect[1];
         this->normalDirect[2] = normalDirect[2];

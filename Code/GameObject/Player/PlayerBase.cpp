@@ -99,8 +99,8 @@ void PlayerBase::Move()
 	if (ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LX, 0.1f) != 0 ||
 		ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LY, 0.1f) != 0)
 	{
-		velocity.x += move * (ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LX, 0.1f) / 500);
-		velocity.y += move * -(ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LY, 0.1f) / 500);
+		velocity.x += move * (ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LX, 0.1f) / 500.0f);
+		velocity.y += move * -(ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LY, 0.1f) / 500.0f);
 	}
 
 	//move以上に大きく動かないようにする
