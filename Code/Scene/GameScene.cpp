@@ -1,14 +1,12 @@
 #include "GameScene.h"
+#include "../GameObject/Other/Wall.h"
+#include "../Manager/SceneManager.h"
+#include "../Collision/Collider/BaseCollider.h"
 #include "../2d/Particle/ParticleManager.h"
-#include <cassert>
-#include <time.h>
 #include "../3d/Fbx/FbxLoader.h"
 #include "../3d/Fbx/FbxDraw.h"
-#include "../GameObject/Other/Wall.h"
-
-#include "../Manager/SceneManager.h"
-
-#include "../Collision/Collider/BaseCollider.h"
+#include <cassert>
+#include <time.h>
 
 using namespace DirectX;
 
@@ -63,6 +61,7 @@ void GameScene::Init()
 	// 背景スプライト生成
 	//spriteBG = Sprite::CreateSprite(3, { 0.0f,0.0f });
 #pragma endregion
+
 	//デバイスをセット
 	FbxDraw::SetDevice(dxCommon->GetDevice());
 	//カメラをセット
@@ -83,9 +82,6 @@ void GameScene::Init()
 	//audio->SoundPlayWave(audio->xAudio2.Get(), soundData[0], Audio::loop);
 
 #pragma endregion
-
-	/*player = new PlayerBase(PlayerType::SHOT,ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
-	player->Init(dxCommon);*/
 
 	gameObjManager->Init();
 	gameEndFlag = false;
@@ -152,7 +148,6 @@ void GameScene::Draw()
 
 #pragma region 3Dモデル描画
 	
-	/*player->Draw();*/
 	gameObjManager->Draw();
 
 #pragma endregion

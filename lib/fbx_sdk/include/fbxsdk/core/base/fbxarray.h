@@ -17,6 +17,8 @@
 
 #include <fbxsdk/fbxsdk_nsbegin.h>
 
+
+
 #if defined(FBXSDK_COMPILER_MSC)
     #pragma warning( push )
     #pragma warning( disable : 4201 ) // nonstandard extension used: nameless struct/union

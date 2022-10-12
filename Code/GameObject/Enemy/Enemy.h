@@ -1,9 +1,9 @@
 #pragma once
+#include "../Player/PlayerBase.h"
 #include "../../GameObject/GameObjectBase.h"
 #include "../../Manager/GameObjectManager.h"
-#include "../../3d/Obj/ObjDraw.h"
 #include "../../Manager/ModelManager.h"
-#include "../Player/PlayerBase.h"
+#include "../../3d/Obj/ObjDraw.h"
 
 
 class Enemy :
@@ -45,7 +45,12 @@ public:
 	/// </summary>
 	void Draw() override;
 
+	/// <summary>
+	/// 衝突時の挙動
+	/// </summary>
+	/// <param name="info">衝突情報</param>
 	void OnCollision(CollisionInfo info) override;
+
 private:
 	/// <summary>
 	/// 移動処理
@@ -56,6 +61,7 @@ private:
 
 #pragma region 変数
 private:
+	//マネージャ
 	std::weak_ptr<GameObjectManager> gameObjManager;
 	std::weak_ptr<CollisionManager> collisionManager;
 
@@ -65,7 +71,7 @@ private:
 	float move = -0.1f;
 	//1f内での合計移動量
 	Vector3 velocity = { 0,0,0 };
-
+	//プレイヤーデータ
 	PlayerBase* player;
 
 	int liveTime = 0;	//生存時間

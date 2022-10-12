@@ -153,6 +153,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		//描画終了
 		dxCommon->PostDraw();
 #pragma endregion
+
+		//Escキーを押したらゲームを終了する
+		if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_ESCAPE)) break;
+
 		////////////////DirectX毎フレーム処理 ここまで
 	}
 

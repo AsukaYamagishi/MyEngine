@@ -33,10 +33,14 @@ void Enemy::Update()
 {
 	Move();
 	++liveTime;
+
+	//120fごとに弾を発射
 	if (liveTime % 120 == 0)
 	{
 		GameObjectBase::Create<EnemyBullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,-1.0f }, Vector3{ 0.0f,0.0f,-0.7f });
 	}
+
+	//画面奥に出たら消去
 	if (pos.z < player->GetPos().z - 30) {
 		deleteFlag = true;
 	}
@@ -56,6 +60,7 @@ void Enemy::Draw()
 
 void Enemy::OnCollision(CollisionInfo info)
 {
+	//プレイヤー弾に当たった時消える
  	if (info.hitName == "Bullet") {
    		deleteFlag = true;
 	}
@@ -63,14 +68,5 @@ void Enemy::OnCollision(CollisionInfo info)
 
 void Enemy::Move()
 {
-	/*pos = enemy->GetPos();
-	if (pos.z >= 10.0f)
-	{
-		velocity.z = move;
-	}
-	else
-	{
-		velocity.z = 0.0f;
-	}
-	pos += velocity;*/
+	
 }

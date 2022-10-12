@@ -4,6 +4,7 @@
 #include "../../Manager/GameObjectManager.h"
 #include "../../Math/Vector3.h"
 #include <queue>
+
 class EnemySpawner :
 	public GameObjectBase
 {

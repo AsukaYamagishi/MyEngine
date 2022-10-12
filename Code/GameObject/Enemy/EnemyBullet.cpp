@@ -3,16 +3,17 @@
 EnemyBullet::EnemyBullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, Vector3 shotVelocity):
 	GameObjectBase(dxCommon)
 {
-
+	//モデルセット
 	bullet = std::make_shared<ObjDraw>(*ObjDraw::Create());
 	bullet->SetModel(ModelManager::GetIns()->GetModel(ModelManager::BULLET));
 
+	//各変数セット
 	pos = startPos;
 	velocity = shotVelocity;
 	bullet->SetPos(pos);
 	bullet->SetScale({ 0.5f, 0.5f, 0.5f });
 
-
+	//コライダー情報セット
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
 	sphere.get()->SetName("EnemyBullet");
 	sphere.get()->SetRadius(1.0f);

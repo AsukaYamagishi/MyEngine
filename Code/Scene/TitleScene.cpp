@@ -43,8 +43,7 @@ void TitleScene::Init()
 
 void TitleScene::Update()
 {
-	//キーボード入力更新
-	KeyboardInput::Update();
+
 }
 
 void TitleScene::Draw()

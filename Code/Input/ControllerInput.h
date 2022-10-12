@@ -1,10 +1,8 @@
 #pragma once
-#include "../DirectXBase/WindowsAPI.h"
 #include <vector>
-
-//インクルード関係
-#define DIRECTINPUT_VERSION 0x0800 //DirectInputバージョン指定
 #include <dinput.h>
+#include "../DirectXBase/WindowsAPI.h"
+#define DIRECTINPUT_VERSION 0x0800 //DirectInputバージョン指定
 
 #pragma comment(lib,"dinput8.lib")
 #pragma comment(lib,"dxguid.lib")
@@ -52,15 +50,24 @@ public: //コンストラクタ関係の設定
 private: //エイリアス
 	template<class T> using vector = std::vector<T>;
 
-
 public: //静的メンバ関数
-	//初期化
+	/// <summary>
+	/// 初期化
+	/// </summary>
 	static void Init();
-	//更新
+
+	/// <summary>
+	/// 毎フレーム更新
+	/// </summary>
 	static void Update();
 
-	//ゲームパッドの状態取得
+	/// <summary>
+	/// ゲームパッドの状態取得
+	/// </summary>
+	/// <param name="padNo">どのボタンか</param>
+	/// <returns>ゲームパッドの状態</returns>
 	static DIJOYSTATE GetGamepadState(const size_t& padNo = 0);
+
 	//ボタンが押されているか
 	static bool IsPadButton(const size_t& button, const size_t& padNo = 0);
 	//ボタンが押されている間の時間の取得
@@ -75,11 +82,25 @@ public: //静的メンバ関数
 	static int IsPadStick(const size_t& stickAxis, const float& deadzone, const size_t& padNo = 0);
 
 private:
-	//ゲームパッドデバイスの生成
+	/// <summary>
+	/// ゲームパッドデバイスの生成
+	/// </summary>
+	/// <returns>成否</returns>
 	static HRESULT CreateGamepadDevice();
-	//デバイス列挙コールバック関数
+
+	/// <summary>
+	/// デバイス列挙コールバック関数
+	/// </summary>
+	/// <param name="lpddi"></param>
+	/// <param name="pvRef"></param>
+	/// <returns>成否</returns>
 	static BOOL CALLBACK EnumGamepadCallback(LPCDIDEVICEINSTANCE lpddi, LPVOID pvRef);
-	//プロパティ設定
+
+	/// <summary>
+	/// プロパティ初期設定
+	/// </summary>
+	/// <param name="padNo">どのボタンか</param>
+	/// <returns>成否</returns>
 	static HRESULT SetupGamepadProperty(const size_t& padNo = 0);
 
 

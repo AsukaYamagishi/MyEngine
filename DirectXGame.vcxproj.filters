@@ -14,10 +14,10 @@
       <Filter>Shader\FBX</Filter>
     </FxCompile>
     <FxCompile Include="Resources\Shaders\MultiRenderTargetTestPS.hlsl">
-      <Filter>Shader\MultiRenderTarget</Filter>
+      <Filter>Shader\PostEffect\MultiRenderTarget</Filter>
     </FxCompile>
     <FxCompile Include="Resources\Shaders\MultiRenderTargetTestVS.hlsl">
-      <Filter>Shader\MultiRenderTarget</Filter>
+      <Filter>Shader\PostEffect\MultiRenderTarget</Filter>
     </FxCompile>
     <FxCompile Include="Resources\Shaders\ObjPS.hlsl">
       <Filter>Shader\OBJ</Filter>
@@ -190,6 +190,9 @@
     <ClCompile Include="Code\GameObject\Other\Wall.cpp">
       <Filter>メイン部分\GameObj\Other</Filter>
     </ClCompile>
+    <ClCompile Include="Code\DirectXBase\CSVLoader.cpp">
+      <Filter>メイン部分\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">
@@ -318,6 +321,9 @@
     <ClInclude Include="Code\GameObject\Other\Wall.h">
       <Filter>メイン部分\GameObj\Other</Filter>
     </ClInclude>
+    <ClInclude Include="Code\DirectXBase\CSVLoader.h">
+      <Filter>メイン部分\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">
@@ -327,7 +333,7 @@
       <Filter>Shader\FBX</Filter>
     </None>
     <None Include="Resources\Shaders\MultiRenderTargetTest.hlsli">
-      <Filter>Shader\MultiRenderTarget</Filter>
+      <Filter>Shader\PostEffect\MultiRenderTarget</Filter>
     </None>
     <None Include="Resources\Shaders\Obj.hlsli">
       <Filter>Shader\OBJ</Filter>
@@ -351,9 +357,6 @@
     </Filter>
     <Filter Include="Shader\FBX">
       <UniqueIdentifier>{65392644-7150-4ed4-b0e0-2fc1fa043d4a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Shader\MultiRenderTarget">
-      <UniqueIdentifier>{496aceef-5040-4385-b23b-c02117043d7c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shader\OBJ">
       <UniqueIdentifier>{77d61d12-9a26-4ba2-9c60-f49145791d14}</UniqueIdentifier>
@@ -432,6 +435,9 @@
     </Filter>
     <Filter Include="メイン部分\GameObj\Other">
       <UniqueIdentifier>{c0ce1929-586d-4bea-a56e-5052f2d49eb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\PostEffect\MultiRenderTarget">
+      <UniqueIdentifier>{496aceef-5040-4385-b23b-c02117043d7c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

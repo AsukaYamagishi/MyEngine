@@ -33,6 +33,8 @@ Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObject
 void Wall::Update()
 {
 	wall->SetPos(pos);
+
+	//画面外（手前）に来たら消去
 	if (pos.z < player->GetPos().z - 30) {
 		deleteFlag = true;
 	}
@@ -49,8 +51,8 @@ void Wall::Draw()
 
 void Wall::OnCollision(CollisionInfo info)
 {
+	//プレイヤーと衝突したら消滅させる
 	if (info.hitName == "Player") {
 		deleteFlag = true;
-
 	}
 }

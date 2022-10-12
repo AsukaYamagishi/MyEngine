@@ -123,6 +123,8 @@
       <ConformanceMode>false</ConformanceMode>
       <AdditionalIncludeDirectories>$(SorutionDir)DirectXTex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -169,6 +171,7 @@
     <ClInclude Include="Code\Collision\CollisionInfo.h" />
     <ClInclude Include="Code\Collision\CollisionManager.h" />
     <ClInclude Include="Code\Collision\CollisionPrimitive.h" />
+    <ClInclude Include="Code\DirectXBase\CSVLoader.h" />
     <ClInclude Include="Code\DirectXBase\DebugText.h" />
     <ClInclude Include="Code\DirectXBase\DirectXCommon.h" />
     <ClInclude Include="Code\DirectXBase\SafeDelete.h" />
@@ -211,6 +214,7 @@
     <ClCompile Include="Code\Collision\Collision.cpp" />
     <ClCompile Include="Code\Collision\CollisionManager.cpp" />
     <ClCompile Include="Code\Collision\CollisionPrimitive.cpp" />
+    <ClCompile Include="Code\DirectXBase\CSVLoader.cpp" />
     <ClCompile Include="Code\DirectXBase\DebugText.cpp" />
     <ClCompile Include="Code\DirectXBase\DirectXCommon.cpp" />
     <ClCompile Include="Code\DirectXBase\WindowsAPI.cpp" />

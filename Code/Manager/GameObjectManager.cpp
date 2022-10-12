@@ -30,6 +30,7 @@ void GameObjectManager::Update()
     			objects.erase(objects.begin() + i);
 		}
 	}
+	//残った全てのデータを更新
 	for (int i = 0; i < objects.size(); ++i) {
 		objects[i]->Update();
 	}

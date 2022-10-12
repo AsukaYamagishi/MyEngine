@@ -6,7 +6,7 @@ EnemySpawner::EnemySpawner(DirectXCommon* dxCommon,std::shared_ptr<CollisionMana
 	this->collisionManager = collisionManager;
 	playerData = player;
 	// ƒtƒ@ƒCƒ‹“Ç‚İ‚İ
-	spawnDatas = LoadData("Resources/EnemySpownData.csv");
+	spawnDatas = LoadData("Resources/Csv/EnemySpownData.csv");
 }
 
 void EnemySpawner::Update()
