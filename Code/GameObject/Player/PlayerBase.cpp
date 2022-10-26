@@ -82,18 +82,23 @@ void PlayerBase::Move()
 	}
 
 	//キーボード移動
-	if (KeyboardInput::GetIns()->PressKey(DIK_W)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_W) 
+		|| KeyboardInput::GetIns()->PressKey(DIK_UP)) {
 		velocity += Vector3(0.0f, move, 0.0f);
 	}
-	if (KeyboardInput::GetIns()->PressKey(DIK_S)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_S)
+		|| KeyboardInput::GetIns()->PressKey(DIK_DOWN)) {
 		velocity += Vector3(0.0f, -move, 0.0f);
 	}
-	if (KeyboardInput::GetIns()->PressKey(DIK_A)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_A)
+		|| KeyboardInput::GetIns()->PressKey(DIK_LEFT)) {
 		velocity += Vector3(-move, 0.0f, 0.0f);
 	}
-	if (KeyboardInput::GetIns()->PressKey(DIK_D)) {
+	if (KeyboardInput::GetIns()->PressKey(DIK_D)
+		|| KeyboardInput::GetIns()->PressKey(DIK_RIGHT)) {
 		velocity += Vector3(+move, 0.0f, 0.0f);
 	}
+
 
 	//ゲームパッド移動
 	if (ControllerInput::GetIns()->IsPadStick(INPUT_AXIS_LX, 0.1f) != 0 ||
@@ -135,8 +140,9 @@ void PlayerBase::Move()
 
 void PlayerBase::Attack()
 {
-	//スペースを押すと弾が飛ぶ(長距離攻撃挙動)
-	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE))
+	//スペースorBを押すと弾が飛ぶ(長距離攻撃挙動)
+	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE)
+		|| ControllerInput::GetIns()->IsPadButtonTrigger(XBOX_INPUT_B))
 	{
 		GameObjectBase::Create<Bullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,1.0f }, Vector3{ 0.0f,0.0f,0.7f });
 	}
