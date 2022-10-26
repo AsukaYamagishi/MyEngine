@@ -7,6 +7,8 @@
 #include "../3d/Fbx/FbxDraw.h"
 #include <cassert>
 #include <time.h>
+#include "../Input/KeyboardInput.h"
+#include "../Input/ControllerInput.h"
 
 using namespace DirectX;
 
@@ -94,23 +96,22 @@ void GameScene::Update()
 	camera->eye.z = player->GetPos().z - 30;
 	camera->target.z = camera->eye.z + 1.0f;
 
-
-	//if (timer % 180 == 60)
-	//{
-	//	auto wall= GameObjectBase::Create<Wall>(
-	//		Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), player->GetPos().z + 50.0f },
-	//		dxCommon, gameObjManager, collisionManager, player);
-	//}
-
 	gameObjManager->Update();
 	collisionManager->CheckHitColliders();
 	camera->SetCam(camera);
 	camera->Update();
 
+	//ゲームエンドシーンに移行(仮でENDキーに設定)
+	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_END))
+	{
+		SceneManager::ChangeScene(SceneManager::END);
+	}
+
 #pragma region デバッグテキスト設定
 	
 #pragma endregion
 
+	//ゲーム中タイマー加算
 	++timer;
 }
 

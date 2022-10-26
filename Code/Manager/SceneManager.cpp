@@ -55,7 +55,7 @@ SceneManager::~SceneManager()
 void SceneManager::Init()
 {
 	//ƒQ[ƒ€‹N“®ˆ—
-	ChangeScene(GAMEPLAY);
+	ChangeScene(TITLE);
 }
 
 void SceneManager::Update()

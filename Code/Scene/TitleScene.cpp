@@ -1,5 +1,8 @@
 #include "TitleScene.h"
 #include <cassert>
+#include "../Input/KeyboardInput.h"
+#include "../Input/ControllerInput.h"
+#include "../Manager/SceneManager.h"
 
 using namespace DirectX;
 
@@ -25,12 +28,12 @@ void TitleScene::Init()
 
 #pragma region Sprite初期設定
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)
-	/*if (!Sprite::LoadTexture(2, L"Resources/TitleScene.png")) {
+	if (!Sprite::LoadTexture(2, L"Resources/Title.png")) {
 		assert(0);
 		return;
-	}*/
+	}
 	//// 背景スプライト生成
-	//spriteBG = Sprite::CreateSprite(2, { 0.0f,0.0f });
+	spriteBG = Sprite::CreateSprite(2, { 0.0f,0.0f });
 #pragma endregion
 
 
@@ -43,7 +46,12 @@ void TitleScene::Init()
 
 void TitleScene::Update()
 {
-
+	//特定キーによりゲームプレイに移動（後ほどゲームセレクトへ変更）
+	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE)
+		|| ControllerInput::GetIns()->IsPadButtonTrigger(XBOX_INPUT_B))
+	{
+		SceneManager::ChangeScene(SceneManager::GAMEPLAY);
+	}
 }
 
 void TitleScene::Draw()
@@ -56,7 +64,7 @@ void TitleScene::Draw()
 	Sprite::PreDraw(cmdList);
 
 	// 背景スプライト描画
-	//spriteBG->Draw();
+	spriteBG->Draw();
 
 	// スプライト描画後処理
 	Sprite::PostDraw();

@@ -3,10 +3,9 @@
 #include "../DirectXBase/DirectXCommon.h"
 #include <DirectXMath.h>
 #include "../Audio/Audio.h"
-#include "../Input/KeyboardInput.h"
 #include "../2d/Sprite.h"
-
 #include "AbstructScene.h"
+
 
 using namespace Microsoft::WRL;
 using namespace DirectX;

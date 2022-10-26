@@ -1,5 +1,8 @@
 #include "EndScene.h"
 #include <cassert>
+#include "../Input/KeyboardInput.h"
+#include "../Input/ControllerInput.h"
+#include "../Manager/SceneManager.h"
 
 using namespace DirectX;
 
@@ -21,20 +24,24 @@ EndScene::~EndScene()
 
 void EndScene::Init()
 {
-	
-
 	// テクスチャ読み込み(１番にするとよくわからんエラー起こる)
-	/*if (!Sprite::LoadTexture(4, L"Resources/end.png")) {
+	if (!Sprite::LoadTexture(4, L"Resources/END.png")) {
 		assert(0);
 		return;
-	}*/
+	}
 	//// 背景スプライト生成
-	//spriteBG = Sprite::CreateSprite(4, { 0.0f,0.0f });
+	spriteBG = Sprite::CreateSprite(4, { 0.0f,0.0f });
 	
 }
 
 void EndScene::Update()
 {
+	//タイトル画面に戻る
+	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE)
+		|| ControllerInput::GetIns()->IsPadButtonTrigger(XBOX_INPUT_B))
+	{
+		SceneManager::ChangeScene(SceneManager::TITLE);
+	}
 }
 
 void EndScene::Draw()
