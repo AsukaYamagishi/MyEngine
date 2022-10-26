@@ -193,7 +193,9 @@
     <ClCompile Include="Code\DirectXBase\CSVLoader.cpp">
       <Filter>メイン部分\Base</Filter>
     </ClCompile>
-    <ClCompile Include="Code\GameObject\Other\WallSpaner.cpp" />
+    <ClCompile Include="Code\GameObject\Other\WallSpaner.cpp">
+      <Filter>メイン部分\GameObj\Other</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">
@@ -313,9 +315,6 @@
     <ClInclude Include="Code\Scene\TitleScene.h">
       <Filter>メイン部分\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Math\Vector3.h">
-      <Filter>メイン部分\Base</Filter>
-    </ClInclude>
     <ClInclude Include="Code\DirectXBase\WindowsAPI.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
@@ -325,7 +324,15 @@
     <ClInclude Include="Code\DirectXBase\CSVLoader.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Code\GameObject\Other\WallSpaner.h" />
+    <ClInclude Include="Code\Math\Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameObject\Other\WallSpaner.h">
+      <Filter>メイン部分\GameObj\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Math\Mathf.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">
@@ -440,6 +447,9 @@
     </Filter>
     <Filter Include="Shader\PostEffect\MultiRenderTarget">
       <UniqueIdentifier>{496aceef-5040-4385-b23b-c02117043d7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{1f9a2841-2c3b-4510-b11e-69fb74e80e57}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
