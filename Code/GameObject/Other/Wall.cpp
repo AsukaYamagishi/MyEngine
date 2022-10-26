@@ -1,7 +1,7 @@
 #include "Wall.h"
 #include "../../Collision/Collider/OBBCollider.h"
 
-Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
+Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon,std::weak_ptr<CollisionManager> collisionManager, PlayerBase* player,Vector3 length):
 	GameObjectBase(dxCommon)
 {
 	wall = std::make_shared<ObjDraw>(*ObjDraw::Create());
@@ -16,14 +16,15 @@ Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObject
 		{0,0,1.0f},
 	};
 	// 各軸の長さ
-	float obbLength[3] = {
-		rand() % 10 + 1.0f,
-		rand() % 10 + 1.0f,
-		1.0f
+	float obbLength[3]
+	{
+		length.x,
+		length.y,
+		length.z
 	};
 	// コライダー
 	std::shared_ptr<OBBCollider> obb = std::make_shared<OBBCollider>(obbNormal, obbLength);
-	wall->SetScale(Vector3(obbLength[0], obbLength[1], obbLength[2]));
+	wall->SetScale(length);
 	obb.get()->SetName("Wall");
 	AddCollider(obb, collisionManager);
 

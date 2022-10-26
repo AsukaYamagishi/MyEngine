@@ -1,8 +1,8 @@
 ﻿#pragma once
-#include "../../DirectXBase/SafeDelete.h"
 #include "../../DirectXBase/DirectXCommon.h"
 #include "../../3d/Obj/ObjDraw.h"
 #include "../../Manager/ModelManager.h"
+
 class Stage {
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 	// DirectX::��ȗ�

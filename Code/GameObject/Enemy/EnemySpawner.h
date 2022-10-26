@@ -22,11 +22,20 @@ private:
 
 	};
 
-	std::queue<SpawnData> LoadData(const char* filepath);
+	void LoadData(const char* filepath);
 
 	std::queue<SpawnData> spawnDatas;	// スポーンデータコンテナ
 
 	PlayerBase* playerData;
 	std::weak_ptr<CollisionManager> collisionManager;
+
+	void CrossSpown(Vector3 startPos);
+	void BoxSpown(Vector3 startPos);
+	enum SpownType
+	{
+		CROSS,
+		BOX,
+		MAX,
+	};
 };
 

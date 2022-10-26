@@ -183,6 +183,7 @@
     <ClInclude Include="Code\GameObject\GameObjectBase.h" />
     <ClInclude Include="Code\GameObject\Other\Stage.h" />
     <ClInclude Include="Code\GameObject\Other\Wall.h" />
+    <ClInclude Include="Code\GameObject\Other\WallSpaner.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBase.h" />
     <ClInclude Include="Code\GameObject\Player\PlayerBullet.h" />
     <ClInclude Include="Code\Input\ControllerInput.h" />
@@ -225,6 +226,7 @@
     <ClCompile Include="Code\GameObject\GameObjectBase.cpp" />
     <ClCompile Include="Code\GameObject\Other\Stage.cpp" />
     <ClCompile Include="Code\GameObject\Other\Wall.cpp" />
+    <ClCompile Include="Code\GameObject\Other\WallSpaner.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBase.cpp" />
     <ClCompile Include="Code\GameObject\Player\PlayerBullet.cpp" />
     <ClCompile Include="Code\Input\ControllerInput.cpp" />

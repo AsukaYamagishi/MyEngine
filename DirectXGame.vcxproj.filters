@@ -193,6 +193,7 @@
     <ClCompile Include="Code\DirectXBase\CSVLoader.cpp">
       <Filter>メイン部分\Base</Filter>
     </ClCompile>
+    <ClCompile Include="Code\GameObject\Other\WallSpaner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">
@@ -324,6 +325,7 @@
     <ClInclude Include="Code\DirectXBase\CSVLoader.h">
       <Filter>メイン部分\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Code\GameObject\Other\WallSpaner.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">

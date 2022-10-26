@@ -26,6 +26,7 @@ GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 	GameObjectBase::SetManager(gameObjManager);
 	player = GameObjectBase::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT);
 	GameObjectBase::Create<EnemySpawner>(dxCommon, collisionManager, player);
+	GameObjectBase::Create<WallSpaner>(dxCommon, collisionManager, player);
 	srand(time(NULL));
 }
 
@@ -94,12 +95,12 @@ void GameScene::Update()
 	camera->target.z = camera->eye.z + 1.0f;
 
 
-	if (timer % 180 == 60)
-	{
-		auto wall= GameObjectBase::Create<Wall>(
-			Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), player->GetPos().z + 50.0f },
-			dxCommon, gameObjManager, collisionManager, player);
-	}
+	//if (timer % 180 == 60)
+	//{
+	//	auto wall= GameObjectBase::Create<Wall>(
+	//		Vector3{ static_cast<float>(rand() % 61 - 30),static_cast<float>(rand() % 31 - 15), player->GetPos().z + 50.0f },
+	//		dxCommon, gameObjManager, collisionManager, player);
+	//}
 
 	gameObjManager->Update();
 	collisionManager->CheckHitColliders();

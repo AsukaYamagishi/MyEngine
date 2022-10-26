@@ -40,9 +40,21 @@ void Enemy::Update()
 		GameObjectBase::Create<EnemyBullet>(dxCommon, collisionManager, pos + Vector3{ 0,0,-1.0f }, Vector3{ 0.0f,0.0f,-0.7f });
 	}
 
-	//âÊñ âúÇ…èoÇΩÇÁè¡ãé
-	if (pos.z < player->GetPos().z - 30) {
-		deleteFlag = true;
+	// àÍíËãóó£Çï€Ç¬
+	float playerToEnemy = pos.z - player->GetPos().z;
+	if (playerToEnemy < 20.0f)
+	{
+		pos.z = player->GetPos().z + 20.0f;
+	}
+
+	// ó£íE
+	if (liveTime >= 300)
+	{
+		velocity.x = 1;
+		if (pos.x >= 100)
+		{
+			deleteFlag = true;
+		}
 	}
 }
 
@@ -68,5 +80,5 @@ void Enemy::OnCollision(CollisionInfo info)
 
 void Enemy::Move()
 {
-	
+	pos += velocity;
 }

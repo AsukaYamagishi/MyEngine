@@ -17,6 +17,7 @@
 #include "../Collision/CollisionManager.h"
 #include "../Scene/AbstructScene.h"
 #include "../GameObject/Enemy/EnemySpawner.h"
+#include "../GameObject/Other/WallSpaner.h"
 
 using namespace Microsoft::WRL;
 using namespace DirectX;

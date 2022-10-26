@@ -10,7 +10,11 @@ class Wall :
     public GameObjectBase
 {
 public:
-    Wall(Vector3 startPos, DirectXCommon* dxCommon, std::shared_ptr<GameObjectManager> gameObjManager, std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player);
+    Wall(
+        Vector3 startPos, 
+        DirectXCommon* dxCommon,
+        std::weak_ptr<CollisionManager> collisionManager,
+        PlayerBase* player, Vector3 length);
     void Update() override;
     void Draw() override;
     void OnCollision(CollisionInfo info) override;

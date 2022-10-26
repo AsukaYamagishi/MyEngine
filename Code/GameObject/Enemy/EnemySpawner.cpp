@@ -1,12 +1,13 @@
 #include "EnemySpawner.h"
 
+
 EnemySpawner::EnemySpawner(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
 	GameObjectBase(dxCommon)
 {
 	this->collisionManager = collisionManager;
 	playerData = player;
 	// ファイル読み込み
-	spawnDatas = LoadData("Resources/Csv/EnemySpownData.csv");
+	LoadData("Resources/Csv/EnemySpownBlocData.csv");
 }
 
 void EnemySpawner::Update()
@@ -25,9 +26,8 @@ void EnemySpawner::Update()
 	}
 }
 
-std::queue<EnemySpawner::SpawnData> EnemySpawner::LoadData(const char* filepath)
+void EnemySpawner::LoadData(const char* filepath)
 {
-	std::queue<SpawnData> dataTable;
 
 	ifstream fileStream(filepath);
 	if (!fileStream) 
@@ -55,18 +55,56 @@ std::queue<EnemySpawner::SpawnData> EnemySpawner::LoadData(const char* filepath)
 		{
 			datas.push_back(stemp);
 		}
-		//切り分けたデータを構造体に格納
-		SpawnData data;
-		data.spawnPos =
+
+		int type = strtof(datas[3].c_str(), NULL);
+		Vector3 startPos
 		{
 			strtof(datas[0].c_str(),NULL),
 			strtof(datas[1].c_str(),NULL),
 			strtof(datas[2].c_str(),NULL)
 		};
-		dataTable.push(data);
+		//切り分けたデータを構造体に格納
+		switch (type)
+		{
+		case CROSS:
+			CrossSpown(startPos);
+			break;
+		case BOX:
+			BoxSpown(startPos);
+			break;
+		default:
+			break;
+		}
+		
 	}
 	//ファイルクローズ
 	fileStream.close();
 
-	return dataTable;
+}
+
+void EnemySpawner::CrossSpown(Vector3 startPos)
+{
+	// 真ん中
+	spawnDatas.push(SpawnData{ startPos });
+	// 右上
+	spawnDatas.push(SpawnData{ startPos + Vector3{10,10,0} });
+	// 左上
+	spawnDatas.push(SpawnData{ startPos + Vector3{-10,10,0} });
+	// 右下
+	spawnDatas.push(SpawnData{ startPos + Vector3{10,-10,0} });
+	// 左下
+	spawnDatas.push(SpawnData{ startPos + Vector3{-10,-10,0} });
+}
+
+void EnemySpawner::BoxSpown(Vector3 startPos)
+{
+	// 右上
+	spawnDatas.push(SpawnData{ startPos + Vector3{5,5,0} });
+	// 左上
+	spawnDatas.push(SpawnData{ startPos + Vector3{-5,5,0} });
+	// 右下
+	spawnDatas.push(SpawnData{ startPos + Vector3{5,-5,0} });
+	// 左下
+	spawnDatas.push(SpawnData{ startPos + Vector3{-5,-5,0} });
+
 }
