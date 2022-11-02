@@ -130,3 +130,9 @@ Vector3 Vector3::Normalized() const
     };
     return normalized;
 }
+
+float Vector3::Dot(const Vector3& vec)
+{
+    float dot = x * vec.x + y * vec.y + z * vec.z;
+    return dot;
+}

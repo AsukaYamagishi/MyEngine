@@ -76,7 +76,7 @@ void PlayerBase::Move()
 	//徐々に止まる
 	velocity = velocity * Vector3(0.85f, 0.85f, 0.85f);
 	velocity.z = flontMove;
-	if (velocity.length() <= 0.01f)
+	if (velocity.Length() <= 0.01f)
 	{
 		velocity = { 0,0,0 };
 	}
@@ -109,8 +109,8 @@ void PlayerBase::Move()
 	}
 
 	//move以上に大きく動かないようにする
-	if (velocity.length() > move) {
-		velocity = velocity.Normal() * move;
+	if (velocity.Length() > move) {
+		velocity = velocity.Normalized() * move;
 	}
 
 	//フレーム内の移動を適応

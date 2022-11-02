@@ -140,6 +140,12 @@ struct Vector3 : public XMFLOAT3
 	/// <returns>正規化ベクトル（Vector3）</returns>
 	Vector3 Normalized() const;
 
+	/// <summary>
+	/// 2つのベクトルの内積(引数1つ)
+	/// </summary>
+	/// <returns>内積（float）</returns>
+	float Dot(const Vector3& vec);
+
 #pragma endregion
 
 #pragma region 演算子
@@ -174,7 +180,7 @@ struct Vector3 : public XMFLOAT3
 		*this = *this + -vec;
 		return *this;
 	}
-
+	//乗算・除算は下に
 
 	//比較演算子
 	bool operator ==(const Vector3& vec) const
@@ -212,6 +218,15 @@ inline Vector3 operator *(const Vector3& vec, const float& num)
 inline Vector3 operator *(const float& num, const Vector3& vec)
 {
 	Vector3 temp = vec * num;
+	return temp;
+}
+inline Vector3 operator *(const Vector3& a, const Vector3& b)
+{
+	Vector3 temp = {
+		a.x * b.x,
+		a.y * b.y,
+		a.z * b.z
+	};
 	return temp;
 }
 inline Vector3 operator /(const Vector3& vec, const float& num)

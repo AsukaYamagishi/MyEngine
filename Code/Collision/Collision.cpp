@@ -241,7 +241,7 @@ bool Collision::IsRayToSqhere(const Ray &ray, const Sphere &sphere, float *dista
 			if (length <= 0) {
 				continue;	//’·‚³ƒ[ƒ‚ÍœŠO
 			}
-			float s = Vector3(sphere.centor - obb.centor).VDot(Vector3(obb.normalDirect[i]))/length;
+			float s = Vector3(sphere.centor - obb.centor).Dot(Vector3(obb.normalDirect[i]))/length;
 
 			s = fabsf(s);
 
@@ -250,7 +250,7 @@ bool Collision::IsRayToSqhere(const Ray &ray, const Sphere &sphere, float *dista
 			}
 		}
 
-		if (vec.length() <= sphere.radius) {
+		if (vec.Length() <= sphere.radius) {
 			return true;
 		}
 		return false;
