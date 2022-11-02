@@ -196,6 +196,9 @@
     <ClCompile Include="Code\GameObject\Other\WallSpaner.cpp">
       <Filter>メイン部分\GameObj\Other</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Math\Vector3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">
