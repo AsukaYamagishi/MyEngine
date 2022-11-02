@@ -199,6 +199,9 @@
     <ClCompile Include="Code\Math\Vector3.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Math\Vector2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">
@@ -334,6 +337,9 @@
       <Filter>メイン部分\GameObj\Other</Filter>
     </ClInclude>
     <ClInclude Include="Code\Math\Mathf.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Math\Vector2.h">
       <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>
