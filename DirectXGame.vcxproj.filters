@@ -208,6 +208,9 @@
     <ClCompile Include="Code\Math\Easing.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Math\Matrix4x4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">

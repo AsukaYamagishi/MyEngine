@@ -241,6 +241,7 @@
     <ClCompile Include="Code\Manager\ModelManager.cpp" />
     <ClCompile Include="Code\Manager\SceneManager.cpp" />
     <ClCompile Include="Code\Math\Easing.cpp" />
+    <ClCompile Include="Code\Math\Matrix4x4.cpp" />
     <ClCompile Include="Code\Math\Quaternion.cpp" />
     <ClCompile Include="Code\Math\Vector2.cpp" />
     <ClCompile Include="Code\Math\Vector3.cpp" />
