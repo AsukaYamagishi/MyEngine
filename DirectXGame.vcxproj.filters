@@ -202,6 +202,12 @@
     <ClCompile Include="Code\Math\Vector2.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Math\Quaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Math\Easing.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">
@@ -336,10 +342,19 @@
     <ClInclude Include="Code\GameObject\Other\WallSpaner.h">
       <Filter>メイン部分\GameObj\Other</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Math\Mathf.h">
+    <ClInclude Include="Code\Math\Vector2.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Math\Vector2.h">
+    <ClInclude Include="Code\Math\Quaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Math\Matrix4x4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Math\Easing.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Math\Mathf.h">
       <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>

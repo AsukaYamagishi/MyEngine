@@ -191,7 +191,10 @@
     <ClInclude Include="Code\Manager\GameObjectManager.h" />
     <ClInclude Include="Code\Manager\ModelManager.h" />
     <ClInclude Include="Code\Manager\SceneManager.h" />
+    <ClInclude Include="Code\Math\Easing.h" />
     <ClInclude Include="Code\Math\Mathf.h" />
+    <ClInclude Include="Code\Math\Matrix4x4.h" />
+    <ClInclude Include="Code\Math\Quaternion.h" />
     <ClInclude Include="Code\Math\Vector2.h" />
     <ClInclude Include="Code\Math\Vector3.h" />
     <ClInclude Include="Code\Scene\AbstructScene.h" />
@@ -237,6 +240,8 @@
     <ClCompile Include="Code\Manager\GameObjectManager.cpp" />
     <ClCompile Include="Code\Manager\ModelManager.cpp" />
     <ClCompile Include="Code\Manager\SceneManager.cpp" />
+    <ClCompile Include="Code\Math\Easing.cpp" />
+    <ClCompile Include="Code\Math\Quaternion.cpp" />
     <ClCompile Include="Code\Math\Vector2.cpp" />
     <ClCompile Include="Code\Math\Vector3.cpp" />
     <ClCompile Include="Code\Scene\EndScene.cpp" />
