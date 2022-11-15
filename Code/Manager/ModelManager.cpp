@@ -15,6 +15,7 @@ void ModelManager::Init()
 	LoadModel(ENEMY, "enemy");
 	LoadModel(WALL, "Wall");
 	LoadModel(SKYDOME, "skydome");
+	LoadModel(EBULLET, "EnemyBullet");
 	
 	//LoadModel(TestDunut, "donut");
 }

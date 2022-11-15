@@ -107,7 +107,7 @@ void GameScene::Update()
 		gameEndFlag = true;
 	}
 
-	//ゲームエンドシーンに移行(仮でENDキーに設定)
+	//ゲームエンドシーンに移行(ゴールする or ENDキー)
 	if (gameEndFlag || KeyboardInput::GetIns()->PressKeyTrigger(DIK_END))
 	{
 		SceneManager::ChangeScene(SceneManager::END);

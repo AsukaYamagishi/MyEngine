@@ -17,6 +17,7 @@ public:
 		PLAYER,
 		BULLET,
 		ENEMY,
+		EBULLET,
 		WALL,
 		SKYDOME,
 

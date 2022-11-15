@@ -42,9 +42,9 @@ void Enemy::Update()
 
 	// ˆê’è‹——£‚ð•Û‚Â
 	float playerToEnemy = pos.z - player->GetPos().z;
-	if (playerToEnemy < 20.0f)
+	if (playerToEnemy < 15.0f)
 	{
-		pos.z = player->GetPos().z + 20.0f;
+		pos.z = player->GetPos().z + 15.0f;
 	}
 
 	// —£’E

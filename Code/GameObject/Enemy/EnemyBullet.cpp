@@ -5,13 +5,15 @@ EnemyBullet::EnemyBullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager
 {
 	//モデルセット
 	bullet = std::make_shared<ObjDraw>(*ObjDraw::Create());
-	bullet->SetModel(ModelManager::GetIns()->GetModel(ModelManager::BULLET));
+	bullet->SetModel(ModelManager::GetIns()->GetModel(ModelManager::EBULLET));
+
 
 	//各変数セット
 	pos = startPos;
 	velocity = shotVelocity;
 	bullet->SetPos(pos);
 	bullet->SetScale({ 0.5f, 0.5f, 0.5f });
+	bullet->SetRotation({ 90.0f,0.0f,0.0f });
 
 	//コライダー情報セット
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
@@ -24,6 +26,11 @@ void EnemyBullet::Update()
 {
 	pos = bullet.get()->GetPos();
 	pos += velocity;
+
+	//画面外（手前）に来たら消去
+	if (pos.z < -10.0f) {
+		deleteFlag = true;
+	}
 	
 }
 

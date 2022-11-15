@@ -67,11 +67,11 @@ void PlayerBase::OnCollision(CollisionInfo info)
 
 void PlayerBase::Move()
 {
-	if (flontMove < 0.2f) {
+	if (flontMove < 0.3f) {
 		flontMove += 0.1f;
 	}
 	else {
-		flontMove = 0.2f;
+		flontMove = 0.3f;
 	}
 	//徐々に止まる
 	velocity = velocity * Vector3(0.85f, 0.85f, 0.85f);
