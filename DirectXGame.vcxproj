@@ -181,6 +181,7 @@
     <ClInclude Include="Code\GameObject\Enemy\EnemyBullet.h" />
     <ClInclude Include="Code\GameObject\Enemy\EnemySpawner.h" />
     <ClInclude Include="Code\GameObject\GameObjectBase.h" />
+    <ClInclude Include="Code\GameObject\Other\ScoreManager.h" />
     <ClInclude Include="Code\GameObject\Other\Stage.h" />
     <ClInclude Include="Code\GameObject\Other\Wall.h" />
     <ClInclude Include="Code\GameObject\Other\WallSpaner.h" />
@@ -229,6 +230,7 @@
     <ClCompile Include="Code\GameObject\Enemy\EnemyBullet.cpp" />
     <ClCompile Include="Code\GameObject\Enemy\EnemySpawner.cpp" />
     <ClCompile Include="Code\GameObject\GameObjectBase.cpp" />
+    <ClCompile Include="Code\GameObject\Other\ScoreManager.cpp" />
     <ClCompile Include="Code\GameObject\Other\Stage.cpp" />
     <ClCompile Include="Code\GameObject\Other\Wall.cpp" />
     <ClCompile Include="Code\GameObject\Other\WallSpaner.cpp" />

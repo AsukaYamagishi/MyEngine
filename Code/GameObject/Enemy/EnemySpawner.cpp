@@ -1,9 +1,10 @@
 #include "EnemySpawner.h"
 
 
-EnemySpawner::EnemySpawner(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
+EnemySpawner::EnemySpawner(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player, ScoreManager* scoreMan):
 	GameObjectBase(dxCommon)
 {
+	scoreManager = scoreMan;
 	this->collisionManager = collisionManager;
 	playerData = player;
 	// ÉtÉ@ÉCÉãì«Ç›çûÇ›
@@ -21,7 +22,7 @@ void EnemySpawner::Update()
 	{
 		GameObjectBase::Create<Enemy>(
 			dxCommon, gameObjectManager, collisionManager,
-			spawnDatas.front().spawnPos, playerData);
+			spawnDatas.front().spawnPos, playerData, scoreManager);
 		spawnDatas.pop();
 	}
 }

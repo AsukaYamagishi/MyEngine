@@ -6,6 +6,7 @@
 #include "../../Manager/ModelManager.h"
 #include "../../Manager/GameObjectManager.h"
 #include "../../3d/Obj/ObjDraw.h"
+#include "../../DirectXBase/DebugText.h"
 
 enum class PlayerType {
 	MELLE, //近距離
@@ -28,7 +29,7 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	PlayerBase(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerType type);
+	PlayerBase(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerType type, DebugText* debugText);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -64,8 +65,13 @@ private:
 #pragma endregion
 
 #pragma region 変数
+public:
+	//体力
+	int hp = 3;
+
 private:
 	std::weak_ptr<CollisionManager> collisionManager;
+	DebugText* debugText;
 	
 	//プレイヤーモデル
 	std::shared_ptr<ObjDraw> player;
@@ -76,9 +82,6 @@ private:
 	//1f内での合計移動量
 	Vector3 velocity = { 0,0,0 };
 	
-	//体力
-	int hp = 100;
-
 	//前後への移動量
 	float flontMove;
 #pragma endregion

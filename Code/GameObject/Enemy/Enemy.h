@@ -4,6 +4,7 @@
 #include "../../Manager/GameObjectManager.h"
 #include "../../Manager/ModelManager.h"
 #include "../../3d/Obj/ObjDraw.h"
+#include "../Other/ScoreManager.h"
 
 
 class Enemy :
@@ -23,7 +24,7 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjManager, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player);
+	Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjManager, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player, ScoreManager* scoreMan);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -64,6 +65,7 @@ private:
 	//マネージャ
 	std::weak_ptr<GameObjectManager> gameObjManager;
 	std::weak_ptr<CollisionManager> collisionManager;
+	ScoreManager* scoreManager;
 
 	//モデル
 	std::shared_ptr<ObjDraw> enemy;

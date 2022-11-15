@@ -4,13 +4,14 @@
 #include "../../Manager/GameObjectManager.h"
 #include "../../Math/Vector3.h"
 #include <queue>
+#include "../Other/ScoreManager.h"
 
 class EnemySpawner :
 	public GameObjectBase
 {
 public:
 
-	EnemySpawner(DirectXCommon* dxCommon,  std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player);
+	EnemySpawner(DirectXCommon* dxCommon,  std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player, ScoreManager* scoreMan);
 	
 	void Update() override;
 private:
@@ -27,6 +28,7 @@ private:
 	std::queue<SpawnData> spawnDatas;	// スポーンデータコンテナ
 
 	PlayerBase* playerData;
+	ScoreManager* scoreManager;
 	std::weak_ptr<CollisionManager> collisionManager;
 
 	void CrossSpawn(Vector3 startPos);

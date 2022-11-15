@@ -7,16 +7,19 @@
 #include "../../Input/ControllerInput.h"
 #include "../../Collision/Collider/SphereCollider.h"
 #include "../../Collision/Collider/OBBCollider.h"
+#include <iostream>
+#include <sstream>
 
 
 using namespace DirectX;
 
-PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager> collisionManager, PlayerType type):
+PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager> collisionManager, PlayerType type, DebugText* debugText):
 	GameObjectBase(dxCommon)
 {
 	player = std::make_shared<ObjDraw>(*ObjDraw::Create());
 	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
 	this->collisionManager = collisionManager;
+	this->debugText = debugText;
 
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
 	sphere.get()->SetName("Player");
@@ -54,14 +57,25 @@ void PlayerBase::Draw()
 	player->Draw();
 	ObjDraw::PostDraw();
 
+
+	std::ostringstream drawHpStr;
+	drawHpStr << "HP:";
+	drawHpStr << hp;
+	debugText->PrintDebugText(drawHpStr.str().c_str(), 0.0f, 60.0f, 2.0f);
 }
 
 void PlayerBase::OnCollision(CollisionInfo info)
 {
 	
 	if (info.hitName == "Wall") {
+		hp = hp - 1;
 		flontMove = -4.0f;
 
+	}
+
+	if (info.hitName == "EnemyBullet")
+	{
+		hp = hp - 1;
 	}
 }
 

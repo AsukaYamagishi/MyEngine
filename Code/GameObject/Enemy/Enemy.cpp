@@ -2,13 +2,14 @@
 #include "EnemyBullet.h"
 #include "../../Collision/Collider/SphereCollider.h"
 
-Enemy::Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjManager, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player):
+Enemy::Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjManager, std::weak_ptr<CollisionManager> collisionManager, Vector3 startPos, PlayerBase* player, ScoreManager* scoreMan):
 	GameObjectBase(dxCommon)
 {
 	enemy = std::make_shared<ObjDraw>(*ObjDraw::Create());
 	enemy->SetModel(ModelManager::GetIns()->GetModel(ModelManager::ENEMY));
 	this->gameObjManager = gameObjManager;
 	this->collisionManager = collisionManager;
+	scoreManager = scoreMan;
 	pos = startPos;
 	enemy->SetPos(pos);
 
@@ -74,6 +75,7 @@ void Enemy::OnCollision(CollisionInfo info)
 {
 	//ƒvƒŒƒCƒ„[’e‚É“–‚½‚Á‚½ŽžÁ‚¦‚é
  	if (info.hitName == "Bullet") {
+		scoreManager->AddScore(100);
    		deleteFlag = true;
 	}
 }

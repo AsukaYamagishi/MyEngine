@@ -72,6 +72,7 @@ private: //メンバ変数
 public:
 	//ゲームシーン終了用
 	bool gameEndFlag = false;
+	static bool gameoverFlag;
 
 #pragma endregion
 

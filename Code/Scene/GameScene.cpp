@@ -9,8 +9,11 @@
 #include <time.h>
 #include "../Input/KeyboardInput.h"
 #include "../Input/ControllerInput.h"
+#include "../GameObject/Other/ScoreManager.h"
 
 using namespace DirectX;
+
+bool GameScene::gameoverFlag = false;
 
 
 GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
@@ -26,8 +29,9 @@ GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 	collisionManager = std::make_shared<CollisionManager>();
 	gameObjManager = std::make_shared<GameObjectManager>(dxCommon);
 	GameObjectBase::SetManager(gameObjManager);
-	player = GameObjectBase::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT);
-	GameObjectBase::Create<EnemySpawner>(dxCommon, collisionManager, player);
+	auto scoreManager = GameObjectBase::Create<ScoreManager>(dxCommon, &debugText);
+	player = GameObjectBase::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT, &debugText);
+	GameObjectBase::Create<EnemySpawner>(dxCommon, collisionManager, player, scoreManager);
 	GameObjectBase::Create<WallSpaner>(dxCommon, collisionManager, player);
 	GameObjectBase::Create<Stage>(dxCommon, player);
 	srand(time(NULL));
@@ -89,6 +93,7 @@ void GameScene::Init()
 
 	gameObjManager->Init();
 	gameEndFlag = false;
+	gameoverFlag = false;
 }
 
 void GameScene::Update()
@@ -107,14 +112,20 @@ void GameScene::Update()
 		gameEndFlag = true;
 	}
 
+	if (player->hp <= 0)
+	{
+		gameoverFlag = true;
+	}
+
+
 	//ゲームエンドシーンに移行(ゴールする or ENDキー)
-	if (gameEndFlag || KeyboardInput::GetIns()->PressKeyTrigger(DIK_END))
+	if (gameEndFlag || gameoverFlag || KeyboardInput::GetIns()->PressKeyTrigger(DIK_END))
 	{
 		SceneManager::ChangeScene(SceneManager::END);
 	}
 
 #pragma region デバッグテキスト設定
-	
+	//debugText.PrintDebugText("test012", 0.0f, 0.0f, 2.0f);
 #pragma endregion
 
 	//ゲーム中タイマー加算

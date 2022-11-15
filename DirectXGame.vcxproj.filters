@@ -211,6 +211,7 @@
     <ClCompile Include="Code\Math\Matrix4x4.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Code\GameObject\Other\ScoreManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Audio\Audio.h">
@@ -360,6 +361,7 @@
     <ClInclude Include="Code\Math\Mathf.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="Code\GameObject\Other\ScoreManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.hlsli">

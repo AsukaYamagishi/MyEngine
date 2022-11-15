@@ -42,7 +42,7 @@ bool WindowsAPI::WindowCreate()
 
 	//ウィンドウオブジェクトの生成
 	WindowsAPI::hwnd = CreateWindow(WindowsAPI::w.lpszClassName, //クラス名
-							 L"就職作品", //タイトルバーの文字
+							 L"LE3B_26_ヤマギシアスカ_flyer", //タイトルバーの文字
 							 WS_OVERLAPPEDWINDOW, //標準的なウィンドウスタイル
 							 CW_USEDEFAULT, //表示Ｘ座標（OS依存）
 							 CW_USEDEFAULT, //表示Y座標（OS依存）

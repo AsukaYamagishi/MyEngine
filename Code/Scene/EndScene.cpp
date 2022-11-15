@@ -29,19 +29,50 @@ void EndScene::Init()
 		assert(0);
 		return;
 	}
+	if (!Sprite::LoadTexture(5, L"Resources/Gameover.png")) {
+		assert(0);
+		return;
+	}
 	//// 背景スプライト生成
-	spriteBG = Sprite::CreateSprite(4, { 0.0f,0.0f });
+	//spriteBG = Sprite::CreateSprite(4, { 0.0f,0.0f });
+	if (GameScene::gameoverFlag == true)
+	{
+		spriteBG = Sprite::CreateSprite(5, { 0.0f,0.0f });
+	}
+	else
+	{
+		spriteBG = Sprite::CreateSprite(4, { 0.0f,0.0f });
+	}
 	
 }
 
 void EndScene::Update()
 {
-	//タイトル画面に戻る
-	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE)
-		|| ControllerInput::GetIns()->IsPadButtonTrigger(XBOX_INPUT_B))
+	if (GameScene::gameoverFlag == true)
 	{
-		SceneManager::ChangeScene(SceneManager::TITLE);
+		//ゲーム画面に戻る
+		if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE)
+			|| ControllerInput::GetIns()->IsPadButtonTrigger(XBOX_INPUT_B))
+		{
+			SceneManager::ChangeScene(SceneManager::GAMEPLAY);
+		}
+		//タイトル画面に戻る
+		else if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_RETURN)
+			|| ControllerInput::GetIns()->IsPadButtonTrigger(XBOX_INPUT_A))
+		{
+			SceneManager::ChangeScene(SceneManager::TITLE);
+		}
 	}
+	else
+	{
+		//タイトル画面に戻る
+		if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_SPACE)
+			|| ControllerInput::GetIns()->IsPadButtonTrigger(XBOX_INPUT_B))
+		{
+			SceneManager::ChangeScene(SceneManager::TITLE);
+		}
+	}
+	
 }
 
 void EndScene::Draw()
