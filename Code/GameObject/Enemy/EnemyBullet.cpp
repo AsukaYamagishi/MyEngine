@@ -18,7 +18,7 @@ EnemyBullet::EnemyBullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager
 	//コライダー情報セット
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
 	sphere.get()->SetName("EnemyBullet");
-	sphere.get()->SetRadius(1.0f);
+	sphere.get()->SetRadius(1.5f);
 	AddCollider(sphere, collisionManager);
 }
 

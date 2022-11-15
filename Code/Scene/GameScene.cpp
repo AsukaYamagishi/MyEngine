@@ -30,7 +30,7 @@ GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 	gameObjManager = std::make_shared<GameObjectManager>(dxCommon);
 	GameObjectBase::SetManager(gameObjManager);
 	auto scoreManager = GameObjectBase::Create<ScoreManager>(dxCommon, &debugText);
-	player = GameObjectBase::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT, &debugText);
+	player = GameObjectBase::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT, &debugText, scoreManager);
 	GameObjectBase::Create<EnemySpawner>(dxCommon, collisionManager, player, scoreManager);
 	GameObjectBase::Create<WallSpaner>(dxCommon, collisionManager, player);
 	GameObjectBase::Create<Stage>(dxCommon, player);

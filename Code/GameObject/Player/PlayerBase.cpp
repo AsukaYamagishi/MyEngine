@@ -13,13 +13,14 @@
 
 using namespace DirectX;
 
-PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager> collisionManager, PlayerType type, DebugText* debugText):
+PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager> collisionManager, PlayerType type, DebugText* debugText, ScoreManager* scoreMan):
 	GameObjectBase(dxCommon)
 {
 	player = std::make_shared<ObjDraw>(*ObjDraw::Create());
 	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
 	this->collisionManager = collisionManager;
 	this->debugText = debugText;
+	scoreManager = scoreMan;
 
 	std::shared_ptr<SphereCollider> sphere = std::make_shared<SphereCollider>();
 	sphere.get()->SetName("Player");
@@ -69,6 +70,7 @@ void PlayerBase::OnCollision(CollisionInfo info)
 	
 	if (info.hitName == "Wall") {
 		hp = hp - 1;
+		scoreManager->SubScore(30);
 		flontMove = -4.0f;
 
 	}
@@ -76,6 +78,7 @@ void PlayerBase::OnCollision(CollisionInfo info)
 	if (info.hitName == "EnemyBullet")
 	{
 		hp = hp - 1;
+		scoreManager->SubScore(50);
 	}
 }
 

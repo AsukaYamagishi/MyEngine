@@ -7,6 +7,7 @@
 #include "../../Manager/GameObjectManager.h"
 #include "../../3d/Obj/ObjDraw.h"
 #include "../../DirectXBase/DebugText.h"
+#include "../Other/ScoreManager.h"
 
 enum class PlayerType {
 	MELLE, //近距離
@@ -29,7 +30,7 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	PlayerBase(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerType type, DebugText* debugText);
+	PlayerBase(DirectXCommon* dxCommon,std::shared_ptr<CollisionManager> collisionManager, PlayerType type, DebugText* debugText, ScoreManager* scoreMan);
 	/// <summary>
 	/// デストラクタ
 	/// </summary>
@@ -72,6 +73,7 @@ public:
 private:
 	std::weak_ptr<CollisionManager> collisionManager;
 	DebugText* debugText;
+	ScoreManager* scoreManager;
 	
 	//プレイヤーモデル
 	std::shared_ptr<ObjDraw> player;
