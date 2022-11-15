@@ -49,7 +49,6 @@ private: //メンバ変数
 
 	
 	//ステージ
-	Stage* stage;
 
 
 	//FBXモデル

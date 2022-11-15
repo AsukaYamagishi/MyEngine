@@ -1,5 +1,6 @@
 #include "WallSpaner.h"
 #include "Wall.h"
+
 WallSpaner::WallSpaner(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager> collisionManager, PlayerBase* player):
 	GameObjectBase(dxCommon)
 {
@@ -59,22 +60,60 @@ void WallSpaner::LoadData(const char* filepath)
 			datas.push_back(stemp);
 		}
 
+		int type = strtof(datas[3].c_str(), NULL);
 		Vector3 startPos
 		{
 			strtof(datas[0].c_str(),NULL),
 			strtof(datas[1].c_str(),NULL),
 			strtof(datas[2].c_str(),NULL)
 		};
-		Vector3 size
+		//切り分けたデータを構造体に格納
+		switch (type)
 		{
-			strtof(datas[3].c_str(),NULL),
-			strtof(datas[4].c_str(),NULL),
-			strtof(datas[5].c_str(),NULL)
-		};
+		case SIDE:
+			SideSpawn(startPos);
+			break;
+		case VERTICAL:
+			VerticalSpawn(startPos);
+			break;
+		case AROUND:
+			AroundSpawn(startPos);
+			break;
+		case CENTER:
+			CenterSpawn(startPos);
+			break;
 
-		spawnDatas.push(SpawnData{ startPos,size });
+		default:
+			break;
+		}
 	}
 	//ファイルクローズ
 	fileStream.close();
 
+}
+
+void WallSpaner::SideSpawn(Vector3 startPos)
+{
+	spawnDatas.push(SpawnData{ startPos + Vector3{20,0,0}, Vector3{4,10,1} });
+	spawnDatas.push(SpawnData{ startPos + Vector3{-20,0,0}, Vector3{4,10,1} });
+}
+
+void WallSpaner::VerticalSpawn(Vector3 startPos)
+{
+	spawnDatas.push(SpawnData{ startPos + Vector3{0,20,0}, Vector3{20,4,1} });
+	spawnDatas.push(SpawnData{ startPos + Vector3{0,-20,0}, Vector3{20,4,1} });
+}
+
+void WallSpaner::AroundSpawn(Vector3 startPos)
+{
+	spawnDatas.push(SpawnData{ startPos + Vector3{20,0,0}, Vector3{4,10,1} });
+	spawnDatas.push(SpawnData{ startPos + Vector3{-20,0,0}, Vector3{4,10,1} });
+	spawnDatas.push(SpawnData{ startPos + Vector3{0,13,0}, Vector3{20,2,1} });
+	spawnDatas.push(SpawnData{ startPos + Vector3{0,-13,0}, Vector3{20,2,1} });
+
+}
+
+void WallSpaner::CenterSpawn(Vector3 startPos)
+{
+	spawnDatas.push(SpawnData{ startPos + Vector3{0,0,0}, Vector3{10,10,1} });
 }

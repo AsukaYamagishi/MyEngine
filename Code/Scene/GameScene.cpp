@@ -29,6 +29,7 @@ GameScene::GameScene(DirectXCommon* dxCommon, Audio* audio)
 	player = GameObjectBase::Create<PlayerBase>(dxCommon, collisionManager, PlayerType::SHOT);
 	GameObjectBase::Create<EnemySpawner>(dxCommon, collisionManager, player);
 	GameObjectBase::Create<WallSpaner>(dxCommon, collisionManager, player);
+	GameObjectBase::Create<Stage>(dxCommon, player);
 	srand(time(NULL));
 }
 
@@ -101,8 +102,13 @@ void GameScene::Update()
 	camera->SetCam(camera);
 	camera->Update();
 
+	if (player->GetPos().z > 500.0f)
+	{
+		gameEndFlag = true;
+	}
+
 	//ゲームエンドシーンに移行(仮でENDキーに設定)
-	if (KeyboardInput::GetIns()->PressKeyTrigger(DIK_END))
+	if (gameEndFlag || KeyboardInput::GetIns()->PressKeyTrigger(DIK_END))
 	{
 		SceneManager::ChangeScene(SceneManager::END);
 	}

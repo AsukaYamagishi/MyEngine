@@ -25,5 +25,19 @@ private:
     PlayerBase* playerData;
     std::weak_ptr<CollisionManager> collisionManager;
 
+    void SideSpawn(Vector3 startPos);
+    void VerticalSpawn(Vector3 startPos);
+    void AroundSpawn(Vector3 startPos);
+    void CenterSpawn(Vector3 startPos);
+    enum SpawnType
+    {
+        SIDE,
+        VERTICAL,
+        AROUND,
+        CENTER,
+        MAX,
+    };
+
+
 };
 

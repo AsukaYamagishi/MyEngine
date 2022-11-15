@@ -18,6 +18,7 @@ public:
 		BULLET,
 		ENEMY,
 		WALL,
+		SKYDOME,
 
 		MAX //Å‘å”ŠÇ—
 	};

@@ -67,10 +67,10 @@ void EnemySpawner::LoadData(const char* filepath)
 		switch (type)
 		{
 		case CROSS:
-			CrossSpown(startPos);
+			CrossSpawn(startPos);
 			break;
 		case BOX:
-			BoxSpown(startPos);
+			BoxSpawn(startPos);
 			break;
 		default:
 			break;
@@ -82,7 +82,7 @@ void EnemySpawner::LoadData(const char* filepath)
 
 }
 
-void EnemySpawner::CrossSpown(Vector3 startPos)
+void EnemySpawner::CrossSpawn(Vector3 startPos)
 {
 	// ê^ÇÒíÜ
 	spawnDatas.push(SpawnData{ startPos });
@@ -96,7 +96,7 @@ void EnemySpawner::CrossSpown(Vector3 startPos)
 	spawnDatas.push(SpawnData{ startPos + Vector3{-10,-10,0} });
 }
 
-void EnemySpawner::BoxSpown(Vector3 startPos)
+void EnemySpawner::BoxSpawn(Vector3 startPos)
 {
 	// âEè„
 	spawnDatas.push(SpawnData{ startPos + Vector3{5,5,0} });

@@ -29,9 +29,9 @@ private:
 	PlayerBase* playerData;
 	std::weak_ptr<CollisionManager> collisionManager;
 
-	void CrossSpown(Vector3 startPos);
-	void BoxSpown(Vector3 startPos);
-	enum SpownType
+	void CrossSpawn(Vector3 startPos);
+	void BoxSpawn(Vector3 startPos);
+	enum SpawnType
 	{
 		CROSS,
 		BOX,

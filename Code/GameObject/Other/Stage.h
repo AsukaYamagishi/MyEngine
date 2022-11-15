@@ -2,8 +2,10 @@
 #include "../../DirectXBase/DirectXCommon.h"
 #include "../../3d/Obj/ObjDraw.h"
 #include "../../Manager/ModelManager.h"
+#include "../../Manager/GameObjectManager.h"
+#include "../Player/PlayerBase.h"
 
-class Stage {
+class Stage : public GameObjectBase {
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 	// DirectX::��ȗ�
 	using XMFLOAT2 = DirectX::XMFLOAT2;
@@ -11,23 +13,24 @@ class Stage {
 	using XMFLOAT4 = DirectX::XMFLOAT4;
 	using XMMATRIX = DirectX::XMMATRIX;
 public:
-	Stage();
+	Stage(DirectXCommon* dxCommon, PlayerBase* player);
 	~Stage();
-	void Initialize(DirectXCommon* dxCommon);
+	void Init() override;
 
 	/// <summary>
 	/// ���t���[������
 	/// </summary>
-	void Update();
+	void Update() override;
 
 	/// <summary>
 	/// �`��
 	/// </summary>
-	void Draw();
+	void Draw() override;
 
 public:
-	ObjDraw* skydome = nullptr;
-	ObjDraw* stage = nullptr;
+	std::shared_ptr<ObjDraw> skydome = nullptr;
+	std::shared_ptr<ObjDraw> stage = nullptr;
+	PlayerBase* playerData;
 
 private:
 	DirectXCommon* dxCommon = nullptr;

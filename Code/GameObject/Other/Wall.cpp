@@ -36,7 +36,7 @@ void Wall::Update()
 	wall->SetPos(pos);
 
 	//画面外（手前）に来たら消去
-	if (pos.z < player->GetPos().z - 30) {
+	if (pos.z < player->GetPos().z - 15) {
 		deleteFlag = true;
 	}
 }
