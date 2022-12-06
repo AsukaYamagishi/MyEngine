@@ -12,17 +12,17 @@ private:
 	ModelManager& operator= (const ModelManager& r) = default;
 
 public:
-	//モデルに付けるタグ名
-	enum ModelName {
-		PLAYER,
-		BULLET,
-		ENEMY,
-		EBULLET,
-		WALL,
-		SKYDOME,
+	////モデルに付けるタグ名
+	//enum ModelName {
+	//	PLAYER,
+	//	BULLET,
+	//	ENEMY,
+	//	EBULLET,
+	//	WALL,
+	//	SKYDOME,
 
-		MAX //最大数管理
-	};
+	//	MAX //最大数管理
+	//};
 
 public:
 	static ModelManager* GetIns();		//取得用
@@ -37,16 +37,24 @@ public:
 	/// </summary>
 	/// <param name="modelName">モデルに付けたいタグ名</param>
 	/// <param name="fileName">ファイル名</param>
-	void LoadModel(const ModelName modelName, std::string fileName);
+	void LoadModel(std::string fileName);
 
 	/// <summary>
 	/// モデル情報の取得
 	/// </summary>
-	/// <param name="modelName">モデルのタグ名</param>
-	/// <returns>タグに対応したモデル情報</returns>
-	ObjLoader *GetModel(ModelName modelName) { return model[modelName]; }
+	/// <param name="modelName">モデルのファイル名</param>
+	/// <returns>モデル情報</returns>
+	ObjLoader* GetModel(const std::string& modelName)
+	{
+		if (model.find(modelName) == model.end())
+		{
+			//モデルが未ロードなら読み込み
+			LoadModel(modelName);
+		}
+		return model[modelName]; 
+	}
 
 private:
-	static map<ModelName, ObjLoader* > model;	//モデル格納マップ
+	static map<std::string, ObjLoader* > model;	//モデル格納マップ
 };
 

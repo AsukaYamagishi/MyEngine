@@ -6,7 +6,7 @@ Bullet::Bullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager> collisio
 {
 	//モデルのセット
 	bullet = std::make_shared<ObjDraw>(*ObjDraw::Create());
-	bullet->SetModel(ModelManager::GetIns()->GetModel(ModelManager::BULLET));
+	bullet->SetModel(ModelManager::GetIns()->GetModel("Bullet"));
 
 	//各変数の初期設定
 	pos = startPos;

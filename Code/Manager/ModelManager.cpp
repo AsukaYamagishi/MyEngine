@@ -1,6 +1,6 @@
 #include "ModelManager.h"
 
-map<ModelManager::ModelName, ObjLoader* > ModelManager::model;
+map<std::string, ObjLoader* > ModelManager::model;
 
 ModelManager* ModelManager::GetIns()
 {
@@ -10,20 +10,20 @@ ModelManager* ModelManager::GetIns()
 
 void ModelManager::Init()
 {
-	LoadModel(PLAYER, "Player");
-	LoadModel(BULLET, "bullet");
-	LoadModel(ENEMY, "enemy");
-	LoadModel(WALL, "Wall");
-	LoadModel(SKYDOME, "skydome");
-	LoadModel(EBULLET, "EnemyBullet");
+	LoadModel("Player");
+	LoadModel("bullet");
+	LoadModel("enemy");
+	LoadModel("Wall");
+	LoadModel("skydome");
+	LoadModel("EnemyBullet");
 	
 	//LoadModel(TestDunut, "donut");
 }
 
-void ModelManager::LoadModel(const ModelName modelName, std::string fileName)
+void ModelManager::LoadModel(std::string fileName)
 {
-	model[modelName] = new ObjLoader();
-	model[modelName]->InitializeDiscriptorHeap();
-	model[modelName]->CreateFromObj(fileName);
+	model[fileName] = new ObjLoader();
+	model[fileName]->InitializeDiscriptorHeap();
+	model[fileName]->CreateFromObj(fileName);
 
 }

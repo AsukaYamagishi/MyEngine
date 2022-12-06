@@ -5,7 +5,7 @@ EnemyBullet::EnemyBullet(DirectXCommon* dxCommon, std::weak_ptr<CollisionManager
 {
 	//モデルセット
 	bullet = std::make_shared<ObjDraw>(*ObjDraw::Create());
-	bullet->SetModel(ModelManager::GetIns()->GetModel(ModelManager::EBULLET));
+	bullet->SetModel(ModelManager::GetIns()->GetModel("EnemyBullet"));
 
 
 	//各変数セット

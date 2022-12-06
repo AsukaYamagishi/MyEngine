@@ -9,7 +9,7 @@ Stage::Stage(DirectXCommon* dxCommon, PlayerBase* player):
 	playerData = player;
 	
 	skydome = std::make_shared<ObjDraw>(*ObjDraw::Create());
-	skydome->SetModel(ModelManager::GetIns()->GetModel(ModelManager::SKYDOME));
+	skydome->SetModel(ModelManager::GetIns()->GetModel("Skydome"));
 	skydome->SetPos(playerData->GetPos());
 	/*stage = ModelDraw::Create();
 	stage->SetModel(ModelManager::GetIns()->GetModel(ModelManager::Stage));*/

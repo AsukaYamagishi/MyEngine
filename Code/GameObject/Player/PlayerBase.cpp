@@ -17,7 +17,7 @@ PlayerBase::PlayerBase(DirectXCommon* dxCommon, std::shared_ptr<CollisionManager
 	GameObjectBase(dxCommon)
 {
 	player = std::make_shared<ObjDraw>(*ObjDraw::Create());
-	player->SetModel(ModelManager::GetIns()->GetModel(ModelManager::PLAYER));
+	player->SetModel(ModelManager::GetIns()->GetModel("Player"));
 	this->collisionManager = collisionManager;
 	this->debugText = debugText;
 	scoreManager = scoreMan;

@@ -6,7 +6,7 @@ Enemy::Enemy(DirectXCommon* dxCommon, std::weak_ptr<GameObjectManager> gameObjMa
 	GameObjectBase(dxCommon)
 {
 	enemy = std::make_shared<ObjDraw>(*ObjDraw::Create());
-	enemy->SetModel(ModelManager::GetIns()->GetModel(ModelManager::ENEMY));
+	enemy->SetModel(ModelManager::GetIns()->GetModel("Enemy"));
 	this->gameObjManager = gameObjManager;
 	this->collisionManager = collisionManager;
 	scoreManager = scoreMan;

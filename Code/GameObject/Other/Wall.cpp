@@ -5,7 +5,7 @@ Wall::Wall(Vector3 startPos, DirectXCommon* dxCommon,std::weak_ptr<CollisionMana
 	GameObjectBase(dxCommon)
 {
 	wall = std::make_shared<ObjDraw>(*ObjDraw::Create());
-	wall->SetModel(ModelManager::GetIns()->GetModel(ModelManager::WALL));
+	wall->SetModel(ModelManager::GetIns()->GetModel("Wall"));
 
 	this->player = player;
 
