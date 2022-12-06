@@ -2,6 +2,8 @@
 #include "../DirectXBase/DirectXCommon.h"
 #include "../Math/Vector3.h"
 #include "../Collision/CollisionInfo.h"
+#include "../Manager/ModelManager.h"
+#include "../3d/Obj/ObjDraw.h"
 
 class CollisionManager;
 class GameObjectManager;
@@ -65,6 +67,10 @@ public:
 	Vector3 GetPos() { return pos; }
 
 	bool GetDeleteFlag() { return deleteFlag; }
+
+	void SetObjData(const std::string& fileName) {
+		obj->SetModel(ModelManager::GetIns()->GetModel(fileName));
+	}
 #pragma endregion
 
 #pragma region 変数
@@ -79,6 +85,8 @@ protected:
 	// 自分が所属しているマネージャー
 	static std::weak_ptr<GameObjectManager> gameObjectManager;
 	std::vector<std::shared_ptr<BaseCollider>> colliders;
+	
+	std::shared_ptr<ObjDraw> obj;
 
 };
 
